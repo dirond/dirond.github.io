@@ -11,11 +11,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ivanovds.ru/Windows/</loc>
-         <lastmod>2023-03-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://ivanovds.ru/CTF/</loc>
          <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
@@ -311,87 +306,72 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ivanovds.ru/Services%2C_Protocols_and_etc/Program_languages/</loc>
+         <loc>https://ivanovds.ru/Technologies/</loc>
          <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ivanovds.ru/Services%2C_Protocols_and_etc/Protocols/</loc>
+         <loc>https://ivanovds.ru/Technologies/FTP/</loc>
          <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ivanovds.ru/Services%2C_Protocols_and_etc/Services%2C_Protocols_and_etc/</loc>
+         <loc>https://ivanovds.ru/Technologies/Hashing/</loc>
          <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ivanovds.ru/Services%2C_Protocols_and_etc/Services/</loc>
+         <loc>https://ivanovds.ru/Technologies/Kerberos/</loc>
          <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ivanovds.ru/Services%2C_Protocols_and_etc/Technologies/</loc>
+         <loc>https://ivanovds.ru/Technologies/MySQL/</loc>
          <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ivanovds.ru/Services%2C_Protocols_and_etc/Program_languages/XML/</loc>
+         <loc>https://ivanovds.ru/Technologies/NFS/</loc>
          <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ivanovds.ru/Services%2C_Protocols_and_etc/Program_languages/python/</loc>
+         <loc>https://ivanovds.ru/Technologies/NTLM/</loc>
          <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ivanovds.ru/Services%2C_Protocols_and_etc/Protocols/FTP/</loc>
+         <loc>https://ivanovds.ru/Technologies/SMB/</loc>
          <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ivanovds.ru/Services%2C_Protocols_and_etc/Protocols/Kerberos/</loc>
+         <loc>https://ivanovds.ru/Technologies/SMTP/</loc>
          <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ivanovds.ru/Services%2C_Protocols_and_etc/Protocols/NTLM/</loc>
+         <loc>https://ivanovds.ru/Technologies/SQLite/</loc>
          <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ivanovds.ru/Services%2C_Protocols_and_etc/Protocols/SMB/</loc>
+         <loc>https://ivanovds.ru/Technologies/XML/</loc>
          <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ivanovds.ru/Services%2C_Protocols_and_etc/Protocols/SMTP/</loc>
+         <loc>https://ivanovds.ru/Technologies/python/</loc>
          <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ivanovds.ru/Services%2C_Protocols_and_etc/Protocols/telnet/</loc>
+         <loc>https://ivanovds.ru/Technologies/telnet/</loc>
          <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ivanovds.ru/Services%2C_Protocols_and_etc/Services/MySQL/</loc>
-         <lastmod>2023-03-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ivanovds.ru/Services%2C_Protocols_and_etc/Services/NFS/</loc>
-         <lastmod>2023-03-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ivanovds.ru/Services%2C_Protocols_and_etc/Services/SQLite/</loc>
-         <lastmod>2023-03-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ivanovds.ru/Services%2C_Protocols_and_etc/Technologies/Hashing/</loc>
+         <loc>https://ivanovds.ru/Windows/</loc>
          <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -417,11 +397,6 @@
     </url>
     <url>
          <loc>https://ivanovds.ru/Windows/Windows_Services/</loc>
-         <lastmod>2023-03-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ivanovds.ru/Windows/Windows_notes_and_tips/</loc>
          <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
