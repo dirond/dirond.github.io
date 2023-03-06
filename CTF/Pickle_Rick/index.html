@@ -478,9 +478,40 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Pickle Rick
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Pickle Rick
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Сканирование
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -507,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Upload_Vulnearbilities.md" class="md-nav__link">
+      <a href="../Upload_Vulnerabilities/" class="md-nav__link">
         Upload Vulnerabilities
       </a>
     </li>
@@ -1986,6 +2017,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Сканирование
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2001,35 +2047,40 @@
 
 <h1 id="pickle-rick">Pickle Rick</h1>
 <hr />
-<p><a href="https://tryhackme.com/room/picklerick">https://tryhackme.com/room/picklerick</a>
-Основная задача - обход фильтров ограничивающих ввод определенных команд в консоли.</p>
-<ol>
-<li>Проведение разведки с nmap на предмет наличия открытых портов:</li>
-</ol>
-<p><code>sudo nmap -T 4 IP-ADDRESS #</code>Обнаружены открытые порты 22 и 80.
-<code>sudo nmap -sV -sC -O -p 22,80 IP-ADDRESS</code>#Получаем версии, наименование ПО работающего на открытых портах</p>
-<ol>
-<li>Изучаем главную страницу web приложения, находим в комментариях username</li>
-<li>Проводим разведку с gobuster или feroxbuster для получения информации о имеющихся директориях и файлов php,txt,js,cgi,html,htm,sh:</li>
-</ol>
-<p><code>feroxbuster -u IP-ADDRESS -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -t 64 -x php,txt,js,cgi,html,htm,sh</code></p>
-<p><code>gobuster dir -t 64-u IP-ADDRESS -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -x php,txt,js,cgi,html,htm,sh</code></p>
-<ol>
-<li>Находим robots.txt с нествойственным содержимым - которое является паролем для ранее найденной учетки.</li>
-<li>Находим login.php. Логинимся используя найденные логин/пароль.</li>
-<li>Исследуем portal.php - в одной из вкладок находим возможность запускать команды, однако понимаем, что часть из них блокируется ("cat", "head", "more", "tail", "nano", "vim", "vi") </li>
-<li>Через sudo -l понимаем, что через sudo можем запускать все.</li>
-<li>Находим первый ключ в текущей директории.</li>
-<li>В директории /root находим очередной ингредиент.</li>
-<li>В директри /home/rick находим последний ингредиент.</li>
-</ol>
-<p>—
-Прочие заметки:</p>
+<p>Основная задача - обход фильтров ограничивающих ввод определенных команд в консоли.<br />
+Описание задания можно найти на <a href="https://tryhackme.com/room/picklerick">TryHackme</a></p>
+<h3 id="_1">Сканирование</h3>
+<p>Проведение разведки с nmap на предмет наличия открытых портов:</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>nmap<span class="w"> </span>-T<span class="w"> </span><span class="m">4</span><span class="w"> </span>IP-ADDRESS
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>nmap<span class="w"> </span>-sV<span class="w"> </span>-sC<span class="w"> </span>-O<span class="w"> </span>-p<span class="w"> </span><span class="m">22</span>,80<span class="w"> </span>IP-ADDRESS<span class="w"> </span>
+</span></code></pre></div>
+<blockquote>
+<p>Обнаружены открытые порты 22 и 80.<br />
+Получены версии, наименование ПО работающего на открытых портах</p>
+</blockquote>
+<p>Изучаем главную страницу web приложения, находим в комментариях <code>username</code>
+Проводим разведку с <a href="/CyberSec/Tools/gobuster">gobuster</a> или <a href="/CyberSec/Tools/feroxbuster">feroxbuster</a> для получения информации о имеющихся директориях и файлов <code>php</code>,<code>txt</code>,<code>js</code>,<code>cgi</code>,<code>html</code>,<code>htm</code>,<code>sh</code>:</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>feroxbuster<span class="w"> </span>-u<span class="w"> </span>IP-ADDRESS<span class="w"> </span>-w<span class="w"> </span>/usr/share/wordlists/dirbuster/directory-list-2.3-small.txt<span class="w"> </span>-t<span class="w"> </span><span class="m">64</span><span class="w"> </span>-x<span class="w"> </span>php,txt,js,cgi,html,htm,sh<span class="sb">``</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>gobuster<span class="w"> </span>dir<span class="w"> </span>-t<span class="w"> </span><span class="m">64</span>-u<span class="w"> </span>IP-ADDRESS<span class="w"> </span>-w<span class="w"> </span>/usr/share/wordlists/dirbuster/directory-list-2.3-small.txt<span class="w"> </span>-x<span class="w"> </span>php,txt,js,cgi,html,htm,sh<span class="sb">``</span>
+</span></code></pre></div>
+<blockquote>
+<p>Находим <code>robots.txt</code> с нествойственным содержимым - которое является паролем для ранее найденной учетки.<br />
+Находим <code>login.php</code>. </p>
+</blockquote>
+<h1 id="_2">Изучение приложения</h1>
+<p>Логинимся используя найденные логин/пароль.</p>
+<p>Исследуем <code>portal.php</code> - в одной из вкладок находим возможность запускать команды, однако понимаем, что часть из них блокируется (<code>cat</code>, <code>head</code>, <code>more</code>, <code>tail</code>, <code>nano</code>, <code>vim</code>, <code>vi</code>).
+С помощью <code>sudo -l</code> понимаем, что через <code>sudo</code> можем запускать все.</p>
+<p>Находим первый ключ в текущей директории.<br />
+В директории <code>/root</code> находим очередной ингредиент.<br />
+В директри <code>/home/rick</code> находим последний ингредиент.</p>
+<h1 id="_3">Прочие заметки:</h1>
 <ul>
-<li>Через find / -name "*.txt" 2&gt; /dev/null теоретически можно найти остальные флаги.</li>
-<li>Можно было поднять reverse shell для более удобной работы с машиной.</li>
-<li>Используя nikto можно было-бы найти login.php без использования перебора каталогов</li>
-<li>Через grep -R . можно получить содержимое всех файлов в текущей директории. Их удобно просматривать через просмотр кода страницы.</li>
+<li>Через <code>find / -name "*.txt" 2&gt; /dev/null</code> теоретически можно найти остальные флаги.</li>
+<li>Можно было поднять <a href="/CyberSec/Penetration_testing/Reverse_shell">reverse shell</a> для более удобной работы с машиной.</li>
+<li>Используя <code>nikto</code> можно было-бы найти <code>login.php</code> без использования перебора каталогов</li>
+<li>Через <code>grep -R .</code> можно получить содержимое всех файлов в текущей директории. Их удобно просматривать через просмотр кода страницы.</li>
 </ul>
 
 
