@@ -291,6 +291,22 @@
   
 
 
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Documents/" class="md-tabs__link">
+        Нормативка
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
   <li class="md-tabs__item">
     <a href="../../Update_log/" class="md-tabs__link">
       Update Log
@@ -1958,6 +1974,71 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../Documents/">Нормативка</a>
+          
+            <label for="__nav_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Нормативка
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documents/683-p/" class="md-nav__link">
+        Положение Банка России 683-П
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../Update_log/" class="md-nav__link">
         Update Log
@@ -2001,19 +2082,22 @@
 
 <h1 id="alternate-data-streams">Alternate Data Streams</h1>
 <hr />
-<p>Alternate Data Streams (ADS) - альтернативные потоки данных. Фишка файловой системы NTFS, которая позволяет записывать несколько потоков данных в один файл.
-В винде это используется как минимум для того, чтобы, к примеру,  обозначить специальной меткой файл скачанный из сети (Тот самый крыж в свойствах файла -  "Файл получен из сети и может быть не безопасным").
-Каждый файл в NTFS имеет как минимум один поток данных - $DATA. Стандартным виндовым проводником, виден только он. 
+<p>Alternate Data Streams (ADS) - альтернативные потоки данных. Фишка файловой системы NTFS, которая позволяет записывать несколько потоков данных в один файл.</p>
+<p>В винде это используется как минимум для того, чтобы, к примеру,  обозначить специальной меткой файл скачанный из сети (Тот самый крыж в свойствах файла -  "Файл получен из сети и может быть не безопасным").</p>
+<p>Каждый файл в NTFS имеет как минимум один поток данных - <code>$DATA</code>. Стандартным виндовым проводником, виден только он. 
 Один лишь этот факт позволяет использовать ADS в нехороших целях. Это же фактически легальная стеганография в чистом виде! 
-А учитывая то, что в альтернативный поток можно записать бинарники, ADS становится must have штукой к изучению.
-Для просмотра всех имеющихся потоков файла есть различные утилиты/командлеты в powershell. et-Ityem
-Для просмотра потоков файла: 
-<code>Get-Item  -path %PATH_TO_FILE% -stream *</code>
+А учитывая то, что в альтернативный поток можно записать бинарники, ADS становится must have штукой к изучению.</p>
+<p>Для просмотра всех имеющихся потоков файла есть различные утилиты/командлеты в powershell.
+Для просмотра потоков файла:
+<div class="language-Powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Get-Item</span>  <span class="n">-path</span> <span class="k">%</span><span class="n">PATH_TO_FILE</span><span class="p">%</span> <span class="n">-stream</span> <span class="p">*</span>
+</span></code></pre></div>
 Для просмотра конкретного потока:
-<code>Get-Item  -path %PATH_TO_FILE% -stream %STREAM_NAME%</code>
+<div class="language-Powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Get-Item</span>  <span class="n">-path</span> <span class="k">%</span><span class="n">PATH_TO_FILE</span><span class="p">%</span> <span class="n">-stream</span> <span class="k">%</span><span class="n">STREAM_NAME</span><span class="p">%</span>
+</span></code></pre></div>
 Записать в альтернативный поток:
-<code>set-content - path {path to the file} - stream {name of the stream}</code></p>
-<p>Подробнее: гугли NTFS ADS, или смотри здесь: <a href="https://www.malwarebytes.com/blog/news/2015/07/introduction-to-alternate-data-streams">https://www.malwarebytes.com/blog/news/2015/07/introduction-to-alternate-data-streams</a>    </p>
+<div class="language-Powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">set-content</span> <span class="p">-</span> <span class="n">path</span> <span class="p">{</span><span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">file</span><span class="p">}</span> <span class="p">-</span> <span class="n">stream</span> <span class="p">{</span><span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">stream</span><span class="p">}</span>
+</span></code></pre></div></p>
+<p>Подробнее: гугли NTFS ADS, или смотри здесь: <a href="https://www.malwarebytes.com/blog/news/2015/07/introduction-to-alternate-data-streams">Introduction to ADS</a></p>
 
 
 

@@ -291,6 +291,22 @@
   
 
 
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Documents/" class="md-tabs__link">
+        Нормативка
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
   <li class="md-tabs__item">
     <a href="../../Update_log/" class="md-tabs__link">
       Update Log
@@ -1958,6 +1974,71 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../Documents/">Нормативка</a>
+          
+            <label for="__nav_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Нормативка
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documents/683-p/" class="md-nav__link">
+        Положение Банка России 683-П
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../Update_log/" class="md-nav__link">
         Update Log
@@ -2001,16 +2082,30 @@
 
 <h1 id="powershell-commandlets">Powershell commandlets</h1>
 <hr />
-<p>Смена пароля для доменного пользователя  $USERNAME (1 - ввод нового пароля, 2 - требования обязательной смены при первом входе:</p>
-<ol>
-<li><strong><code>Set-ADAccountPassword $USERNAME -Reset -NewPassword (Read-Host -AsSecureString -Prompt 'New password') -Verbose</code></strong></li>
-<li><strong><code>Set-ADUser -ChangePasswordAtLogon $true -Identity $USERNAME -Verbose</code></strong></li>
-</ol>
-<p>Ключи по нижеследующим командам легко гуглятся или берутся из первоисточника в <a href="https://learn.microsoft.com/en-us/powershell/">PowerShell Documention</a><br />
-| командлет   | Описание                  |
-|:------------|:--------------------------|
-| Get-Process | Получает список процессов |
-|             |                           |</p>
+<p>Смена пароля для доменного пользователя  $USERNAME: (1 - ввод нового пароля, 2 - требования обязательной смены при первом входе:</p>
+<p><div class="language-Powershell highlight"><span class="filename">Требование ввода нового пароля</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Set-ADAccountPassword</span> <span class="nv">$USERNAME</span> <span class="n">-Reset</span> <span class="n">-NewPassword</span> <span class="p">(</span><span class="nb">Read-Host</span> <span class="n">-AsSecureString</span> <span class="n">-Prompt</span> <span class="s1">&#39;New password&#39;</span><span class="p">)</span> <span class="n">-Verbose</span>
+</span></code></pre></div>
+<div class="language-Powershell highlight"><span class="filename">Требование сменить пароль при первом использовании</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Set-ADUser</span> <span class="n">-ChangePasswordAtLogon</span> <span class="nv">$true</span> <span class="n">-Identity</span> <span class="nv">$USERNAME</span> <span class="n">-Verbose</span>
+</span></code></pre></div></p>
+<p>Ключи по нижеследующим командам легко гуглятся или берутся из первоисточника в <a href="https://learn.microsoft.com/en-us/powershell/">PowerShell Documention</a>  </p>
+<table>
+<thead>
+<tr>
+<th align="left">командлет</th>
+<th align="left">Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Get-Process</td>
+<td align="left">Получает список процессов</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
 
 
 

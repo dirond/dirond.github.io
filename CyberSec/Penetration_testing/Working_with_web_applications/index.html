@@ -291,6 +291,22 @@
   
 
 
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Documents/" class="md-tabs__link">
+        Нормативка
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
   <li class="md-tabs__item">
     <a href="../../../Update_log/" class="md-tabs__link">
       Update Log
@@ -1034,13 +1050,6 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    !
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
     Поиск поддоменов.
   </a>
   
@@ -1051,6 +1060,33 @@
   <a href="#osint" class="md-nav__link">
     OSINT
   </a>
+  
+    <nav class="md-nav" aria-label="OSINT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tls" class="md-nav__link">
+    Получение информации о TLS сертификатах
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    Гуглинг c ключами
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Автоматический перебор доменов
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2025,6 +2061,71 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Documents/">Нормативка</a>
+          
+            <label for="__nav_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Нормативка
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Documents/683-p/" class="md-nav__link">
+        Положение Банка России 683-П
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../../Update_log/" class="md-nav__link">
         Update Log
@@ -2061,13 +2162,6 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    !
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
     Поиск поддоменов.
   </a>
   
@@ -2078,6 +2172,33 @@
   <a href="#osint" class="md-nav__link">
     OSINT
   </a>
+  
+    <nav class="md-nav" aria-label="OSINT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tls" class="md-nav__link">
+    Получение информации о TLS сертификатах
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    Гуглинг c ключами
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Автоматический перебор доменов
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2126,37 +2247,47 @@
 <li>Просмотр MD5 favicon web приложения на <a href="https://wiki.owasp.org/index.php/OWASP_favicon_database">https://wiki.owasp.org/index.php/OWASP_favicon_database</a> для определения импользуемого фреймворка </li>
 <li>Просмотр sitemap.txt на наличие страниц без прямых ссылок </li>
 <li>Поиск поддоменов нахождение которых увеличит поверхности атаки (подробнее ниже) </li>
-<li>Просмотр HTTP заголовков для получения информации о web сервере и используемом языке. </li>
-</ul>
-<p><code>curl -k</code><a href="https://targetsite.site"><code>https://targetsite.site</code></a><code>-v</code></p>
-<ul>
-<li>Получение информации об используемом фреймворке даст информацию о его уязвимостях</li>
+<li>
+<p>Просмотр HTTP заголовков для получения информации о web сервере и используемом языке:</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-k<span class="w"> </span>https://targetsite.site<span class="w"> </span>-v
+</span></code></pre></div>
+</li>
+<li>
+<p>Получение информации об используемом фреймворке, для получения информации о его уязвимостях</p>
+</li>
 <li>Поиск по сайту из внешних поисковиков с использованием дополнительных ключей (site:, filetype:, intitle: и т.д.)</li>
-<li>Использование <a href="https://www.wappalyzer.com/">https://www.wappalyzer.com/</a> и аналогичных инструментов для получения информации об используемых технологиях.</li>
-<li>Поиск по <a href="https://archive.org/web/">https://archive.org/web/</a> который поможет получить информацию об имевшихся ранее страницах</li>
+<li>Использование <a href="https://www.wappalyzer.com/">wappalyzer</a> и аналогичных инструментов для получения информации об используемых технологиях.</li>
+<li>Поиск по <a href="https://archive.org/web/">webarchive</a> который поможет получить информацию об имевшихся ранее страницах</li>
 <li>Поиск по GitHub и подобных сервисах для получения репозиториев в котором могут быть забыты пароли и прочая полезная информация</li>
 <li>В свете повсеместного использования облаков не лишним будет поиск по s3 бакетам для проверки наличия информации в них</li>
 </ul>
 <p>Многое из перечисленного можно исследовать автоматически через специализированное ПО: <a href="https://github.com/ffuf/ffuf">ffuf</a>, <a href="../../Tools/gobuster/">gobuster</a>, <a href="../../Tools/feroxbuster/">feroxbuster</a>, dirb.</p>
-<h3 id="_1">!</h3>
+<div class="admonition danger">
+<p class="admonition-title">Важно!</p>
 <p><strong>На самом деле, все вышеописанное относится к ошибкам конфигурации web приложения и в качественно сделанном продукте, не получится извлечь из вышеуказанного полезной информации.</strong></p>
-<h3 id="_2">Поиск поддоменов.</h3>
-<p>Выполняется тремя основными методиками: OSINT, brute-force, поиск виртуальных хостов.</p>
+</div>
+<h3 id="_1">Поиск поддоменов.</h3>
+<p>Выполняется тремя основными методиками:</p>
+<ul>
+<li>OSINT</li>
+<li>brute-force</li>
+<li>поиск виртуальных хостов</li>
+</ul>
 <h4 id="osint">OSINT</h4>
-<ol>
-<li>Получение информации о TLS сертификате web приложения, в частности поиска информации о выданых ранее сертификатах на специализированных сайтах которые ведут логи - "Certificate Transperecy Logs" <a href="http://crt.sh/">http://crt.sh/</a> и <a href="https://ui.ctsearch.entrust.com/ui/ctsearchui">https://ui.ctsearch.entrust.com/ui/ctsearchui</a> </li>
-</ol>
-<p>В полученной информации могут содержаться сведения о поддоменах на которые были выданы сертификаты.</p>
-<ol>
-<li>Гуглинг используя ключи. К примеру, конструкция </li>
-</ol>
-<p><code>-site:</code><a href="www.example.com"><code>www.example.com</code></a><code>site:*.example.com</code><br />
+<h5 id="tls">Получение информации о TLS сертификатах</h5>
+<p>В частности поиск информации о выданых ранее сертификатах на специализированных сайтах которые ведут соответствующие логи - <a href="http://crt.sh/">Certificate Transperecy Logs</a> и, к примеру, <a href="https://ui.ctsearch.entrust.com/ui/ctsearchui">ctsearch</a>. В полученной информации могут содержаться сведения о поддоменах на которые были выданы сертификаты.</p>
+<hr />
+<h5 id="c">Гуглинг c ключами</h5>
+<p>К примеру, конструкция </p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>-site:www.example.com site:*.example.com
+</span></code></pre></div>
 вернёт поддомены example.com отличные от www</p>
-<ol>
-<li>Автоматический перебор доменов с помощью <a href="https://github.com/aboul3la/Sublist3r">Sublist3r</a> и ему подобных инструментов.</li>
-</ol>
+<hr />
+<h5 id="_2">Автоматический перебор доменов</h5>
+<p>Который можно выполнить с помощью <a href="https://github.com/aboul3la/Sublist3r">Sublist3r</a> и ему подобных инструментов.</p>
+<hr />
 <h4 id="dns-brute-force">DNS Brute-Force</h4>
-<p>Осуществляется с помощью таких инструментов как <a href="https://github.com/darkoperator/dnsrecon">dnsrecon</a></p>
+<p>Можно осуществить  с помощью <a href="https://github.com/darkoperator/dnsrecon">dnsrecon</a> и ему подобных инструментов.</p>
 <h4 id="_3">Обход авторизации</h4>
 <p>В случае, если механизмы авторизации не сконфигурированны должным образом, есть множество различных вариантов получить доступ к системе обойдя авторизацию.
 К основным можно отнести:</p>
@@ -2165,7 +2296,13 @@
 <li>Обход логики авторизации, например при восстановлении пароля.</li>
 <li>Подделка cookies</li>
 </ul>
-<p>Брутфорс проводится инструментами которые позволяют делать множество запросов к приложению перебирая при этом значения из списка слов: <a href="../../Tools/Hydra/">Hydra</a>, <a href="../../Tools/ffuf/">ffuf</a>, <a href="../../Tools/Burp_Suite/">BurpSuite</a> и прочие.</p>
+<p>Брутфорс проводится инструментами которые позволяют делать множество запросов к приложению перебирая при этом значения из списка слов:</p>
+<ul>
+<li><a href="../../Tools/Hydra/">Hydra</a></li>
+<li><a href="../../Tools/ffuf/">ffuf</a></li>
+<li><a href="../../Tools/Burp_Suite/">BurpSuite</a></li>
+<li>и прочие.</li>
+</ul>
 <p>Для попытки обхода логики механизма авторизации, было бы крайне полезно получить доступ к коду такого механизма, что не представляется возможным. Однако, в процессе изучения передаваемых запросов и получаемых ответов, есть вероятность подменить некоторые отправляемые сведения для получения желаемого результата. В этом деле помогут те же инструменты, которые используются при брутфорсе, или же простой curl.</p>
 <p>Подделка cookies описана <a href="../../CyberSec_Frameworks/OWASP/Insecure_Deserialization/">здесь</a> и <a href="../../CyberSec_Frameworks/OWASP/Cross_site_scripting_%28XSS%29/">тут</a> </p>
 
