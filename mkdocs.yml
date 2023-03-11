@@ -1,0 +1,176 @@
+# mkdocs config file
+# for https://ivanovds.ru site
+# By Dmitrii Ivanov t.me/@dirond
+
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+site_name: ivanovds.ru
+site_url: https://ivanovds.ru
+site_author: Dmitrii Ivanov
+site_description: >-
+  Сайт для публикации заметок в области ИТ и ИБ.
+extra:
+  social:
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/dirond
+      name: Telegram
+    - icon: fontawesome/brands/github
+      link: https://github.com/dirond
+      name: Github
+theme:
+  logo: assets/logo.png
+  favicon: images/favicon.png
+  language: ru
+  name: material
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    #- content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    #- navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    #- navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+  palette: 
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+# Plugins
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+nav:
+  - Главная: 
+    - 'Привет! Hello! Hola! Bonjour!': index.md
+  - CTF:
+    - CTF: CTF/index.md
+    - Basic Pentesting : CTF/Basic_Pentesting.md
+    - Kenoby: CTF/Kenoby.md
+    - Pickle Rick: CTF/Pickle_Rick.md
+    - Steel Mountain: CTF/Steel_Mountain.md
+    - Upload Vulnerabilities: CTF/Upload_Vulnerabilities.md
+  - CyberSec:
+    - CyberSec: CyberSec/index.md
+    - Cyber kill chain: CyberSec/Cyber_Kill_Chain.md
+    - CyberSec specialists: CyberSec/CyberSec_specialists.md
+    - CyberSec Frameworks:
+      - CyberSec Frameworks: CyberSec/CyberSec_Frameworks/index.md
+      - OWASP:
+        - OWASP: CyberSec/CyberSec_Frameworks/OWASP/index.md
+        - Broken Access Control: CyberSec/CyberSec_Frameworks/OWASP/Broken_Access_Control.md
+        - Broken Authentication: CyberSec/CyberSec_Frameworks/OWASP/Broken_Authentication.md
+        - Cross Site Scripting: CyberSec/CyberSec_Frameworks/OWASP/Cross_site_scripting_(XSS).md
+        - Injections: CyberSec/CyberSec_Frameworks/OWASP/Injection.md
+        - Insecure Deseralization: CyberSec/CyberSec_Frameworks/OWASP/Insecure_Deserialization.md
+        - Security_Misconfiguration: CyberSec/CyberSec_Frameworks/OWASP/Security_Misconfiguration.md
+        - Sensivity Data Explosure: CyberSec/CyberSec_Frameworks/OWASP/Sensitive_Data_Exposure_(Cryptogrfic_failures).md
+        - XML External Entity XEE: CyberSec/CyberSec_Frameworks/OWASP/XML_External_Entity_(Security_misconfiguration).md
+    - Penetration testing:
+      - Penetration testing: CyberSec/Penetration_testing/index.md
+      - Эскалация привилегий: CyberSec/Penetration_testing/Privilege_escalation.md
+      - Reverse shell: CyberSec/Penetration_testing/Reverse_shell.md
+      - Загрузка payload: CyberSec/Penetration_testing/Upload_payload.md
+    - Security operation center: CyberSec/Security_Operation_Center_(SOC).md
+    - Безопасность web приложений:
+      - Безопасность web приложений: CyberSec/web_applications/index.md
+      - Типичные уязвимости web приложений: CyberSec/web_applications/web_vulns.md
+    - Инструменты:
+      - Инструменты: CyberSec/Tools/index.md
+      - curl: CyberSec/Tools/curl.md
+      - Burp suite: CyberSec/Tools/Burp_Suite.md
+      - Feroxbuster: CyberSec/Tools/feroxbuster.md
+      - ffuf: CyberSec/Tools/ffuf.md
+      - gobuster: CyberSec/Tools/gobuster.md
+      - hash-id: CyberSec/Tools/hash-id.md
+      - Hydra: CyberSec/Tools/Hydra.md
+      - John the ripper: CyberSec/Tools/John_the_ripper.md
+      - Metasploit: CyberSec/Tools/Metasploit.md
+      - netcat (nc): CyberSec/Tools/netcat_nc.md
+      - nikto: CyberSec/Tools/nikto.md
+      - nmap: CyberSec/Tools/nmap.md
+      - socat: CyberSec/Tools/socat.md
+      - WPScan: CyberSec/Tools/WPScan.md
+    - Сетевая безопасность:
+      - Сетевая безопасность: CyberSec/Network_security/index.md
+      - ARP spoffing: CyberSec/Network_security/ARP_spoofing.md
+    - Моделирование угроз: CyberSec/Threat_modeling.md
+    - Полезная информация: CyberSec/Useful_Information.md
+    - Полезные ссылки: CyberSec/Useful_Links.md
+    - Термины и определения: CyberSec/Terms_and_definitions.md
+  - Linux:
+    - Linux: Linux/index.md
+    - Bash startup files: Linux/Bash_startup_files.md
+    - Working with Disks: Linux/Disks.md
+    - Kernel: Linux/Kernel.md
+    - Linux directories (FHS): Linux/Linux_directories_(Filesystem_hierarchy_standart_-_FHS).md
+    - Other necessary things: Linux/Other_necessery_things.md
+    - Processes: Linux/Processes.md
+    - Shell scripting: Linux/Shell_scripting.md
+    - Useful files and directories: Linux/Some_useful_files_and_directories.md
+    - Users: Linux/Users.md
+    - Variables: Linux/Variables.md
+    - Команды Linux: Linux/Linux_commands.md
+  - Windows:
+    - Windows: Windows/index.md
+    - Active Directory: Windows/Active_Directory.md
+    - Alternate Data Streams: Windows/Alternate_Data_Streams.md
+    - Powershell: Windows/Powershell_commandlets.md
+    - System utilities: Windows/System_utilities.md
+    - Windwos Services: Windows/Windows_Services.md
+  - Прочее:
+    - Сервисы, протоколы, технологии: Technologies/index.md
+    - FTP: Technologies/FTP.md
+    - Hashing: Technologies/Hashing.md
+    - Kerberos: Technologies/Kerberos.md
+    - MySQL: Technologies/MySQL.md
+    - NFS: Technologies/NFS.md
+    - NTLM: Technologies/NTLM.md
+    - Python: Technologies/python.md
+    - SMB: Technologies/SMB.md
+    - SMTP: Technologies/SMTP.md
+    - SQLite: Technologies/SQLite.md
+    - Telnet: Technologies/telnet.md
+    - XML: Technologies/XML.md
+  - Нормативка:
+    - Нормативка: Documents/index.md
+    - Положение Банка России 683-П: Documents/683-p.md
+  - Update Log: Update_log.md
