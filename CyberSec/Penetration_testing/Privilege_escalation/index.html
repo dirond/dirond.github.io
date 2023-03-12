@@ -1231,8 +1231,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/curl/" class="md-nav__link">
-        curl
+      <a href="../../Tools/Burp_Suite/" class="md-nav__link">
+        Burp suite
       </a>
     </li>
   
@@ -1245,8 +1245,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/Burp_Suite/" class="md-nav__link">
-        Burp suite
+      <a href="../../Tools/curl/" class="md-nav__link">
+        curl
       </a>
     </li>
   
@@ -2368,11 +2368,11 @@
 <p>Суть состоит в том, что используются имеющиеся изъяны в ОС или ПО способные предоставить неавторизованный доступ к таким ресурсам, на которые обыкновенный пользователь не имеет прав. </p>
 <p>Существует два сценария повышения привилегий - горизонтальное и вертикальное. Понятно, что вертикальное подразумевает переход от доступа с обычными привилегиями к доступу с большими. Горизонтальный - от отдного простого пользователя к другому, в надежде, что у него есть sudo на какой нибудь бинарник.</p>
 <p>Далее некоторые способы горизонтального повышения привилегий:</p>
-<h4 id="etcshadow">Некорректный доступ к <code>/etc/shadow</code></h4>
+<h4 id="etcshadow">Некорректный доступ к /etc/shadow</h4>
 <p>По умолчанию только root пользователь имеет read/write права к <code>/etc/shadow</code>.
 Предоставление подобных прав иным пользователям чревато тем, что они могут:</p>
 <ol>
-<li>Если есть права на чтение, то прогнать хэш root пользователя через JohnTheRipper или условный <a href="https://hashes.com">https://hashes.com</a> и ему подобные ресурсы;</li>
+<li>Если есть права на чтение, то прогнать хэш root пользователя через JohnTheRipper или условный <a href="https://hashes.com">hashes.com</a> и ему подобные ресурсы;</li>
 <li>Если есть права на запись, то отредактировать <code>/etc/shadow</code> вставив туда хэш нового пароля: 
 <div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>openssl<span class="w"> </span>passwd<span class="w"> </span>-1<span class="w"> </span>-salt<span class="w"> </span><span class="o">[</span>salt<span class="o">]</span><span class="w"> </span><span class="o">[</span>password<span class="o">]</span>
 </span></code></pre></div>
@@ -2390,8 +2390,8 @@
 <div class="language-Bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mkpasswd<span class="w"> </span>-m<span class="w"> </span>sha-512<span class="w"> </span>password<span class="w"> </span><span class="o">[</span>salt<span class="o">]</span>
 </span></code></pre></div></p>
 <h4 id="sudo">Некорретная раздача sudo прав</h4>
-<p>Имея <code>sudo</code> на некоторые бинарники, расширить доступ до root не составит труда. Список таких уязвимых бинарников можно найти здесь: <a href="https://gtfobins.github.io/">https://gtfobins.github.io/</a>.</p>
-<p>Их уязвимость заключается в том, что для корректной работы им нужны <code>SUID</code> права. Неверная конфигурация, читай выдача <code>sudo</code>, на выполнение таких бинарников администратором системы - чревата получением <code>root</code> неавторизованным пользователем. </p>
+<p>Имея <code>sudo</code> на некоторые бинарники, расширить доступ до root не составит труда. Список таких уязвимых бинарников можно найти на <a href="https://gtfobins.github.io/">GTFObins</a></p>
+<p>Их уязвимость заключается в том, что для корректной работы им нужны SUID права. Неверная конфигурация, читай выдача sudo, на выполнение таких бинарников администратором системы - чревата получением root неавторизованным пользователем. </p>
 <h4 id="sudo_1">sudo права и переменные окружения</h4>
 <p>Некоторые программы запускаемые через <code>sudo</code> не имеют явной возможности вызвать шелл, в таких случаях, может быть использован следующий вариант.</p>
 <p><code>sudo</code> может быть сконфигурированно таким образом, что при его использовании будут наследоваться определенные переменные окружения.

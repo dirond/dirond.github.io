@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://ivanovds.ru/CyberSec/Tools/Burp_Suite/">
       
       
-        <link rel="prev" href="../curl/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../feroxbuster/">
+        <link rel="next" href="../curl/">
       
       <link rel="icon" href="../../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.0">
@@ -1105,20 +1105,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../curl/" class="md-nav__link">
-        curl
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -1172,6 +1158,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../curl/" class="md-nav__link">
+        curl
+      </a>
     </li>
   
 
@@ -2212,38 +2212,68 @@
 
 <h1 id="burp-suite">Burp Suite</h1>
 <hr />
-<p>Фреймворк для пентеста web и mobile приложений. Скачать можно отсюда: <a href="https://portswigger.net/burp/releases/community/latest">https://portswigger.net/burp/releases/community/latest</a>
-написан на Java
-В самом простом понимании представляет из себя некий прокси сервер который устанавливается между веб сервером и браузером клиента, пропуская через себя все запросы/ответы. Захваченные пакеты могут быть направлены в смежные модули Burp Suite для последующих конкретных действий над ними.
+<p>Написанный на Java фреймворк для пентеста web и mobile приложений. Скачать можно <a href="https://portswigger.net/burp/releases/community/latest">отсюда</a>.</p>
+<p>В самом простом понимании представляет из себя некий прокси сервер который устанавливается между веб сервером и браузером клиента, пропуская через себя все запросы/ответы. Захваченные пакеты могут быть направлены в смежные модули Burp Suite для последующих конкретных действий над ними.
 Различают 3 версии Burp Suite:</p>
 <ol>
-<li><code>Burp Suite Community</code> - основая версия без всяких плюх</li>
-<li><code>Burp Suite Professional</code> - платная версия с кучей плюх по автоматизации, гибким конфигам, увеличению скорости работы некоторых модулей</li>
-<li><code>Burp Suite Enterprise</code> - платная версия работающая только на серваке для выполнения задач постоянного контроля на наличие уязвимостей.</li>
+<li>
+<p><strong>Burp Suite Community</strong> - основая версия без всяких плюх</p>
+</li>
+<li>
+<p><strong>Burp Suite Professional</strong> - платная версия с кучей плюх по автоматизации, гибким конфигам, увеличению скорости работы некоторых модулей</p>
+</li>
+<li>
+<p><strong>Burp Suite Enterprise</strong> - платная версия работающая только на серваке для выполнения задач постоянного контроля на наличие уязвимостей.</p>
+</li>
 </ol>
 <p>В Burp Suite Community входят следующие модули/инструменты:</p>
 <ol>
-<li><code>Proxy</code> - Основной модуль. Перехватывает все запросы/ответы и позволяет их редактировать перед отправкой. Для быстрой настройки прокси сервера рекомендую использовать плагин <a href="https://getfoxyproxy.org/">FoxyProxy</a></li>
-<li><code>Repeater</code> - В дополнение к Proxy позволяет отправлять данные n-ное количество раз.</li>
-<li><code>Intruder</code> - Забросает endpoint запросами. Полезен при брутфорсе. В Burp Suite Community версии сильно урезан по скорости. </li>
-<li><code>Decoder</code> - Кодирует/декодирует данные в запросах приводя их в нужный вид.</li>
-<li><code>Comparer</code> - Сравнивает куски полученной информации для нахождения различий.</li>
-<li><code>Sequncer</code> - Анализирует степень случайности различных токенов таких как куки сессий и прочее. Вдруг они не совсем случайны? ☺</li>
+<li>
+<p><strong>Proxy</strong> - Основной модуль. Перехватывает все запросы/ответы и позволяет их редактировать перед отправкой. Для быстрой настройки прокси сервера рекомендую использовать плагин <a href="https://getfoxyproxy.org/">FoxyProxy</a></p>
+</li>
+<li>
+<p><strong>Repeater</strong> - В дополнение к Proxy позволяет отправлять данные n-ное количество раз.</p>
+</li>
+<li>
+<p><strong>Intruder</strong> - Забросает endpoint запросами. Полезен при брутфорсе. В Burp Suite Community версии сильно урезан по скорости. </p>
+</li>
+<li>
+<p><strong>Decoder</strong> - Кодирует/декодирует данные в запросах приводя их в нужный вид.</p>
+</li>
+<li>
+<p><strong>Comparer</strong> - Сравнивает куски полученной информации для нахождения различий.</p>
+</li>
+<li>
+<p><strong>Sequncer</strong> - Анализирует степень случайности различных токенов таких как куки сессий и прочее. Вдруг они не совсем случайны? ☺</p>
+</li>
 </ol>
 <p>Кроме указанных модулей, можно разрабатывать свои.</p>
 <h3 id="proxy">Proxy.</h3>
-<p>По умолчанию не перехватывает js скрипты и некоторые другие файлы. Иногда это бывает очень нужно для обхода фильтров на стороне клиента по загрузке файлов на сервер. Для изменения такого поведения во вкладке options необходимо в таблицах intercept client requests и intercept server responses убрать из фильтра нужное расширение или просто целиком отключить это условие.
-Для обработки ответа на запрос используется пункт контекстного меню: Do intercept - Response for this request.</p>
+<p>По умолчанию не перехватывает js скрипты и некоторые другие файлы. Иногда это бывает очень нужно для обхода фильтров на стороне клиента по загрузке файлов на сервер. Для изменения такого поведения во вкладке options необходимо в таблицах intercept client requests и intercept server responses убрать из фильтра нужное расширение или просто целиком отключить это условие.</p>
+<p>Для обработки ответа на запрос используется пункт контекстного меню:</p>
+<p><em>Do intercept</em> -&gt; <em>Response for this request</em>.</p>
 <h3 id="repeater">Repeater.</h3>
-<p>Позволяет изменять данные которые перехватил Proxy, изменять их и отправлять измененные запросы множество раз. Возможность многократно обращатся к целевой странице перебирая данные отличный инструмент для получения сведений о том, как целевая страница ведет себя при разных передаваемых данных.
-В правой части окна Repeater расположена секция Inspector. В ней отображены значения из заголовков и тела запроса и ответа в табличном виде которые можно редактировать:</p>
+<p>Позволяет изменять данные которые перехватил Proxy, изменять их и отправлять измененные запросы множество раз. Возможность многократно обращатся к целевой странице перебирая данные отличный инструмент для получения сведений о том, как целевая страница ведет себя при разных передаваемых данных.</p>
+<p>В правой части окна Repeater расположена секция Inspector. В ней отображены значения из заголовков и тела запроса и ответа в табличном виде которые можно редактировать:</p>
 <ul>
-<li>Request <code>atributes</code> - тип протокола, метод, запрашиваемый путь</li>
-<li><code>Request querry parameters</code> - отображает данные передаваемые в GET запросе</li>
-<li><code>Request</code> <code>Body parameters -</code>отображает данные передаваемые в или POST запросе</li>
-<li><code>Request cookies</code> - отображает в табличном виде cookies</li>
-<li>Request headers</li>
-<li><code>Responce headers</code></li>
+<li>
+<p>Request atributes - тип протокола, метод, запрашиваемый путь</p>
+</li>
+<li>
+<p>Request querry parameters - отображает данные передаваемые в GET запросе</p>
+</li>
+<li>
+<p>Request Body parameters - отображает данные передаваемые в или POST запросе</p>
+</li>
+<li>
+<p>Request cookies - отображает в табличном виде cookies</p>
+</li>
+<li>
+<p>Request headers - отображает передаваемые HTTP заголовки</p>
+</li>
+<li>
+<p>Responce headers - отображает получаемые HTTP заголовки</p>
+</li>
 </ul>
 
 
@@ -2271,7 +2301,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
         
           
-          <a href="../curl/" class="md-footer__link md-footer__link--prev" aria-label="Назад: curl" rel="prev">
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Назад: Инструменты" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -2280,20 +2310,20 @@
                 <span class="md-footer__direction">
                   Назад
                 </span>
-                curl
+                Инструменты
               </div>
             </div>
           </a>
         
         
           
-          <a href="../feroxbuster/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Feroxbuster" rel="next">
+          <a href="../curl/" class="md-footer__link md-footer__link--next" aria-label="Вперед: curl" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Вперед
                 </span>
-                Feroxbuster
+                curl
               </div>
             </div>
             <div class="md-footer__button md-icon">

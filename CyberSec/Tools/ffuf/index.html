@@ -1107,8 +1107,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../curl/" class="md-nav__link">
-        curl
+      <a href="../Burp_Suite/" class="md-nav__link">
+        Burp suite
       </a>
     </li>
   
@@ -1121,8 +1121,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Burp_Suite/" class="md-nav__link">
-        Burp suite
+      <a href="../curl/" class="md-nav__link">
+        curl
       </a>
     </li>
   
@@ -2154,15 +2154,26 @@
 <hr />
 <p>Инструмент для фаззинга, аналогичый gobuster, feroxbuster и им подобных.
 Лично мне кажется менее производительным чем gobuster.
-Однако, в отличии от указанных инструментов имеет более широкий спектр приминения, не ограничиваясь перебором директорий, поддоменов и виртуальных хостов. 
-Позволяет подставить значение из словаря вместо ключевого слово FUZZ в любой запрос, заголовок, адрес и т.д.:
-<code>ffuf</code><strong><code>-w</code></strong><code>/usr/share/wordlists/SecLists/Usernames/Names/names.txt</code><strong><code>-X</code></strong><code>POST</code><strong><code>-d</code></strong><code>"</code><strong><code>username</code></strong><code>=FUZZ&amp;</code><strong><code>email</code></strong><code>=x&amp;</code><strong><code>password</code></strong><code>=x&amp;</code><strong><code>cpassword</code></strong><code>=x"</code><strong><code>-H</code></strong><code>"Content-Type: application/x-www-form-urlencoded"</code><strong><code>-u</code></strong> <a href="http://supersite.com/customers/signup"><code>http://supersite.com/customers/signup</code></a> <strong><code>-mr</code></strong><code>"username already exists"</code>
-здесь mr - regexp который ожидается в случае неудачи.</p>
+Однако, в отличии от указанных инструментов имеет более широкий спектр приминения, не ограничиваясь перебором директорий, поддоменов и виртуальных хостов.</p>
+<p>Позволяет подставить значение из словаря вместо ключевого слово FUZZ в любой запрос, заголовок, адрес и т.д.:
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ffuf<span class="w"> </span>-w<span class="w"> </span>/usr/share/wordlists/SecLists/Usernames/Names/names.txt<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>-X<span class="w"> </span>POST<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;username=FUZZ&amp;email=x&amp;password=x&amp;cpassword=x&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/x-www-form-urlencoded&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>-u<span class="w"> </span>http://supersite.com/customers/signup<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>-mr<span class="w"> </span><span class="s2">&quot;username already exists&quot;</span>
+</span></code></pre></div>
+здесь <code>mr</code> - regexp который ожидается в случае неудачи.</p>
 <p>В случае если используется несколько словарей, каждому из них присваивается имя ( W1 в этом примере):
-<code>ffuf -w valid_usernames.txt:W1,/usr/share/wordlists/SecLists/Passwords/Common-Credentials/10-million-password-list-top-100.txt:W2 -X POST -d "username=W1&amp;password=W2" -H "Content-Type: application/x-www-form-urlencoded" -u</code><a href="http://supersite.com/customers/login"><code>http://supersite.com/customers/login</code></a><code>-fc 200</code>
-здесь fc означает, что в случае неудачи не должен возвращаться код 200</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ffuf<span class="w"> </span>-w<span class="w"> </span>valid_usernames.txt:W1,<span class="se">\</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>/usr/share/wordlists/SecLists/Passwords/Common-Credentials/10-million-password-list-top-100.txt:W2<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>-X<span class="w"> </span>POST<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;username=W1&amp;password=W2&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/x-www-form-urlencoded&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>-u<span class="w"> </span>http://supersite.com/customers/login<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>-fc<span class="w"> </span><span class="m">200</span>
+</span></code></pre></div>
+здесь <code>fc</code> означает, что в случае неудачи не должен возвращаться код 200</p>
 <p>Отдельно отмечу, что удобно построена работа по фаззингу вирутальных хостов через HTTP заголовки, которая позволяет отфильтровать страницы с неподходящим размером<br />
-Подробнее на GitHub <a href="https://github.com/ffuf/ffuf">https://github.com/ffuf/ffuf</a></p>
+Подробнее на <a href="https://github.com/ffuf/ffuf">GitHub</a></p>
 
 
 

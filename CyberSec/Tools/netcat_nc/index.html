@@ -1107,8 +1107,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../curl/" class="md-nav__link">
-        curl
+      <a href="../Burp_Suite/" class="md-nav__link">
+        Burp suite
       </a>
     </li>
   
@@ -1121,8 +1121,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Burp_Suite/" class="md-nav__link">
-        Burp suite
+      <a href="../curl/" class="md-nav__link">
+        curl
       </a>
     </li>
   
@@ -1268,15 +1268,55 @@
       
         <li class="md-nav__item">
   <a href="#listeners-shell" class="md-nav__link">
-    Listeners для различных видов shell:
+    Listeners для различных видов shell
   </a>
+  
+    <nav class="md-nav" aria-label="Listeners для различных видов shell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reverse-shell" class="md-nav__link">
+    reverse shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bind-shell" class="md-nav__link">
+    bind shell
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    Стабилизация оболочки:
+    Стабилизация оболочки
   </a>
+  
+    <nav class="md-nav" aria-label="Стабилизация оболочки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-pty" class="md-nav__link">
+    Через Python и модуль pty
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rlwrap-readline-wrapper" class="md-nav__link">
+    Через rlwrap (readline wrapper)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2183,15 +2223,55 @@
       
         <li class="md-nav__item">
   <a href="#listeners-shell" class="md-nav__link">
-    Listeners для различных видов shell:
+    Listeners для различных видов shell
   </a>
+  
+    <nav class="md-nav" aria-label="Listeners для различных видов shell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reverse-shell" class="md-nav__link">
+    reverse shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bind-shell" class="md-nav__link">
+    bind shell
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    Стабилизация оболочки:
+    Стабилизация оболочки
   </a>
+  
+    <nav class="md-nav" aria-label="Стабилизация оболочки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-pty" class="md-nav__link">
+    Через Python и модуль pty
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rlwrap-readline-wrapper" class="md-nav__link">
+    Через rlwrap (readline wrapper)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2212,28 +2292,34 @@
 
 <h1 id="netcat-nc">netcat nc</h1>
 <hr />
-<h3 id="listeners-shell">Listeners для различных видов shell:</h3>
-<ol>
-<li>reverse shell: <strong>nc <code>-lvnp &lt;port-number&gt;</code></strong> В случае если будет использоваться порт меньше 1024 - nc запускать нужно через sudo</li>
-<li>bind shell: <code>nc</code><strong><code>&lt;target-ip&gt; &lt;choosen-port&gt;</code></strong></li>
-</ol>
-<h3 id="_1">Стабилизация оболочки:</h3>
-<ol>
-<li>Через Python и модуль pty: </li>
-</ol>
-<p><strong><code>python3 -c 'import pty;pty.spawn("/bin/bash")</code>'</strong>
-<strong><code>export TERM=xterm</code></strong>
-suspend nc (via ctrl-z)
-<strong><code>stty raw -echo;fg</code></strong><code>-</code>эта команда отключает вводимые символы при написании. Для отключения: <strong><code>stty raw echo</code></strong>
-enter</p>
-<ol>
-<li>Через rlwrap (readline wrapper):</li>
-</ol>
-<p><strong><code>sudo apt install rlwrap</code></strong>
-<strong><code>rlwrap nc -lvnp &lt;port&gt;</code></strong>
-suspend nc (via ctrl-z)
-<strong><code>stty raw -echo;fg</code></strong>
-enter</p>
+<h3 id="listeners-shell">Listeners для различных видов shell</h3>
+<h4 id="reverse-shell">reverse shell</h4>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nc<span class="w"> </span>-lvnp<span class="w"> </span>&lt;port-number&gt;
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Важно</p>
+<p>В случае если будет использоваться порт меньше 1024 - <code>nc</code> запускать нужно через <code>sudo</code></p>
+</div>
+<h4 id="bind-shell">bind shell</h4>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nc<span class="w"> </span>&lt;target-ip&gt;<span class="w"> </span>&lt;choosen-port&gt;
+</span></code></pre></div>
+<hr />
+<h3 id="_1">Стабилизация оболочки</h3>
+<p>Shell полученный через <code>nc</code> является нестабильным. В нём нет автодополнения, не поддерживается интерактивность, a <code>ctrl + C</code> сразу же прервёт сессию. </p>
+<p>Для устранения описанных (и других) проблем необходимо стабилизировать оболочку.</p>
+<h4 id="python-pty">Через Python и модуль pty</h4>
+<p><div class="language-Bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import pty;pty.spawn(&quot;/bin/bash&quot;)&#39;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">TERM</span><span class="o">=</span>xterm
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>приостановить<span class="w"> </span>nc<span class="w"> </span><span class="o">(</span>via<span class="w"> </span>ctrl-z<span class="o">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>stty<span class="w"> </span>raw<span class="w"> </span>-echo<span class="p">;</span><span class="nb">fg</span>
+</span></code></pre></div>
+<code>stty raw -echo</code> отключает вводимые символы при написании. Для возврата в исходное, нужно ввести: <code>stty raw echo</code></p>
+<h4 id="rlwrap-readline-wrapper">Через rlwrap (readline wrapper)</h4>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>rlwrap
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>rlwrap<span class="w"> </span>nc<span class="w"> </span>-lvnp<span class="w"> </span>&lt;port&gt;
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>приостановить<span class="w"> </span>nc<span class="w"> </span><span class="o">(</span>via<span class="w"> </span>ctrl-z<span class="o">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>stty<span class="w"> </span>raw<span class="w"> </span>-echo<span class="p">;</span><span class="nb">fg</span>
+</span></code></pre></div>
 
 
 

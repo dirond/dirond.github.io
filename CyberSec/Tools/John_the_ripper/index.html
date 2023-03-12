@@ -1107,8 +1107,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../curl/" class="md-nav__link">
-        curl
+      <a href="../Burp_Suite/" class="md-nav__link">
+        Burp suite
       </a>
     </li>
   
@@ -1121,8 +1121,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Burp_Suite/" class="md-nav__link">
-        Burp suite
+      <a href="../curl/" class="md-nav__link">
+        curl
       </a>
     </li>
   
@@ -1214,9 +1214,61 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          John the ripper
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         John the ripper
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Автоматический режим
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Режим с указанием формата хэша
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#single" class="md-nav__link">
+    Single режим
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Дополнительные утилиты
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2137,6 +2189,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Автоматический режим
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Режим с указанием формата хэша
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#single" class="md-nav__link">
+    Single режим
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Дополнительные утилиты
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2152,32 +2240,34 @@
 
 <h1 id="john-the-ripper">John the ripper</h1>
 <hr />
-<p>Швейцарский нож для брутфорса хэшей.
-Может работать с различными типами хэшей, имеет множество вспомогательных утилит предназначеных для подготовке данных к брутфорсу.</p>
+<p>Швейцарский нож для брутфорса хэшей.</p>
+<p>Может работать с различными типами хэшей, имеет множество вспомогательных утилит предназначеных для подготовке данных к брутфорсу.</p>
 <p>Основные моменты при использовании:</p>
-<ol>
-<li>Автоматический режим (пробует определить формат хэша, поэтому быстро запускается, но долго работает) </li>
-</ol>
-<p><strong><code>john --wordlist=[/path/to/wordlist] [/path/to/file]</code></strong></p>
-<ol>
-<li>Режим с указанием формата хэша (нужно предварительно понять, что за хэш. Ищи <a href="https://hashes.com">тут</a>, или пользуйся <a href="/CyberSec/Tools/hash-id">этим</a></li>
-</ol>
-<p><strong><code>john --format=[format] --wordlist=[/path/to/wordlist] [/path/to/file]</code></strong>
-Для получения информации о всех известных форматах: <strong><code>john --list=formats</code></strong></p>
-<p>Дополнительные утилиты:</p>
-<ol>
-<li>unshadow - подготавливает файл содержащий в себе соответствие <code>/etc/shadow</code> и <code>/etc/passwd</code> для последующего скармливания такого файла John'у:</li>
-</ol>
-<p><strong><code>unshadow [/path/to/paswd] [/path/to/shadow]</code></strong></p>
-<ol>
-<li>zip2john - подготовливает zip архив для работы с john</li>
-<li>rar2john - подготовливает rar архив для работы с john </li>
-<li>ssh2john - подготавливает private ключи для работы с john. John попытается подобрать passphrase к ключу.</li>
-</ol>
-<p>и т.п.
-Не всегда есть бинарники этих утилит. В kali, например python версии утилит лежат в /opt/john/</p>
-<p>Кроме того, john поддерживает работу в single режиме. В нём он изменяет имя пользователя различными способами, подставляя измененные значения в качестве пароля. Такая техника еще называется word mangling.</p>
-<p>В дополнение ко всему сказанному, john имеет обширные возможности по установке и применению собственных правил. С помощью этих правил, возможно изменение каждого пробуемого варианта из списка слов. К примеру, можно указать John'у начинать каждое пробуемое слово с заглавной и добавлять в конце число и спецсимвол, или чередовать прописные с заглавными и т.д.</p>
+<h5 id="_1">Автоматический режим</h5>
+<p>В этом режиме пробует самостоятельно определить формат хэша, поэтому быстро запускается, но долго работает</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>john<span class="w"> </span>--wordlist<span class="o">=[</span>/path/to/wordlist<span class="o">]</span><span class="w"> </span><span class="o">[</span>/path/to/file<span class="o">]</span>
+</span></code></pre></div>
+<h5 id="_2">Режим с указанием формата хэша</h5>
+<p>В этом режиме нужно предварительно понять, что за хэш. Это можно сделать <a href="https://hashes.com">тут</a>, или воспользоваться <a href="/CyberSec/Tools/hash-id">этим</a>.</p>
+<p><div class="language-Bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>john<span class="w"> </span>--format<span class="o">=[</span>format<span class="o">]</span><span class="w"> </span>--wordlist<span class="o">=[</span>/path/to/wordlist<span class="o">]</span><span class="w"> </span><span class="o">[</span>/path/to/file<span class="o">]</span>
+</span></code></pre></div>
+Для получения информации о всех известных форматах: <code>john --list=formats</code></p>
+<h5 id="single">Single режим</h5>
+<p>В этом режиме он изменяет имя пользователя различными способами, подставляя измененные значения в качестве пароля. Такая техника еще называется <strong>word mangling</strong>.</p>
+<h5 id="_3">Дополнительные утилиты</h5>
+<p>В дополнение к основному модулю, имеются различные дополнительные утилиты, далее некоторые из них:</p>
+<p><strong>unshadow</strong> - подготавливает файл содержащий в себе соответствие <code>/etc/shadow</code> и <code>/etc/passwd</code> для последующего скармливания такого файла John'у:</p>
+<p><div class="language-Bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>unshadow<span class="w"> </span><span class="o">[</span>/path/to/paswd<span class="o">]</span><span class="w"> </span><span class="o">[</span>/path/to/shadow<span class="o">]</span>
+</span></code></pre></div>
+<strong>zip2john</strong> - подготовливает zip архив для работы с john</p>
+<p><strong>rar2john</strong> - подготовливает rar архив для работы с john </p>
+<p><strong>ssh2john</strong> - подготавливает private ключи для работы с john. John попытается подобрать passphrase к ключу.</p>
+<div class="admonition info">
+<p class="admonition-title">К сведению.</p>
+<p>Не всегда есть бинарники этих утилит. В kali, например python версии утилит лежат в <code>/opt/john/</code></p>
+</div>
+<p>В дополнение ко всему сказанному, John имеет обширные возможности по установке и применению собственных правил. С помощью этих правил, возможно изменение каждого пробуемого варианта из списка слов.</p>
+<p>К примеру, можно указать John'у начинать каждое пробуемое слово с заглавной и добавлять в конце число и спецсимвол, или чередовать прописные с заглавными и т.д.</p>
 
 
 

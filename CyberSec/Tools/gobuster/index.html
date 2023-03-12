@@ -1107,8 +1107,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../curl/" class="md-nav__link">
-        curl
+      <a href="../Burp_Suite/" class="md-nav__link">
+        Burp suite
       </a>
     </li>
   
@@ -1121,8 +1121,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Burp_Suite/" class="md-nav__link">
-        Burp suite
+      <a href="../curl/" class="md-nav__link">
+        curl
       </a>
     </li>
   
@@ -2159,13 +2159,13 @@
 <li><strong>DNS</strong> - перебор поддоменов.</li>
 <li><strong>vhost</strong> - перебор виртуальных хостов.</li>
 </ul>
-<p>Для работы нужны список слов который задается ключом -w. Использую в качестве источника списков - seclists 
-По умолчанию запускается в 10 потоков. Ключ -t устанавливает их число. Обычно я использую 64.
-Для работы с https есть ключ -k которой позволяет пропустить валидацию TLS сертификата
-В режиме vhost имеет смысл задать ключ --append-domain для корректной обработки слов из списка.
-Для поиска файлов используется ключ -x с заданным расширением:
-<code>gobuster dir -u http://target.address -w /my/own/wordlist -x php,txt,md</code>
---
+<p>Для работы нужны список слов который задается ключом <code>-w</code>. Использую в качестве источника списков - <code>seclists</code><br />
+По умолчанию запускается в 10 потоков. Ключ <code>-t</code> устанавливает их число. Обычно я использую 64.<br />
+Для работы с https есть ключ <code>-k</code> которой позволяет пропустить валидацию TLS сертификата.<br />
+В режиме vhost имеет смысл задать ключ <code>--append-domain</code> для корректной обработки слов из списка.<br />
+Для поиска файлов используется ключ <code>-x</code> с заданным расширением:</p>
+<p><div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>gobuster<span class="w"> </span>dir<span class="w"> </span>-u<span class="w"> </span>http://target.address<span class="w"> </span>-w<span class="w"> </span>/my/own/wordlist<span class="w"> </span>-x<span class="w"> </span>php,txt,md
+</span></code></pre></div>
 Свежая версия gobuster - <a href="https://github.com/OJ/gobuster">https://github.com/OJ/gobuster</a></p>
 
 

