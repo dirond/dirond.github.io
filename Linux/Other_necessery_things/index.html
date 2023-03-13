@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://ivanovds.ru/Linux/Other_necessery_things/">
       
       
-        <link rel="prev" href="../Linux_directories_%28Filesystem_hierarchy_standart_-_FHS%29/">
+        <link rel="prev" href="../Kernel/">
       
       
         <link rel="next" href="../Processes/">
@@ -51,6 +51,18 @@
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-HVGKC2VEZ3"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-HVGKC2VEZ3",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-HVGKC2VEZ3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -1471,8 +1483,6 @@
         
           
         
-          
-        
       
       
         
@@ -1531,20 +1541,6 @@
     <li class="md-nav__item">
       <a href="../Kernel/" class="md-nav__link">
         Kernel
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Linux_directories_%28Filesystem_hierarchy_standart_-_FHS%29/" class="md-nav__link">
-        Linux directories (FHS)
       </a>
     </li>
   
@@ -2150,7 +2146,7 @@
 
 <h1 id="other-necessery-things">Other necessery things</h1>
 <hr />
-<p>In some commands can use {} for enumerate some information. 
+<p>In some commands can use <code>{}</code> for enumerate some information.<br />
 For example: <code>cp /etc/fstab{,.orig}</code> will create a copy of fstab named fstab.orig</p>
 <hr />
 <p>Open a new virtual terminal - <code>Alt+Ctrl+F{1..3}</code></p>
@@ -2159,9 +2155,9 @@ For example: <code>cp /etc/fstab{,.orig}</code> will create a copy of fstab name
 <hr />
 <p><code>$?</code> - show exit code for last ran program.</p>
 <hr />
-<p>For use clipboard in vim accross the terminals, consider to install <code>vim-gtk</code> package, or use <code>set:clipboard=unnamed</code> options in vimrc or specified file</p>
+<p>For use clipboard in vim accross the terminals, consider to install <code>vim-gtk</code> package, or use <code>set:clipboard=unnamed</code> options in <code>.vimrc</code> or specified file</p>
 <hr />
-<p><code>. $FILE\_NAME</code> run commands from file. Can be usefull to reread .bashrc </p>
+<p><code>. $FILE_NAME</code> run commands from file. Can be usefull to reread <code>.bashrc</code> </p>
 <hr />
 <p>For debian based systems, if PC have enabled Secure Boot, use intermediary bootloader called shim.</p>
 <hr />
@@ -2172,8 +2168,10 @@ because .deb file = archive, it can be open with any archive handle programs: ta
 <hr />
 <p>meta-package - the type of a package which contain only meta files describe dependencies and not contain another files. When meta-package</p>
 <hr />
-<p>Для работы с rar есть unrar и unrar-free. Для debian живет в репозитории non-free <a href="http://ftp.ru.debian.org/debian">http://ftp.ru.debian.org/debian</a></p>
+<p>Для работы с rar есть unrar и unrar-free. Для debian живет в репозитории <a href="http://ftp.ru.debian.org/debian">non-free</a></p>
 
+
+  
 
 
 
@@ -2199,7 +2197,7 @@ because .deb file = archive, it can be open with any archive handle programs: ta
       <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
         
           
-          <a href="../Linux_directories_%28Filesystem_hierarchy_standart_-_FHS%29/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Linux directories (FHS)" rel="prev">
+          <a href="../Kernel/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Kernel" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -2208,7 +2206,7 @@ because .deb file = archive, it can be open with any archive handle programs: ta
                 <span class="md-footer__direction">
                   Назад
                 </span>
-                Linux directories (FHS)
+                Kernel
               </div>
             </div>
           </a>

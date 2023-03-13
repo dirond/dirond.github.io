@@ -51,6 +51,18 @@
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-HVGKC2VEZ3"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-HVGKC2VEZ3",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-HVGKC2VEZ3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -1270,9 +1282,60 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          nmap
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         nmap
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Часто используемые ключи
+  </a>
+  
+    <nav class="md-nav" aria-label="Часто используемые ключи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Ключи определяющие тип сканирования
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Ключи определяющие формат выходного файла
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1483,8 +1546,6 @@
         
           
         
-          
-        
       
       
         
@@ -1543,20 +1604,6 @@
     <li class="md-nav__item">
       <a href="../../../Linux/Kernel/" class="md-nav__link">
         Kernel
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Linux/Linux_directories_%28Filesystem_hierarchy_standart_-_FHS%29/" class="md-nav__link">
-        Linux directories (FHS)
       </a>
     </li>
   
@@ -2137,6 +2184,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Часто используемые ключи
+  </a>
+  
+    <nav class="md-nav" aria-label="Часто используемые ключи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Ключи определяющие тип сканирования
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Ключи определяющие формат выходного файла
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2152,36 +2234,56 @@
 
 <h1 id="nmap">nmap</h1>
 <hr />
-<p>nmap - Утилита для исследования сети и сканер портов.
-—
-keys:
--v      Подробный режим вывода результатов. Для повышения уровня подробности нужно увеличить количество v
--O      Определение операционной системы хоста, через анализ полученных ответных пакетов и сравнения их с имеющейся базой ОС.
--sV     Определение версии запущенного сервиса. Работает по такому же принципу как и обнаружение ОС. Кроме того, также полезно запускать для тех портов которые помечены open | filtered для того что бы попытаться однозначно определить его состояние.
--A      Агрессивный режим. Равнозначен использованию ключей -O, -sV, -sC, --tracerout
--p      Задать определенный порт. Также можно передавать диапазон и диапазон с типом сканирования (TCP/UDP) или просканировать <strong>все порты,</strong> указав <strong>вместо номера дефис</strong>.</p>
-<p>--script    Использование скриптов. Подробнее в man. Скрипты можно найти на <a href="https://nmap.org/nsedoc/scripts/">https://nmap.org/nsedoc/scripts/</a> и <a href="file:///home/dirond/docs/content_ivanovds/usr/share/nmap/scripts">/usr/share/nmap/scripts</a> Также просмотреть скрипты можно из файла <a href="file:///home/dirond/docs/content_ivanovds/usr/share/nmap/scripts/script.db">/usr/share/nmap/scripts/script.db</a> Скачать скрипт можно с помощью wget: sudo wget -O /usr/share/nmap/scripts/<script-name>.nse <a href="https://svn.nmap.org/nmap/scripts/">https://svn.nmap.org/nmap/scripts/</a><script-name>.nse После этого обязательно запустить nmap --script-updatedb
-полезным ключём является <strong>--script vuln </strong>по результатам работы которого можно получить информацию о том, какие уязвимости могут быть эксплуатированы </p>
-<p><code>-s#</code> Группа ключей определяющих тип сканирования, где s означает - scan, а # - непосредственно сам тип:
--sL Составление списка хостов
--sn Ping сканирование, без сканирования портов. Так же смотри -sP
--sS <strong>по умолчанию для root прав.</strong> TCP SYN сканирование, так же известно как сканирование через полуоткрытое соединение. Является быстрым и незаметным методом позволяющий миновать firewallы
--sT <strong>по умолчанию без root прав.</strong> TCP сканирование через системный вызов connect. Хуже чем -sS, оставляет следы, так как полностью устанавливает соединение, но может быть запущен без root прав 
--sU UDP сканирование, применяется для обнаружения UDP сервисов (DNS, DHCP, SNMP и т.д.)гораздо медленнее TCP сканирования, так как отправляется пустой UDP пакет на который ожидается ответ, а так как это UDP он может потерятся, поэтому отправляются и ждутся пакеты по нескольку раз. Можно комбинировать с TCP сканированием. В виду того, что UDP сканирование довольно медленное, имеет смысл использовать его вместе с дополнительным ключем <code>--top-ports &lt;кол-во портов&gt;</code>, который просканирует наиболее популярные <code>&lt;кол-во портов&gt;</code> UDP портов.
--sN, -sF, -sX   Очень похожие типы TCP сканирования, по идее, более скрытые относительно того же TCP SYN, но это не точно. могут быть полезны в редких случаях.
--Pn Сразу же приступить к сканированию портов, минуя icmp запросы. Полезно в тех сетях, в которых icmp блокируется.</p>
-<p>-T{0-5} Задание скорости сканирования. 0 самый медленный, 5 самый быстрый. Чем медленнее, тем меньше возможность обнаружения сканирования. 0 и 1 позволяют обходить IDS, 3 - по умолчанию.
--f  Фрагментирует пакеты на части, так же полезно для обхода систем защиты.
---mtu   Позволяет задать mtu пакета, кратное 8, что тоже может быть полезно для обхода систем защиты
---scan-delay    Понятно из названия, понятно для чего.
---badsum    Интересный ключ который записывает неверную контрольную сумму пакета. Некоторые файрволы могут среагировать.</p>
-<p>-o# Группа ключей определяющих тип вывода, где o означает output, а # - непосредственно сам тип:
-Важно правильно именовать файлы, для дальнейшей работы с ними. Так как лучше запускать сканирование как можно меньшее количество раз, для того, чтобы не создавать лишнего подозрительного трафика. Поддерживаются шорткаты %T - время, $D - дата
--oN $FILE_NAME  нормальный вывод в файл
--oX $FILE_NAME  вывод в xml файл
--oG $FILE_NAME  вывод в grepable файл работать с которым удобно через стандартные инструменты работы с текстом в shell: grep, awk, cut, sed и т.д.
--oA $DIR_NAME   сохранение вывода во всех форматах в указанной директории</p>
+<p>nmap - Утилита для исследования сети и сканер портов.</p>
+<h3 id="_1">Часто используемые ключи</h3>
+<p><code>-v</code> - Подробный режим вывода результатов. Для повышения уровня подробности нужно увеличить количество v</p>
+<p><code>-O</code> - Определение операционной системы хоста, через анализ полученных ответных пакетов и сравнения их с имеющейся базой ОС.</p>
+<p><code>-sV</code> - Определение версии запущенного сервиса. Работает по такому же принципу как и обнаружение ОС. Кроме того, также полезно запускать для тех портов которые помечены open | filtered для того что бы попытаться однозначно определить его состояние.</p>
+<p><code>-A</code> - Агрессивный режим. Равнозначен использованию ключей -O, -sV, -sC, --tracerout</p>
+<p><code>-p</code> - Задать определенный порт. Также можно передавать диапазон и диапазон с типом сканирования (TCP/UDP) или просканировать все порты <code>-p-</code>.</p>
+<p><code>--script</code>  Использование скриптов. Подробнее в man. Скрипты можно найти на <a href="https://nmap.org/nsedoc/scripts/">nmap.org</a> и в <code>/usr/share/nmap/scripts</code>. Просмотреть имеющиеся скрипты можно из файла <code>/usr/share/nmap/scripts/script.db</code>  </p>
+<p>Скрипты также можно скачать с помощью wget:
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>wget<span class="w"> </span>-O<span class="w"> </span>/usr/share/nmap/scripts/&lt;script-name&gt;.nse<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>&lt;https://svn.nmap.org/nmap/scripts/&gt;&lt;script-name&gt;.nse<span class="w"> </span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># После скачивания скрипта, нужно обновить БД скриптов</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>nmap<span class="w"> </span>--script-updatedb
+</span></code></pre></div></p>
+<p><code>--script vuln</code> предоставляет информацию о том, какие уязвимости могут быть эксплуатированы</p>
+<h4 id="_2">Ключи определяющие тип сканирования</h4>
+<p><code>-sL</code> - Составление списка хостов</p>
+<p><code>-sn</code> - Ping сканирование, без сканирования портов. Так же смотри <code>-sP</code></p>
+<p><code>-sS</code> - TCP SYN сканирование, так же известно как сканирование через полуоткрытое соединение. Является быстрым и незаметным методом позволяющий миновать firewall'ы</p>
+<div class="admonition info">
+<p class="admonition-title">К сведению</p>
+<p>Тип сканирования <code>-sS</code> применяется по умолчанию, в случае если nmap был запущен <strong>через sudo</strong> </p>
+</div>
+<p><code>-sT</code> - TCP сканирование через системный вызов connect. Хуже чем <code>-sS</code>, оставляет следы, так как полностью устанавливает соединение, но может быть запущен без root прав </p>
+<div class="admonition info">
+<p class="admonition-title">К сведению</p>
+<p>Тип сканирования <code>-ST</code> применяется по умолчанию, в случае если nmap был запущен <strong>без sudo</strong> </p>
+</div>
+<p><code>-sU</code> - UDP сканирование, применяется для обнаружения UDP сервисов (DNS, DHCP, SNMP и т.д.)гораздо медленнее TCP сканирования, в виду того, что отправляется пустой UDP пакет на который ожидается ответ, а так как это UDP он может потерятся, поэтому отправляются и ждутся пакеты по нескольку раз. </p>
+<p>Можно комбинировать с TCP сканированием. В виду того, что UDP сканирование довольно медленное, имеет смысл использовать его вместе с дополнительным ключем <code>--top-ports &lt;кол-во портов&gt;</code>, который просканирует наиболее популярные <code>&lt;кол-во портов&gt;</code>UDP портов.</p>
+<p><code>-sN</code>, <code>-sF</code>, <code>-sX</code> - Очень похожие типы TCP сканирования, по идее, более скрытые относительно того же TCP SYN, но это не точно. могут быть полезны в редких случаях.</p>
+<p><code>-Pn</code>- Сразу же приступить к сканированию портов, минуя icmp запросы. Полезно в тех сетях, в которых icmp блокируется.</p>
+<p><code>-T{0-5}</code> - Задание скорости сканирования, где: 0 самый медленный, 5 самый быстрый. Чем медленнее, тем меньше возможность обнаружения сканирования. 0 и 1 позволяют обходить IDS, 3 - по умолчанию.</p>
+<p><code>-f</code> - Фрагментирует пакеты на части, так же полезно для обхода систем защиты.</p>
+<p><code>--mtu</code> - Позволяет задать mtu пакета, кратное 8, что тоже может быть полезно для обхода систем защиты</p>
+<p><code>--scan-delay</code> - Понятно из названия, понятно для чего.</p>
+<p><code>--badsum</code> - Интересный ключ который записывает неверную контрольную сумму пакета. Некоторые файрволы могут среагировать.</p>
+<h4 id="_3">Ключи определяющие формат выходного файла</h4>
+<p><code>-oN $FILE_NAME</code> - нормальный вывод в файл</p>
+<p><code>-oX $FILE_NAME</code> - вывод в xml файл</p>
+<p><code>-oG $FILE_NAME</code> - вывод в grepable файл работать с которым удобно через стандартные инструменты работы с текстом в shell: <code>grep</code>, <code>awk</code>, <code>cut</code>, <code>sed</code> и т.д.</p>
+<p><code>-oA $DIR_NAME</code> - сохранение вывода во всех форматах в указанной директории</p>
+<p>Поддерживаются шорткаты <code>%T</code> - время, <code>$D</code> - дата</p>
+<div class="admonition warning">
+<p class="admonition-title">Обрати внимание</p>
+<p>Важно правильно именовать файлы, для дальнейшей работы с ними. Так как лучше запускать сканирование как можно меньшее количество раз, для того, чтобы не создавать лишнего подозрительного трафика.</p>
+</div>
 
+
+  
 
 
 

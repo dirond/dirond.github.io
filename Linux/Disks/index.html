@@ -51,6 +51,18 @@
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-HVGKC2VEZ3"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-HVGKC2VEZ3",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-HVGKC2VEZ3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -1471,8 +1483,6 @@
         
           
         
-          
-        
       
       
         
@@ -1549,8 +1559,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#4-show-to-filesystem-a-new-size-of-lv-by-resize2fs-command" class="md-nav__link">
-    4*. Show to filesystem a new size of LV by resize2fs command
+  <a href="#lvm" class="md-nav__link">
+    LVM
+  </a>
+  
+    <nav class="md-nav" aria-label="LVM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lvm-snapshots" class="md-nav__link">
+    LVM snapshots
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raid" class="md-nav__link">
+    RAID
   </a>
   
 </li>
@@ -1572,20 +1602,6 @@
     <li class="md-nav__item">
       <a href="../Kernel/" class="md-nav__link">
         Kernel
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Linux_directories_%28Filesystem_hierarchy_standart_-_FHS%29/" class="md-nav__link">
-        Linux directories (FHS)
       </a>
     </li>
   
@@ -2173,8 +2189,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#4-show-to-filesystem-a-new-size-of-lv-by-resize2fs-command" class="md-nav__link">
-    4*. Show to filesystem a new size of LV by resize2fs command
+  <a href="#lvm" class="md-nav__link">
+    LVM
+  </a>
+  
+    <nav class="md-nav" aria-label="LVM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lvm-snapshots" class="md-nav__link">
+    LVM snapshots
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raid" class="md-nav__link">
+    RAID
   </a>
   
 </li>
@@ -2196,97 +2232,169 @@
 
 <h1 id="disks">Disks</h1>
 <hr />
-<p>When udev see some device it create particular files in /dev. Using these files, OS can interact with devices.
-Because to work with any type of disks SCSI protocol are used - all type of disks will be named like "sd{a,b,c..z}". Optical drive - sr{0,1..n}. Virtual drive - vd{a,b..z}
-For work with disk, usually need to do next jobs:</p>
-<ol>
-<li>Create partition table (MBR or GPT)</li>
-<li>Create parititions. In this point have nessesery information about MBR partition table: </li>
-</ol>
-<p><strong>In MBR can create max 4 primary partitions. For create logical partitions, first of all need to create extended partition.</strong></p>
-<ol>
-<li>Create filesystem</li>
-<li>Mount file system to FHS</li>
-</ol>
+<p>When udev see some device it create particular files in <code>/dev</code>. Using these files, OS can interact with devices.</p>
+<p>Because to work with any type of disks SCSI protocol are used - all type of disks will be named like "sd{a,b,c..z}". Optical drive - sr{0,1..n}. Virtual drive - vd{a,b..z}</p>
+<p>For work with disk, usually need to do next jobs:</p>
+<ul>
+<li>
+<p>Create partition table (MBR or GPT)</p>
+</li>
+<li>
+<p>Create parititions. In this point have nessesery information about MBR partition table: </p>
+</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>In MBR can create max 4 primary partitions. For create logical partitions, first of all need to create extended partition.</p>
+</div>
+<ul>
+<li>
+<p>Create filesystem</p>
+</li>
+<li>
+<p>Mount file system to FHS</p>
+</li>
+</ul>
 <p>For example, if needs to move /home directory to another disk, need to do next:</p>
 <ol>
-<li>Move all data from /home to another place.</li>
-</ol>
-<p>1.1 Close all processes which use target directory.
-1.2 Specifically in this case, need to close GUI session and start new virtual terminal with a root session.
-1.3 Ensure that there are not open files from target directory.
-1.4 Check and remeber the target directory size, for a better understanding how many space are requred in the new partition.
-1.5 Prepare new disk: create partition table, partitions, filesystem
-1.6 Temporary mount new partition to some place if FHS. Usually this place is /mnt directory.
-1.7 Ensure that there new filesystem has been mounted
-1.8 Move or copy files from target directory to the new directory.
-1.9 Ensure that all files moved correctly (compare the sizes)</p>
-<ol>
-<li>Unmount new filesystem from temprorary directory.</li>
-<li>Mount new filesystem to the /home or do next point.</li>
-<li>Permanetly add information about mount point of the new disk.</li>
-</ol>
-<p>4.1 Discover the information about UUID of the filesystem in the new disk.
-4.2 Ensure that you have a backup of the original fstab file.
-4.3 Write down recived UUID to the /etc/fstab (use <code>blkid</code>, <code>grep</code> and <code>cut -d' ' -f2</code>). 
+<li>
+<p>Move all data from <code>/home</code> to another place.</p>
+<p>1.1. Close all processes which use target directory.</p>
+<p>1.2. Specifically in this case, need to close GUI session and start new virtual terminal with a root session.</p>
+<p>1.3. Ensure that there are not open files from target directory.</p>
+<p>1.4. Check and remeber the target directory size, for a better understanding how many space are requred in the new partition.</p>
+<p>1.5. Prepare new disk: create partition table, partitions, filesystem</p>
+<p>1.6. Temporary mount new partition to some place if FHS. Usually this place is <code>/mnt</code> directory.</p>
+<p>1.7. Ensure that there new filesystem has been mounted</p>
+<p>1.8. Move or copy files from target directory to the new directory.</p>
+<p>1.9. Ensure that all files moved correctly (compare the sizes)</p>
+</li>
+<li>
+<p>Unmount new filesystem from temprorary directory.</p>
+</li>
+<li>
+<p>Mount new filesystem to the <code>/home</code> or do next point.</p>
+</li>
+<li>
+<p>Permanetly add information about mount point of the new disk.</p>
+<p>4.1. Discover the information about UUID of the filesystem in the new disk.</p>
+<p>4.2. Ensure that you have a backup of the original fstab file.</p>
+<p>4.3. Write down recived UUID to the <code>/etc/fstab</code> (use <code>blkid</code>, <code>grep</code> and <code>cut -d' ' -f2</code>).<br />
 Don't forget about another required information in that row: mounted directory, filesystem, mount options, dump flag, fscheck flag.</p>
-<ol>
-<li>So how OS know where to mount filesystem, just mount this filesystem by "mount /home"</li>
-<li><strong>If files was copied, not moved - change owner and group of the copied directory/files with -R key.</strong></li>
+</li>
+<li>
+<p>So how OS know where to mount filesystem, just mount this filesystem by <code>mount /home</code></p>
+</li>
 </ol>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If files was copied, not moved - change owner and group of the copied directory/files with <code>-R</code> key.</p>
+</div>
 <hr />
-<p>Another one wondwerful software to work with disks - gparted. It's GUI programm and it literally can copy/cut and paste partitions!</p>
+<p>Another one wondwerful software to work with disks - <a href="https://gparted.org">Gparted</a>. It's GUI programm and it literally can copy/cut and paste partitions!</p>
 <hr />
-<p>For flexible work with disks use LVM (Logical Volume Manager). LVM allow to union several disks/partitions to create common virtual space. In base of them, perhaps to create logical volumes.
-LVM uses following entities in its work:
-<code>partitions and disks</code> - "physical volumes - PV"
-<code>common space from PV</code> - "volume group - VG"
-<code>partitions in VG</code> - "logical volume - LV"
-LVM allow to add  partitions and disks to VG, and expand LV without having to stop work with disk. 
-To create LVM partition need to create LVM entities in next order: 
-PV -&gt; VG -&gt; LV
-When LV has been created in /dev/ apear two nested directories was named as VG name and LV name. (<code>/dev/myvg/mylv</code>) which is a soft link to <code>/dev/$SOME_NAME</code> which generated by udev.
-Finally, filesystem create in the LV and should be wright in /etc/fstab. For that purpose instead UUID use <code>/dev/mapper/$VG_NAME-$LV_NAME</code>
-In case of the end of free space, you can add a new disk to LVM:</p>
+<h3 id="lvm">LVM</h3>
+<p>For flexible work with disks use LVM (Logical Volume Manager). LVM allow to union several disks/partitions to create common virtual space. In base of them, perhaps to create logical volumes.</p>
+<p>LVM uses following entities in its work:</p>
+<ul>
+<li>
+<p>partitions and disks - physical volumes - <strong>PV</strong></p>
+</li>
+<li>
+<p>common space from PV - volume group - <strong>VG</strong></p>
+</li>
+<li>
+<p>partitions in VG - logical volume - <strong>LV</strong></p>
+</li>
+</ul>
+<p>LVM allow to add  partitions and disks to <strong>VG</strong>, and expand <strong>LV</strong> without having to stop work with disk. </p>
+<p>To create LVM partition need to create LVM entities in next order: 
+<strong>PV</strong> -&gt; <strong>VG</strong> -&gt; <strong>LV</strong></p>
+<p>When <strong>LV</strong> has been created, in <code>/dev/</code> apear two nested directories was named as <strong>VG</strong> name and <strong>LV</strong> name - <code>/dev/myvg/mylv</code> which is a soft link to a <code>/dev/$SOME_NAME</code> which generated by udev.</p>
+<p>Finally, filesystem create in the <strong>LV</strong> and should be wright in <code>/etc/fstab</code>. For that purpose instead UUID use <code>/dev/mapper/$VG_NAME-$LV_NAME</code>.</p>
+<p>In case of the end of free space, you can add a new disk to LVM:</p>
 <ol>
-<li>Create a new PV from new partition.</li>
-<li>Extend the VG</li>
-<li>Extend LV</li>
+<li>
+<p>Create a new <strong>PV</strong> from new partition.</p>
+</li>
+<li>
+<p>Extend the <strong>VG</strong></p>
+</li>
+<li>
+<p>Extend <strong>LV</strong></p>
+</li>
+<li>
+<p>Show to filesystem a new size of <strong>LV</strong> by <code>resize2fs</code> command</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Run <code>resize2fs</code> only if LV was extended without -r key.**</p>
+</div>
+</li>
 </ol>
-<h2 id="4-show-to-filesystem-a-new-size-of-lv-by-resize2fs-command">4*. Show to filesystem a new size of LV by resize2fs command</h2>
-<p><strong>*Run only if LV was extended without -r key.</strong></p>
-<p>Also, LVM provide snapshots of data has stored in it. When you create a LVM snapshot, choose how much space will be use to snapshots. LVM use copy-on-write technology, they allow to copy old blocks of data to special space in disk, before new data will be write on the blocks. 
-So how data has no many changes, snapshot size can be less than target LV.Shapshot LV can be mounted as like ordinary partition.
-For restore data from snapshot need to umount this snapshot and target LV and then merge snapshot with LV. After that, snapshot LV was delete, It remains onlyto mount the target LV partition.
+<h4 id="lvm-snapshots">LVM snapshots</h4>
+<p>Also, LVM provide snapshots of data has stored in it. </p>
+<p>When you create a LVM snapshot, choose how much space will be use to snapshots. LVM use copy-on-write technology, they allow to copy old blocks of data to special space in disk, before new data will be write on the blocks. </p>
+<p>So how data has no many changes, snapshot size can be less than target LV.Shapshot LV can be mounted as like ordinary partition.</p>
+<p>For restore data from snapshot need to umount this snapshot and target LV and then merge snapshot with LV. After that, snapshot LV was delete, It remains onlyto mount the target LV partition.
 Creating snapshots its a good practice before updates or backups.</p>
 <hr />
-<p>For improve availability information, often use RAID (redundant array of indepen det disks). 
-RAID can be hardware and software based. 
-Linux software based RAID is are virtual devices created from two or more real block device.
-Linux software based RAID create and mantain with module "md" (multiply device driver) and mdadm utility.
-RAID devices named like md###, where ### is random integer number
-RAID has a few levels:
-RAID0 (stripping)       blocks divide to the same lenght fragments and write to two or more disks sequentally in turn
-RAID1 (mirroring)       all blocks write to two or more disks simultaneously.
-RAID 10 (RAID 1+0)  like mirroring RAID1
-Because all disks are not totally same, they are can differ for a few number of sectors, in the proccess of creation of RAID, leave some free space.
-Information about RAID devices store in /etc/mdadm.conf (in another distr can be another place, clarify this point by man).
-Next command creates list of partitions which OS will check to present of the RAID after start:
-<code>echo 'DEVICE /dev/hd*[0-9] /dev/sd*[0,9]' &gt; /etc/mdadm.conf</code>
+<h3 id="raid">RAID</h3>
+<p>For improve availability information, often use RAID (redundant array of indepen det disks).<br />
+RAID can be hardware and software based.<br />
+Linux software based RAID is are virtual devices created from two or more real block device.<br />
+Linux software based RAID create and mantain with module "md" (multiply device driver) and mdadm utility.<br />
+RAID devices named like <code>md###</code>, where <code>###</code> is random integer number</p>
+<p>RAID has a few levels:</p>
+<ul>
+<li>
+<p><strong>RAID0 (stripping)</strong> - blocks divide to the same lenght fragments and write to two or more disks sequentally in turn</p>
+</li>
+<li>
+<p><strong>RAID1 (mirroring)</strong> - all blocks write to two or more disks simultaneously.</p>
+</li>
+<li>
+<p><strong>RAID 10 (RAID 1+0)</strong> - like mirroring RAID1</p>
+</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Because all disks are not totally same, they are can differ for a few number of sectors, in the proccess of creation of RAID, leave some free space.</p>
+</div>
+<p>Information about RAID devices store in <code>/etc/mdadm.conf</code> (in another distr can be another place, clarify this point by <code>man</code>).</p>
+<p>Next command creates list of partitions which OS will check to present of the RAID after start:
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;DEVICE /dev/hd*[0-9] /dev/sd*[0,9]&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>/etc/mdadm.conf
+</span></code></pre></div>
 Next command add to mdadm.conf information about current RAID:
-<code>mdadm --detail --scan &gt;&gt; /etc/mdadm.conf</code>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mdadm<span class="w"> </span>--detail<span class="w"> </span>--scan<span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/mdadm.conf
+</span></code></pre></div>
 Information about RAID status can be displayed with <code>dmadm --detail</code> in state section: clean, degraded, spare rebuilding.</p>
 <p>Linux software RAID creation check-list:</p>
 <ol>
-<li>Create a partitions on the disks leaved some free space.</li>
-<li>Create new mddevice by <code>mdadm</code> with <code>--create</code> key.</li>
-<li>Check information about just created RAID by <code>mdadm --detail /dev/$MD_NAME</code></li>
-<li>Save current config by comamnds listed above.</li>
-<li>Create file system or LVM physycal volumes.</li>
-<li>Edit <code>/etc/fstab.</code></li>
-<li>If need to add disks: prepare it and add by <code>mdadm --add</code> command</li>
+<li>
+<p>Create a partitions on the disks leaved some free space.</p>
+</li>
+<li>
+<p>Create new mddevice by <code>mdadm</code> with <code>--create</code> key.</p>
+</li>
+<li>
+<p>Check information about just created RAID by <code>mdadm --detail /dev/$MD_NAME</code></p>
+</li>
+<li>
+<p>Save current config by comamnds listed above.</p>
+</li>
+<li>
+<p>Create file system or LVM physycal volumes.</p>
+</li>
+<li>
+<p>Edit <code>/etc/fstab.</code></p>
+</li>
+<li>
+<p>If need to add disks: prepare it and add by <code>mdadm --add</code> command</p>
+</li>
 </ol>
 
+
+  
 
 
 

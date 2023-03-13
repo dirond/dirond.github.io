@@ -51,6 +51,18 @@
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-HVGKC2VEZ3"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-HVGKC2VEZ3",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-HVGKC2VEZ3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -1471,8 +1483,6 @@
         
           
         
-          
-        
       
       
         
@@ -1531,20 +1541,6 @@
     <li class="md-nav__item">
       <a href="../Kernel/" class="md-nav__link">
         Kernel
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Linux_directories_%28Filesystem_hierarchy_standart_-_FHS%29/" class="md-nav__link">
-        Linux directories (FHS)
       </a>
     </li>
   
@@ -1675,8 +1671,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#table-of-content" class="md-nav__link">
-    TABLE OF CONTENT
+  <a href="#keys-in-linux-commands" class="md-nav__link">
+    Keys in Linux commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-commands-in-shell" class="md-nav__link">
+    Common commands in shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-text-files" class="md-nav__link">
+    Working with text files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#users-groups-access-rules" class="md-nav__link">
+    Users. Groups. Access Rules.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-hardware-without-disks" class="md-nav__link">
+    Working with hardware without disks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-disks-and-filesystems" class="md-nav__link">
+    Working with disks and filesystems.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lvm" class="md-nav__link">
+    LVM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux-software-based-raid" class="md-nav__link">
+    Linux software based RAID.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-packages" class="md-nav__link">
+    Working with packages.
   </a>
   
 </li>
@@ -2173,8 +2225,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#table-of-content" class="md-nav__link">
-    TABLE OF CONTENT
+  <a href="#keys-in-linux-commands" class="md-nav__link">
+    Keys in Linux commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-commands-in-shell" class="md-nav__link">
+    Common commands in shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-text-files" class="md-nav__link">
+    Working with text files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#users-groups-access-rules" class="md-nav__link">
+    Users. Groups. Access Rules.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-hardware-without-disks" class="md-nav__link">
+    Working with hardware without disks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-disks-and-filesystems" class="md-nav__link">
+    Working with disks and filesystems.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lvm" class="md-nav__link">
+    LVM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux-software-based-raid" class="md-nav__link">
+    Linux software based RAID.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-packages" class="md-nav__link">
+    Working with packages.
   </a>
   
 </li>
@@ -2196,194 +2304,580 @@
 
 <h1 id="linux-commands">Linux commands</h1>
 <hr />
-<h4 id="table-of-content">TABLE OF CONTENT</h4>
-<ol>
-<li>Keys in linux commands</li>
-<li>Common commands in shell</li>
-<li>Working with text files</li>
-<li>Users. Groups. Access rules</li>
-<li>Working with hardware including disks</li>
-<li>Working with packages</li>
-</ol>
-<hr />
-<hr />
-<h1 id="keys-in-linux-commands">Keys in Linux commands</h1>
+<h3 id="keys-in-linux-commands">Keys in Linux commands</h3>
 <p>There are a some different keys types in:</p>
 <ul>
-<li><strong>UNIX keys</strong>     begin with "-" sign</li>
-<li><strong>BSD keys</strong>      with no any sign</li>
-<li><strong>GNU keys</strong>      with "--" sign </li>
+<li><strong>UNIX keys</strong> - begin with "-" sign</li>
+<li><strong>BSD keys</strong> - with no any sign</li>
+<li><strong>GNU keys</strong> - with "--" sign </li>
 </ul>
 <p>There are some operators in Linux commands are listed below:</p>
 <ul>
-<li><strong>&gt;</strong>             stdout. Remove file content after use.</li>
-<li><strong>&lt;</strong>             stdin</li>
-<li><strong>2&gt;</strong>            stderr</li>
-<li><strong>&gt;&gt;</strong>            append stdout file</li>
-<li><strong>&amp;&gt;</strong>            stdout and stderror in one file</li>
-<li><strong>|</strong>             pipe. Use to transfer stdout from one command to another.</li>
-<li><strong>$(<code>command</code>)</strong>    assigns the result of <code>command</code> to some variable</li>
+<li>
+<p><strong>&gt;</strong> - stdout. Remove file content after use.</p>
+</li>
+<li>
+<p><strong>&lt;</strong> - stdin</p>
+</li>
+<li>
+<p><strong>2&gt;</strong> - stderr</p>
+</li>
+<li>
+<p><strong>&gt;&gt;</strong> - append stdout file</p>
+</li>
+<li>
+<p><strong>&amp;&gt;</strong> - stdout and stderror in one file</p>
+</li>
+<li>
+<p><strong>|</strong> - pipe. Use to transfer stdout from one command to another.</p>
+</li>
+<li>
+<p><strong>$(<code>command</code>)</strong>  assigns the result of <code>command</code> to some variable</p>
+</li>
 </ul>
 <hr />
-<hr />
-<h1 id="common-commands-in-shell">Common commands in shell.</h1>
+<h3 id="common-commands-in-shell">Common commands in shell</h3>
 <p>Common comands in shell are listed below.</p>
-<ul>
-<li><strong><code>alias</code></strong>         Create aliase for some command. </li>
-<li><strong><code>bash</code></strong>          Start new bash session.</li>
-<li><strong><code>cat</code></strong>           Concatenate txt files.</li>
-<li><strong><code>cp</code></strong>                Copy files.</li>
-<li><strong><code>cut</code></strong>           Remove sections from each line on files.</li>
-<li><strong><code>command</code></strong>       Run <code>$com</code> directly without alias</li>
-<li><strong><code>dmesg</code></strong>         Print or control the kernel ring buffer.</li>
-<li><strong><code>du</code></strong>            Estiamte file space usage.</li>
-<li><strong><code>echo</code></strong>          Display inputted text in stdout</li>
-<li><strong><code>getent</code></strong>            Get entries from name service switch libraries.</li>
-<li><strong><code>less</code></strong>          Reader for files whos contains page lister, find text pattern and more</li>
-<li><strong><code>lsb_release</code></strong>       Print distribution specific information </li>
-<li><strong><code>ldd $/bin/sh</code></strong>Show shared library required by program</li>
-<li><strong><code>hostname</code></strong>      Show or set the system host name.</li>
-<li><strong><code>locate</code></strong>Show where specific file can be stored</li>
-<li><strong><code>ls</code></strong>                List files in directory. Also have keys to sort results.</li>
-<li><strong><code>lsof</code></strong>          List open files.</li>
-<li><strong><code>mkdir</code></strong>         Create a directory.</li>
-<li><strong><code>mktemp</code></strong>        Create a temp file in /tmp</li>
-<li><strong><code>printenv</code></strong>list all environment variables</li>
-<li><strong><code>sort</code></strong>          Sort files and his content</li>
-<li><strong><code>sudoedit</code></strong>      Execute editor which was in $EDITOR.</li>
-<li><strong><code>stat</code></strong>          Display information about file or file system</li>
-<li><strong><code>stty</code></strong>          Display information about current terminal</li>
-<li><strong><code>read</code></strong>          Read data from stdin.</li>
-<li><strong><code>rm</code></strong>            Remove file.</li>
-<li><strong><code>rmdir</code></strong>             Remove directory</li>
-<li><strong><code>tac</code></strong>           Concatenate txt files in reverse order.</li>
-<li><strong><code>tee</code></strong>           Print stdput on console and write stdout to file simultaniously.</li>
-<li><strong><code>tree</code></strong>          List contents of directories in tree format</li>
-<li><strong><code>touch</code></strong>             Change file timestamps. Create file if it not exist.</li>
-<li><strong><code>tr</code></strong>                Translate or delete characters</li>
-<li><strong><code>type</code></strong>          Show information about command (location of command)</li>
-<li><strong><code>ulimit</code></strong>            Provide control over the available resources.</li>
-<li><strong><code>uname</code></strong>             Print system information.</li>
-<li><strong><code>updatedb</code></strong>Update DB for <strong><code>locate</code></strong> program</li>
-<li><strong><code>vipe</code></strong>          Pipe to text editor (<em>inhabit in</em> <code>moreutils</code> <em>packages</em>)</li>
-<li><strong><code>watch</code></strong>         Execute a given command periodically.</li>
-<li><strong><code>which</code></strong>             Show the full path of (shell) commands.</li>
-<li><strong><code>xclip</code></strong>         Copy from shell to clipboard (<em>Not in coreutils</em>)</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Desctiption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>alias</code></td>
+<td align="left">Create aliase for some command</td>
+</tr>
+<tr>
+<td align="left"><code>bash</code></td>
+<td align="left">Start new bash session.</td>
+</tr>
+<tr>
+<td align="left"><code>cat</code></td>
+<td align="left">Concatenate txt files.</td>
+</tr>
+<tr>
+<td align="left"><code>cp</code></td>
+<td align="left">Copy files.</td>
+</tr>
+<tr>
+<td align="left"><code>cut</code></td>
+<td align="left">Remove sections from each line on files.</td>
+</tr>
+<tr>
+<td align="left"><code>command</code></td>
+<td align="left">Run <code>$com</code> directly without alias</td>
+</tr>
+<tr>
+<td align="left"><code>dmesg</code></td>
+<td align="left">Print or control the kernel ring buffer.</td>
+</tr>
+<tr>
+<td align="left"><code>du</code></td>
+<td align="left">Estiamte file space usage.</td>
+</tr>
+<tr>
+<td align="left"><code>echo</code></td>
+<td align="left">Display inputted text in stdout</td>
+</tr>
+<tr>
+<td align="left"><code>getent</code></td>
+<td align="left">Get entries from name service switch libraries.</td>
+</tr>
+<tr>
+<td align="left"><code>less</code></td>
+<td align="left">Reader for files whos contains page lister, find text pattern and more</td>
+</tr>
+<tr>
+<td align="left"><code>lsb_release</code></td>
+<td align="left">Print distribution specific information</td>
+</tr>
+<tr>
+<td align="left"><code>ldd $/bin/sh</code></td>
+<td align="left">Show shared library required by program</td>
+</tr>
+<tr>
+<td align="left"><code>hostname</code></td>
+<td align="left">Show or set the system host name.</td>
+</tr>
+<tr>
+<td align="left"><code>locate</code></td>
+<td align="left">Show where specific file can be stored</td>
+</tr>
+<tr>
+<td align="left"><code>ls</code></td>
+<td align="left">List files in directory. Also have keys to sort results.</td>
+</tr>
+<tr>
+<td align="left"><code>lsof</code></td>
+<td align="left">List open files.</td>
+</tr>
+<tr>
+<td align="left"><code>mkdir</code></td>
+<td align="left">Create a directory.</td>
+</tr>
+<tr>
+<td align="left"><code>mktemp</code></td>
+<td align="left">Create a temp file in /tmp</td>
+</tr>
+<tr>
+<td align="left"><code>printenv</code></td>
+<td align="left">list all environment variables</td>
+</tr>
+<tr>
+<td align="left"><code>sort</code></td>
+<td align="left">Sort files and his content</td>
+</tr>
+<tr>
+<td align="left"><code>sudoedit</code></td>
+<td align="left">Execute editor which was in $EDITOR.</td>
+</tr>
+<tr>
+<td align="left"><code>stat</code></td>
+<td align="left">Display information about file or file system</td>
+</tr>
+<tr>
+<td align="left"><code>stty</code></td>
+<td align="left">Display information about current terminal</td>
+</tr>
+<tr>
+<td align="left"><code>read</code></td>
+<td align="left">Read data from stdin.</td>
+</tr>
+<tr>
+<td align="left"><code>rm</code></td>
+<td align="left">Remove file.</td>
+</tr>
+<tr>
+<td align="left"><code>rmdir</code></td>
+<td align="left">Remove directory</td>
+</tr>
+<tr>
+<td align="left"><code>tac</code></td>
+<td align="left">Concatenate txt files in reverse order.</td>
+</tr>
+<tr>
+<td align="left"><code>tee</code></td>
+<td align="left">Print stdput on console and write stdout to file simultaniously.</td>
+</tr>
+<tr>
+<td align="left"><code>tree</code></td>
+<td align="left">List contents of directories in tree format</td>
+</tr>
+<tr>
+<td align="left"><code>touch</code></td>
+<td align="left">Change file timestamps. Create file if it not exist.</td>
+</tr>
+<tr>
+<td align="left"><code>tr</code></td>
+<td align="left">Translate or delete characters</td>
+</tr>
+<tr>
+<td align="left"><code>type</code></td>
+<td align="left">Show information about command (location of command)</td>
+</tr>
+<tr>
+<td align="left"><code>ulimit</code></td>
+<td align="left">Provide control over the available resources.</td>
+</tr>
+<tr>
+<td align="left"><code>uname</code></td>
+<td align="left">Print system information.</td>
+</tr>
+<tr>
+<td align="left"><code>updatedb</code></td>
+<td align="left">Update DB for <code>locate</code> program</td>
+</tr>
+<tr>
+<td align="left"><code>vipe</code></td>
+<td align="left">Pipe to text editor (<em>inhabit in</em> <code>moreutils</code> <em>packages</em>)</td>
+</tr>
+<tr>
+<td align="left"><code>watch</code></td>
+<td align="left">Execute a given command periodically.</td>
+</tr>
+<tr>
+<td align="left"><code>which</code></td>
+<td align="left">Show the full path of (shell) commands.</td>
+</tr>
+<tr>
+<td align="left"><code>xclip</code></td>
+<td align="left">Copy from shell to clipboard (<em>Not in coreutils</em>)</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<hr />
-<h1 id="working-with-text-files">Working with text files</h1>
+<h3 id="working-with-text-files">Working with text files</h3>
 <p>Comands for work with text files in shell are listed below.</p>
-<ul>
-<li><strong><code>cat</code></strong>           Concatenate file with another one.</li>
-<li><strong><code>grep</code></strong>          Find text pattern in file(s).</li>
-<li><strong><code>head</code></strong>          Show only few top lines of the file.</li>
-<li><strong><code>tail</code></strong>          Show only few bottom lines of the file</li>
-<li><strong><code>wc</code></strong>            Count number of rows, words, and other in file.</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Desctiption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>cat</code></td>
+<td align="left">Concatenate file with another one.</td>
+</tr>
+<tr>
+<td align="left"><code>grep</code></td>
+<td align="left">Find text pattern in file(s).</td>
+</tr>
+<tr>
+<td align="left"><code>head</code></td>
+<td align="left">Show only few top lines of the file.</td>
+</tr>
+<tr>
+<td align="left"><code>tail</code></td>
+<td align="left">Show only few bottom lines of the file</td>
+</tr>
+<tr>
+<td align="left"><code>wc</code></td>
+<td align="left">Count number of rows, words, and other in file.</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<hr />
-<h1 id="users-groups-access-rules">Users. Groups. Access Rules.</h1>
+<h3 id="users-groups-access-rules">Users. Groups. Access Rules.</h3>
 <p>Comands for work with users, groups and access rules in shell are listed below.</p>
-<ul>
-<li><strong><code>chage</code></strong>         Change user password expiry information.</li>
-<li><strong><code>chgrp</code></strong>         Change group ownership.</li>
-<li><strong><code>chfn</code></strong>          Change personal information about user (full name, phone, etc).</li>
-<li><strong><code>chown</code></strong>         Change file owner and group.</li>
-<li><strong><code>chmod</code></strong>         Change file mode bits.</li>
-<li><strong><code>getfacl</code></strong>           Get file access control lists.</li>
-<li><strong><code>groupadd</code></strong>      Create a new group.</li>
-<li><strong><code>groupmod</code></strong>      Modify exist group.</li>
-<li><strong><code>groupdel</code></strong>      Delete group.</li>
-<li><strong><code>gpasswd</code></strong>       Administer groups.</li>
-<li><strong><code>groups</code></strong>            Print the groups are user is in.</li>
-<li><strong><code>id</code></strong>                Print user id and group IDs.</li>
-<li><strong><code>lid</code></strong>               Display user groups or group users.</li>
-<li><strong><code>mkpasswd</code></strong>  Encrypt the given password with given crypt and optionaly with given salt</li>
-<li><strong><code>passwd</code></strong>        Update user authentication tokens.</li>
-<li><strong><code>setfacl</code></strong>           Set file access control list.</li>
-<li><strong><code>su $usr</code></strong>           Run command with substitute $usr and group ID.</li>
-<li><strong><code>sudo</code></strong>          Execute a command as another user.</li>
-<li><strong><code>umask</code></strong>         The user file-creation default mask. </li>
-<li><strong><code>useradd</code></strong>       Create a new user or update default new user information.</li>
-<li><strong><code>userdel</code></strong>       Delete user.</li>
-<li><strong><code>usermod</code></strong>       Modify information about exist user.</li>
-<li><strong><code>visudo</code></strong>            Allow to change /etc/sudoers file</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Desctiption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>chage</code></td>
+<td align="left">Change user password expiry information.</td>
+</tr>
+<tr>
+<td align="left"><code>chgrp</code></td>
+<td align="left">Change group ownership.</td>
+</tr>
+<tr>
+<td align="left"><code>chfn</code></td>
+<td align="left">Change personal information about user (full name, phone, etc).</td>
+</tr>
+<tr>
+<td align="left"><code>chown</code></td>
+<td align="left">Change file owner and group.</td>
+</tr>
+<tr>
+<td align="left"><code>chmod</code></td>
+<td align="left">Change file mode bits.</td>
+</tr>
+<tr>
+<td align="left"><code>getfacl</code></td>
+<td align="left">Get file access control lists.</td>
+</tr>
+<tr>
+<td align="left"><code>groupadd</code></td>
+<td align="left">Create a new group.</td>
+</tr>
+<tr>
+<td align="left"><code>groupmod</code></td>
+<td align="left">Modify exist group.</td>
+</tr>
+<tr>
+<td align="left"><code>groupdel</code></td>
+<td align="left">Delete group.</td>
+</tr>
+<tr>
+<td align="left"><code>gpasswd</code></td>
+<td align="left">Administer groups.</td>
+</tr>
+<tr>
+<td align="left"><code>groups</code></td>
+<td align="left">Print the groups are user is in.</td>
+</tr>
+<tr>
+<td align="left"><code>id</code></td>
+<td align="left">Print user id and group IDs.</td>
+</tr>
+<tr>
+<td align="left"><code>lid</code></td>
+<td align="left">Display user groups or group users.</td>
+</tr>
+<tr>
+<td align="left"><code>mkpasswd</code></td>
+<td align="left">Encrypt the given password with given crypt and optionaly with given salt</td>
+</tr>
+<tr>
+<td align="left"><code>passwd</code></td>
+<td align="left">Update user authentication tokens.</td>
+</tr>
+<tr>
+<td align="left"><code>setfacl</code></td>
+<td align="left">Set file access control list.</td>
+</tr>
+<tr>
+<td align="left"><code>su $usr</code></td>
+<td align="left">Run command with substitute $usr and group ID.</td>
+</tr>
+<tr>
+<td align="left"><code>sudo</code></td>
+<td align="left">Execute a command as another user.</td>
+</tr>
+<tr>
+<td align="left"><code>umask</code></td>
+<td align="left">The user file-creation default mask.</td>
+</tr>
+<tr>
+<td align="left"><code>useradd</code></td>
+<td align="left">Create a new user or update default new user information.</td>
+</tr>
+<tr>
+<td align="left"><code>userdel</code></td>
+<td align="left">Delete user.</td>
+</tr>
+<tr>
+<td align="left"><code>usermod</code></td>
+<td align="left">Modify information about exist user.</td>
+</tr>
+<tr>
+<td align="left"><code>visudo</code></td>
+<td align="left">Allow to change /etc/sudoers file</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<hr />
-<h1 id="working-with-hardware-without-disks">Working with hardware without disks</h1>
+<h3 id="working-with-hardware-without-disks">Working with hardware without disks</h3>
 <p>Comands for working with hardware in shell are listed below.</p>
-<ul>
-<li>iostat            Report CPU statistics and IO statistics from devices and partitions.</li>
-<li>lscpu         Display information about cpu.</li>
-<li>lspci         List al PCI devices.</li>
-<li>lsmod         Show the status of modules in Linux kernel.</li>
-<li>lsusb         List all USB devices.</li>
-<li>lshw          List hardware.</li>
-<li>modinfo       Show information about linux kernel module.</li>
-<li>modprobe      Add and remove modules from kernel.</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Desctiption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>iostat</code></td>
+<td align="left">Report CPU statistics and IO statistics from devices and partitions.</td>
+</tr>
+<tr>
+<td align="left"><code>lscpu</code></td>
+<td align="left">Display information about cpu.</td>
+</tr>
+<tr>
+<td align="left"><code>lspci</code></td>
+<td align="left">List al PCI devices.</td>
+</tr>
+<tr>
+<td align="left"><code>lsmod</code></td>
+<td align="left">Show the status of modules in Linux kernel.</td>
+</tr>
+<tr>
+<td align="left"><code>lsusb</code></td>
+<td align="left">List all USB devices.</td>
+</tr>
+<tr>
+<td align="left"><code>lshw</code></td>
+<td align="left">List hardware.</td>
+</tr>
+<tr>
+<td align="left"><code>modinfo</code></td>
+<td align="left">Show information about linux kernel module.</td>
+</tr>
+<tr>
+<td align="left"><code>modprobe</code></td>
+<td align="left">Add and remove modules from kernel.</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<hr />
-<h1 id="working-with-disks-and-filesystems">Working with disks and filesystems.</h1>
+<h3 id="working-with-disks-and-filesystems">Working with disks and filesystems.</h3>
 <p>Comands for working with disks and filesystems in shell are listed below.</p>
-<ul>
-<li>blkid         Command-line utility to locate/print block device attributes.</li>
-<li>df                Report file system disk space usage.</li>
-<li>cfdisk            Display or manipulate a disk partition table.</li>
-<li>fdisk         Manipulate disk partition table.</li>
-<li>fsck          Check and repair the Linux filesystem.</li>
-<li>lsscsi            List scsi devices or hosts.</li>
-<li>mkfs          Create new file system on the partition. </li>
-<li>mount         Mount filesystem on the partition.</li>
-<li>tune2fs       Show detailed information about filesystem. Also can tune that filesystem.</li>
-<li>resize2fs     Re-write metadata of the filesystem.</li>
-<li>umount        Unmount filesystem from the partition.</li>
-<li>xfs_repair        Check and repair the xfs filesystem.</li>
-<li>wipefs            Wipe a signature from a device.</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Desctiption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>blkid</code></td>
+<td align="left">Command-line utility to locate/print block device attributes.</td>
+</tr>
+<tr>
+<td align="left"><code>df</code></td>
+<td align="left">Report file system disk space usage.</td>
+</tr>
+<tr>
+<td align="left"><code>cfdisk</code></td>
+<td align="left">Display or manipulate a disk partition table.</td>
+</tr>
+<tr>
+<td align="left"><code>fdisk</code></td>
+<td align="left">Manipulate disk partition table.</td>
+</tr>
+<tr>
+<td align="left"><code>fsck</code></td>
+<td align="left">Check and repair the Linux filesystem.</td>
+</tr>
+<tr>
+<td align="left"><code>lsscsi</code></td>
+<td align="left">List scsi devices or hosts.</td>
+</tr>
+<tr>
+<td align="left"><code>mkfs</code></td>
+<td align="left">Create new file system on the partition.</td>
+</tr>
+<tr>
+<td align="left"><code>mount</code></td>
+<td align="left">Mount filesystem on the partition.</td>
+</tr>
+<tr>
+<td align="left"><code>tune2fs</code></td>
+<td align="left">Show detailed information about filesystem. Also can tune that filesystem.</td>
+</tr>
+<tr>
+<td align="left"><code>resize2fs</code></td>
+<td align="left">Re-write metadata of the filesystem.</td>
+</tr>
+<tr>
+<td align="left"><code>umount</code></td>
+<td align="left">Unmount filesystem from the partition.</td>
+</tr>
+<tr>
+<td align="left"><code>xfs_repair</code></td>
+<td align="left">Check and repair the xfs filesystem.</td>
+</tr>
+<tr>
+<td align="left"><code>wipefs</code></td>
+<td align="left">Wipe a signature from a device.</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<hr />
-<h1 id="lvm">LVM</h1>
+<h3 id="lvm">LVM</h3>
 <p>Comands for working with LVM in shell are listed below.</p>
-<ul>
-<li>lvconvert         Change logical volume layout.</li>
-<li>lvcreate          Create logical volume for futher work with it in LVM.</li>
-<li>lvdisplay         Show detailed information about certain LVM logical volume.</li>
-<li>lvextend          Extend exist LVM logical volume.</li>
-<li>lvremove          Remove LVM logical volume.</li>
-<li>lvs               Display exist LVM logical volumes.</li>
-<li>pvcreate          Create physical volume for futher work with it in LVM.</li>
-<li>pvdisplay         Show detailed information about certain LVM physical volume.</li>
-<li>pvremove          Remove LVM physical volume.</li>
-<li>pvs               Display exist LVM physical volumes.</li>
-<li>vgcreate          Create volume group for futher work with it in LVM.</li>
-<li>vgremove          Remove LVM volume group.</li>
-<li>vgs               Display exist volume groups.</li>
-<li>vgdisplay         Show detailed information about certain volume group.</li>
-<li>vgextend          Extend exist volume group.</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Desctiption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>lvconvert</code></td>
+<td align="left">Change logical volume layout.</td>
+</tr>
+<tr>
+<td align="left"><code>lvcreate</code></td>
+<td align="left">Create logical volume for futher work with it in LVM.</td>
+</tr>
+<tr>
+<td align="left"><code>lvdisplay</code></td>
+<td align="left">Show detailed information about certain LVM logical volume.</td>
+</tr>
+<tr>
+<td align="left"><code>lvextend</code></td>
+<td align="left">Extend exist LVM logical volume.</td>
+</tr>
+<tr>
+<td align="left"><code>lvremove</code></td>
+<td align="left">Remove LVM logical volume.</td>
+</tr>
+<tr>
+<td align="left"><code>lvs</code></td>
+<td align="left">Display exist LVM logical volumes.</td>
+</tr>
+<tr>
+<td align="left"><code>pvcreate</code></td>
+<td align="left">Create physical volume for futher work with it in LVM.</td>
+</tr>
+<tr>
+<td align="left"><code>pvdisplay</code></td>
+<td align="left">Show detailed information about certain LVM physical volume.</td>
+</tr>
+<tr>
+<td align="left"><code>pvremove</code></td>
+<td align="left">Remove LVM physical volume.</td>
+</tr>
+<tr>
+<td align="left"><code>pvs</code></td>
+<td align="left">Display exist LVM physical volumes.</td>
+</tr>
+<tr>
+<td align="left"><code>vgcreate</code></td>
+<td align="left">Create volume group for futher work with it in LVM.</td>
+</tr>
+<tr>
+<td align="left"><code>vgremove</code></td>
+<td align="left">Remove LVM volume group.</td>
+</tr>
+<tr>
+<td align="left"><code>vgs</code></td>
+<td align="left">Display exist volume groups.</td>
+</tr>
+<tr>
+<td align="left"><code>vgdisplay</code></td>
+<td align="left">Show detailed information about certain volume group.</td>
+</tr>
+<tr>
+<td align="left"><code>vgextend</code></td>
+<td align="left">Extend exist volume group.</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<hr />
-<h1 id="linux-software-based-raid">Linux software based RAID.</h1>
+<h3 id="linux-software-based-raid">Linux software based RAID.</h3>
 <p>Comands for working with linux software based RAID in shell are listed below.</p>
-<ul>
-<li>mdadm         Manage RAID devices.</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Desctiption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>mdadm</code></td>
+<td align="left">Manage RAID devices.</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<hr />
-<h1 id="working-with-packages">Working with packages.</h1>
+<h3 id="working-with-packages">Working with packages.</h3>
 <p>Comands for work with users, groups and access rules in shell are listed below.</p>
-<ul>
-<li>apt                                   Packet manager. Can search, manage and querry information about packages.</li>
-<li>apt-cache                             Query information about installed as well installable packages.</li>
-<li>apt-get                                   Search, install, upgrade, remove packages.</li>
-<li>apt-get install --only-upgrade <package_name> Upgrade particular package</li>
-</ul>
-<hr />
-<hr />
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Desctiption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>apt</code></td>
+<td align="left">Packet manager for Debian based system. Can search, manage and querry information about packages.</td>
+</tr>
+<tr>
+<td align="left"><code>apt-cache</code></td>
+<td align="left">Query information about installed as well installable packages.</td>
+</tr>
+<tr>
+<td align="left"><code>apt-get</code></td>
+<td align="left">Search, install, upgrade, remove packages.</td>
+</tr>
+<tr>
+<td align="left"><code>apt-get install --only-upgrade &lt;package_name&gt;</code></td>
+<td align="left">Upgrade particular package</td>
+</tr>
+</tbody>
+</table>
 
+
+  
 
 
 
