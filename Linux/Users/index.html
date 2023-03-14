@@ -1618,9 +1618,61 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Users
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Users
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#su-sudo" class="md-nav__link">
+    su, sudo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etcpasswd" class="md-nav__link">
+    /etc/passwd
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etcgroups" class="md-nav__link">
+    /etc/groups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etcshadow" class="md-nav__link">
+    /etc/shadow
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2131,6 +2183,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#su-sudo" class="md-nav__link">
+    su, sudo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etcpasswd" class="md-nav__link">
+    /etc/passwd
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etcgroups" class="md-nav__link">
+    /etc/groups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etcshadow" class="md-nav__link">
+    /etc/shadow
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2146,22 +2234,22 @@
 
 <h1 id="users">Users</h1>
 <hr />
-<p>System can have multiply users. "su" command allow to change user to run some program from his name. By default, su not change environment, not re-read <code>~/.bash_profile</code> file. 
-Run "su" command with "-" before target username, allow to read <code>~/.bash_profile</code> file of target username and thus change environment.
-Also we can change users which will be run the program by using "sudo" command.
-By default, mechanism of "sudo" use for run some command from root user, but with <code>-u</code> key, possibly to run command from particular user.
-Instead by "su", "sudo" allow to input password of currently user. 
-In addition, "sudo" allow to run only some commands defined in <code>/etc/sudoers</code> file.</p>
+<h3 id="su-sudo">su, sudo</h3>
+<p>System can have multiply users. <code>su</code> command allow to change user to run some program from his name. By default, <code>su</code> not change environment, not re-read <code>~/.bash_profile</code> file.</p>
+<p>Run <code>su</code> command with <code>-</code> before target username, allow to read <code>~/.bash_profile</code> file of target username and thus change environment.</p>
+<p>Also we can change users which will be run the program by using <code>sudo</code> command. By default, mechanism of <code>sudo</code> use for run some command from root user, but with <code>-u</code> key, possibly to run command from particular user.</p>
+<p>Instead by <code>su</code>, <code>sudo</code> allow to input password of currently user. </p>
+<p>In addition, <code>sudo</code> allow to run only some commands defined in <code>/etc/sudoers</code> file.</p>
 <hr />
-<p><code>sudoers</code>  file shall edit through "visudo" command.
-<code>sudoers</code> has keys like:
-<code>NOEXEC</code>      prevent dynamicly-linked executable from running further command itself.
-<code>NOPASSWD</code>    allow to run commands without authenticating himself</p>
-<p>By default sudo write down log file in <code>/var/log/secure</code>. In addition, for more comfortable reading the sudo logs we can use "sudoreplay" command. 
-For enable "sudoreplay" in sudoers file shall write down next commands:
-<code>Default log_output</code>
-<code>Defaluts log_input</code></p>
+<p><code>/etc/sudoers</code>  file shall edit through <code>visudo</code> command and has next keys:</p>
+<p><code>NOEXEC</code> -      prevent dynamicly-linked executable from running further command itself.</p>
+<p><code>NOPASSWD</code> -    allow to run commands without authenticating himself</p>
+<p>By default sudo write down log file in <code>/var/log/secure</code>. In addition, for more comfortable reading the sudo logs we can use <code>sudoreplay</code> command. </p>
+<p>For enable <code>sudoreplay</code> in <code>/etc/sudoers</code> file shall write down next commands:
+<code>Default log_output</code></p>
+<p><code>Defaluts log_input</code></p>
 <hr />
+<h3 id="etcpasswd">/etc/passwd</h3>
 <p>Information about all users store in <code>/etc/passwd</code> file. It contains the following columns:</p>
 <ol>
 <li>username</li>
@@ -2170,8 +2258,12 @@ For enable "sudoreplay" in sudoers file shall write down next commands:
 <li>group id (gid)</li>
 <li>comment about user (full name, phone number and so on)</li>
 <li>user home directory path</li>
-<li>user command shell. For service users instead name of shell there is a "nologin". If somebody try to log with that username, system display standart text or text from <code>/etc/nonlogin.txt.</code> Also here can be  <code>/bin/false</code> - program which do nothing but display error.</li>
+<li>
+<p>user command shell.</p>
+<p>For service users instead name of shell there is a "nologin". If somebody try to log with that username, system display standart text or text from <code>/etc/nonlogin.txt.</code> Also here can be  <code>/bin/false</code> - program which do nothing but display error.</p>
+</li>
 </ol>
+<h3 id="etcgroups">/etc/groups</h3>
 <p>Information about groups are stored in <code>/etc/group</code>. It contains the following columns:</p>
 <ol>
 <li>groupname    </li>
@@ -2179,7 +2271,8 @@ For enable "sudoreplay" in sudoers file shall write down next commands:
 <li>gid</li>
 <li>users in group separeted by comma</li>
 </ol>
-<p>Groups in system may have an administrator who can add users to they own group without a root with "gpasswd" command</p>
+<p>Groups in system may have an administrator who can add users to they own group without a root with <code>gpasswd</code> command</p>
+<h3 id="etcshadow">/etc/shadow</h3>
 <p>Information about passwords are store in <code>/etc/shadow</code>. It contains the following columns:</p>
 <ol>
 <li>username</li>

@@ -2145,38 +2145,140 @@
 
 
 <h1 id="some-useful-files-and-directories">Some useful files and directories</h1>
-<hr />
-<p><strong>/etc/*releases</strong>                      store scpecific information about distributive
-<strong>/etc/passwd</strong>                         info about users registred in the system
-<strong>/etc/shadow</strong>                         shadowed password file
-<strong>/etc/group</strong>                          <code>info about groups registred in the system</code>
-<strong>/etc/update-motd.d/</strong>                 <code>MOTD files</code> 
-<strong>/etc/sudoers</strong>                            <code>default sudo security policy plugin</code>
-<strong>/etc/security/limits.conf</strong>               <code>sets recource limits for the users</code>
-<strong>/etc/security/limits.d/</strong>                 <code>the same as the previous but override it</code>
-<strong>/etc/default/default</strong>                    <code>default information for useradd command</code>
-<strong>/etc/fstab</strong>                          <code>static information about the filesystems</code>
-<strong>/etc/login.defs</strong>                     <code>another default information for useradd command</code>
-<strong>/etc/skel/</strong>                              <code>template directory which contains the files which will be copied to</code> <code>user home directory</code>
-<strong>/etc/mdadm.conf</strong>                     <code>store information about RAID devices</code>
-<strong>/etc/modules-load.d/$MODULENAME.conf</strong>    <code>modules in that file are automaticly load when OS will be start</code>
-<strong>/etc/modprobe.d/$MODULENAME.conf</strong>    <code>modules in that file are not load or load with special parameters</code>
-<strong>/etc/mke2fs.conf</strong>                        <code>default settings for file systems. Inodes and blocks size and so on</code>
-<strong>/dev/mapper</strong>                         <code>store files to work with Device mapper. It's a kernel module (framework) use to map physical block devices to virtual hign level block devices.</code>
-<strong>/lib/modules/</strong>                           <code>all available kernel modules</code>
-<strong>/lib/modules/$(uname -r)/</strong>               <code>modules for current kernel</code>
-<strong>/lib/modules/$(uname -r)/modules.alias</strong>  <code>list of modules to be load to the kernel</code>
-<strong>/lib/modules/$(uname -r)/modules.builtin/</strong>   <code>list of modules which built in kernel. In the 2nd column listed hardware id, in the last column listed modules required for this hardware id</code> 
-<strong>/proc/version</strong>                           <code>info about kernel version</code>
-<strong>/proc/uptime</strong>                            <code>info about how long the system has been running</code>
-<strong>/proc/$PID/cmdline</strong>                      <code>info about command which ran the $PID process</code>
-<strong>/proc/$PID/cmdline</strong>                      <code>info about environment variables which were transferd to</code> <code>the $PID proccess</code>
-<strong>/proc/$PID/status</strong>                       <code>some information about $PID</code>
-<strong>/proc/cpuinfo</strong>                           <code>info about CPU</code>
-<strong>/proc/meminfo</strong>                           <code>info about DDR</code>
-<strong>/proc/sys/kernel/pid_max</strong>                    <code>max number of running processes</code>
-<strong>/var/log/secure</strong>                         <code>sudo logs</code>
-<strong>/usr/lib/udev/rules.d/</strong>                  <code>udev rules</code></p>
+<table>
+<thead>
+<tr>
+<th align="left">PATH</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>/etc/*releases</code></td>
+<td align="left">store scpecific information about distributive</td>
+</tr>
+<tr>
+<td align="left"><code>/etc/passwd</code></td>
+<td align="left">info about users registred in the system</td>
+</tr>
+<tr>
+<td align="left"><code>/etc/shadow</code></td>
+<td align="left">shadowed password file</td>
+</tr>
+<tr>
+<td align="left"><code>/etc/group</code></td>
+<td align="left">info about groups registred in the system</td>
+</tr>
+<tr>
+<td align="left"><code>/etc/update-motd.d/</code></td>
+<td align="left">MOTD files</td>
+</tr>
+<tr>
+<td align="left"><code>/etc/sudoers</code></td>
+<td align="left">default sudo security policy plugin</td>
+</tr>
+<tr>
+<td align="left"><code>/etc/security/limits.conf</code></td>
+<td align="left">sets recource limits for the users</td>
+</tr>
+<tr>
+<td align="left"><code>/etc/security/limits.d/</code></td>
+<td align="left">the same as the previous but override it</td>
+</tr>
+<tr>
+<td align="left"><code>/etc/default/default</code></td>
+<td align="left">default information for useradd command</td>
+</tr>
+<tr>
+<td align="left"><code>/etc/fstab</code></td>
+<td align="left">static information about the filesystems</td>
+</tr>
+<tr>
+<td align="left"><code>/etc/login.defs</code></td>
+<td align="left">another default information for useradd command</td>
+</tr>
+<tr>
+<td align="left"><code>/etc/skel/</code></td>
+<td align="left">template directory which contains the files which will be copied to user home directory</td>
+</tr>
+<tr>
+<td align="left"><code>/etc/mdadm.conf</code></td>
+<td align="left">store information about RAID devices</td>
+</tr>
+<tr>
+<td align="left"><code>/etc/modules-load.d/$MODULENAME.conf</code></td>
+<td align="left">modules in that file are automaticly load when OS will be start</td>
+</tr>
+<tr>
+<td align="left"><code>/etc/modprobe.d/$MODULENAME.conf</code></td>
+<td align="left">modules in that file are not load or load with special parameters</td>
+</tr>
+<tr>
+<td align="left"><code>/etc/mke2fs.conf</code></td>
+<td align="left">default settings for file systems. Inodes and blocks size and so on</td>
+</tr>
+<tr>
+<td align="left"><code>/dev/mapper</code></td>
+<td align="left">store files to work with Device mapper. It's a kernel module (framework) use to map physical block devices to virtual hign level block devices.</td>
+</tr>
+<tr>
+<td align="left"><code>/lib/modules/</code></td>
+<td align="left">all available kernel modules</td>
+</tr>
+<tr>
+<td align="left"><code>/lib/modules/$(uname -r)/</code></td>
+<td align="left">modules for current kernel</td>
+</tr>
+<tr>
+<td align="left"><code>/lib/modules/$(uname -r)/modules.alias</code></td>
+<td align="left">list of modules to be load to the kernel</td>
+</tr>
+<tr>
+<td align="left"><code>/lib/modules/$(uname -r)/modules.builtin/</code></td>
+<td align="left">list of modules which built in kernel. In the 2nd column listed hardware id, in the last column listed modules required for this hardware id</td>
+</tr>
+<tr>
+<td align="left"><code>/proc/version</code></td>
+<td align="left">info about kernel version</td>
+</tr>
+<tr>
+<td align="left"><code>/proc/uptime</code></td>
+<td align="left">info about how long the system has been running</td>
+</tr>
+<tr>
+<td align="left"><code>/proc/$PID/cmdline</code></td>
+<td align="left">info about command which ran the $PID process</td>
+</tr>
+<tr>
+<td align="left"><code>/proc/$PID/cmdline</code></td>
+<td align="left">info about environment variables which were transferd to the $PID proccess</td>
+</tr>
+<tr>
+<td align="left"><code>/proc/$PID/status</code></td>
+<td align="left">some information about $PID</td>
+</tr>
+<tr>
+<td align="left"><code>/proc/cpuinfo</code></td>
+<td align="left">info about CPU</td>
+</tr>
+<tr>
+<td align="left"><code>/proc/meminfo</code></td>
+<td align="left">info about DDR</td>
+</tr>
+<tr>
+<td align="left"><code>/proc/sys/kernel/pid_max</code></td>
+<td align="left">max number of running processes</td>
+</tr>
+<tr>
+<td align="left"><code>/var/log/secure</code></td>
+<td align="left">sudo logs</td>
+</tr>
+<tr>
+<td align="left"><code>/usr/lib/udev/rules.d/</code></td>
+<td align="left">udev rules</td>
+</tr>
+</tbody>
+</table>
 
 
   

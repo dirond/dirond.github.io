@@ -2146,32 +2146,43 @@
 
 <h1 id="shell-scripting">Shell scripting</h1>
 <hr />
-<p><code>#!/usr/bin/env bash</code> - this row write in begining of a script and show OS to use bash for execute script. Also know as shebang.</p>
-<p>Use <code>echo 'command' &gt;&gt;</code> whenewer you want to write down "command" to some file. Also, echo can display some messages.</p>
-<p><strong>Don't forget about chmod +x before run script.</strong></p>
+<p>row write in begining of a script and show OS to use bash for execute script. Also know as <strong>shebang</strong>.</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="ch">#!/usr/bin/env bash</span>
+</span></code></pre></div>
+<p>Use <code>echo 'command' &gt;&gt;</code> whenewer you want to write down <code>command</code> to some file. Also, echo can display some messages.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Don't forget about chmod +x before run script.</p>
+</div>
 <p>Because script can store in directory not described in PATH, runing script from current directory looks like: <code>[sudo] ./scriptname</code></p>
 <p>Variables in script work like variables in bash.</p>
-<p>Sripts may run with parameters. In that case, value of parameters can be obtainted by $1, $2,..., $n for parameters from 1st to n.</p>
+<p>Sripts may run with parameters. In that case, value of parameters can be obtainted by <code>$1</code>, <code>$2</code>,..., <code>$n</code> for parameters from 1st to n.</p>
 <p>Use <code>read</code> command to add interactivity to the script.</p>
 <p>Don't forget about <code>2&gt; /dev/null</code> to filter unnecessary information.</p>
-<p>Logical operator "if" in bash must be end by keyword "fi":
-<code>if -&gt; then -&gt; [elif -&gt; then] -&gt; [else] -&gt; fi</code>
-Use "if !" to reverse result of "if" operator.</p>
-<p>Bash has exit code of every command has been ran. Exit code it's a integer number from 0 to 255, where 0 mean "Exit with no errors".
+<p>Logical operator <code>if</code> in bash must be end by keyword <code>fi</code>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">if</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="k">then</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="o">[</span><span class="k">elif</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="k">then</span><span class="o">]</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="o">[</span><span class="k">else</span><span class="o">]</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="k">fi</span>
+</span></code></pre></div></p>
+<p>Use <code>if !</code> to reverse result of <code>if</code> operator.</p>
+<p>Bash has exit code of every command has been ran. Exit code it's a integer number from 0 to 255, where 0 mean "Exit with no errors".<br />
 Use <code>$?</code> to see exit code of last operation.</p>
-<p><code>&amp;&amp;</code> - and, <code>||</code> - or</p>
+<p><code>&amp;&amp;</code> - and</p>
+<p><code>||</code> - or</p>
 <p>Comparision in bash execute with special operator - square brakets. 
-For example, if need to compare exit code and run commands depending on the result of comparision:
-<code>if [ "$value" = data ] || [ "$value" = almost_data ]</code>
-<code>echo 'Value has data</code>'
-<code>else</code>
-<code>echo 'Value not has data</code>'
-<code>fi</code></p>
-<p>command <code>[ -z $SOME_VARIABLE ]</code> compare lenght of $SOME_VARIABLE with 0 (-z mean Zero lenght)</p>
-<p>command <code>[-f $SOME_FILE ]</code> check if the $SOME_FILE exists</p>
-<p>Instead "return" shell use <code>exit $EXIT_CODE</code> keyword to exit from script.
-<strong>Don't forget about spaces between brackets.</strong>
-To run multiple commands in one row, use ";" after each command.</p>
+For example, if need to compare exit code and run commands depending on the result of comparision:</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$value</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>data<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$value</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>almost_data<span class="w"> </span><span class="o">]</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;Value has data``&#39;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">else</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;Value not has data``&#39;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">fi</span>
+</span></code></pre></div>
+<p>command <code>[ -z $SOME_VARIABLE ]</code> compare lenght of <code>$SOME_VARIABLE</code> with 0 (-z mean Zero lenght)</p>
+<p>command <code>[-f $SOME_FILE ]</code> check if the <code>$SOME_FILE</code> exists</p>
+<p>Instead "return" shell use <code>exit $EXIT_CODE</code> keyword to exit from script.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Don't forget about spaces between brackets.</p>
+</div>
+<p>To run multiple commands in one row, use <code>;</code> after each command.</p>
 
 
   

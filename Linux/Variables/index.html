@@ -2207,24 +2207,24 @@
 <h1 id="variables">Variables</h1>
 <hr />
 <h4 id="shell-variables">Shell variables.</h4>
-<p>Namespace of that variables - only current bash session. To spread it to another sessions - describe them on <code>~/.bashrc</code>
-var_name=var_value
-$var_name - refer to var_name. For example, we can display it with echo.</p>
-<p>Variable name can contains number, but can't begin with them. Also can't contains special characters, except sign "_".
-If variable name contains spaces - use double quotes to describe them.
-Variable can contains expression. In this case, describe var like:</p>
-<ol>
-<li><code>cur\_version=$(uname -r)</code></li>
-<li><code>`cur\_version=</code>uname -r``` - <strong>deprecated method</strong></li>
-</ol>
-<p>--another one example--</p>
-<ol>
-<li><code>head -2 $(grep -rl bash /etc/ 2&gt; /dev/null)</code></li>
-</ol>
+<p>Namespace of that variables - only current bash session. To spread it to another sessions - describe them on <code>~/.bashrc</code></p>
+<p><div class="language-bash highlight"><span class="filename">describe variale var_name</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">var_name</span><span class="o">=</span>var_value
+</span></code></pre></div>
+<code>$var_name</code> - refer to var_name. For example, we can display it with echo.</p>
+<p>Variable name can contains number, but can't begin with them. Also can't contains special characters, except sign <code>_</code>.</p>
+<p>If variable name contains spaces - use double quotes to describe them.</p>
+<p>Variable can contains expression. In this case, describe var like:</p>
+<p><div class="language-Bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">cur_version</span><span class="o">=</span><span class="k">$(</span>uname<span class="w"> </span>-r<span class="k">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># or next deprecated method</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nv">cur_version</span><span class="o">=</span><span class="sb">`</span>uname<span class="w"> </span>-r
+</span></code></pre></div>
+another one example:
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>head<span class="w"> </span>-2<span class="w"> </span><span class="k">$(</span>grep<span class="w"> </span>-rl<span class="w"> </span>bash<span class="w"> </span>/etc/<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null<span class="k">)</span>
+</span></code></pre></div></p>
 <h4 id="environment-variables">Environment variables.</h4>
-<p>Use for exhange data between programs. Store on <code>/etc/profile</code>, <code>/etc/environment</code>, <code>~/bash_profile</code> or <code>~/.bashrc</code>
-<code>env</code> - show all those varibles.
-<code>export</code> - add variable to env</p>
+<p>Use for exhange data between programs. Store on <code>/etc/profile</code>, <code>/etc/environment</code>, <code>~/bash_profile</code> or <code>~/.bashrc</code></p>
+<p><code>env</code> - show all those varibles.</p>
+<p><code>export</code> - add variable to env</p>
 
 
   
