@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://ivanovds.ru/CyberSec/CyberSec_Frameworks/OWASP/XML_External_Entity_%28Security_misconfiguration%29/">
       
       
-        <link rel="prev" href="../Sensitive_Data_Exposure_%28Cryptogrfic_failures%29/">
+        <link rel="prev" href="../SQLi/">
       
       
         <link rel="next" href="../../../Penetration_testing/">
@@ -718,6 +718,10 @@
         
           
         
+          
+        
+          
+        
       
       
         
@@ -842,6 +846,34 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../SSRF/" class="md-nav__link">
+        Server-site request forgery
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SQLi/" class="md-nav__link">
+        SQL Injections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -878,8 +910,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mitigation" class="md-nav__link">
-    Mitigation
+  <a href="#_1" class="md-nav__link">
+    Способы противодействия
   </a>
   
 </li>
@@ -2089,6 +2121,8 @@
         
           
         
+          
+        
       
       
         
@@ -2119,6 +2153,20 @@
     <li class="md-nav__item">
       <a href="../../../../Documents/683-p/" class="md-nav__link">
         Положение Банка России 683-П
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Documents/719-p/" class="md-nav__link">
+        Положение Банка России 719-П
       </a>
     </li>
   
@@ -2173,8 +2221,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mitigation" class="md-nav__link">
-    Mitigation
+  <a href="#_1" class="md-nav__link">
+    Способы противодействия
   </a>
   
 </li>
@@ -2211,7 +2259,7 @@
 DTD определяющий <code>root</code> элемент как сущность <code>read</code> которая в свою очередь ссылается на <code>/etc/passwd.</code> Это позволит получить данные из <code>/etc/passwd</code></p>
 <p>Больше примеров - <a href="https://github.com/payloadbox/xxe-injection-payload-list">https://github.com/payloadbox/xxe-injection-payload-list</a></p>
 <hr />
-<h3 id="mitigation">Mitigation</h3>
+<h3 id="_1">Способы противодействия</h3>
 <p><strong>Главное: отключать DTD!</strong><br />
 Для каждого языка на котором написан обработчик XML есть свои методы.</p>
 <p>Подробнее - <a href="https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html">owasp.org</a></p>
@@ -2243,7 +2291,7 @@ DTD определяющий <code>root</code> элемент как сущно�
       <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
         
           
-          <a href="../Sensitive_Data_Exposure_%28Cryptogrfic_failures%29/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Sensivity Data Explosure" rel="prev">
+          <a href="../SQLi/" class="md-footer__link md-footer__link--prev" aria-label="Назад: SQL Injections" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -2252,7 +2300,7 @@ DTD определяющий <code>root</code> элемент как сущно�
                 <span class="md-footer__direction">
                   Назад
                 </span>
-                Sensivity Data Explosure
+                SQL Injections
               </div>
             </div>
           </a>

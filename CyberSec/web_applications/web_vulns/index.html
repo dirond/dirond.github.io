@@ -714,6 +714,10 @@
         
           
         
+          
+        
+          
+        
       
       
         
@@ -828,6 +832,34 @@
     <li class="md-nav__item">
       <a href="../../CyberSec_Frameworks/OWASP/Sensitive_Data_Exposure_%28Cryptogrfic_failures%29/" class="md-nav__link">
         Sensivity Data Explosure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CyberSec_Frameworks/OWASP/SSRF/" class="md-nav__link">
+        Server-site request forgery
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CyberSec_Frameworks/OWASP/SQLi/" class="md-nav__link">
+        SQL Injections
       </a>
     </li>
   
@@ -1102,31 +1134,25 @@
     SSRF
   </a>
   
-    <nav class="md-nav" aria-label="SSRF">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ssrf_1" class="md-nav__link">
-    Способы обнаружения SSRF
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ssrf_2" class="md-nav__link">
-    Способы защиты от SSRF
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
   <a href="#xss" class="md-nav__link">
     XSS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-injection" class="md-nav__link">
+    Command Injection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-injection" class="md-nav__link">
+    SQL Injection
   </a>
   
 </li>
@@ -2151,6 +2177,8 @@
         
           
         
+          
+        
       
       
         
@@ -2181,6 +2209,20 @@
     <li class="md-nav__item">
       <a href="../../../Documents/683-p/" class="md-nav__link">
         Положение Банка России 683-П
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Documents/719-p/" class="md-nav__link">
+        Положение Банка России 719-П
       </a>
     </li>
   
@@ -2278,31 +2320,25 @@
     SSRF
   </a>
   
-    <nav class="md-nav" aria-label="SSRF">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ssrf_1" class="md-nav__link">
-    Способы обнаружения SSRF
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ssrf_2" class="md-nav__link">
-    Способы защиты от SSRF
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
   <a href="#xss" class="md-nav__link">
     XSS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-injection" class="md-nav__link">
+    Command Injection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-injection" class="md-nav__link">
+    SQL Injection
   </a>
   
 </li>
@@ -2369,80 +2405,17 @@
 </span></code></pre></div></p>
 <hr />
 <h3 id="ssrf">SSRF</h3>
-<p>Server-Side Request Forgery - уязвимость позволяющая атакующему заставить web сервер делать запросы к тем ресурсам которые определит атакующий.</p>
-<p><strong>В качестве примера:</strong></p>
-<p>Запрос который отправляет web приложение выглядит следующим образом:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>https://some-store.com/stock?url=https://api.store-catalogue.com/api/stock/item?id=123
-</span></code></pre></div>
-В таком случае простая подмена параметра <code>url</code>:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>https://some-store.com/stock?url=https://api.store-catalogue.com/api/user/
-</span></code></pre></div>
-вернет нам то, что было передано в качестве значения параметра:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>https://api.store-catalogue.com/api/user/
-</span></code></pre></div>
-<hr />
-<p><strong>Другой пример:</strong></p>
-<p>Легитимный запрос получающий сведения о товаре выглядит следующим образом:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>https://some-store.com/stock?url=/item?id=123
-</span></code></pre></div></p>
-<p>В таком случае, используя directory traversal можно изменить запрос следующим образом:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>https://some-store.com/stock?url=/../user/
-</span></code></pre></div></p>
-<p>Чтобы получить:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>https://some-store.com/stock/../user/
-</span></code></pre></div></p>
-<hr />
-<p><strong>Еще один пример:</strong></p>
-<p>В нём атакующий может изменять субдомен на который посылаются запросы.</p>
-<p>Легитимный запрос:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>https://some-store.com/stock?server=api&amp;id=123
-</span></code></pre></div>
-Изменённый запрос: 
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>https://some-store.com/stock?server=api.some-store.com/api/user&amp;x=&amp;id=123
-</span></code></pre></div>
-Получив такой запрос, сервер вернет данные из:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>https://api.some-store.com/api/user
-</span></code></pre></div></p>
-<div class="admonition info">
-<p class="admonition-title">К сведению</p>
-<p><code>&amp;x=</code> позволяет "отрезать" оставшуюся часть запроса, представив его как значение параметра <code>x</code> </p>
-</div>
-<hr />
-<p><strong>Очередной пример</strong></p>
-<p>Атакующий может заставить web сервер делать запросы вообще на произвольный адрес, как правило на тот, который контролирует сам атакующий. </p>
-<blockquote>
-<p>Результатом такого запроса будут являтся передаваемые заголовки, которые могут содержать полезную информацию, такую как ключи API или аутентификационные данные.</p>
-</blockquote>
-<p>Легитимный запрос:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>https://some-store.com/stock?url=https://api.store-catalogue.com/api/stock/item?id=123
-</span></code></pre></div>
-после подмены параметра <code>url</code>:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>https://some-store.com/stock?url=https://attacker-domain.com/
-</span></code></pre></div></p>
-<hr />
-<h4 id="ssrf_1">Способы обнаружения SSRF</h4>
-<p>Понять, что web приложение может быть подвержено SSRF можно из следующего:</p>
-<ul>
-<li>Использование в качестве параметров GET запросов полных URL адресов:
-    <code>https://website.com/form?server=https://target-site.com/some/path</code></li>
-<li>Использование в качестве параметров GET запросов части URL адресов(hostname):
-    <code>https://website.com/form?server=api</code></li>
-<li>Использование в качестве параметров GET запросов путей:
-    <code>https://website.com/form?dst=/forms/contact</code></li>
-<li>Использование скрытых полей в формах ведущих на определенный URL</li>
-</ul>
-<hr />
-<h4 id="ssrf_2">Способы защиты от SSRF</h4>
-<p>Действенным способом защиты является ограничение адресов на которые может обращатся приложение. Для этого используются deny или allow листы.  </p>
-<blockquote>
-<p>Не смотря на это, обойти защиту все же можно.</p>
-<p>deny листы обходятся использованием альтернативных написанием адресов:
-например 127.0.0.1 можно выразить в десятичной базе как 2130706433 или как 017700000001 в двоичной.<br />
-allow листы так же легко обходятся путем создания поддоменов, наименование которых соответствует доменам из allow листа.</p>
-</blockquote>
+<p>Server-Side Request Forgery - уязвимость позволяющая атакующему заставить web сервер делать запросы к тем ресурсам которые определит атакующий.<br />
+Подробно о SSRF уже написано в разделе <a href="/CyberSec/CyberSec_Frameworks/OWASP/SSRF">OWASP/SSRF</a></p>
 <h3 id="xss">XSS</h3>
 <p>Cross site scripting - уязвимость которая позволяет выполнять произвольный JS код на уязвимых страницах web приложения.<br />
-Подробно о XSS уже написано в разделе <a href="/CyberSec/CyberSec_Frameworks/OWASP/Cross_site_scripting_(XSS)">OWASP/XSS</a></p>
+Подробно о XSS уже написано в разделе <a href="/CyberSec/CyberSec_Frameworks/OWASP/Cross_site_scripting_(XSS)">OWASP/SSRF</a></p>
+<h3 id="command-injection">Command Injection</h3>
+<p>Command Injection - уязвимость которая позволяет выполнить произвольный код на web сервере от имени той учётной записи под которой запущен web сервер.
+Подробно о Command Injection уже написано в разделе <a href="/CyberSec/CyberSec_Frameworks/OWASP/Injection">OWASP/Injection</a></p>
+<h3 id="sql-injection">SQL Injection</h3>
+<p>SQL Injection - уязвимость заключающаяся в передаче злонамеренного SQL запроса в БД.<br />
+Подробно о SQL Injection уже написано в разделе <a href="/CyberSec/CyberSec_Frameworks/OWASP/SQLi">OWASP/SQLi</a></p>
 
 
   

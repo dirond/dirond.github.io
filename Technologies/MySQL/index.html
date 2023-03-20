@@ -712,6 +712,10 @@
         
           
         
+          
+        
+          
+        
       
       
         
@@ -826,6 +830,34 @@
     <li class="md-nav__item">
       <a href="../../CyberSec/CyberSec_Frameworks/OWASP/Sensitive_Data_Exposure_%28Cryptogrfic_failures%29/" class="md-nav__link">
         Sensivity Data Explosure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/SSRF/" class="md-nav__link">
+        Server-site request forgery
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/SQLi/" class="md-nav__link">
+        SQL Injections
       </a>
     </li>
   
@@ -2054,6 +2086,8 @@
         
           
         
+          
+        
       
       
         
@@ -2084,6 +2118,20 @@
     <li class="md-nav__item">
       <a href="../../Documents/683-p/" class="md-nav__link">
         Положение Банка России 683-П
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documents/719-p/" class="md-nav__link">
+        Положение Банка России 719-П
       </a>
     </li>
   
@@ -2146,11 +2194,26 @@
 
 <h1 id="mysql">MySQL</h1>
 <hr />
-<p>RDBMS (Система управления реляционными базами данных)</p>
-<p>Как правило работает на порту 3306.</p>
-<p>Конкретно в Mysql, термин schema аналогичен термину database.</p>
-<p>Может случится такое, что получится попасть в RDMS со стандартным паролем. </p>
-<p>Часто она используется для хранения хешей credential пользователей сервиса который она обслуживает</p>
+<p>RDBMS (Система управления реляционными базами данных).<br />
+Как правило работает на порту 3306.<br />
+Конкретно в Mysql, термин schema аналогичен термину database.<br />
+Может случится такое, что получится попасть в RDMS со стандартным паролем.<br />
+Часто она используется для хранения хешей credential пользователей сервиса который она обслуживает</p>
+<hr />
+<p>Для получения сведений о наименовании БД, достаточно вызвать <code>database()</code>:</p>
+<div class="language-SQL highlight"><span class="filename">Получить сведения о наименовании БД</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">database</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<p>Таблица <code>information_schema</code> предоставляет доступ к метаданным MySQL. В ней можно найти множество полезной информации.<br />
+<code>information_shema.tables</code> - содержит в себе информацию об имеющихся таблицах (наименование, тип и т.д.). Для того чтобы получить информацию о таблицах из конкретной БД, нужно указать имя этой БД в <code>WHERE table_schema</code>:
+<div class="language-SQL highlight"><span class="filename">Получить сведения об имеющихся таблицах</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">information_shema</span><span class="p">.</span><span class="n">tables</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">table_schema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;DB_NAME&#39;</span>
+</span></code></pre></div></p>
+<hr />
+<p>В случае необходимости объединения результатов запроса в одно значение, используется <code>group_concat</code>.<br />
+Групировка значений крайне полезна в случае использовании совместно с UNION в SQLi.</p>
+<hr />
+<p>Крайне полезным является знание того, что для комментирования используются два тире <code>--</code>, а для окончания запроса используется <code>;</code></p>
+<hr />
 
 
   

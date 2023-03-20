@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#injection" class="md-skip">
+        <a href="#command-injection" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -718,6 +718,10 @@
         
           
         
+          
+        
+          
+        
       
       
         
@@ -822,8 +826,49 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mitigation" class="md-nav__link">
-    Mitigation:
+  <a href="#_1" class="md-nav__link">
+    Примеры
+  </a>
+  
+    <nav class="md-nav" aria-label="Примеры">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#php-passthru" class="md-nav__link">
+    PHP passthru
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#php-exec" class="md-nav__link">
+    PHP exec
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pythonflask-subroccess" class="md-nav__link">
+    Python.Flask subroccess
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-injection_1" class="md-nav__link">
+    Обнаружение возможности использования Command Injection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Способы противодействия
   </a>
   
 </li>
@@ -873,6 +918,34 @@
     <li class="md-nav__item">
       <a href="../Sensitive_Data_Exposure_%28Cryptogrfic_failures%29/" class="md-nav__link">
         Sensivity Data Explosure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSRF/" class="md-nav__link">
+        Server-site request forgery
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SQLi/" class="md-nav__link">
+        SQL Injections
       </a>
     </li>
   
@@ -2089,6 +2162,8 @@
         
           
         
+          
+        
       
       
         
@@ -2119,6 +2194,20 @@
     <li class="md-nav__item">
       <a href="../../../../Documents/683-p/" class="md-nav__link">
         Положение Банка России 683-П
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Documents/719-p/" class="md-nav__link">
+        Положение Банка России 719-П
       </a>
     </li>
   
@@ -2173,8 +2262,49 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mitigation" class="md-nav__link">
-    Mitigation:
+  <a href="#_1" class="md-nav__link">
+    Примеры
+  </a>
+  
+    <nav class="md-nav" aria-label="Примеры">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#php-passthru" class="md-nav__link">
+    PHP passthru
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#php-exec" class="md-nav__link">
+    PHP exec
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pythonflask-subroccess" class="md-nav__link">
+    Python.Flask subroccess
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-injection_1" class="md-nav__link">
+    Обнаружение возможности использования Command Injection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Способы противодействия
   </a>
   
 </li>
@@ -2194,11 +2324,26 @@
                   
 
 
-<h1 id="injection">Injection</h1>
+<h1 id="command-injection">Command Injection</h1>
 <hr />
-<p>Дефекты приложения приводящие к возможности выполнения неавторизованного кода на сервере. 
-Вызваны тем, что пользовательский ввод никак не обрабатывается и введенные пользователем данные интерпретируюся как команда или параметры:</p>
-<p><div class="language-PHP highlight"><span class="filename">Псевдокод PHP</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;?php</span>
+<p>Дефекты приложения приводящие к возможности выполнения неавторизованного кода на сервере. </p>
+<p>В зависимости от типа используемого ПО различают: SQL, командные, XEE, email инъекции. Каждая из них может привести к максимально плохим последствиям: прямой доступ к БД, запуск reverse shell с правами web сервера, RCE.</p>
+<p>Возникновение уязвимостей такого типа вызвано следующим:</p>
+<ul>
+<li>
+<p>Использование потенциально опасных конструкций языков программирования.</p>
+<p>некоторые функции различных языков передают полученные данные в ОС для последующего выполнения системных вызовов (<code>exec()</code>, <code>passthru()</code>, <code>eval()</code>, <code>subprocess.popen()</code> и др.)</p>
+</li>
+<li>
+<p>Отсутствие обработки пользовательского ввода.</p>
+<p>пользовательский ввод никак не обрабатывается и введенные пользователем данные интерпретируюся как команда или параметры.</p>
+</li>
+</ul>
+<p>Из перечисленных пунктов следует, что, к примеру, в имеющуся на сайте форму, вместе с вводимой информацией, можно через <code>;</code> ввести произвольную, самостоятельную команду которая будет выполнена.</p>
+<h3 id="_1">Примеры</h3>
+<h4 id="php-passthru">PHP passthru</h4>
+<p>В нижепредставленном псевдо PHP коде, в <code>$command_string</code> попадает пользовательский ввод, который затем в чистом виде попадает в функцию <code>passthru()</code> которая выполняет переданные её параметры.</p>
+<div class="language-PHP highlight"><span class="filename">vulnerable passthru()</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;?php</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;command_string&quot;</span><span class="p">]))</span> <span class="p">{</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="nv">$command_string</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;command_string&quot;</span><span class="p">];</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
@@ -2210,9 +2355,54 @@
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="p">}</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="cp">?&gt;</span>
 </span></code></pre></div>
-здесь в <code>$command_string</code> попадает пользовательский ввод, который затем в чистом виде попадает в функцию <code>passthru</code> которая выполняет переданные её параметры.</p>
-<p>В зависимости от типа используемого ПО различают SQL, командные, XEE инъекции, email. Каждая из них может привести к максимально плохим последствиям: прямой доступ к БД, запуск reverse shell с правами web сервера, RCE.</p>
-<h3 id="mitigation">Mitigation:</h3>
+<h4 id="php-exec">PHP exec</h4>
+<p>В следующем сниппете небезопасно используется <code>exec()</code>.</p>
+<div class="language-PHP highlight"><span class="filename">vulnerable exec()</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">&lt;?php</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nv">$books</span> <span class="s2">&quot;/var/www/html/books&quot;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">if</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">])</span> <span class="p">{</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="nv">$title</span><span class="o">=</span><span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">];</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="nv">$command</span> <span class="o">=</span> <span class="s2">&quot;grep </span><span class="si">$title</span><span class="s2"> /var/www/html/bookstitle.txt&quot;</span><span class="p">;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="nv">$search</span> <span class="o">=</span> <span class="nb">exec</span><span class="p">(</span><span class="nv">$command</span><span class="p">);</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$search</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        <span class="nv">$return</span> <span class="o">=</span> <span class="s2">&quot;&lt;p&gt;Нет книги с таким названием&lt;/p&gt;&quot;</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        <span class="nv">$return</span> <span class="o">=</span> <span class="s2">&quot;&lt;p&gt;Есть такая книга!&lt;/p&gt;&quot;</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="p">}</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    <span class="k">echo</span> <span class="nv">$return</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="p">}</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="cp">?&gt;</span>
+</span></code></pre></div>
+<h4 id="pythonflask-subroccess">Python.Flask subroccess</h4>
+<p>В этом примере небезопасно спроектирована маршрутизация по страницам сайта.
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">subprocess</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">def</span> <span class="nf">execute_command</span><span class="p">(</span><span class="n">shell</span><span class="p">):</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="k">return</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="n">shell</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&lt;shell&gt;&#39;</span><span class="p">)</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="k">def</span> <span class="nf">command_server</span><span class="p">(</span><span class="n">shell</span><span class="p">):</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="k">return</span> <span class="n">execute_command</span><span class="p">(</span><span class="n">shell</span><span class="p">)</span>
+</span></code></pre></div></p>
+<h3 id="command-injection_1">Обнаружение возможности использования Command Injection</h3>
+<p>Перед тем как писать о теме подзаголовка, следует зафиксировать информацию о том, что по способу выполнения существует 2 вида Command Injection:</p>
+<ol>
+<li>
+<p>Blind Command Injection - результат выполнения не имеет прямого вывода. Нужно найти подветрждение выполнения внедрённого кода.</p>
+</li>
+<li>
+<p>Verbose  Command Injection - результат выполнения имеет прямой вывод и отобразится на странице в которую был внедрён код.</p>
+</li>
+</ol>
+<p>В качестве обнаружения возможности использования Command Injection можно отправлять в качестве payload например следующие команды: <code>whoami</code>, <code>ls</code>, <code>nc</code>, <code>sleep</code>, <code>ping</code>, <code>curl</code> - для web серверов на Linux и <code>whoami</code>, <code>dir</code>, <code>ping</code>, <code>timeout</code> для серверов на Windows</p>
+<h3 id="_2">Способы противодействия</h3>
+<p>Отказаться от использования уязвимых конструкций, а в случае невозможности - строго определить множество допустимых значений подаваемых на вход таких функций.</p>
 <p>Использовать списки допустимых символов и сравнивать пользовательский ввод с этим списком.<br />
 Обрабатывать пользовательский ввод перед его дальнейшей передачей (шринкать или экранировать запрещенные символы) </p>
 
