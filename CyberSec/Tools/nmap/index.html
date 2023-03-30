@@ -1364,13 +1364,27 @@
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    Ключи определяющие тип сканирования
+    Ключи определяющие методы обнаружения хостов
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    Ключи определяющие тип сканирования
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Прочие ключи
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     Ключи определяющие формат выходного файла
   </a>
   
@@ -1378,6 +1392,20 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Интерпретация вывода
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Скрипты
+  </a>
   
 </li>
       
@@ -2264,13 +2292,27 @@
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    Ключи определяющие тип сканирования
+    Ключи определяющие методы обнаружения хостов
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    Ключи определяющие тип сканирования
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Прочие ключи
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     Ключи определяющие формат выходного файла
   </a>
   
@@ -2278,6 +2320,20 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Интерпретация вывода
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Скрипты
+  </a>
   
 </li>
       
@@ -2301,19 +2357,26 @@
 <p>nmap - Утилита для исследования сети и сканер портов.</p>
 <h3 id="_1">Часто используемые ключи</h3>
 <p><code>-v</code> - Подробный режим вывода результатов. Для повышения уровня подробности нужно увеличить количество v</p>
+<p><code>-d</code> - Debug режим.</p>
+<p><code>--reason</code> - Отображает информацию о причине принятия решения о состоянии порта</p>
 <p><code>-O</code> - Определение операционной системы хоста, через анализ полученных ответных пакетов и сравнения их с имеющейся базой ОС.</p>
-<p><code>-sV</code> - Определение версии запущенного сервиса. Работает по такому же принципу как и обнаружение ОС. Кроме того, также полезно запускать для тех портов которые помечены open | filtered для того что бы попытаться однозначно определить его состояние.</p>
+<p><code>-sV</code> - Определение версии запущенного сервиса. Работает по такому же принципу как и обнаружение ОС. Кроме того, также полезно запускать для тех портов которые помечены open | filtered для того что бы попытаться однозначно определить его состояние.<br />
+Можно задавать степень агрессивности определения версий от 0 до 9.<br />
+По умолчанию, при использовании <code>-sV</code> или <code>--version lite</code> выбирается уровень 2. Для выбора максимального уровня <code>--version-all</code>, для других уровней: <code>--version-intensity $LEVEL</code></p>
+<div class="admonition danger">
+<p class="admonition-title">Запомни!</p>
+<p>Для определения версии запущенного сервиса, nmap <strong>должен обязательно установить полное TCP соединение</strong>. </p>
+</div>
 <p><code>-A</code> - Агрессивный режим. Равнозначен использованию ключей -O, -sV, -sC, --tracerout</p>
 <p><code>-p</code> - Задать определенный порт. Также можно передавать диапазон и диапазон с типом сканирования (TCP/UDP) или просканировать все порты <code>-p-</code>.</p>
-<p><code>--script</code>  Использование скриптов. Подробнее в man. Скрипты можно найти на <a href="https://nmap.org/nsedoc/scripts/">nmap.org</a> и в <code>/usr/share/nmap/scripts</code>. Просмотреть имеющиеся скрипты можно из файла <code>/usr/share/nmap/scripts/script.db</code>  </p>
-<p>Скрипты также можно скачать с помощью wget:
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>wget<span class="w"> </span>-O<span class="w"> </span>/usr/share/nmap/scripts/&lt;script-name&gt;.nse<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>&lt;https://svn.nmap.org/nmap/scripts/&gt;&lt;script-name&gt;.nse<span class="w"> </span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># После скачивания скрипта, нужно обновить БД скриптов</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>nmap<span class="w"> </span>--script-updatedb
-</span></code></pre></div></p>
-<p><code>--script vuln</code> предоставляет информацию о том, какие уязвимости могут быть эксплуатированы</p>
-<h4 id="_2">Ключи определяющие тип сканирования</h4>
+<h4 id="_2">Ключи определяющие методы обнаружения хостов</h4>
+<p><code>-sL</code> - Составление списка хостов</p>
+<p><code>-sP</code> <code>-sn</code> - Ping обнаружение, без сканирования портов.</p>
+<p><code>-PR</code> - ARP обнаружение, применяемое в локальной сети.</p>
+<p><code>-PE</code> - ICMP обнаружение (ICMP Type 8) (echo request). </p>
+<p><code>-PP</code> - ICMP Timestamp обнаружение (ICMP Type 13) (может быть полезно при блокировании echo request) </p>
+<p><code>-PM</code> - ICMP Mask обнаружение (ICMP Type 17) (может быть полезно при блокировании echo request) </p>
+<h4 id="_3">Ключи определяющие тип сканирования</h4>
 <p><code>-sL</code> - Составление списка хостов</p>
 <p><code>-sn</code> - Ping сканирование, без сканирования портов. Так же смотри <code>-sP</code></p>
 <p><code>-sS</code> - TCP SYN сканирование, так же известно как сканирование через полуоткрытое соединение. Является быстрым и незаметным методом позволяющий миновать firewall'ы</p>
@@ -2326,16 +2389,37 @@
 <p class="admonition-title">К сведению</p>
 <p>Тип сканирования <code>-ST</code> применяется по умолчанию, в случае если nmap был запущен <strong>без sudo</strong> </p>
 </div>
-<p><code>-sU</code> - UDP сканирование, применяется для обнаружения UDP сервисов (DNS, DHCP, SNMP и т.д.)гораздо медленнее TCP сканирования, в виду того, что отправляется пустой UDP пакет на который ожидается ответ, а так как это UDP он может потерятся, поэтому отправляются и ждутся пакеты по нескольку раз. </p>
+<p><code>-sU</code> - UDP сканирование, применяется для обнаружения UDP сервисов (DNS, DHCP, SNMP и т.д.). Гораздо медленнее TCP сканирования, в виду того, что отправляется пустая UDP датаграмма на которую ожидается ответ и если ответа нет, то порт скорее всего открыт. Следует помнить, что так как UDP может потерятся, датаграммы отправляются по нескольку раз. </p>
 <p>Можно комбинировать с TCP сканированием. В виду того, что UDP сканирование довольно медленное, имеет смысл использовать его вместе с дополнительным ключем <code>--top-ports &lt;кол-во портов&gt;</code>, который просканирует наиболее популярные <code>&lt;кол-во портов&gt;</code>UDP портов.</p>
-<p><code>-sN</code>, <code>-sF</code>, <code>-sX</code> - Очень похожие типы TCP сканирования, по идее, более скрытые относительно того же TCP SYN, но это не точно. могут быть полезны в редких случаях.</p>
+<div class="admonition info">
+<p class="admonition-title">Дополнительная информация по выбору типа сканирования</p>
+<p>В случае сканирования из под <strong>sudo</strong> внутри локальной сети, используется сканирование через ARP запросы.
+В случае сканирования из под <strong>sudo</strong> не в локальной сети, используется ICMP сканирование, TCP ACK сканирование для 80 портов, TCP SYN сканирование для 443 портов.</p>
+</div>
+<p><code>-sA</code> - TCP ACK сканирование. Посылает ACK флаг в ответ на который ожидает получить RST. Не может однозначно определить состояние порта, однако получение значения <strong>unfiltered</strong> означает, что данный порт не блокируется файрволом. </p>
+<p><code>-sW</code> - TCP Window сканирование. Принцип аналогичен TCP ACK, только на неблокируемый файрволом порт показывается как <strong>closed</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Обрати внимание</p>
+<p>TCP ACK и TCP Window сканирования полезны лишь для получения информации о правилах файрвола.
+Кроме того, не блокированный файрволом порт не означает, что за таким портом обязательно закреплён какой-либо сервис. </p>
+</div>
+<p><code>-sN</code>, <code>-sF</code>, <code>-sX</code> - <strong>Null Scan, FIN Scan, Xmas Scan</strong> - Очень похожие типы TCP сканирования, по идее, более скрытые относительно того же TCP SYN, но это не точно. могут быть полезны в редких случаях.</p>
+<p><code>--scanflags</code> - с помощью данного ключа предоставляется возможность самостоятельно задать TCP флаги: <strong>URG, ACK, PSH, RST, SYN, FIN</strong></p>
+<p><code>-S $SPOOFEED_IP</code> - Сканирование с подменой IP адреса. В качестве поля <code>source IP</code> будет задан изменённый адрес. Ответы естественно будут отправлятся на такой подменный адрес. Атакующий должен иметь к нему доступ для получения ответных сообщений.<br />
+Как правило, для сканирования с подменой адреса необходимо задать дополнительные ключи: <code>-e $ETH_INTERFACE</code> и <code>-Pn</code> для явного указания интерфейса с которого будет проводится сканирование и запрета отправлять ICMP. А для подмены MAC адреса при работе в локальной сети используется ключ <code>--spoof-mac $SPOOFED_MAC</code></p>
+<p><code>-D $DECOY_IP1,$DECOY_IP2,..,$DECOY_IPn,ME</code> - сканирование с приманкой. Развивает идею подмены IP адреса, отправляет множество пакетов в <code>source IP</code> которых будут указаны адреса приманок (decoy). <code>ME</code> означает адрес атакующего. Идея состоит в том, чтобы попытаться запутать IDS/IPS системы.</p>
+<p><code>-sI $IDDLE_IP</code> - зомби сканирование (или idle scan) - интересный способ попытки обхода IDS/IPS заключающийся в следующем: в сети находится сетевое устройство которое не ведет активной сетевой деятельности (условный принтер или телефон отпускника) nmap тригерит его (направляя TCP SYN) в ответ получет RST и запоминает  порядковый номер полученного IP пакета. Далее nmap сканирует целевую машину подставляя в <code>source IP</code> адрес idle устройства, а затем снова опрашивает idle устройство для сравнения порядкового номера полученного IP пакета. Если номер больше чем на 1 - цель не ответила =&gt; порт закрыт или блокируется, если номер &gt; 2 цель ответила =&gt; порт открыт.</p>
+<h4 id="_4">Прочие ключи</h4>
 <p><code>-Pn</code>- Сразу же приступить к сканированию портов, минуя icmp запросы. Полезно в тех сетях, в которых icmp блокируется.</p>
 <p><code>-T{0-5}</code> - Задание скорости сканирования, где: 0 самый медленный, 5 самый быстрый. Чем медленнее, тем меньше возможность обнаружения сканирования. 0 и 1 позволяют обходить IDS, 3 - по умолчанию.</p>
-<p><code>-f</code> - Фрагментирует пакеты на части, так же полезно для обхода систем защиты.</p>
-<p><code>--mtu</code> - Позволяет задать mtu пакета, кратное 8, что тоже может быть полезно для обхода систем защиты</p>
+<p><code>--max-rate</code> - Максимальное количество одновременно посылаемых пакетов</p>
+<p><code>-f</code> - Фрагментирует пакеты на части по 8 бит, что является полезным для обхода IDS/IPS. </p>
+<p><code>--mtu</code> - Позволяет задать mtu пакета, кратное 8, что тоже может быть полезно для обхода IDS/IPS</p>
 <p><code>--scan-delay</code> - Понятно из названия, понятно для чего.</p>
 <p><code>--badsum</code> - Интересный ключ который записывает неверную контрольную сумму пакета. Некоторые файрволы могут среагировать.</p>
-<h4 id="_3">Ключи определяющие формат выходного файла</h4>
+<p><code>-R</code> - nmap опросит DNS серверы даже для отключенных хостов.</p>
+<p><code>-n</code> - не использовать DNS lookup</p>
+<h4 id="_5">Ключи определяющие формат выходного файла</h4>
 <p><code>-oN $FILE_NAME</code> - нормальный вывод в файл</p>
 <p><code>-oX $FILE_NAME</code> - вывод в xml файл</p>
 <p><code>-oG $FILE_NAME</code> - вывод в grepable файл работать с которым удобно через стандартные инструменты работы с текстом в shell: <code>grep</code>, <code>awk</code>, <code>cut</code>, <code>sed</code> и т.д.</p>
@@ -2345,6 +2429,122 @@
 <p class="admonition-title">Обрати внимание</p>
 <p>Важно правильно именовать файлы, для дальнейшей работы с ними. Так как лучше запускать сканирование как можно меньшее количество раз, для того, чтобы не создавать лишнего подозрительного трафика.</p>
 </div>
+<h3 id="_6">Интерпретация вывода</h3>
+<table>
+<thead>
+<tr>
+<th align="left">State</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Open</td>
+<td align="left">Порт открыт</td>
+</tr>
+<tr>
+<td align="left">Close</td>
+<td align="left">Порт закрыт</td>
+</tr>
+<tr>
+<td align="left">Filtered</td>
+<td align="left">Порт недоступен и скорее всего блокируется файрволом</td>
+</tr>
+<tr>
+<td align="left">Unfiltered</td>
+<td align="left">Порт доступен, но точное состояние не известно</td>
+</tr>
+<tr>
+<td align="left">Open|Filtered</td>
+<td align="left">Либо открыт, либо фильтруется. Точное состояние неизвестно</td>
+</tr>
+<tr>
+<td align="left">Close|Filtered</td>
+<td align="left">Либо закрыт, либо фильтруется. Точное состояние неизвестно</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">Скрипты</h3>
+<p><code>--script</code>  Использование скриптов. Подробнее в man. Скрипты можно найти на <a href="https://nmap.org/nsedoc/scripts/">nmap.org</a> и в <code>/usr/share/nmap/scripts</code>. Просмотреть имеющиеся скрипты можно из файла <code>/usr/share/nmap/scripts/script.db</code>  </p>
+<p>Скрипты также можно скачать с помощью wget:
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>wget<span class="w"> </span>-O<span class="w"> </span>/usr/share/nmap/scripts/&lt;script-name&gt;.nse<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>&lt;https://svn.nmap.org/nmap/scripts/&gt;&lt;script-name&gt;.nse<span class="w"> </span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># После скачивания скрипта, нужно обновить БД скриптов</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>nmap<span class="w"> </span>--script-updatedb
+</span></code></pre></div></p>
+<p>Скрипты можно запускать как по одному, так и целыми группами сразу. Для запуска группы используется следующая команда: <code>--script GROUP_NAME</code></p>
+<table>
+<thead>
+<tr>
+<th align="left">Категория скрипта</th>
+<th align="left">Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>auth</code></td>
+<td align="left">Скрипты связанные с аутентификацией</td>
+</tr>
+<tr>
+<td align="left"><code>broadcast</code></td>
+<td align="left">Определение хостов с помощью broadcast сообщений</td>
+</tr>
+<tr>
+<td align="left"><code>brute</code></td>
+<td align="left">Используют проверки типа брутфорс для аутентификационных данных</td>
+</tr>
+<tr>
+<td align="left"><code>default</code></td>
+<td align="left">Стандартные скрипты, аналог ключа <code>-sC</code></td>
+</tr>
+<tr>
+<td align="left"><code>discovery</code></td>
+<td align="left">Извлекают доступную информацию (таблицы БД, DNS имена)</td>
+</tr>
+<tr>
+<td align="left"><code>dos</code></td>
+<td align="left">Обнаруживают уязвимость к DDoS</td>
+</tr>
+<tr>
+<td align="left"><code>exploit</code></td>
+<td align="left">Пытаются эксплуатировать различные уязвимые сервисы</td>
+</tr>
+<tr>
+<td align="left"><code>external</code></td>
+<td align="left">Проверяют с помощью сторонних сервисов (GeoPlugin, Virustotal)</td>
+</tr>
+<tr>
+<td align="left"><code>fuzzer</code></td>
+<td align="left">Запускают фаззинг атаки</td>
+</tr>
+<tr>
+<td align="left"><code>intrusive</code></td>
+<td align="left">Запускают брутфорс атаки и различные эксплойты</td>
+</tr>
+<tr>
+<td align="left"><code>malware</code></td>
+<td align="left">Сканируют на наличие бэкдоров</td>
+</tr>
+<tr>
+<td align="left"><code>safe</code></td>
+<td align="left">Скрипты из этой категории точно не принесут вреда исследуемому хосту</td>
+</tr>
+<tr>
+<td align="left"><code>version</code></td>
+<td align="left">Предоставляют информацию о версиях сервисов</td>
+</tr>
+<tr>
+<td align="left"><code>vuln</code></td>
+<td align="left">Предоставляют информацию о том, какие уязвимости могут быть эксплуатированы</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition danger">
+<p class="admonition-title">Запомни!</p>
+<p>Некоторые скрипты могут нанести вред системе, одни будут брутфорсить, другие ддосить, третьи эксплуатировать различные уязвимости.<br />
+<strong>Запускать скрипты нужно с умом, чтобы не порушить сервис.</strong></p>
+</div>
+<p>Посмотреть то, что делает скрипт можно просто открыв его в удобном редакторе или пейджере.</p>
 
 
   
