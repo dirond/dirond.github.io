@@ -467,6 +467,8 @@
         
           
         
+          
+        
       
       
         
@@ -1431,6 +1433,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vulnerabilities/" class="md-nav__link">
+        Уязвимости
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1456,6 +1472,8 @@
         
           
             
+          
+        
           
         
           
@@ -1526,6 +1544,20 @@
     <li class="md-nav__item">
       <a href="../../../CTF/Pickle_Rick/" class="md-nav__link">
         Pickle Rick
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CTF/root_me/" class="md-nav__link">
+        Root me
       </a>
     </li>
   
@@ -1806,6 +1838,8 @@
         
           
         
+          
+        
       
       
         
@@ -1891,7 +1925,21 @@
   
     <li class="md-nav__item">
       <a href="../../../Windows/Windows_Services/" class="md-nav__link">
-        Windwos Services
+        Windows Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Windows/windows_users/" class="md-nav__link">
+        Windows Users
       </a>
     </li>
   
@@ -2376,7 +2424,8 @@
 <h5 id="_3">Дополнительные утилиты</h5>
 <p>В дополнение к основному модулю, имеются различные дополнительные утилиты, далее некоторые из них:</p>
 <p><strong>unshadow</strong> - подготавливает файл содержащий в себе соответствие <code>/etc/shadow</code> и <code>/etc/passwd</code> для последующего скармливания такого файла John'у:</p>
-<p><div class="language-Bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>unshadow<span class="w"> </span><span class="o">[</span>/path/to/paswd<span class="o">]</span><span class="w"> </span><span class="o">[</span>/path/to/shadow<span class="o">]</span>
+<p><div class="language-Bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>unshadow<span class="w"> </span><span class="o">[</span>/path/to/paswd<span class="o">]</span><span class="w"> </span><span class="o">[</span>/path/to/shadow<span class="o">]</span><span class="w"> </span>&gt;<span class="w"> </span>2john.txt
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>john<span class="w"> </span>--format<span class="o">=</span>sha512crypt<span class="w"> </span>--wordlist<span class="o">=</span>/usr/share/wordlists/rockyou.txt<span class="w">  </span>2john.txt
 </span></code></pre></div>
 <strong>zip2john</strong> - подготовливает zip архив для работы с john</p>
 <p><strong>rar2john</strong> - подготовливает rar архив для работы с john </p>

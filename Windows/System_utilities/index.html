@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sc-start-system-utilities" class="md-skip">
+        <a href="#windows" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -439,6 +439,8 @@
         
           
             
+          
+        
           
         
           
@@ -1365,6 +1367,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CyberSec/vulnerabilities/" class="md-nav__link">
+        Уязвимости
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1390,6 +1406,8 @@
         
           
             
+          
+        
           
         
           
@@ -1460,6 +1478,20 @@
     <li class="md-nav__item">
       <a href="../../CTF/Pickle_Rick/" class="md-nav__link">
         Pickle Rick
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/root_me/" class="md-nav__link">
+        Root me
       </a>
     </li>
   
@@ -1742,6 +1774,8 @@
         
           
         
+          
+        
       
       
         
@@ -1837,7 +1871,21 @@
   
     <li class="md-nav__item">
       <a href="../Windows_Services/" class="md-nav__link">
-        Windwos Services
+        Windows Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../windows_users/" class="md-nav__link">
+        Windows Users
       </a>
     </li>
   
@@ -2267,7 +2315,7 @@
                   
 
 
-<h1 id="sc-start-system-utilities">sc start  System utilities</h1>
+<h1 id="windows">Системные утилиты Windows</h1>
 <hr />
 <p>Для вызовы системных утилит/сервисов в windows используются следующие команды:</p>
 <table>
@@ -2280,79 +2328,84 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">certmgr.msc</td>
+<td align="left"><code>certmgr.msc</code></td>
 <td align="left">Certificates managment tool</td>
-<td align="left"></td>
+<td align="left">Управление сертификатами</td>
 </tr>
 <tr>
-<td align="left">compmgmt</td>
+<td align="left"><code>compmgmt</code></td>
 <td align="left">Computer managment</td>
-<td align="left"></td>
+<td align="left">Управление компьютером</td>
 </tr>
 <tr>
-<td align="left">control</td>
+<td align="left"><code>control</code></td>
 <td align="left">Control panel with all settings.</td>
-<td align="left">Also have a possibility to run control /name %Microsoft.%SERVICE_NAME%</td>
+<td align="left">Можно запустить конфигурацию отдельного сервиса через <code>control /name %Microsoft.%SERVICE_NAME%</code></td>
 </tr>
 <tr>
-<td align="left">dsa.msc</td>
+<td align="left"><code>dsa.msc</code></td>
 <td align="left">AD Users and Computers add-in</td>
-<td align="left"></td>
+<td align="left">Оснастка для управления пользователями и компьютерами в AD</td>
 </tr>
 <tr>
-<td align="left">hostname</td>
+<td align="left"><code>hostname</code></td>
 <td align="left">Display name of the current host</td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">ipconfig</td>
+<td align="left"><code>ipconfig</code></td>
 <td align="left">Show information about network adapters setings</td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">lusrmgr.msc</td>
+<td align="left"><code>lusrmgr.msc</code></td>
 <td align="left">Local users and group managment tool</td>
-<td align="left"></td>
+<td align="left">Управление локальными пользователями</td>
 </tr>
 <tr>
-<td align="left">msconfig</td>
+<td align="left"><code>msconfig</code></td>
 <td align="left">System configuration panel</td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">msinfo32</td>
+<td align="left"><code>msinfo32</code></td>
 <td align="left">System information</td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">net</td>
+<td align="left"><code>net</code></td>
 <td align="left">CLI utility for managing system.</td>
 <td align="left">Use NET HELP $COMMAND for get help about $command</td>
 </tr>
 <tr>
-<td align="left">netstat</td>
+<td align="left"><code>netstat</code></td>
 <td align="left">Show current TCP/IP connections</td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">resmon</td>
+<td align="left"><code>resmon</code></td>
 <td align="left">Resource monitor</td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">wf.msc</td>
+<td align="left"><code>wf.msc</code></td>
 <td align="left">Windows firewall</td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">whoami</td>
+<td align="left"><code>whoami</code></td>
 <td align="left">Dislplay the domain\name of current user</td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">sc start|stop</td>
-<td align="left">Start or stop service</td>
-<td align="left">Use sc start $ServiceName</td>
+<td align="left"><code>sc.exe</code></td>
+<td align="left">Управление сервисами</td>
+<td align="left">Запуск, остановка, изменение, получение информации</td>
+</tr>
+<tr>
+<td align="left"><code>icacls.exe</code></td>
+<td align="left">Работа с правами над файлами</td>
+<td align="left">Просмотр, редактирование</td>
 </tr>
 </tbody>
 </table>
@@ -2400,13 +2453,13 @@
         
         
           
-          <a href="../Windows_Services/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Windwos Services" rel="next">
+          <a href="../Windows_Services/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Windows Services" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Вперед
                 </span>
-                Windwos Services
+                Windows Services
               </div>
             </div>
             <div class="md-footer__button md-icon">
