@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://ivanovds.ru/CTF/Pickle_Rick/">
       
       
-        <link rel="prev" href="../Kenoby/">
+        <link rel="prev" href="../Lazy_admin/">
       
       
         <link rel="next" href="../root_me/">
@@ -1424,6 +1424,10 @@
         
           
         
+          
+        
+          
+        
       
       
         
@@ -1468,6 +1472,20 @@
     <li class="md-nav__item">
       <a href="../Kenoby/" class="md-nav__link">
         Kenoby
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lazy_admin/" class="md-nav__link">
+        Lazy Admin
       </a>
     </li>
   
@@ -1537,6 +1555,20 @@
     <li class="md-nav__item">
       <a href="../root_me/" class="md-nav__link">
         Root me
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Simple_CTF/" class="md-nav__link">
+        Simple CTF
       </a>
     </li>
   
@@ -2383,8 +2415,9 @@
 Описание задания можно найти на <a href="https://tryhackme.com/room/picklerick">TryHackme</a></p>
 <h3 id="_1">Сканирование</h3>
 <p>Проведение разведки с nmap на предмет наличия открытых портов:</p>
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>nmap<span class="w"> </span>-T4<span class="w"> </span>IP-ADDRESS
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>nmap<span class="w"> </span>-sV<span class="w"> </span>-sC<span class="w"> </span>-O<span class="w"> </span>-p<span class="w"> </span><span class="m">22</span>,80<span class="w"> </span>IP-ADDRESS<span class="w"> </span>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>nmap<span class="w"> </span>-T4<span class="w">  </span>-p-<span class="w"> </span>IP-ADDRESS
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">#После получения сведений о портах</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>sudo<span class="w"> </span>nmap<span class="w"> </span>-sV<span class="w"> </span>-sC<span class="w"> </span>-O<span class="w"> </span>-p<span class="w"> </span><span class="m">22</span>,80<span class="w"> </span>IP-ADDRESS<span class="w"> </span>
 </span></code></pre></div>
 <blockquote>
 <p>Обнаружены открытые порты 22 и 80.<br />
@@ -2442,7 +2475,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
         
           
-          <a href="../Kenoby/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Kenoby" rel="prev">
+          <a href="../Lazy_admin/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Lazy Admin" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -2451,7 +2484,7 @@
                 <span class="md-footer__direction">
                   Назад
                 </span>
-                Kenoby
+                Lazy Admin
               </div>
             </div>
           </a>

@@ -18,7 +18,7 @@
         <link rel="prev" href="../Pickle_Rick/">
       
       
-        <link rel="next" href="../Skynet/">
+        <link rel="next" href="../Simple_CTF/">
       
       <link rel="icon" href="../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.0">
@@ -1424,6 +1424,10 @@
         
           
         
+          
+        
+          
+        
       
       
         
@@ -1468,6 +1472,20 @@
     <li class="md-nav__item">
       <a href="../Kenoby/" class="md-nav__link">
         Kenoby
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lazy_admin/" class="md-nav__link">
+        Lazy Admin
       </a>
     </li>
   
@@ -1552,6 +1570,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Simple_CTF/" class="md-nav__link">
+        Simple CTF
+      </a>
     </li>
   
 
@@ -2411,8 +2443,9 @@
 Описание задания можно найти на <a href="https://tryhackme.com/room/rrootme">TryHackme</a></p>
 <h3 id="_1">Сканирование</h3>
 <p>Проведение разведки с nmap на предмет наличия открытых портов:</p>
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>nmap<span class="w"> </span>-T4<span class="w"> </span>IP-ADDRESS
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>nmap<span class="w"> </span>-sV<span class="w"> </span>-sC<span class="w"> </span>-O<span class="w"> </span>-p<span class="w"> </span><span class="m">22</span>,80<span class="w"> </span>IP-ADDRESS<span class="w"> </span>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>nmap<span class="w"> </span>-T4<span class="w">  </span>-p-<span class="w"> </span>IP-ADDRESS
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">#После получения сведений о портах</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>sudo<span class="w"> </span>nmap<span class="w"> </span>-sV<span class="w"> </span>-sC<span class="w"> </span>-O<span class="w"> </span>-p<span class="w"> </span><span class="m">22</span>,80<span class="w"> </span>IP-ADDRESS<span class="w"> </span>
 </span></code></pre></div>
 <blockquote>
 <p>Обнаружены открытые порты 22 и 80.<br />
@@ -2511,13 +2544,13 @@
         
         
           
-          <a href="../Skynet/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Skynet" rel="next">
+          <a href="../Simple_CTF/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Simple CTF" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Вперед
                 </span>
-                Skynet
+                Simple CTF
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -1422,6 +1422,10 @@
         
           
         
+          
+        
+          
+        
       
       
         
@@ -1478,6 +1482,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../CTF/Lazy_admin/" class="md-nav__link">
+        Lazy Admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../CTF/Pickle_Rick/" class="md-nav__link">
         Pickle Rick
       </a>
@@ -1494,6 +1512,20 @@
     <li class="md-nav__item">
       <a href="../../CTF/root_me/" class="md-nav__link">
         Root me
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/Simple_CTF/" class="md-nav__link">
+        Simple CTF
       </a>
     </li>
   
@@ -2334,94 +2366,138 @@
 <h1 id="windows">Системные утилиты Windows</h1>
 <hr />
 <p>Для вызовы системных утилит/сервисов в windows используются следующие команды:</p>
+<div class="admonition warning">
+<p class="admonition-title">Обрати внимание</p>
+<p>Некоторые команды при запуске в Powershell могут не работать в виду того, что их наименование соответствует некоему алиасу. Лучше лишний раз прожать tab, для того чтобы добавить расширение .exe в случае необходимости.</p>
+</div>
 <table>
 <thead>
 <tr>
-<th align="left">Команда</th>
-<th align="left">Наименование</th>
-<th align="left">Примечание</th>
+<th>Команда</th>
+<th>Наименование</th>
+<th>Примечание</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>certmgr.msc</code></td>
-<td align="left">Certificates managment tool</td>
-<td align="left">Управление сертификатами</td>
+<td><code>accesschk64.exe</code></td>
+<td>Получение информации о дискреционном доступе к объекту</td>
+<td><strong>из пакета Sysinternals</strong></td>
 </tr>
 <tr>
-<td align="left"><code>compmgmt</code></td>
-<td align="left">Computer managment</td>
-<td align="left">Управление компьютером</td>
+<td><code>certmgr.msc</code></td>
+<td>Certificates managment tool</td>
+<td>Управление сертификатами</td>
 </tr>
 <tr>
-<td align="left"><code>control</code></td>
-<td align="left">Control panel with all settings.</td>
-<td align="left">Можно запустить конфигурацию отдельного сервиса через <code>control /name %Microsoft.%SERVICE_NAME%</code></td>
+<td><code>cmdkey</code></td>
+<td>Отображение информации о сохраненных логинах/паролях</td>
+<td></td>
 </tr>
 <tr>
-<td align="left"><code>dsa.msc</code></td>
-<td align="left">AD Users and Computers add-in</td>
-<td align="left">Оснастка для управления пользователями и компьютерами в AD</td>
+<td><code>compmgmt</code></td>
+<td>Computer managment</td>
+<td>Управление компьютером</td>
 </tr>
 <tr>
-<td align="left"><code>hostname</code></td>
-<td align="left">Display name of the current host</td>
-<td align="left"></td>
+<td><code>control</code></td>
+<td>Control panel with all settings.</td>
+<td>Можно запустить конфигурацию отдельного сервиса через <code>control /name %Microsoft.%SERVICE_NAME%</code></td>
 </tr>
 <tr>
-<td align="left"><code>ipconfig</code></td>
-<td align="left">Show information about network adapters setings</td>
-<td align="left"></td>
+<td><code>dsa.msc</code></td>
+<td>AD Users and Computers add-in</td>
+<td>Оснастка для управления пользователями и компьютерами в AD</td>
 </tr>
 <tr>
-<td align="left"><code>lusrmgr.msc</code></td>
-<td align="left">Local users and group managment tool</td>
-<td align="left">Управление локальными пользователями</td>
+<td><code>icacls.exe</code></td>
+<td>Работа с правами над файлами</td>
+<td>Просмотр, редактирование(<code>/grant</code>)</td>
 </tr>
 <tr>
-<td align="left"><code>msconfig</code></td>
-<td align="left">System configuration panel</td>
-<td align="left"></td>
+<td><code>ipconfig</code></td>
+<td>Show information about network adapters setings</td>
+<td></td>
 </tr>
 <tr>
-<td align="left"><code>msinfo32</code></td>
-<td align="left">System information</td>
-<td align="left"></td>
+<td><code>hostname</code></td>
+<td>Display name of the current host</td>
+<td></td>
 </tr>
 <tr>
-<td align="left"><code>net</code></td>
-<td align="left">CLI utility for managing system.</td>
-<td align="left">Use NET HELP $COMMAND for get help about $command</td>
+<td><code>lusrmgr.msc</code></td>
+<td>Local users and group managment tool</td>
+<td>Управление локальными пользователями</td>
 </tr>
 <tr>
-<td align="left"><code>netstat</code></td>
-<td align="left">Show current TCP/IP connections</td>
-<td align="left"></td>
+<td><code>msconfig</code></td>
+<td>System configuration panel</td>
+<td></td>
 </tr>
 <tr>
-<td align="left"><code>resmon</code></td>
-<td align="left">Resource monitor</td>
-<td align="left"></td>
+<td><code>msiexec</code></td>
+<td>CLI для запуска msi пакетов</td>
+<td></td>
 </tr>
 <tr>
-<td align="left"><code>wf.msc</code></td>
-<td align="left">Windows firewall</td>
-<td align="left"></td>
+<td><code>msinfo32</code></td>
+<td>System information</td>
+<td></td>
 </tr>
 <tr>
-<td align="left"><code>whoami</code></td>
-<td align="left">Dislplay the domain\name of current user</td>
-<td align="left"></td>
+<td><code>net</code></td>
+<td>CLI utility for managing system.</td>
+<td>Use NET HELP $COMMAND for get help about $command</td>
 </tr>
 <tr>
-<td align="left"><code>sc.exe</code></td>
-<td align="left">Управление сервисами</td>
-<td align="left">Запуск, остановка, изменение, получение информации</td>
+<td><code>netstat</code></td>
+<td>Show current TCP/IP connections</td>
+<td></td>
 </tr>
 <tr>
-<td align="left"><code>icacls.exe</code></td>
-<td align="left">Работа с правами над файлами</td>
-<td align="left">Просмотр, редактирование</td>
+<td><code>reg query</code></td>
+<td>Запросы к реестру</td>
+<td></td>
+</tr>
+<tr>
+<td><code>resmon</code></td>
+<td>Resource monitor</td>
+<td></td>
+</tr>
+<tr>
+<td><code>runas</code></td>
+<td>Запуск от имени другого пользователя</td>
+<td>С ключом <code>/savecred</code> можно использовать учетки из <code>cmdkey</code></td>
+</tr>
+<tr>
+<td><code>sc.exe</code></td>
+<td>Управление сервисами</td>
+<td>Запуск, остановка, изменение, получение информации</td>
+</tr>
+<tr>
+<td><code>schtasks</code></td>
+<td>CLI для Scheduler</td>
+<td></td>
+</tr>
+<tr>
+<td><code>takeown</code></td>
+<td>Стать владельцем файла</td>
+<td></td>
+</tr>
+<tr>
+<td><code>wf.msc</code></td>
+<td>Windows firewall</td>
+<td></td>
+</tr>
+<tr>
+<td><code>whoami</code></td>
+<td>Dislplay the domain\name of current user</td>
+<td></td>
+</tr>
+<tr>
+<td><code>wmic</code></td>
+<td>CLI для Windows managment tools</td>
+<td>Deprecated в 10 винде. Аналог в pwsh - <code>Get-WmiObject</code></td>
 </tr>
 </tbody>
 </table>
