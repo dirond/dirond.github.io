@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#windows-services" class="md-skip">
+        <a href="#windows-services-and-files" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -1052,6 +1052,8 @@
         
           
         
+          
+        
       
       
         
@@ -1236,6 +1238,20 @@
     <li class="md-nav__item">
       <a href="../../CyberSec/Tools/nmap/" class="md-nav__link">
         nmap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CyberSec/Tools/rubeus/" class="md-nav__link">
+        Rubeus
       </a>
     </li>
   
@@ -1462,6 +1478,10 @@
         
           
         
+          
+        
+          
+        
       
       
         
@@ -1482,6 +1502,34 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/agent_sudo/" class="md-nav__link">
+        Agent SUDO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/bounty_hacker/" class="md-nav__link">
+        Bounty hacker
+      </a>
+    </li>
+  
+
             
           
             
@@ -2012,6 +2060,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ntds" class="md-nav__link">
+    NTDS
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2458,6 +2513,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ntds" class="md-nav__link">
+    NTDS
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2473,7 +2535,7 @@
                   
 
 
-<h1 id="windows-services">Windows Services</h1>
+<h1 id="windows-services-and-files">Windows Services and Files</h1>
 <hr />
 <h3 id="lsass">lsass</h3>
 <p>Local Security Authority Subsytem Service (<strong>lsass.exe</strong>) - один из основных сервисов Windows систем. Отвечает за:</p>
@@ -2489,6 +2551,9 @@
 <p><strong>Принудетельное завершение lsass.exe приведет к тому, что система потеряет доступ к любой учётной записи включая SYSTEM\NT AUTHORITY и выведет запрос на перезагрузку ОС.</strong></p>
 <p>В виду критической важности этого сервиса, под него часто мимикрируют различная малварь, включая <a href="../../CyberSec/Tools/Metasploit/">metasploit:meterpreter</a></p>
 </div>
+<h3 id="ntds">NTDS</h3>
+<p>Windows NT Directory Services - сервис используемый Microsoft для управления, поиска и организации сетевых ресурсов.</p>
+<p>Файл NTDS.dit - файл базы данных который распологается на контроллере домена и хранит сведения из Active Directory, включая пользователей, группы, хэши паролей.</p>
 
 
   
