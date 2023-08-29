@@ -9,6 +9,9 @@ site_author: Dmitrii Ivanov
 site_description: >-
   Сайт для публикации заметок в области ИТ и ИБ.
 extra:
+  analytics:
+    provider: google
+    property: G-HVGKC2VEZ3
   social:
     - icon: fontawesome/brands/telegram
       link: https://t.me/dirond
@@ -80,29 +83,28 @@ markdown_extensions:
   - pymdownx.superfences
 nav:
   - Главная: 
-    - 'Привет! Hello! Hola! Bonjour!': index.md
-  - CTF:
-    - CTF: CTF/index.md
-    - Basic Pentesting : CTF/Basic_Pentesting.md
-    - Kenoby: CTF/Kenoby.md
-    - Pickle Rick: CTF/Pickle_Rick.md
-    - Steel Mountain: CTF/Steel_Mountain.md
-    - Upload Vulnerabilities: CTF/Upload_Vulnerabilities.md
+    - 'ivanovds.ru': index.md
   - CyberSec:
     - CyberSec: CyberSec/index.md
     - Cyber kill chain: CyberSec/Cyber_Kill_Chain.md
     - CyberSec specialists: CyberSec/CyberSec_specialists.md
     - CyberSec Frameworks:
       - CyberSec Frameworks: CyberSec/CyberSec_Frameworks/index.md
+      - NIST Cybersecurity Framework: CyberSec/CyberSec_Frameworks/nist.md
+      - GRC: CyberSec/CyberSec_Frameworks/GRC.md
       - OWASP:
         - OWASP: CyberSec/CyberSec_Frameworks/OWASP/index.md
         - Broken Access Control: CyberSec/CyberSec_Frameworks/OWASP/Broken_Access_Control.md
-        - Broken Authentication: CyberSec/CyberSec_Frameworks/OWASP/Broken_Authentication.md
-        - Cross Site Scripting: CyberSec/CyberSec_Frameworks/OWASP/Cross_site_scripting_(XSS).md
-        - Injections: CyberSec/CyberSec_Frameworks/OWASP/Injection.md
-        - Insecure Deseralization: CyberSec/CyberSec_Frameworks/OWASP/Insecure_Deserialization.md
-        - Security_Misconfiguration: CyberSec/CyberSec_Frameworks/OWASP/Security_Misconfiguration.md
-        - Sensivity Data Explosure: CyberSec/CyberSec_Frameworks/OWASP/Sensitive_Data_Exposure_(Cryptogrfic_failures).md
+        - Cryptographic failures: CyberSec/CyberSec_Frameworks/OWASP/Cryptographic_failures.md
+        - Comand Injections: CyberSec/CyberSec_Frameworks/OWASP/Injection.md
+        - SQL Injections: CyberSec/CyberSec_Frameworks/OWASP/SQLi.md
+        - Cross-Site Scripting (XSS): CyberSec/CyberSec_Frameworks/OWASP/XSS.md
+        - Insecure Design: CyberSec/CyberSec_Frameworks/OWASP/insecure_design.md
+        - Security Misconfiguration: CyberSec/CyberSec_Frameworks/OWASP/Security_Misconfiguration.md
+        - Identification and Authentication failures: CyberSec/CyberSec_Frameworks/OWASP/Broken_Authentication.md
+        - Software and Data integrity failures: CyberSec/CyberSec_Frameworks/OWASP/Insecure_Deserialization.md
+        - Server-site request forgery: CyberSec/CyberSec_Frameworks/OWASP/SSRF.md
+        - Security logging and Monitoring failures: CyberSec/CyberSec_Frameworks/OWASP/logging_and_monitoring.md
         - XML External Entity XEE: CyberSec/CyberSec_Frameworks/OWASP/XML_External_Entity_(Security_misconfiguration).md
     - Penetration testing:
       - Penetration testing: CyberSec/Penetration_testing/index.md
@@ -115,8 +117,8 @@ nav:
       - Типичные уязвимости web приложений: CyberSec/web_applications/web_vulns.md
     - Инструменты:
       - Инструменты: CyberSec/Tools/index.md
-      - curl: CyberSec/Tools/curl.md
       - Burp suite: CyberSec/Tools/Burp_Suite.md
+      - curl: CyberSec/Tools/curl.md
       - Feroxbuster: CyberSec/Tools/feroxbuster.md
       - ffuf: CyberSec/Tools/ffuf.md
       - gobuster: CyberSec/Tools/gobuster.md
@@ -127,6 +129,7 @@ nav:
       - netcat (nc): CyberSec/Tools/netcat_nc.md
       - nikto: CyberSec/Tools/nikto.md
       - nmap: CyberSec/Tools/nmap.md
+      - Rubeus: CyberSec/Tools/rubeus.md
       - socat: CyberSec/Tools/socat.md
       - WPScan: CyberSec/Tools/WPScan.md
     - Сетевая безопасность:
@@ -136,12 +139,27 @@ nav:
     - Полезная информация: CyberSec/Useful_Information.md
     - Полезные ссылки: CyberSec/Useful_Links.md
     - Термины и определения: CyberSec/Terms_and_definitions.md
+    - Уязвимости: CyberSec/vulnerabilities.md
+  - CTF:
+    - CTF: CTF/index.md
+    - Agent SUDO: CTF/agent_sudo.md
+    - Bounty hacker: CTF/bounty_hacker.md
+    - Attacktive Directory: CTF/attacktive_directory.md
+    - Basic Pentesting : CTF/Basic_Pentesting.md
+    - Kenoby: CTF/Kenoby.md
+    - Lazy Admin: CTF/Lazy_admin.md
+    - Mr.Robot CTF: CTF/MrRobot.md
+    - Pickle Rick: CTF/Pickle_Rick.md
+    - Root me: CTF/root_me.md
+    - Simple CTF: CTF/Simple_CTF.md
+    - Skynet: CTF/Skynet.md
+    - Steel Mountain: CTF/Steel_Mountain.md
+    - Upload Vulnerabilities: CTF/Upload_Vulnerabilities.md
   - Linux:
     - Linux: Linux/index.md
     - Bash startup files: Linux/Bash_startup_files.md
     - Working with Disks: Linux/Disks.md
     - Kernel: Linux/Kernel.md
-    - Linux directories (FHS): Linux/Linux_directories_(Filesystem_hierarchy_standart_-_FHS).md
     - Other necessary things: Linux/Other_necessery_things.md
     - Processes: Linux/Processes.md
     - Shell scripting: Linux/Shell_scripting.md
@@ -155,15 +173,18 @@ nav:
     - Alternate Data Streams: Windows/Alternate_Data_Streams.md
     - Powershell: Windows/Powershell_commandlets.md
     - System utilities: Windows/System_utilities.md
-    - Windwos Services: Windows/Windows_Services.md
+    - Windows Services: Windows/Windows_Services.md
+    - Windows Users: Windows/windows_users.md
   - Прочее:
     - Сервисы, протоколы, технологии: Technologies/index.md
     - FTP: Technologies/FTP.md
     - Hashing: Technologies/Hashing.md
+    - IMAP: Technologies/IMAP.md
     - Kerberos: Technologies/Kerberos.md
     - MySQL: Technologies/MySQL.md
     - NFS: Technologies/NFS.md
     - NTLM: Technologies/NTLM.md
+    - POP3: Technologies/POP3.md
     - Python: Technologies/python.md
     - SMB: Technologies/SMB.md
     - SMTP: Technologies/SMTP.md
@@ -173,4 +194,6 @@ nav:
   - Нормативка:
     - Нормативка: Documents/index.md
     - Положение Банка России 683-П: Documents/683-p.md
+    - Положение Банка России 719-П: Documents/719-p.md
+  - Disclaimer: disclaimer.md
   - Update Log: Update_log.md
