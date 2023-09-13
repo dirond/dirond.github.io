@@ -12,27 +12,27 @@
         <meta name="author" content="Dmitrii Ivanov">
       
       
-        <link rel="canonical" href="https://ivanovds.ru/Windows/Windows_Services/">
+        <link rel="canonical" href="https://ivanovds.ru/CyberSec/Tools/wireshark/">
       
       
-        <link rel="prev" href="../System_utilities/">
+        <link rel="prev" href="../socat/">
       
       
-        <link rel="next" href="../windows_users/">
+        <link rel="next" href="../WPScan/">
       
-      <link rel="icon" href="../../images/favicon.png">
+      <link rel="icon" href="../../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
-        <title>Windows Services - ivanovds.ru</title>
+        <title>Wireshark - ivanovds.ru</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -48,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#windows-services-and-files" class="md-skip">
+        <a href="#wireshark" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -105,9 +105,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
-    <a href="../.." title="ivanovds.ru" class="md-header__button md-logo" aria-label="ivanovds.ru" data-md-component="logo">
+    <a href="../../.." title="ivanovds.ru" class="md-header__button md-logo" aria-label="ivanovds.ru" data-md-component="logo">
       
-  <img src="../../assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Windows Services
+              Wireshark
             
           </span>
         </div>
@@ -215,56 +215,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         Главная
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../CyberSec/" class="md-tabs__link">
-        CyberSec
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../CTF/" class="md-tabs__link">
-        CTF
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../Linux/" class="md-tabs__link">
-        Linux
       </a>
     </li>
   
@@ -281,7 +233,55 @@
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        CyberSec
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../CTF/" class="md-tabs__link">
+        CTF
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Linux/" class="md-tabs__link">
+        Linux
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Windows/" class="md-tabs__link">
         Windows
       </a>
     </li>
@@ -297,7 +297,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Technologies/" class="md-tabs__link">
+      <a href="../../../Technologies/" class="md-tabs__link">
         Прочее
       </a>
     </li>
@@ -313,7 +313,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Documents/" class="md-tabs__link">
+      <a href="../../../Documents/" class="md-tabs__link">
         Нормативка
       </a>
     </li>
@@ -326,7 +326,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../disclaimer/" class="md-tabs__link">
+    <a href="../../../disclaimer/" class="md-tabs__link">
       Disclaimer
     </a>
   </li>
@@ -338,7 +338,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../Update_log/" class="md-tabs__link">
+    <a href="../../../Update_log/" class="md-tabs__link">
       Update Log
     </a>
   </li>
@@ -371,9 +371,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="ivanovds.ru" class="md-nav__button md-logo" aria-label="ivanovds.ru" data-md-component="logo">
+    <a href="../../.." title="ivanovds.ru" class="md-nav__button md-logo" aria-label="ivanovds.ru" data-md-component="logo">
       
-  <img src="../../assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     ivanovds.ru
@@ -407,7 +407,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../..">Главная</a>
+          <a href="../../..">Главная</a>
           
         </div>
       
@@ -432,14 +432,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
       
       
         
@@ -478,7 +480,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../CyberSec/">CyberSec</a>
+          <a href="../../">CyberSec</a>
           
             <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
@@ -486,7 +488,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           CyberSec
@@ -501,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Cyber_Kill_Chain/" class="md-nav__link">
+      <a href="../../Cyber_Kill_Chain/" class="md-nav__link">
         Cyber kill chain
       </a>
     </li>
@@ -515,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_specialists/" class="md-nav__link">
+      <a href="../../CyberSec_specialists/" class="md-nav__link">
         CyberSec specialists
       </a>
     </li>
@@ -555,7 +557,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../CyberSec/CyberSec_Frameworks/">CyberSec Frameworks</a>
+          <a href="../../CyberSec_Frameworks/">CyberSec Frameworks</a>
           
             <label for="__nav_2_4">
               <span class="md-nav__icon md-icon"></span>
@@ -578,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/nist/" class="md-nav__link">
+      <a href="../../CyberSec_Frameworks/nist/" class="md-nav__link">
         NIST Cybersecurity Framework
       </a>
     </li>
@@ -592,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/GRC/" class="md-nav__link">
+      <a href="../../CyberSec_Frameworks/GRC/" class="md-nav__link">
         GRC
       </a>
     </li>
@@ -648,7 +650,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../CyberSec/CyberSec_Frameworks/OWASP/">OWASP</a>
+          <a href="../../CyberSec_Frameworks/OWASP/">OWASP</a>
           
             <label for="__nav_2_4_4">
               <span class="md-nav__icon md-icon"></span>
@@ -671,7 +673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/Broken_Access_Control/" class="md-nav__link">
+      <a href="../../CyberSec_Frameworks/OWASP/Broken_Access_Control/" class="md-nav__link">
         Broken Access Control
       </a>
     </li>
@@ -685,7 +687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/Cryptographic_failures/" class="md-nav__link">
+      <a href="../../CyberSec_Frameworks/OWASP/Cryptographic_failures/" class="md-nav__link">
         Cryptographic failures
       </a>
     </li>
@@ -699,7 +701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/Injection/" class="md-nav__link">
+      <a href="../../CyberSec_Frameworks/OWASP/Injection/" class="md-nav__link">
         Comand Injections
       </a>
     </li>
@@ -713,7 +715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/SQLi/" class="md-nav__link">
+      <a href="../../CyberSec_Frameworks/OWASP/SQLi/" class="md-nav__link">
         SQL Injections
       </a>
     </li>
@@ -727,7 +729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/XSS/" class="md-nav__link">
+      <a href="../../CyberSec_Frameworks/OWASP/XSS/" class="md-nav__link">
         Cross-Site Scripting (XSS)
       </a>
     </li>
@@ -741,7 +743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/insecure_design/" class="md-nav__link">
+      <a href="../../CyberSec_Frameworks/OWASP/insecure_design/" class="md-nav__link">
         Insecure Design
       </a>
     </li>
@@ -755,7 +757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/Security_Misconfiguration/" class="md-nav__link">
+      <a href="../../CyberSec_Frameworks/OWASP/Security_Misconfiguration/" class="md-nav__link">
         Security Misconfiguration
       </a>
     </li>
@@ -769,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/Broken_Authentication/" class="md-nav__link">
+      <a href="../../CyberSec_Frameworks/OWASP/Broken_Authentication/" class="md-nav__link">
         Identification and Authentication failures
       </a>
     </li>
@@ -783,7 +785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/Insecure_Deserialization/" class="md-nav__link">
+      <a href="../../CyberSec_Frameworks/OWASP/Insecure_Deserialization/" class="md-nav__link">
         Software and Data integrity failures
       </a>
     </li>
@@ -797,7 +799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/SSRF/" class="md-nav__link">
+      <a href="../../CyberSec_Frameworks/OWASP/SSRF/" class="md-nav__link">
         Server-site request forgery
       </a>
     </li>
@@ -811,7 +813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/logging_and_monitoring/" class="md-nav__link">
+      <a href="../../CyberSec_Frameworks/OWASP/logging_and_monitoring/" class="md-nav__link">
         Security logging and Monitoring failures
       </a>
     </li>
@@ -825,7 +827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/XML_External_Entity_%28Security_misconfiguration%29/" class="md-nav__link">
+      <a href="../../CyberSec_Frameworks/OWASP/XML_External_Entity_%28Security_misconfiguration%29/" class="md-nav__link">
         XML External Entity XEE
       </a>
     </li>
@@ -879,7 +881,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../CyberSec/Penetration_testing/">Penetration testing</a>
+          <a href="../../Penetration_testing/">Penetration testing</a>
           
             <label for="__nav_2_5">
               <span class="md-nav__icon md-icon"></span>
@@ -902,7 +904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Penetration_testing/Privilege_escalation/" class="md-nav__link">
+      <a href="../../Penetration_testing/Privilege_escalation/" class="md-nav__link">
         Эскалация привилегий
       </a>
     </li>
@@ -916,7 +918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Penetration_testing/Reverse_shell/" class="md-nav__link">
+      <a href="../../Penetration_testing/Reverse_shell/" class="md-nav__link">
         Reverse shell
       </a>
     </li>
@@ -930,7 +932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Penetration_testing/Upload_payload/" class="md-nav__link">
+      <a href="../../Penetration_testing/Upload_payload/" class="md-nav__link">
         Загрузка payload
       </a>
     </li>
@@ -951,7 +953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Security_Operation_Center_%28SOC%29/" class="md-nav__link">
+      <a href="../../Security_Operation_Center_%28SOC%29/" class="md-nav__link">
         Security operation center
       </a>
     </li>
@@ -987,7 +989,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../CyberSec/web_applications/">Безопасность web приложений</a>
+          <a href="../../web_applications/">Безопасность web приложений</a>
           
             <label for="__nav_2_7">
               <span class="md-nav__icon md-icon"></span>
@@ -1010,7 +1012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/web_applications/web_vulns/" class="md-nav__link">
+      <a href="../../web_applications/web_vulns/" class="md-nav__link">
         Типичные уязвимости web приложений
       </a>
     </li>
@@ -1029,16 +1031,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" checked>
       
       
         
@@ -1083,7 +1087,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../CyberSec/Tools/">Инструменты</a>
+          <a href="../">Инструменты</a>
           
             <label for="__nav_2_8">
               <span class="md-nav__icon md-icon"></span>
@@ -1091,7 +1095,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2_8">
           <span class="md-nav__icon md-icon"></span>
           Инструменты
@@ -1106,7 +1110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/Burp_Suite/" class="md-nav__link">
+      <a href="../Burp_Suite/" class="md-nav__link">
         Burp suite
       </a>
     </li>
@@ -1120,7 +1124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/curl/" class="md-nav__link">
+      <a href="../curl/" class="md-nav__link">
         curl
       </a>
     </li>
@@ -1134,7 +1138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/feroxbuster/" class="md-nav__link">
+      <a href="../feroxbuster/" class="md-nav__link">
         Feroxbuster
       </a>
     </li>
@@ -1148,7 +1152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/ffuf/" class="md-nav__link">
+      <a href="../ffuf/" class="md-nav__link">
         ffuf
       </a>
     </li>
@@ -1162,7 +1166,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/gobuster/" class="md-nav__link">
+      <a href="../gobuster/" class="md-nav__link">
         gobuster
       </a>
     </li>
@@ -1176,7 +1180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/hash-id/" class="md-nav__link">
+      <a href="../hash-id/" class="md-nav__link">
         hash-id
       </a>
     </li>
@@ -1190,7 +1194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/Hydra/" class="md-nav__link">
+      <a href="../Hydra/" class="md-nav__link">
         Hydra
       </a>
     </li>
@@ -1204,7 +1208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/John_the_ripper/" class="md-nav__link">
+      <a href="../John_the_ripper/" class="md-nav__link">
         John the ripper
       </a>
     </li>
@@ -1218,7 +1222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/Metasploit/" class="md-nav__link">
+      <a href="../Metasploit/" class="md-nav__link">
         Metasploit
       </a>
     </li>
@@ -1232,7 +1236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/netcat_nc/" class="md-nav__link">
+      <a href="../netcat_nc/" class="md-nav__link">
         netcat (nc)
       </a>
     </li>
@@ -1246,7 +1250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/nikto/" class="md-nav__link">
+      <a href="../nikto/" class="md-nav__link">
         nikto
       </a>
     </li>
@@ -1260,7 +1264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/nmap/" class="md-nav__link">
+      <a href="../nmap/" class="md-nav__link">
         nmap
       </a>
     </li>
@@ -1274,7 +1278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/rubeus/" class="md-nav__link">
+      <a href="../rubeus/" class="md-nav__link">
         Rubeus
       </a>
     </li>
@@ -1288,7 +1292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/socat/" class="md-nav__link">
+      <a href="../socat/" class="md-nav__link">
         socat
       </a>
     </li>
@@ -1300,11 +1304,73 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/wireshark/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Wireshark
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Wireshark
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Назначение
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Интерфейс
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Исследование пакетов и навигация по ним
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Фильтрация пакетов
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1316,7 +1382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/WPScan/" class="md-nav__link">
+      <a href="../WPScan/" class="md-nav__link">
         WPScan
       </a>
     </li>
@@ -1359,7 +1425,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../CyberSec/Network_security/">Сетевая безопасность</a>
+          <a href="../../Network_security/">Сетевая безопасность</a>
           
             <label for="__nav_2_9">
               <span class="md-nav__icon md-icon"></span>
@@ -1382,7 +1448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Network_security/ARP_spoofing/" class="md-nav__link">
+      <a href="../../Network_security/ARP_spoofing/" class="md-nav__link">
         ARP spoffing
       </a>
     </li>
@@ -1403,7 +1469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Threat_modeling/" class="md-nav__link">
+      <a href="../../Threat_modeling/" class="md-nav__link">
         Моделирование угроз
       </a>
     </li>
@@ -1417,7 +1483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Useful_Information/" class="md-nav__link">
+      <a href="../../Useful_Information/" class="md-nav__link">
         Полезная информация
       </a>
     </li>
@@ -1431,7 +1497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Useful_Links/" class="md-nav__link">
+      <a href="../../Useful_Links/" class="md-nav__link">
         Полезные ссылки
       </a>
     </li>
@@ -1445,7 +1511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Terms_and_definitions/" class="md-nav__link">
+      <a href="../../Terms_and_definitions/" class="md-nav__link">
         Термины и определения
       </a>
     </li>
@@ -1459,7 +1525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/vulnerabilities/" class="md-nav__link">
+      <a href="../../vulnerabilities/" class="md-nav__link">
         Уязвимости
       </a>
     </li>
@@ -1525,7 +1591,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../CTF/">CTF</a>
+          <a href="../../../CTF/">CTF</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -1548,7 +1614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CTF/agent_sudo/" class="md-nav__link">
+      <a href="../../../CTF/agent_sudo/" class="md-nav__link">
         Agent SUDO
       </a>
     </li>
@@ -1562,7 +1628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CTF/bounty_hacker/" class="md-nav__link">
+      <a href="../../../CTF/bounty_hacker/" class="md-nav__link">
         Bounty hacker
       </a>
     </li>
@@ -1576,7 +1642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CTF/attacktive_directory/" class="md-nav__link">
+      <a href="../../../CTF/attacktive_directory/" class="md-nav__link">
         Attacktive Directory
       </a>
     </li>
@@ -1590,7 +1656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CTF/Basic_Pentesting/" class="md-nav__link">
+      <a href="../../../CTF/Basic_Pentesting/" class="md-nav__link">
         Basic Pentesting
       </a>
     </li>
@@ -1604,7 +1670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CTF/Kenoby/" class="md-nav__link">
+      <a href="../../../CTF/Kenoby/" class="md-nav__link">
         Kenoby
       </a>
     </li>
@@ -1618,7 +1684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CTF/Lazy_admin/" class="md-nav__link">
+      <a href="../../../CTF/Lazy_admin/" class="md-nav__link">
         Lazy Admin
       </a>
     </li>
@@ -1632,7 +1698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CTF/MrRobot/" class="md-nav__link">
+      <a href="../../../CTF/MrRobot/" class="md-nav__link">
         Mr.Robot CTF
       </a>
     </li>
@@ -1646,7 +1712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CTF/Pickle_Rick/" class="md-nav__link">
+      <a href="../../../CTF/Pickle_Rick/" class="md-nav__link">
         Pickle Rick
       </a>
     </li>
@@ -1660,7 +1726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CTF/root_me/" class="md-nav__link">
+      <a href="../../../CTF/root_me/" class="md-nav__link">
         Root me
       </a>
     </li>
@@ -1674,7 +1740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CTF/Simple_CTF/" class="md-nav__link">
+      <a href="../../../CTF/Simple_CTF/" class="md-nav__link">
         Simple CTF
       </a>
     </li>
@@ -1688,7 +1754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CTF/Skynet/" class="md-nav__link">
+      <a href="../../../CTF/Skynet/" class="md-nav__link">
         Skynet
       </a>
     </li>
@@ -1702,7 +1768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CTF/Steel_Mountain/" class="md-nav__link">
+      <a href="../../../CTF/Steel_Mountain/" class="md-nav__link">
         Steel Mountain
       </a>
     </li>
@@ -1716,7 +1782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CTF/Upload_Vulnerabilities/" class="md-nav__link">
+      <a href="../../../CTF/Upload_Vulnerabilities/" class="md-nav__link">
         Upload Vulnerabilities
       </a>
     </li>
@@ -1776,7 +1842,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../Linux/">Linux</a>
+          <a href="../../../Linux/">Linux</a>
           
             <label for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
@@ -1799,7 +1865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/Bash_startup_files/" class="md-nav__link">
+      <a href="../../../Linux/Bash_startup_files/" class="md-nav__link">
         Bash startup files
       </a>
     </li>
@@ -1813,7 +1879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/Disks/" class="md-nav__link">
+      <a href="../../../Linux/Disks/" class="md-nav__link">
         Working with Disks
       </a>
     </li>
@@ -1827,7 +1893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/Kernel/" class="md-nav__link">
+      <a href="../../../Linux/Kernel/" class="md-nav__link">
         Kernel
       </a>
     </li>
@@ -1841,7 +1907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/Other_necessery_things/" class="md-nav__link">
+      <a href="../../../Linux/Other_necessery_things/" class="md-nav__link">
         Other necessary things
       </a>
     </li>
@@ -1855,7 +1921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/Processes/" class="md-nav__link">
+      <a href="../../../Linux/Processes/" class="md-nav__link">
         Processes
       </a>
     </li>
@@ -1869,7 +1935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/Shell_scripting/" class="md-nav__link">
+      <a href="../../../Linux/Shell_scripting/" class="md-nav__link">
         Shell scripting
       </a>
     </li>
@@ -1883,7 +1949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/Some_useful_files_and_directories/" class="md-nav__link">
+      <a href="../../../Linux/Some_useful_files_and_directories/" class="md-nav__link">
         Useful files and directories
       </a>
     </li>
@@ -1897,7 +1963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/Users/" class="md-nav__link">
+      <a href="../../../Linux/Users/" class="md-nav__link">
         Users
       </a>
     </li>
@@ -1911,7 +1977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/Variables/" class="md-nav__link">
+      <a href="../../../Linux/Variables/" class="md-nav__link">
         Variables
       </a>
     </li>
@@ -1925,7 +1991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/Linux_commands/" class="md-nav__link">
+      <a href="../../../Linux/Linux_commands/" class="md-nav__link">
         Команды Linux
       </a>
     </li>
@@ -1945,16 +2011,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
       
       
         
@@ -1981,7 +2045,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../">Windows</a>
+          <a href="../../../Windows/">Windows</a>
           
             <label for="__nav_5">
               <span class="md-nav__icon md-icon"></span>
@@ -1989,7 +2053,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Windows
@@ -2004,7 +2068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Active_Directory/" class="md-nav__link">
+      <a href="../../../Windows/Active_Directory/" class="md-nav__link">
         Active Directory
       </a>
     </li>
@@ -2018,7 +2082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Alternate_Data_Streams/" class="md-nav__link">
+      <a href="../../../Windows/Alternate_Data_Streams/" class="md-nav__link">
         Alternate Data Streams
       </a>
     </li>
@@ -2032,7 +2096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Powershell_commandlets/" class="md-nav__link">
+      <a href="../../../Windows/Powershell_commandlets/" class="md-nav__link">
         Powershell
       </a>
     </li>
@@ -2046,7 +2110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../System_utilities/" class="md-nav__link">
+      <a href="../../../Windows/System_utilities/" class="md-nav__link">
         System utilities
       </a>
     </li>
@@ -2058,59 +2122,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Windows Services
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../Windows/Windows_Services/" class="md-nav__link">
         Windows Services
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание раздела
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#lsass" class="md-nav__link">
-    lsass
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ntds" class="md-nav__link">
-    NTDS
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2122,7 +2138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../windows_users/" class="md-nav__link">
+      <a href="../../../Windows/windows_users/" class="md-nav__link">
         Windows Users
       </a>
     </li>
@@ -2136,7 +2152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Windows_persistence/" class="md-nav__link">
+      <a href="../../../Windows/Windows_persistence/" class="md-nav__link">
         Способы закрепления в Windows
       </a>
     </li>
@@ -2204,7 +2220,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../Technologies/">Прочее</a>
+          <a href="../../../Technologies/">Прочее</a>
           
             <label for="__nav_6">
               <span class="md-nav__icon md-icon"></span>
@@ -2227,7 +2243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Technologies/FTP/" class="md-nav__link">
+      <a href="../../../Technologies/FTP/" class="md-nav__link">
         FTP
       </a>
     </li>
@@ -2241,7 +2257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Technologies/Hashing/" class="md-nav__link">
+      <a href="../../../Technologies/Hashing/" class="md-nav__link">
         Hashing
       </a>
     </li>
@@ -2255,7 +2271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Technologies/IMAP/" class="md-nav__link">
+      <a href="../../../Technologies/IMAP/" class="md-nav__link">
         IMAP
       </a>
     </li>
@@ -2269,7 +2285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Technologies/Kerberos/" class="md-nav__link">
+      <a href="../../../Technologies/Kerberos/" class="md-nav__link">
         Kerberos
       </a>
     </li>
@@ -2283,7 +2299,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Technologies/MySQL/" class="md-nav__link">
+      <a href="../../../Technologies/MySQL/" class="md-nav__link">
         MySQL
       </a>
     </li>
@@ -2297,7 +2313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Technologies/NFS/" class="md-nav__link">
+      <a href="../../../Technologies/NFS/" class="md-nav__link">
         NFS
       </a>
     </li>
@@ -2311,7 +2327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Technologies/NTLM/" class="md-nav__link">
+      <a href="../../../Technologies/NTLM/" class="md-nav__link">
         NTLM
       </a>
     </li>
@@ -2325,7 +2341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Technologies/POP3/" class="md-nav__link">
+      <a href="../../../Technologies/POP3/" class="md-nav__link">
         POP3
       </a>
     </li>
@@ -2339,7 +2355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Technologies/python/" class="md-nav__link">
+      <a href="../../../Technologies/python/" class="md-nav__link">
         Python
       </a>
     </li>
@@ -2353,7 +2369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Technologies/SMB/" class="md-nav__link">
+      <a href="../../../Technologies/SMB/" class="md-nav__link">
         SMB
       </a>
     </li>
@@ -2367,7 +2383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Technologies/SMTP/" class="md-nav__link">
+      <a href="../../../Technologies/SMTP/" class="md-nav__link">
         SMTP
       </a>
     </li>
@@ -2381,7 +2397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Technologies/SQLite/" class="md-nav__link">
+      <a href="../../../Technologies/SQLite/" class="md-nav__link">
         SQLite
       </a>
     </li>
@@ -2395,7 +2411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Technologies/telnet/" class="md-nav__link">
+      <a href="../../../Technologies/telnet/" class="md-nav__link">
         Telnet
       </a>
     </li>
@@ -2409,7 +2425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Technologies/XML/" class="md-nav__link">
+      <a href="../../../Technologies/XML/" class="md-nav__link">
         XML
       </a>
     </li>
@@ -2453,7 +2469,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../Documents/">Нормативка</a>
+          <a href="../../../Documents/">Нормативка</a>
           
             <label for="__nav_7">
               <span class="md-nav__icon md-icon"></span>
@@ -2476,7 +2492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Documents/683-p/" class="md-nav__link">
+      <a href="../../../Documents/683-p/" class="md-nav__link">
         Положение Банка России 683-П
       </a>
     </li>
@@ -2490,7 +2506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Documents/719-p/" class="md-nav__link">
+      <a href="../../../Documents/719-p/" class="md-nav__link">
         Положение Банка России 719-П
       </a>
     </li>
@@ -2512,7 +2528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../disclaimer/" class="md-nav__link">
+      <a href="../../../disclaimer/" class="md-nav__link">
         Disclaimer
       </a>
     </li>
@@ -2527,7 +2543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Update_log/" class="md-nav__link">
+      <a href="../../../Update_log/" class="md-nav__link">
         Update Log
       </a>
     </li>
@@ -2561,15 +2577,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#lsass" class="md-nav__link">
-    lsass
+  <a href="#_1" class="md-nav__link">
+    Назначение
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ntds" class="md-nav__link">
-    NTDS
+  <a href="#_2" class="md-nav__link">
+    Интерфейс
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Исследование пакетов и навигация по ним
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Фильтрация пакетов
   </a>
   
 </li>
@@ -2589,25 +2619,35 @@
                   
 
 
-<h1 id="windows-services-and-files">Windows Services and Files</h1>
-<hr />
-<h3 id="lsass">lsass</h3>
-<p>Local Security Authority Subsytem Service (<strong>lsass.exe</strong>) - один из основных сервисов Windows систем. Отвечает за:</p>
+<h1 id="wireshark">Wireshark</h1>
+<p>OpenSource инструмент для анализа сетевых пакетов.</p>
+<h2 id="_1">Назначение</h2>
 <ul>
-<li>приминение политик безопасности</li>
-<li>верификацию входа пользователей в систему</li>
-<li>обработки изменения паролей</li>
-<li>создания <a href="https://en.wikipedia.org/wiki/Access_token">access token-ов</a></li>
-<li>запись в системный журнал событий безопасности.</li>
+<li>Диагностика и траблшутинг сетевых проблем, таких как уменьшение пропускной способности и ошибки загрузки</li>
+<li>Обнаружение сетевых аномалий возможно влияющих на безопасность: неучтенные хосты, непривычное использование портов, подозрительный трафик</li>
+<li>Исследование и изучение особенностей различных сетевых протоколов, просмотр переданного payload</li>
 </ul>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p><strong>Принудетельное завершение lsass.exe приведет к тому, что система потеряет доступ к любой учётной записи включая SYSTEM\NT AUTHORITY и выведет запрос на перезагрузку ОС.</strong></p>
-<p>В виду критической важности этого сервиса, под него часто мимикрируют различная малварь, включая <a href="../../CyberSec/Tools/Metasploit/">metasploit:meterpreter</a></p>
-</div>
-<h3 id="ntds">NTDS</h3>
-<p>Windows NT Directory Services - сервис используемый Microsoft для управления, поиска и организации сетевых ресурсов.</p>
-<p>Файл NTDS.dit - файл базы данных который распологается на контроллере домена и хранит сведения из Active Directory, включая пользователей, группы, хэши паролей.</p>
+<h2 id="_2">Интерфейс</h2>
+<p>Имеется как GUI версия, так и CLI.</p>
+<p>Имеется возможность работать как с трафиком в реальном времени, так и загружать дампы трафика из файлов .pcap, причем возможно загрузить несколько файлов для дальнейшего их объединения в один.</p>
+<p>Имеется возможность цветовой градации пакетов (<code>View -&gt; Coloring Rules</code>), причём вместе с предустановленными цветовыми схемами, можно создавать свои.</p>
+<p>Для каждого пакета можно посмостреть дополнительную информацию путём вызова <code>Statistics -&gt; Capture File Propetries</code> или нажатием кнопки с блокнотиком в левой части статусбара.</p>
+<h2 id="_3">Исследование пакетов и навигация по ним</h2>
+<p>Для просмотра деталей пакета достаточно встать на него. Информация отобразится в нижней части экрана в соответствующих областях. Кроме того, можно открыть каждый пакет двойным кликом.</p>
+<p>С помощью <code>Ctrl + G</code> можно перейти к нужному пакету по его номеру.</p>
+<p>С помощью <code>Ctrl + F</code> можно найти нужные пакеты в соответствии с заданным запросом.</p>
+<p>С помощью <code>Ctrl + M</code> можно помечать конкретные пакеты/группу пакетов</p>
+<p>С помощью <code>Ctrl + Alt + C</code> можно задавать комментарии к конкретному пакету.</p>
+<p>С помощью <code>File -&gt; Export Objects</code> можно извлекать из пакетов переданную информацию </p>
+<p>Раздел <code>Analyze -&gt; Expert Information</code> вызывает окно содержащее обзорные сведения об интересных пакетах</p>
+<h2 id="_4">Фильтрация пакетов</h2>
+<p>Различают два типа фильтрации:
+1. Capture Filter - то, что нужно захватывать
+2. Display Filter - то, что нужно показать в списке пакетов</p>
+<p>Фильтры можно задавать как запросами так и через GUI, имею в виду можно выбрать конкретное поле в конкретном пакете (<code>Analyse -&gt; Apply as Filter</code> или через ПКМ) и назначить фильтр по этому полю.</p>
+<p>Также существует возможность фильтрации отдельных взаимодействий, например по TCP сессии, (Conversation Filter). Кроме того, имеется возможность просто обозначить цветом подходящие под условия фильтра пакеты, не скрывая остальные записи с экрана.</p>
+<p>Имеется возможность отобразить конкретную запись из деталей пакета в списке колонок. После этого удобно применить фильтр по такой нужной колонке.</p>
+<p>С помощью <code>Analyse -&gt; Follow TCP/UDP/HTTP Stream</code> можно восстановить поток и в отдельном окне увидеть результаты взаимодействия.</p>
 
 
   
@@ -2636,7 +2676,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
         
           
-          <a href="../System_utilities/" class="md-footer__link md-footer__link--prev" aria-label="Назад: System utilities" rel="prev">
+          <a href="../socat/" class="md-footer__link md-footer__link--prev" aria-label="Назад: socat" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -2645,20 +2685,20 @@
                 Назад
               </span>
               <div class="md-ellipsis">
-                System utilities
+                socat
               </div>
             </div>
           </a>
         
         
           
-          <a href="../windows_users/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Windows Users" rel="next">
+          <a href="../WPScan/" class="md-footer__link md-footer__link--next" aria-label="Вперед: WPScan" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Вперед
               </span>
               <div class="md-ellipsis">
-                Windows Users
+                WPScan
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2710,10 +2750,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
   </body>

