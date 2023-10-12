@@ -2613,16 +2613,78 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../Windows/Active_Directory/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Windows/Active_Directory/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Active Directory
   </span>
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Active Directory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Active_Directory/breaching_ad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Проникновение в Active Directory
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3368,7 +3430,9 @@
 
 <h1 id="smb">SMB</h1>
 <hr />
-<p>SMB - Server message block protocol. Используется для предоставления/получения доступа к различным ресурсам, каталоги, файлы в них, принтеры и т.п.</p>
+<p>SMB - Server message block protocol - Протокол позволяющий клиентам (например, рабочим станциям) общатся с сервером (например, файловой шарой на сервере). Используется для предоставления/получения доступа к различным ресурсам, каталоги, файлы в них, принтеры и т.п.</p>
+<p>В сетях под управлением Microsoft AD, SMB отвечает практически за всё, начиная от внутрисетевых файловых шар, до удаленного администрирования. Даже сигнал о том, что в принтере закончилась бумага, тоже использует SMB.</p>
+<p>Ранние версии (&lt;3) признаны недостаточно защищенными. Существуют различные уязвимости и эксплойты к ним, которые позволяют восстановить аутентификационные сведения или даже запустить RCE.</p>
 <p>Работает на 445 (ранние версии на 139) порту TCP.</p>
 <h5 id="_1">Инструменты</h5>
 <ul>

