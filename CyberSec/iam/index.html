@@ -12,13 +12,13 @@
         <meta name="author" content="Dmitrii Ivanov">
       
       
-        <link rel="canonical" href="https://ivanovds.ru/CTF/Simple_CTF/">
+        <link rel="canonical" href="https://ivanovds.ru/CyberSec/iam/">
       
       
-        <link rel="prev" href="../root_me/">
+        <link rel="prev" href="../SecurityPrinciples/">
       
       
-        <link rel="next" href="../Skynet/">
+        <link rel="next" href="../Cyber_Kill_Chain/">
       
       
       <link rel="icon" href="../../images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Simple CTF - ivanovds.ru</title>
+        <title>Идентификация и управление доступом - ivanovds.ru</title>
       
     
     
@@ -91,7 +91,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#simple-ctf" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Simple CTF
+              Идентификация и управление доступом
             
           </span>
         </div>
@@ -237,11 +237,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../CyberSec/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -257,13 +259,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../CTF/" class="md-tabs__link">
           
   
     
@@ -489,6 +489,8 @@
       
   
   
+    
+  
   
     
     
@@ -534,17 +536,17 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../CyberSec/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -561,7 +563,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             CyberSec
@@ -576,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Terms_and_definitions/" class="md-nav__link">
+      <a href="../Terms_and_definitions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -596,7 +598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/SecurityPrinciples/" class="md-nav__link">
+      <a href="../SecurityPrinciples/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -614,9 +616,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../CyberSec/iam/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Идентификация и управление доступом
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -625,6 +647,189 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#iaaa" class="md-nav__link">
+    IAAA
+  </a>
+  
+    <nav class="md-nav" aria-label="IAAA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identification" class="md-nav__link">
+    Identification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#something-you-know" class="md-nav__link">
+    Something you know
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#something-you-have" class="md-nav__link">
+    Something you have
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#something-you-are" class="md-nav__link">
+    Something you are
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mfa" class="md-nav__link">
+    MFA
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorisation-and-access-control" class="md-nav__link">
+    Authorisation and Access control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accountability-and-logging" class="md-nav__link">
+    Accountability and Logging
+  </a>
+  
+    <nav class="md-nav" aria-label="Accountability and Logging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-forwarding" class="md-nav__link">
+    Log forwarding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#siem" class="md-nav__link">
+    Логирование и SIEM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idm-iam" class="md-nav__link">
+    Управление идентификацией и доступом ( IdM &amp; IAM)
+  </a>
+  
+    <nav class="md-nav" aria-label="Управление идентификацией и доступом ( IdM & IAM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idm" class="md-nav__link">
+    IdM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iam" class="md-nav__link">
+    IAM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Модели контроля доступа.
+  </a>
+  
+    <nav class="md-nav" aria-label="Модели контроля доступа.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dac" class="md-nav__link">
+    DAC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rbac" class="md-nav__link">
+    RBAC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mac" class="md-nav__link">
+    MAC
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-sign-on-sso" class="md-nav__link">
+    Single Sign-On (SSO)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -636,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Cyber_Kill_Chain/" class="md-nav__link">
+      <a href="../Cyber_Kill_Chain/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -656,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Threat_modeling/" class="md-nav__link">
+      <a href="../Threat_modeling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -676,7 +881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/vulnerabilities/" class="md-nav__link">
+      <a href="../vulnerabilities/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -696,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_specialists/" class="md-nav__link">
+      <a href="../CyberSec_specialists/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -716,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Security_Operation_Center_%28SOC%29/" class="md-nav__link">
+      <a href="../Security_Operation_Center_%28SOC%29/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -736,7 +941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Useful_Information/" class="md-nav__link">
+      <a href="../Useful_Information/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -756,7 +961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Useful_Links/" class="md-nav__link">
+      <a href="../Useful_Links/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -802,7 +1007,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../CyberSec/CyberSec_Frameworks/" class="md-nav__link ">
+            <a href="../CyberSec_Frameworks/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -834,7 +1039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/nist/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/nist/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -854,7 +1059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/GRC/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/GRC/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -918,7 +1123,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../CyberSec/CyberSec_Frameworks/OWASP/" class="md-nav__link ">
+            <a href="../CyberSec_Frameworks/OWASP/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -950,7 +1155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/Broken_Access_Control/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/Broken_Access_Control/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -970,7 +1175,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/Cryptographic_failures/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/Cryptographic_failures/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -990,7 +1195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/Injection/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/Injection/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1010,7 +1215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/SQLi/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/SQLi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1030,7 +1235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/XSS/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/XSS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1050,7 +1255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/insecure_design/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/insecure_design/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1070,7 +1275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/Security_Misconfiguration/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/Security_Misconfiguration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1090,7 +1295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/Broken_Authentication/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/Broken_Authentication/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1110,7 +1315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/Insecure_Deserialization/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/Insecure_Deserialization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1130,7 +1335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/SSRF/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/SSRF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1150,7 +1355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/logging_and_monitoring/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/logging_and_monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1170,7 +1375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/CyberSec_Frameworks/OWASP/XML_External_Entity_%28Security_misconfiguration%29/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/XML_External_Entity_%28Security_misconfiguration%29/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1232,7 +1437,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../CyberSec/Penetration_testing/" class="md-nav__link ">
+            <a href="../Penetration_testing/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1264,7 +1469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Penetration_testing/Privilege_escalation/" class="md-nav__link">
+      <a href="../Penetration_testing/Privilege_escalation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1284,7 +1489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Penetration_testing/Reverse_shell/" class="md-nav__link">
+      <a href="../Penetration_testing/Reverse_shell/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1304,7 +1509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Penetration_testing/Upload_payload/" class="md-nav__link">
+      <a href="../Penetration_testing/Upload_payload/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1354,7 +1559,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../CyberSec/web_applications/" class="md-nav__link ">
+            <a href="../web_applications/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1386,7 +1591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/web_applications/web_vulns/" class="md-nav__link">
+      <a href="../web_applications/web_vulns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1466,7 +1671,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../CyberSec/Tools/" class="md-nav__link ">
+            <a href="../Tools/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1498,7 +1703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/Burp_Suite/" class="md-nav__link">
+      <a href="../Tools/Burp_Suite/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1518,7 +1723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/curl/" class="md-nav__link">
+      <a href="../Tools/curl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1538,7 +1743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/feroxbuster/" class="md-nav__link">
+      <a href="../Tools/feroxbuster/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1558,7 +1763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/ffuf/" class="md-nav__link">
+      <a href="../Tools/ffuf/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1578,7 +1783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/gobuster/" class="md-nav__link">
+      <a href="../Tools/gobuster/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1598,7 +1803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/hash-id/" class="md-nav__link">
+      <a href="../Tools/hash-id/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1618,7 +1823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/Hydra/" class="md-nav__link">
+      <a href="../Tools/Hydra/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1638,7 +1843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/John_the_ripper/" class="md-nav__link">
+      <a href="../Tools/John_the_ripper/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1658,7 +1863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/Metasploit/" class="md-nav__link">
+      <a href="../Tools/Metasploit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1678,7 +1883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/netcat_nc/" class="md-nav__link">
+      <a href="../Tools/netcat_nc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1698,7 +1903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/nikto/" class="md-nav__link">
+      <a href="../Tools/nikto/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1718,7 +1923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/nmap/" class="md-nav__link">
+      <a href="../Tools/nmap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1738,7 +1943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/rubeus/" class="md-nav__link">
+      <a href="../Tools/rubeus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1758,7 +1963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/socat/" class="md-nav__link">
+      <a href="../Tools/socat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1778,7 +1983,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/wireshark/" class="md-nav__link">
+      <a href="../Tools/wireshark/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1798,7 +2003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Tools/WPScan/" class="md-nav__link">
+      <a href="../Tools/WPScan/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1848,7 +2053,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../CyberSec/Network_security/" class="md-nav__link ">
+            <a href="../Network_security/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1880,7 +2085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec/Network_security/ARP_spoofing/" class="md-nav__link">
+      <a href="../Network_security/ARP_spoofing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1913,8 +2118,6 @@
       
   
   
-    
-  
   
     
     
@@ -1958,17 +2161,17 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../CTF/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1985,7 +2188,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             CTF
@@ -2000,7 +2203,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agent_sudo/" class="md-nav__link">
+      <a href="../../CTF/agent_sudo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2020,7 +2223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bounty_hacker/" class="md-nav__link">
+      <a href="../../CTF/bounty_hacker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2040,7 +2243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../attacktive_directory/" class="md-nav__link">
+      <a href="../../CTF/attacktive_directory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2060,7 +2263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Basic_Pentesting/" class="md-nav__link">
+      <a href="../../CTF/Basic_Pentesting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2080,7 +2283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Kenoby/" class="md-nav__link">
+      <a href="../../CTF/Kenoby/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2100,7 +2303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Lazy_admin/" class="md-nav__link">
+      <a href="../../CTF/Lazy_admin/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2120,7 +2323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../MrRobot/" class="md-nav__link">
+      <a href="../../CTF/MrRobot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2140,7 +2343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Pickle_Rick/" class="md-nav__link">
+      <a href="../../CTF/Pickle_Rick/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2160,7 +2363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../root_me/" class="md-nav__link">
+      <a href="../../CTF/root_me/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2178,29 +2381,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Simple CTF
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../CTF/Simple_CTF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2209,47 +2392,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Сканирование
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sqli" class="md-nav__link">
-    SQLi
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Эскалация привилегий.
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2261,7 +2403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Skynet/" class="md-nav__link">
+      <a href="../../CTF/Skynet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2281,7 +2423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Steel_Mountain/" class="md-nav__link">
+      <a href="../../CTF/Steel_Mountain/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2301,7 +2443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tomghost/" class="md-nav__link">
+      <a href="../../CTF/tomghost/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2321,7 +2463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Upload_Vulnerabilities/" class="md-nav__link">
+      <a href="../../CTF/Upload_Vulnerabilities/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3465,23 +3607,165 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Сканирование
+  <a href="#iaaa" class="md-nav__link">
+    IAAA
+  </a>
+  
+    <nav class="md-nav" aria-label="IAAA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identification" class="md-nav__link">
+    Identification
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#sqli" class="md-nav__link">
-    SQLi
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#something-you-know" class="md-nav__link">
+    Something you know
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#something-you-have" class="md-nav__link">
+    Something you have
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#something-you-are" class="md-nav__link">
+    Something you are
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mfa" class="md-nav__link">
+    MFA
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorisation-and-access-control" class="md-nav__link">
+    Authorisation and Access control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accountability-and-logging" class="md-nav__link">
+    Accountability and Logging
+  </a>
+  
+    <nav class="md-nav" aria-label="Accountability and Logging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-forwarding" class="md-nav__link">
+    Log forwarding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#siem" class="md-nav__link">
+    Логирование и SIEM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idm-iam" class="md-nav__link">
+    Управление идентификацией и доступом ( IdM &amp; IAM)
+  </a>
+  
+    <nav class="md-nav" aria-label="Управление идентификацией и доступом ( IdM & IAM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idm" class="md-nav__link">
+    IdM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iam" class="md-nav__link">
+    IAM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    Эскалация привилегий.
+    Модели контроля доступа.
   </a>
+  
+    <nav class="md-nav" aria-label="Модели контроля доступа.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dac" class="md-nav__link">
+    DAC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rbac" class="md-nav__link">
+    RBAC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mac" class="md-nav__link">
+    MAC
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-sign-on-sso" class="md-nav__link">
+    Single Sign-On (SSO)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3500,44 +3784,109 @@
                   
 
 
-<h1 id="simple-ctf">Simple CTF</h1>
-<hr />
-<p>Основная задача - Поиск и эксплуатация уязвимостей типа <a href="https://ivanovds.ru/CyberSec/CyberSec_Frameworks/OWASP/SQLi/?h=boolean+based#boolean-based-sqli">Boolean Based SQLi</a>. Эскалация привилегий в Linux.<br />
-Описание задания можно найти на <a href="https://tryhackme.com/room/easyctf">TryHackme</a></p>
-<h3 id="_1">Сканирование</h3>
-<p>Проведение разведки с nmap на предмет наличия открытых портов:</p>
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>nmap<span class="w"> </span>-T4<span class="w">  </span>-p-<span class="w"> </span>IP-ADDRESS
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">#После получения сведений о портах</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>sudo<span class="w"> </span>nmap<span class="w"> </span>-sV<span class="w"> </span>-sC<span class="w"> </span>-O<span class="w"> </span>-p<span class="w"> </span><span class="m">22</span>,80,<span class="w"> </span><span class="m">2222</span><span class="w"> </span>IP-ADDRESS<span class="w"> </span>
-</span></code></pre></div>
+<h1 id="_1">Идентификация и управление доступом</h1>
+<h2 id="iaaa">IAAA</h2>
+<p><strong>I</strong>dentification -&gt; <strong>A</strong>uthentication -&gt; <strong>A</strong>uthorisation -&gt; <strong>A</strong>ccountability</p>
+<p>4 столпа информационной безопасности, каждый из которых играет важнейюшую роль в обеспечении CIA триады.</p>
+<h3 id="identification">Identification</h3>
+<p>Идентификация - процесс заключающийся в предоставление информационной системе сведений о конкретном пользователе.</p>
+<p>Ввод имени пользователя в форму входа на сайте ничто иное как этап идентификации. Пользователь предъявляет сведения о том, кто он есть.</p>
+<h3 id="authentication">Authentication</h3>
+<p>Аутентификация - процесс заключающийся в подтверждении идентичности пользователя информационной системы. Аутентификация неразрывно связанна с идентифакацией, так как по сути является её продолжением: мало предъявить иденитификатор, нужно подтвердить то, что он действительно принадлежит тому кто его предъявляет.</p>
+<p>Проверить принадлежность идентификатора (читай провести аутентификацию) можно путём предъявления следующего:</p>
+<ul>
+<li>
+<p>То, что ты знаешь (Something you know)</p>
+</li>
+<li>
+<p>То, что у тебя есть (Something you have)</p>
+</li>
+<li>
+<p>То, чем ты являешься (Something you are)</p>
+</li>
+</ul>
+<p>Так же различают еще 2 дополнительных подхода:</p>
+<ul>
+<li>
+<p>То, где ты находишься (логическое или физическое местонахождение)</p>
+</li>
+<li>
+<p>То, что ты делаешь (поведение)</p>
+</li>
+</ul>
+<p>Далее подробнее о каждом из механизмов аутентификации.</p>
+<h5 id="something-you-know">Something you know</h5>
+<p>К этому механизму относятся пароли, парольные фразы, пин-коды, в общем всё то, что хранится в памяти и конкретный человек это знает.</p>
+<h5 id="something-you-have">Something you have</h5>
+<p>Сюда относятся различные аппаратные способы аутентификации - то что есть у конкретного человека начиная от телефона (SMS, пуши, OTP аутентификаторы и т.д.) заканчивая аппаратными ключами (Yubico, Nitrokey и т.д.).</p>
+<h5 id="something-you-are">Something you are</h5>
+<p>К этому типу относятся различные методы биометрической аутентификации</p>
+<h4 id="mfa">MFA</h4>
+<p>Мультифкаторная аутентификация (Multi-Factor authentication - MFA) - метод аутентификации заключающийся в комбинации различных вышеприведенных способов аутентификации, направленный на усиление безопасности.</p>
+<h3 id="authorisation-and-access-control">Authorisation and Access control</h3>
+<p>Авторизация - процесс заключающийся в проверке выданных пользователю полномочий на действия в информационной системе.</p>
+<p>Контроль доступа - процесс направленный на обеспечение выполнения авторизованными пользователями только тех действий, которые им разрешены.</p>
+<h3 id="accountability-and-logging">Accountability and Logging</h3>
+<p>Учёт действий - процесс обеспечивающий учёт всех действий пользователей, направленный на обеспечение неотказуемости пользователя от его действий.</p>
 <blockquote>
-<p>Обнаружены открытые порты 22, 80, 2222.<br />
-Получены версии, наименование ПО работающего на открытых портах.</p>
+<p>Если контроль доступа направлен на обеспечение защиты информационных систем от неавторизованных пользователей, механизм учёта действий может рассматриваться как инструмент направленный на защиту от авторизованных пользователей.</p>
 </blockquote>
-<p>На 80 порту, находим лишь стандартную страницу Apache.
-Проводим разведку с <a href="/CyberSec/Tools/gobuster">gobuster</a> или <a href="/CyberSec/Tools/feroxbuster">feroxbuster</a> для получения информации о имеющихся директориях и файлов <code>php</code>,<code>txt</code>,<code>js</code>,<code>cgi</code>,<code>html</code>,<code>htm</code>,<code>sh</code>:</p>
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>feroxbuster<span class="w"> </span>-u<span class="w"> </span>IP-ADDRESS<span class="w"> </span>-w<span class="w"> </span>/usr/share/wordlists/dirbuster/directory-list-2.3-small.txt<span class="w"> </span>-t<span class="w"> </span><span class="m">64</span><span class="w"> </span>-x<span class="w"> </span>php,txt,js,cgi,html,htm,sh<span class="sb">``</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>gobuster<span class="w"> </span>dir<span class="w"> </span>-t<span class="w"> </span><span class="m">64</span>-u<span class="w"> </span>IP-ADDRESS<span class="w"> </span>-w<span class="w"> </span>/usr/share/wordlists/dirbuster/directory-list-2.3-small.txt<span class="w"> </span>-x<span class="w"> </span>php,txt,js,cgi,html,htm,sh<span class="sb">``</span>
-</span></code></pre></div>
-<blockquote>
-<p>Находим директорию <code>/simple/</code>. Которая является стандартной страницей CMS Made Simple.</p>
-</blockquote>
-<p>Изучив страницу выясняем версию. С этими сведениями идём на <a href="https://www.exploit-db.com">exploit-db.com</a> для поиска возможных уязвимостей и эксплойтов к ним.</p>
-<h3 id="sqli">SQLi</h3>
-<p>Находим уязвимость CVE-2019–9053 которая представляет из себя <a href="https://ivanovds.ru/CyberSec/CyberSec_Frameworks/OWASP/SQLi/?h=boolean+based#boolean-based-sqli">Boolean Based SQL инъекцию</a>, а также эксплойт к ней написанный на Python.</p>
-<p>Скачиваем его, понимаем как работает, запускаем, получаем логин/пароль. </p>
-<p>Используем их для подключения к хосту по ssh который вертится на 2222 порту. </p>
-<p>Получаем user flag.</p>
-<h3 id="_2">Эскалация привилегий.</h3>
+<p>Логирование - процесс направленный на журналирование событий происходящих в информационных системах. </p>
+<p>Учёт действий невозможно представить себе без логирования, эти процессы неразрывно связанны друг с другом.</p>
+<p>Логирование чрезвычайно важный процесс для реагирования на инциденты, форензики, соблюдения регуляторных требований и т.д.</p>
+<p>В виду особой важности логов, отношение к ним должно быть соответствующее. Они должны быть защищены от всяческого вредоносного воздействия, включая подмену, так как первое, что сделает злоумыщленник - попытается затереть следы своей противоправной деятельности.</p>
+<p>Хорошим примером считается вынесение логов критичных процессов на отдельный защищенный сервер.</p>
+<h4 id="log-forwarding">Log forwarding</h4>
+<p>Предназначен именно для этого. Это процесс направленный на агрегирование логов с различных систем в одном централизованном хранилище.</p>
+<h4 id="siem">Логирование и SIEM</h4>
+<p>Управление событиями безопасности информации (<strong>S</strong>ecurity <strong>I</strong>nformation and <strong>E</strong>vent <strong>M</strong>anagement) - технология агрегации и анализа логов различных систем на предмент наличия в них сведений которые могут свидетельствовать о событиях безопасности информации.</p>
+<p>Интегрирование логирования и SIEM позволит более глубже понимать процессы проходящие в информационных системах. Такой симбиоз поможет идентифицировать и реагировать на угрозы информации более эффективно.</p>
+<p>Больше того, логирование и SIEM предоставляют дополнительные преимущества в виде отчётности о соблюдении требований в рамках комплаенса и получения ценной информации (детальные логи работы систем и сетевого трафика) для форензики.</p>
+<p>Отчётность о соблюдении требований - важная часть документов предоставляемых при проведении различных аудитов. Форензика - ключевой процесс идентификации источников и причин инцидентов информационной безопасности.</p>
+<h3 id="idm-iam">Управление идентификацией и доступом ( IdM &amp; IAM)</h3>
+<p>Управление идентификацией и доступом - нацелено на гарантирование того, что авторизированные пользователи получат доступ только к тем активам и ресурсам которые необходимы им для выполнения их должностных обязанностей, в то время как не авторизированные пользователи не будут иметь доступа к активам организации.</p>
+<h4 id="idm">IdM</h4>
+<p>Системы Управления идентификацией (<strong>Id</strong>entity <strong>M</strong>anagmenet) предоставляют функциональность управления идентификацией пользователей, такие как управление учётными данными, управление атрибутами пользователей и т.д. Выполняют функции связанные с аутентификацией и авторизацией.</p>
+<h4 id="iam">IAM</h4>
+<p>Управление идентификацией и доступом (<strong>I</strong>dentity and <strong>A</strong>ccess <strong>M</strong>anagement) - более разносторонние системы по сравнению с IdM. Они выполняют все те же функции, что и IdM системы (через различные коннекторы), однако дополнительно предоставляют функции управления ролями пользователей, контроля доступа к ресурсам.</p>
+<p>Правильно сконфигурированная IAM система обеспечивает безопасный и эффективный доступ к ресурсам и приложениям в организации.</p>
+<h3 id="_2">Модели контроля доступа.</h3>
+<p>Механизм управления доступом к активам и ресурсам организации основывается на различных ресурсных моделях. Некоторые из них, о которых будет написано ниже:</p>
 <ol>
 <li>
-<p>Через <code>sudo -l</code> узнаем, что можем запустить <code>sudo vim</code>.</p>
+<p>Дискреционная (избирательная) модель управления доступом. (<strong>D</strong>iscretionaly <strong>A</strong>ccess <strong>C</strong>ontrol)</p>
 </li>
 <li>
-<p><a href="https://gtfobins.github.io/gtfobins/vim/#sudo">Эскплуатируем уязвимость</a>. Забираем root флаг в <code>/root/root.txt</code></p>
+<p>Ролевая модель управления доступом. (<strong>R</strong>ole-<strong>B</strong>ased <strong>A</strong>ccess <strong>C</strong>ontrol)</p>
+</li>
+<li>
+<p>Мандатная модель управления доступом. (<strong>M</strong>andatory <strong>A</strong>ccess <strong>C</strong>ontrol)</p>
 </li>
 </ol>
+<h4 id="dac">DAC</h4>
+<p>Модель доступа в которой у каждого ресурса есть пользователь-владелец который может наделять других пользователей правами на свой объект. Как правило, в права входит чтение, запись, выполнение и т.п. Субъект с определенным правом доступа может передать это право другим субъектам.</p>
+<p>Модель предусматривает наличие специального субъекта - суперпользователь - который имеет право устанавливать права на любой объект.</p>
+<p>В такой модели права полностью контролируются владельцем ресурса. Недостатки модели проявляются при увеличении количества пользователей: управлять права становится не удобно, особенно, если права пользователей часто меняются.</p>
+<h4 id="rbac">RBAC</h4>
+<p>Модель имеет очень наглядный подход: каждый пользователь наделяется определенными ролями в которых, в свою очередь, определены права для различных ресурсов. Обычно роли, представляют из себя специальные группы в которые включаются необходимые пользователи.</p>
+<p>По сравнению с DAC, RBAC позволяет назначать гранулированные права на ресурсы. А в случае если пользователю нужно добавить или прибавить определенную роль, его просто включают или исключают из соответствующей группы. Такой подход более удобен во многих аспектах.</p>
+<h4 id="mac">MAC</h4>
+<p>Модель позволяет определить как будут взаимодействовать между собой различные ресурсы системы такие как: пользователи, файлы, процессы, сокеты, устройства, а также их сетевые и внутрисистемные коммуникации. Обеспечивается это в общем случае путём проставления соответствующих меток на каждый из вышеназыванных ресурсов, с дальнейшим написанием правил о порядке взаимодействия помеченных ресурсов между собой.</p>
+<p>Например: приложение запущенное от имени пользователя имеет права пользователя который запустил это приложение, а следовательно оно имеет доступ ко всем файлам пользователя в его домашней директории, включая файлы из <code>~/.ssh</code>. Используя только <strong>DAC</strong> модель, приложению невозможно ограничить доступ к таким файлам. Используя же <strong>MAC</strong> модель, можно создать правило о том, что к файлам которые помечены конкретной меткой могут иметь только процессы связанные с <code>ssh</code> (они соответственно тоже должны иметь необходимую метку)</p>
+<blockquote>
+<p>Ключевым отличием <strong>MAC</strong> от <strong>DAC</strong> является то, что в <strong>MAC</strong> права на ресурсы назначаются администратором, следовательно владелец ресурса не обладает полным контролем над правами к собственным ресурсам.</p>
+</blockquote>
+<h3 id="single-sign-on-sso">Single Sign-On (SSO)</h3>
+<p>Технология позволяющая пользователям аутентифицироваться в различных информационных системах, используя всего один аккаунт.</p>
+<p>Внедрение SSO предоставляет следующие преимущества:</p>
+<ul>
+<li>
+<p>Удобство для пользователей и для администраторов информационных систем</p>
+</li>
+<li>
+<p>Легкое внедрение MFA. Нужно будет прикрутить только на сервере SSO</p>
+</li>
+</ul>
 
 
   
@@ -3567,7 +3916,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
         
           
-          <a href="../root_me/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Root me">
+          <a href="../SecurityPrinciples/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Принципы обеспечения безопаности информации">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -3577,20 +3926,20 @@
                 Назад
               </span>
               <div class="md-ellipsis">
-                Root me
+                Принципы обеспечения безопаности информации
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Skynet/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Skynet">
+          <a href="../Cyber_Kill_Chain/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Cyber kill chain">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Вперед
               </span>
               <div class="md-ellipsis">
-                Skynet
+                Cyber kill chain
               </div>
             </div>
             <div class="md-footer__button md-icon">
