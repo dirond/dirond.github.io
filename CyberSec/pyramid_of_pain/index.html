@@ -12,28 +12,28 @@
         <meta name="author" content="Dmitrii Ivanov">
       
       
-        <link rel="canonical" href="https://ivanovds.ru/CyberSec/Network_security/ARP_spoofing/">
+        <link rel="canonical" href="https://ivanovds.ru/CyberSec/pyramid_of_pain/">
       
       
-        <link rel="prev" href="../network_zones/">
+        <link rel="prev" href="../SecurityPrinciples/">
       
       
-        <link rel="next" href="../../../CTF/">
+        <link rel="next" href="../iam/">
       
       
-      <link rel="icon" href="../../../images/favicon.png">
+      <link rel="icon" href="../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
     
     
       
-        <title>ARP spoffing - ivanovds.ru</title>
+        <title>Pyramid of pain - ivanovds.ru</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.d451bc0e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d451bc0e.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a5377069.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a5377069.min.css">
       
       
 
@@ -52,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -91,7 +91,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#arp-spoofing" class="md-skip">
+        <a href="#pyramid-of-pain" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -107,9 +107,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
-    <a href="../../.." title="ivanovds.ru" class="md-header__button md-logo" aria-label="ivanovds.ru" data-md-component="logo">
+    <a href="../.." title="ivanovds.ru" class="md-header__button md-logo" aria-label="ivanovds.ru" data-md-component="logo">
       
-  <img src="../../../assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ARP spoffing
+              Pyramid of pain
             
           </span>
         </div>
@@ -221,7 +221,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../.." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
     
@@ -243,7 +243,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -263,7 +263,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../CTF/" class="md-tabs__link">
+        <a href="../../CTF/" class="md-tabs__link">
           
   
     
@@ -283,7 +283,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../Linux/" class="md-tabs__link">
+        <a href="../../Linux/" class="md-tabs__link">
           
   
     
@@ -303,7 +303,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../Windows/" class="md-tabs__link">
+        <a href="../../Windows/" class="md-tabs__link">
           
   
     
@@ -323,7 +323,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../Technologies/" class="md-tabs__link">
+        <a href="../../Technologies/" class="md-tabs__link">
           
   
     
@@ -343,7 +343,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../Documents/" class="md-tabs__link">
+        <a href="../../Documents/" class="md-tabs__link">
           
   
     
@@ -361,7 +361,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../disclaimer/" class="md-tabs__link">
+      <a href="../../disclaimer/" class="md-tabs__link">
         
   
     
@@ -378,7 +378,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../Update_log/" class="md-tabs__link">
+      <a href="../../Update_log/" class="md-tabs__link">
         
   
     
@@ -418,9 +418,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="ivanovds.ru" class="md-nav__button md-logo" aria-label="ivanovds.ru" data-md-component="logo">
+    <a href="../.." title="ivanovds.ru" class="md-nav__button md-logo" aria-label="ivanovds.ru" data-md-component="logo">
       
-  <img src="../../../assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     ivanovds.ru
@@ -457,7 +457,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../.." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -550,7 +550,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -582,7 +582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Terms_and_definitions/" class="md-nav__link">
+      <a href="../Terms_and_definitions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -602,7 +602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SecurityPrinciples/" class="md-nav__link">
+      <a href="../SecurityPrinciples/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -620,9 +620,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../pyramid_of_pain/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Pyramid of pain
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -631,6 +651,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Хэши файлов
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ip" class="md-nav__link">
+    IP адреса
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Доменные имена
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Сетевые/хостовые артефакты
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Инструменты
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ttp" class="md-nav__link">
+    TTP атакующего
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -642,7 +724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../iam/" class="md-nav__link">
+      <a href="../iam/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -662,7 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../risk_man/" class="md-nav__link">
+      <a href="../risk_man/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -682,7 +764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Cyber_Kill_Chain/" class="md-nav__link">
+      <a href="../Cyber_Kill_Chain/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -702,7 +784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Threat_modeling/" class="md-nav__link">
+      <a href="../Threat_modeling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -722,7 +804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vulnerabilities/" class="md-nav__link">
+      <a href="../vulnerabilities/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -742,7 +824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec_specialists/" class="md-nav__link">
+      <a href="../CyberSec_specialists/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -762,7 +844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Security_Operation_Center_%28SOC%29/" class="md-nav__link">
+      <a href="../Security_Operation_Center_%28SOC%29/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -782,7 +864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Useful_Information/" class="md-nav__link">
+      <a href="../Useful_Information/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -802,7 +884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Useful_Links/" class="md-nav__link">
+      <a href="../Useful_Links/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -848,7 +930,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../CyberSec_Frameworks/" class="md-nav__link ">
+            <a href="../CyberSec_Frameworks/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -880,7 +962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec_Frameworks/nist/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/nist/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -900,7 +982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec_Frameworks/GRC/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/GRC/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -964,7 +1046,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../CyberSec_Frameworks/OWASP/" class="md-nav__link ">
+            <a href="../CyberSec_Frameworks/OWASP/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -996,7 +1078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec_Frameworks/OWASP/Broken_Access_Control/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/Broken_Access_Control/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1016,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec_Frameworks/OWASP/Cryptographic_failures/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/Cryptographic_failures/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1036,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec_Frameworks/OWASP/Injection/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/Injection/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1056,7 +1138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec_Frameworks/OWASP/SQLi/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/SQLi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1076,7 +1158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec_Frameworks/OWASP/XSS/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/XSS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1096,7 +1178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec_Frameworks/OWASP/insecure_design/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/insecure_design/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1116,7 +1198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec_Frameworks/OWASP/Security_Misconfiguration/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/Security_Misconfiguration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1136,7 +1218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec_Frameworks/OWASP/Broken_Authentication/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/Broken_Authentication/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1156,7 +1238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec_Frameworks/OWASP/Insecure_Deserialization/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/Insecure_Deserialization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1176,7 +1258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec_Frameworks/OWASP/SSRF/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/SSRF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1196,7 +1278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec_Frameworks/OWASP/logging_and_monitoring/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/logging_and_monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1216,7 +1298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CyberSec_Frameworks/OWASP/XML_External_Entity_%28Security_misconfiguration%29/" class="md-nav__link">
+      <a href="../CyberSec_Frameworks/OWASP/XML_External_Entity_%28Security_misconfiguration%29/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1278,7 +1360,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Penetration_testing/" class="md-nav__link ">
+            <a href="../Penetration_testing/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1310,7 +1392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Penetration_testing/Privilege_escalation/" class="md-nav__link">
+      <a href="../Penetration_testing/Privilege_escalation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1330,7 +1412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Penetration_testing/Reverse_shell/" class="md-nav__link">
+      <a href="../Penetration_testing/Reverse_shell/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1350,7 +1432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Penetration_testing/Upload_payload/" class="md-nav__link">
+      <a href="../Penetration_testing/Upload_payload/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1400,7 +1482,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../web_applications/" class="md-nav__link ">
+            <a href="../web_applications/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1432,7 +1514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web_applications/web_vulns/" class="md-nav__link">
+      <a href="../web_applications/web_vulns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1512,7 +1594,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Tools/" class="md-nav__link ">
+            <a href="../Tools/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1544,7 +1626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/Burp_Suite/" class="md-nav__link">
+      <a href="../Tools/Burp_Suite/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1564,7 +1646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/curl/" class="md-nav__link">
+      <a href="../Tools/curl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1584,7 +1666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/feroxbuster/" class="md-nav__link">
+      <a href="../Tools/feroxbuster/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1604,7 +1686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/ffuf/" class="md-nav__link">
+      <a href="../Tools/ffuf/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1624,7 +1706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/gobuster/" class="md-nav__link">
+      <a href="../Tools/gobuster/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1644,7 +1726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/hash-id/" class="md-nav__link">
+      <a href="../Tools/hash-id/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1664,7 +1746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/Hydra/" class="md-nav__link">
+      <a href="../Tools/Hydra/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1684,7 +1766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/John_the_ripper/" class="md-nav__link">
+      <a href="../Tools/John_the_ripper/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1704,7 +1786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/Metasploit/" class="md-nav__link">
+      <a href="../Tools/Metasploit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1724,7 +1806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/netcat_nc/" class="md-nav__link">
+      <a href="../Tools/netcat_nc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1744,7 +1826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/nikto/" class="md-nav__link">
+      <a href="../Tools/nikto/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1764,7 +1846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/nmap/" class="md-nav__link">
+      <a href="../Tools/nmap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1784,7 +1866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/rubeus/" class="md-nav__link">
+      <a href="../Tools/rubeus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1804,7 +1886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/socat/" class="md-nav__link">
+      <a href="../Tools/socat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1824,7 +1906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/wireshark/" class="md-nav__link">
+      <a href="../Tools/wireshark/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1844,7 +1926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/WPScan/" class="md-nav__link">
+      <a href="../Tools/WPScan/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1870,8 +1952,6 @@
                 
   
   
-    
-  
   
     
     
@@ -1888,17 +1968,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_18" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_18" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../Network_security/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1915,7 +1995,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_18_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_18_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_18">
             <span class="md-nav__icon md-icon"></span>
             Сетевая безопасность
@@ -1930,7 +2010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../network_zones/" class="md-nav__link">
+      <a href="../Network_security/network_zones/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1948,29 +2028,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    ARP spoffing
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Network_security/ARP_spoofing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1979,40 +2039,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Инструменты:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Способы борьбы
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2090,7 +2116,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../CTF/" class="md-nav__link ">
+            <a href="../../CTF/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2122,7 +2148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CTF/agent_sudo/" class="md-nav__link">
+      <a href="../../CTF/agent_sudo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2142,7 +2168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CTF/bounty_hacker/" class="md-nav__link">
+      <a href="../../CTF/bounty_hacker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2162,7 +2188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CTF/attacktive_directory/" class="md-nav__link">
+      <a href="../../CTF/attacktive_directory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2182,7 +2208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CTF/Basic_Pentesting/" class="md-nav__link">
+      <a href="../../CTF/Basic_Pentesting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2202,7 +2228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CTF/Kenoby/" class="md-nav__link">
+      <a href="../../CTF/Kenoby/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2222,7 +2248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CTF/Lazy_admin/" class="md-nav__link">
+      <a href="../../CTF/Lazy_admin/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2242,7 +2268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CTF/MrRobot/" class="md-nav__link">
+      <a href="../../CTF/MrRobot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2262,7 +2288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CTF/Pickle_Rick/" class="md-nav__link">
+      <a href="../../CTF/Pickle_Rick/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2282,7 +2308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CTF/root_me/" class="md-nav__link">
+      <a href="../../CTF/root_me/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2302,7 +2328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CTF/Simple_CTF/" class="md-nav__link">
+      <a href="../../CTF/Simple_CTF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2322,7 +2348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CTF/Skynet/" class="md-nav__link">
+      <a href="../../CTF/Skynet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2342,7 +2368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CTF/Steel_Mountain/" class="md-nav__link">
+      <a href="../../CTF/Steel_Mountain/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2362,7 +2388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CTF/tomghost/" class="md-nav__link">
+      <a href="../../CTF/tomghost/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2382,7 +2408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CTF/Upload_Vulnerabilities/" class="md-nav__link">
+      <a href="../../CTF/Upload_Vulnerabilities/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2452,7 +2478,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Linux/" class="md-nav__link ">
+            <a href="../../Linux/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2484,7 +2510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Linux/Bash_startup_files/" class="md-nav__link">
+      <a href="../../Linux/Bash_startup_files/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2504,7 +2530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Linux/Disks/" class="md-nav__link">
+      <a href="../../Linux/Disks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2524,7 +2550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Linux/Kernel/" class="md-nav__link">
+      <a href="../../Linux/Kernel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2544,7 +2570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Linux/Other_necessery_things/" class="md-nav__link">
+      <a href="../../Linux/Other_necessery_things/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2564,7 +2590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Linux/Processes/" class="md-nav__link">
+      <a href="../../Linux/Processes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2584,7 +2610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Linux/Shell_scripting/" class="md-nav__link">
+      <a href="../../Linux/Shell_scripting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2604,7 +2630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Linux/Some_useful_files_and_directories/" class="md-nav__link">
+      <a href="../../Linux/Some_useful_files_and_directories/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2624,7 +2650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Linux/Users/" class="md-nav__link">
+      <a href="../../Linux/Users/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2644,7 +2670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Linux/Variables/" class="md-nav__link">
+      <a href="../../Linux/Variables/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2664,7 +2690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Linux/Linux_commands/" class="md-nav__link">
+      <a href="../../Linux/Linux_commands/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2728,7 +2754,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Windows/" class="md-nav__link ">
+            <a href="../../Windows/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2782,7 +2808,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Windows/Active_Directory/" class="md-nav__link ">
+            <a href="../../Windows/Active_Directory/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2814,7 +2840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Windows/Active_Directory/breaching_ad/" class="md-nav__link">
+      <a href="../../Windows/Active_Directory/breaching_ad/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2842,7 +2868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Windows/Alternate_Data_Streams/" class="md-nav__link">
+      <a href="../../Windows/Alternate_Data_Streams/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2862,7 +2888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Windows/Powershell_commandlets/" class="md-nav__link">
+      <a href="../../Windows/Powershell_commandlets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2882,7 +2908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Windows/System_utilities/" class="md-nav__link">
+      <a href="../../Windows/System_utilities/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2902,7 +2928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Windows/Windows_Services/" class="md-nav__link">
+      <a href="../../Windows/Windows_Services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2922,7 +2948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Windows/windows_users/" class="md-nav__link">
+      <a href="../../Windows/windows_users/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2942,7 +2968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Windows/Windows_persistence/" class="md-nav__link">
+      <a href="../../Windows/Windows_persistence/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3022,7 +3048,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Technologies/" class="md-nav__link ">
+            <a href="../../Technologies/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3054,7 +3080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Technologies/Crypto_base/" class="md-nav__link">
+      <a href="../../Technologies/Crypto_base/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3074,7 +3100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Technologies/FTP/" class="md-nav__link">
+      <a href="../../Technologies/FTP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3094,7 +3120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Technologies/Hashing/" class="md-nav__link">
+      <a href="../../Technologies/Hashing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3114,7 +3140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Technologies/IMAP/" class="md-nav__link">
+      <a href="../../Technologies/IMAP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3134,7 +3160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Technologies/Kerberos/" class="md-nav__link">
+      <a href="../../Technologies/Kerberos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3154,7 +3180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Technologies/MySQL/" class="md-nav__link">
+      <a href="../../Technologies/MySQL/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3174,7 +3200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Technologies/NFS/" class="md-nav__link">
+      <a href="../../Technologies/NFS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3194,7 +3220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Technologies/NTLM/" class="md-nav__link">
+      <a href="../../Technologies/NTLM/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3214,7 +3240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Technologies/POP3/" class="md-nav__link">
+      <a href="../../Technologies/POP3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3234,7 +3260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Technologies/python/" class="md-nav__link">
+      <a href="../../Technologies/python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3254,7 +3280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Technologies/SMB/" class="md-nav__link">
+      <a href="../../Technologies/SMB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3274,7 +3300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Technologies/SMTP/" class="md-nav__link">
+      <a href="../../Technologies/SMTP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3294,7 +3320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Technologies/SQLite/" class="md-nav__link">
+      <a href="../../Technologies/SQLite/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3314,7 +3340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Technologies/telnet/" class="md-nav__link">
+      <a href="../../Technologies/telnet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3334,7 +3360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Technologies/XML/" class="md-nav__link">
+      <a href="../../Technologies/XML/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3388,7 +3414,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Documents/" class="md-nav__link ">
+            <a href="../../Documents/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3420,7 +3446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Documents/683-p/" class="md-nav__link">
+      <a href="../../Documents/683-p/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3440,7 +3466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Documents/719-p/" class="md-nav__link">
+      <a href="../../Documents/719-p/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3467,7 +3493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../disclaimer/" class="md-nav__link">
+      <a href="../../disclaimer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3486,7 +3512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Update_log/" class="md-nav__link">
+      <a href="../../Update_log/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3527,14 +3553,42 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    Инструменты:
+    Хэши файлов
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ip" class="md-nav__link">
+    IP адреса
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    Способы борьбы
+    Доменные имена
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Сетевые/хостовые артефакты
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Инструменты
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ttp" class="md-nav__link">
+    TTP атакующего
   </a>
   
 </li>
@@ -3554,18 +3608,40 @@
                   
 
 
-<h1 id="arp-spoofing">ARP spoofing</h1>
-<hr />
-<p>Атака типа MITM заключаящаяся в том, что злоумышленник находясь в одном broadcast домене с машинами жертв, выдает себя за каждую из них, становясь таким образом между ними и пропуская трафик через себя.
-Суть заключается в том, что согласно протокола ARP каждое устройство может в любой момент времени отправить ARP request о своем IP адресе, даже если на это не было запроса.</p>
-<h5 id="_1">Инструменты:</h5>
-<p>Любые сниферы, а в особенности те, которые имеют предварительные конфигурации для ARP spoofing'a (aka APR poisoning), например Ettercap.</p>
-<h5 id="_2">Способы борьбы</h5>
+<h1 id="pyramid-of-pain">Pyramid of pain</h1>
+<p>Модель характеризующая IOC (индикаторы компроментации) как по степени сложности обнаружения со стороны защиты, так и по степени важности обнаруженного индикатора, со стороны атакующего.</p>
+<p>Уровень расположения индикатора в модели отображает: </p>
+<ul>
+<li>
+<p><strong>критичность</strong> его обнаружения для атакующего (верхний IOC причиняет много страданий атакующему)  </p>
+</li>
+<li>
+<p><strong>простоту</strong> его обнаружения для защищающихся (верхний IOC тяжело обнаружить защищающемуся)</p>
+</li>
+</ul>
+<p><img alt="" src="/images/pyramid_of_pain.png" /></p>
+<h3 id="_1">Хэши файлов</h3>
+<p>Позволяют быстро и однозначно определить вредоносный файл, однако могут быть легко изменены атакующим, к примеру путём добавления в файл пары незначащих бит.</p>
+<h3 id="ip">IP адреса</h3>
+<p>Блокировка нежелательных сетевых соединений позволит прервать канал с C2, однако для атакующего не составит особого труда иметь множество различных IP адресов. </p>
+<h3 id="_2">Доменные имена</h3>
+<p>Заменить доменное имя атакующему будет сложнее чем IP адрес: его как минимум нужно купить,  зарегистрировать, внести изменения в DNS записи. Однако, множество регистраторов предоставляют API, а еще не обеспокоены вопросами принадлежности домена конкретному лицу. Кроме того, использование таких технологий как <a href="https://unit42.paloaltonetworks.com/fast-flux-101/">FastFlux</a>, создаст много проблем защищающимся.</p>
+<h3 id="_3">Сетевые/хостовые артефакты</h3>
+<p>Любая деятельность оставляет следы. На хосте это могут быть ключи реестра, вызов определенных процессов, файлы на дисках и т.п. </p>
+<p>К сетевым можно отнести user агенты, информацию о C2, URI в POST запросах и т.д.</p>
+<p>Обнаружение и превентивное реагирование на появление артефактов, заставит атакующего вносить изменения в конфигурацию используемых им инструментов </p>
+<h3 id="_4">Инструменты</h3>
+<p>Обнаружение и реагирование на используемые инструменты - серьёзный вызов для атакующего. В большинстве случаев, ему придется прекратить попытки вмешательства, однако сильно мотивированные негодяи могут либо приобрести новые инструменты, либо разработать свои собственные, с возможностью обхода существующих средств защиты.</p>
+<p>Наравне с сигнатурным анализом АВЗ, различных правил обнаружения (например YARA), действенным способом обнаружения является fuzzy hashing (нечеткие хэши). Почитать про них можно на странице <a href="https://ssdeep-project.github.io/ssdeep/index.html">SSDeep</a></p>
+<h3 id="ttp">TTP атакующего</h3>
+<p>Как правило, обнаружение и реагирование на TTP атакующего оставляет его практически без шансов на успешную атаку. Ему придётся изменить всю стратегию атаки, а следовательно у него есть только 2 пути:</p>
 <ol>
-<li>Использование Dynamic ARP inspection на всех access портах свитчей.</li>
-<li>Меры физической защиты оборудования, в том числе использование port security, 802.1х</li>
-<li>Микросегментация - не решит кардинально проблему, но ограничит broadcast домены</li>
-<li>Шифрование передаваемых данных - так же дополнительная мера, направленная в первую очередь на предотвращение перехвата информации передаваемой в plain text.</li>
+<li>
+<p>Надолго отступить для построения новой стратегии</p>
+</li>
+<li>
+<p>Сдаться и пойти попробовать взломать кого-нибудь другого.</p>
+</li>
 </ol>
 
 
@@ -3596,7 +3672,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
         
           
-          <a href="../network_zones/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Зоны сетевой инфраструктуры">
+          <a href="../SecurityPrinciples/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Принципы обеспечения безопаности информации">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -3606,20 +3682,20 @@
                 Назад
               </span>
               <div class="md-ellipsis">
-                Зоны сетевой инфраструктуры
+                Принципы обеспечения безопаности информации
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../../CTF/" class="md-footer__link md-footer__link--next" aria-label="Вперед: CTF">
+          <a href="../iam/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Идентификация и управление доступом">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Вперед
               </span>
               <div class="md-ellipsis">
-                CTF
+                Идентификация и управление доступом
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3680,10 +3756,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.726fbb30.min.js"></script>
+      <script src="../../assets/javascripts/bundle.726fbb30.min.js"></script>
       
     
   </body>
