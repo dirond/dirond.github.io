@@ -151,6 +151,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ivanovds.ru/CyberSec/unified_kill_chain/</loc>
+         <lastmod>2023-11-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ivanovds.ru/CyberSec/vulnerabilities/</loc>
          <lastmod>2023-11-09</lastmod>
          <changefreq>daily</changefreq>
