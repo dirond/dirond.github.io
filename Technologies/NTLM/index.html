@@ -2864,6 +2864,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2915,6 +2919,46 @@
   
   <span class="md-ellipsis">
     Проникновение в Active Directory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Active_Directory/adenum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Получение сведений из Active Directory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Active_Directory/adlateral/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Перемещение по AD
   </span>
   
 
@@ -3641,7 +3685,27 @@
 
 
 <h1 id="ntlm">NTLM</h1>
-<hr />
+<p><img alt="" src="/assets/ntlm.png" /></p>
+<ol>
+<li>
+<p>Клиент посылает аутентификационный запрос серверу.</p>
+</li>
+<li>
+<p>Сервер генерирует случайное число и отправляет его клиенту (challenge)</p>
+</li>
+<li>
+<p>Клиент шифрует challenge с помощью NTLM хэша своего пароля и отправляет полученное значение серверу.</p>
+</li>
+<li>
+<p>Сервер передает challenge, полученное значение контроллеру домена для верификации.</p>
+</li>
+<li>
+<p>Используйся хранящийся у него NTLM хэш пароля, контроллер домена шифрует challenge этим хэшем и сравнивает результат. В зависимости от результатов сравнения, отправляет соответстсвующее сообщение (разрешить/отказать в аутентификации) серверу.</p>
+</li>
+<li>
+<p>Сервер пересылает сообщение клиенту.</p>
+</li>
+</ol>
 
 
   

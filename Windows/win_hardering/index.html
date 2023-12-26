@@ -2934,6 +2934,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2985,6 +2989,46 @@
   
   <span class="md-ellipsis">
     Проникновение в Active Directory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Active_Directory/adenum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Получение сведений из Active Directory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Active_Directory/adlateral/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Перемещение по AD
   </span>
   
 
@@ -3756,7 +3800,7 @@
 <p>Отключи неиспользуемые сетевые адаптеры - уменьши поверхности атаки.</p>
 </li>
 <li>
-<p>Начиная с Win10 дырявый <code>SMBv1</code> не поставляется по умолчанию. Отключение же <code>SMBv2</code> или <code>SMBv3</code> может <a href="https://learn.microsoft.com/en-us/windows-server/storage/file-server/troubleshoot/detect-enable-and-disable-smbv1-v2-v3?tabs=server">повлиять на некоторую функциональность.</a> Однако, если машинка не в сети, отключить их всё же стоит.</p>
+<p>Начиная с Win10 дырявый <code>SMBv1</code> не поставляется по умолчанию. Отключение же <code>SMBv2</code> или <code>SMBv3</code> может <a href="https://learn.microsoft.com/en-us/windows-server/storage/file-server/troubleshoot/detect-enable-and-disable-smbv1-v2-v3?tabs=server">повлиять на некоторую функциональность.</a> Однако, если машинка не в сети, отключить их всё же стоит. Кроме того, следует включать Подписывание SMB трафика (делается через GPO в AD)</p>
 </li>
 <li>
 <p>Используй системы класса HIPS/HIDS или прочие инструменты для контроля целостности файла hosts.</p>
