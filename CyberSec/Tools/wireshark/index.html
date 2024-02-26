@@ -1590,6 +1590,8 @@
       
         
       
+        
+      
     
     
     
@@ -2154,20 +2156,40 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Прочее
+  </a>
+  
+    <nav class="md-nav" aria-label="Прочее">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reversebindweb-shell" class="md-nav__link">
+    Возможный reverse|bind|web shell
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     Статистика и итоги
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     Прочее
   </a>
   
@@ -2193,6 +2215,26 @@
   
   <span class="md-ellipsis">
     WPScan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yara/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Yara
   </span>
   
 
@@ -4096,20 +4138,40 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Прочее
+  </a>
+  
+    <nav class="md-nav" aria-label="Прочее">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reversebindweb-shell" class="md-nav__link">
+    Возможный reverse|bind|web shell
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     Статистика и итоги
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     Прочее
   </a>
   
@@ -4164,7 +4226,7 @@
 <p>Display фильтры можно задавать как запросами так и через GUI, имею в виду можно выбрать конкретное поле в конкретном пакете (<code>Analyse -&gt; Apply as Filter</code> или через ПКМ) и назначить фильтр по этому полю.</p>
 <p>Также существует возможность фильтрации отдельных взаимодействий, например по TCP сессии, (Conversation Filter). Кроме того, имеется возможность просто обозначить цветом подходящие под условия фильтра пакеты, не скрывая остальные записи с экрана.</p>
 <p>Имеется возможность отобразить конкретную запись из деталей пакета в списке колонок. После этого удобно применить фильтр по такой нужной колонке.</p>
-<p>С помощью <code>Analyse -&gt; Follow TCP/UDP/HTTP Stream</code> можно восстановить поток и в отдельном окне увидеть результаты взаимодействия.</p>
+<p>С помощью <code>Analyse -&gt; Follow TCP/UDP/HTTP Stream</code> можно восстановить поток и в отдельном окне увидеть результаты взаимодействия. Так же, бывает полезно посмотреть TCP поток в сыром виде, для того, чтобы увидеть передаваемые с его помощью файлы. При этом, бинарники, в большинстве случаев, нужно будет привести в читаемый вид с помощью hex редактора.</p>
 <h4 id="display">Синтаксис Display фильтров</h4>
 <table>
 <thead>
@@ -4582,7 +4644,10 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_7">Статистика и итоги</h2>
+<h3 id="_7">Прочее</h3>
+<h5 id="reversebindweb-shell">Возможный reverse|bind|web shell</h5>
+<p><code>tcp.flags.syn eq 1 and !(tcp.port eq 443) and !(tcp.port eq 80) and !(ip.dst eq LAN/24)</code></p>
+<h2 id="_8">Статистика и итоги</h2>
 <p>Wireshark предоставляет статистические возможности рассматриваемого трафика, что бывает весьма полезно, как минимум для получения дополнительной информации.</p>
 <table>
 <thead>
@@ -4622,7 +4687,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_8">Прочее</h2>
+<h2 id="_9">Прочее</h2>
+<p>Для дампа трафика с хостов, можно использовать <a href="https://www.wireshark.org/docs/man-pages/dumpcap.html">dumpcap</a></p>
 <p>По умолчанию отключен резолвинг адресов. Для включения: <code>Edit -&gt; Preferences -&gt; Name Resolution</code>. А при наличии скаченной БД от MindMap, в статистике по Endpoint'ам будут отображаться сведения о географической принадлежности IP адресов.</p>
 <p>Для просмотра TLS трафика нужно загрузить дамп сессионных ключей (<code>Edit -&gt; Preferences -&gt; Protocols -&gt; TLS -&gt; (Pre)-Master-Secret log filename</code>), их могут отдавать Firefox и Chrome если перед запуском будет определена переменная <code>SSLKEYLOGFILE</code>. Подробнее можно почитать, например <a href="https://my.f5.com/manage/s/article/K50557518">тут</a></p>
 <p>Во вкладке <code>Tools</code> имеются инструменты для извлечения крэдов из не шифрованных протоколов и https (в случае наличия сессионниого ключа)</p>

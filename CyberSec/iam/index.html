@@ -777,6 +777,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#abac" class="md-nav__link">
+    ABAC
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1791,6 +1798,8 @@
       
         
       
+        
+      
     
     
     
@@ -2162,6 +2171,26 @@
   
   <span class="md-ellipsis">
     WPScan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tools/yara/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Yara
   </span>
   
 
@@ -4038,6 +4067,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#abac" class="md-nav__link">
+    ABAC
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4148,6 +4184,9 @@
 <li>
 <p>Мандатная модель управления доступом. (<strong>M</strong>andatory <strong>A</strong>ccess <strong>C</strong>ontrol)</p>
 </li>
+<li>
+<p>Разграничение доступа на основе атрибутов (<strong>A</strong>tribute <strong>B</strong>ased <strong>A</strong>ccess <strong>C</strong>ontrol)))</p>
+</li>
 </ol>
 <h4 id="dac">DAC</h4>
 <p>Модель доступа в которой у каждого ресурса есть пользователь-владелец который может наделять других пользователей правами на свой объект. Как правило, в права входит чтение, запись, выполнение и т.п. Субъект с определенным правом доступа может передать это право другим субъектам.</p>
@@ -4162,6 +4201,8 @@
 <blockquote>
 <p>Ключевым отличием <strong>MAC</strong> от <strong>DAC</strong> является то, что в <strong>MAC</strong> права на ресурсы назначаются администратором, следовательно владелец ресурса не обладает полным контролем над правами к собственным ресурсам.</p>
 </blockquote>
+<h4 id="abac">ABAC</h4>
+<p>Модель представляет из себя объединение RBAC и MAC моделей. Её основу составляют атрибуты объектов и субъектов доступа. Позволяет максимально гранулировать предоставление доступа. Для описания политик ABAC используется стандарт <a href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=xacml">XACML</a></p>
 <h3 id="single-sign-on-sso">Single Sign-On (SSO)</h3>
 <p>Технология позволяющая пользователям аутентифицироваться в различных информационных системах, используя всего один аккаунт.</p>
 <p>Внедрение SSO предоставляет следующие преимущества:</p>
